@@ -1,0 +1,71 @@
+---
+id: api-funds-deposit
+title: "/api/funds/deposit"
+description: "/api/funds/deposit"
+sidebar_label: "/api/funds/deposit"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVduO2zYQ/RVhnmVLtnwL0Qs2aVOkQJFFd4s+GEZBUWObiUQyvOzGEPTvwYha27v1tm71RHHODIczZw5b0AYt91KrDxUwyLiR2TaoymUVGu2khxQsfgno/FtdHYC1ILTyqDwtuTG1FL179slpRXtO7LHhtDKWgnuJrscKoYPyf8mK/hqpZBMaYHkK/mAQGEjlcYcWuvSIJct1Dg3hgbW0dg6vPKZHKt4gYQe781aqHZmDQzvEeWHrjtF0+QmFh462KnTCSkPVAAbvw42R7LustD+crj78DxkOf33u5xbKiA2FlxYrYN4G7GjDGa1cLOg0z/9TO/Arb0wdr2q5QLoZFGJWbFczMSqXJR/NFqtixItFORLL+Ww2L1a8qDikgNZq+05XCGya58P/b+gc31EVIAUXhEDnYqopVCGyCtib6bQoltO8WKzms+VykZN/xT0HpkJdp7DXzgMDj85LtUtQPVC4vX6870ucd+kLJkVnavXplBa22jbcxwYvZnCp32e3aF8zHy91gRAx0wuGU7aX4h5LczSWWtfIFRmPrfhfJLuLobehTo6DHD35zgFbQz/LsHnpd3HOG/R7TaQwdM8UDPf717AO7QNaOqKFYGtgsPfesCybTN6MV+N5Pp4WC7bKV0UGXfovmMUVmOUVmNUVmMkVmOkVmNkVmHkG3YZqJYKV/nBHoxgp/Ba5RUursl+9fyLvr3/ew8tm/YI+uUfn7/VnVMnW6iZ5tQDUq9ibhiu+w4zGypPjjyRnsvp+Mi1mc+pgnw2RMeZyZBvF7jlEEvL7Sft/PunHuZbnF+Q6f02R8+ei+8T1M609myqptrqf92fVuLWapiG5uf2Q/KRFaFD5RCpRhyoxVj5wjwlXVWJCWUtB15KesoaPBhV5QQpE3RhtMs7HOR1GnG94ryRDbhd5/yyX48h6/OozU3PZj3TPiXYYnzVwIyEdBpECxFCbJzlZQ9uW3OEftu462v4S0B6ArTcpPHAreUnZrzekP8grYs26hc94AAbvovaPeu0heB0onb+9A8TU6HEjBBr/j9jNmRLcfrwjPpbD09/02gmWP9LrxB+j9Ou+HD2v+70Waq52IT4NMSZ93wAkPMUC
+sidebar_class_name: "post api-method"
+info_path: docs/bitzoom/open-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"/api/funds/deposit"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/funds/deposit"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+/api/funds/deposit
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"account_id":{"minimum":0,"type":"integer"},"account_type_id":{"minimum":0,"type":"integer"},"amount":{},"asset_id":{"minimum":0,"type":"integer"},"asset_name":{"type":"string"},"user_id":{"type":"string"}},"type":"object"}}},"description":"FuApi:</br>account_id:</br>asset_id:</br>amount:</br>asset_name:","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"3c43f84c-b7ba-4683-a36b-c7544538a3da","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":null,"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      

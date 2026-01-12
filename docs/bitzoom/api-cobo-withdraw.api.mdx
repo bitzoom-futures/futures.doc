@@ -1,0 +1,71 @@
+---
+id: api-cobo-withdraw
+title: "/api/cobo/withdraw"
+description: "/api/cobo/withdraw"
+sidebar_label: "/api/cobo/withdraw"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVVluv2jgQ/ivRPAcSAgSIulv1sl2dlVY9KqfqA+LBSQZwT2KnjgNFEf+9GjuQHMjpsjyZudkz8818qUEWqJjmUjykEIHHCu4lMpbegetdqtgBXFD4o8JSv5fpEaIaEik0Ck1HVhQZT4y7972UgmRlssOc0alQFFxzLOnftybgFxvt1oClqcLSHPWxQIig1IqLLZxcYLms7JU3qoRp3ErVBOEa8/4QjYApxY7Gb8e4SbrHNsUyUbygvHr1OeayVyFQH6R6/oTYq24q+cqtjfZRqm6mXGjcouoYLFHtefLbG5ayUgk+FP2VkM/4WuYHlmXY/8C2hjL+jonulVwX77rt0RsvVn8SwposogZgXGEKkVYVmizKQorStjTw/f8FO/zJ8iKz5VEsQU7ADuMpzkIMB34YBIPJIg0HMfMXg3Q2HiWIi00Yb8AFVEqqDzJFiALfb/7/i2XJtpQmuFBWSWJQSk91Ia3s9EC0CILxeBb443A+ncxmoU/+KdMMIlFlmQs7SagHjaXmYuug2FO4nTw8mRr6J/dqIKxzfereUsNGqpxpC4xwAm4PTjpZ9MHoZVI9ILAv7VG0r+2LeynNRRlLmSETBnTnVtyDqxsULW3oTZU5l4VlPdm2hGgFhChYX7v1rrMc9U4SJgpK04WC6d1rtiWqPSq6oYZKZRDBTusi8rzRaDGcD6f+MBiH0dyfjz04uf9hE95hM7vDZn6HzegOm+AOm8kdNlMPTmuqVVIpro9LmkSL4PfIFCo6xeb06Yzdf749wXWz/kbtPGGpn2g9ORslc+fVAlCvbG9yJtgWPZoqs9feViUqnv4xCsaTKXXQvIawaN9yARvFNhCiDfKlpbi/2vXRQ1kXkjrDt+WmVtKlpNVZvO5QTmv6sgQXsSWY9n+XV1pph05uhJZF/FvSuLFsuaJVXSiiFbXM0J1cLjaGCV/m8agkTbLz7vHB+SiTKkehHS6SrEqdQvE90+gwkTpFFWc8ofu4ppLD5wIFeYELNHc22mjoD33aITSwOTNbUDDT1N6h7WdvjT+1V2SMm3VkAF03s78CVnDqGy0RFy6h1udVuIK6jlmJX1V2OpH4R4XqCNFq7cKeKc5iev1qTbsTWUqQX9XwjEeI4IPlrYHZm2SeVeY75JrDaMysx7skwUL/1nbdWWOPn5c0THHzeZabvQ/Npxs7WNqSphxmKI2shoyJbWVpzcak3y/qIVll
+sidebar_class_name: "post api-method"
+info_path: docs/bitzoom/open-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"/api/cobo/withdraw"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/cobo/withdraw"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+/api/cobo/withdraw
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"WithdrawRequest":{"properties":{"address":{"type":"string"},"amount":{"type":"string"},"categories":{"items":{"type":"string"},"type":"array"},"chainId":{"type":"string"},"description":{"type":"string"},"memo":{"type":"string"},"networkFee":{"type":"string"},"requestId":{"type":"string"},"requestPort":{"type":"integer"},"requestService":{"type":"string"},"requestSourceIp":{"type":"string"},"tokenId":{"type":"string"},"walletId":{"type":"string"}},"type":"object"}},"type":"object"}}},"description":"WithdrawRequest:</br>coboService:","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"6b5e76e6-0622-49d6-ba09-d731cee9f6bf","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":null,"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      

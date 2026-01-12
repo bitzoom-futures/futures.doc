@@ -1,0 +1,71 @@
+---
+id: api-v-1-trades
+title: "/api/v1/trades"
+description: "/api/v1/trades"
+sidebar_label: "/api/v1/trades"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVUuP2zYQ/ivCnLXWw88ICILtI0GKBgmwLnowfBhJY5uJRDIk5cQQdO+xx/Ze9FiglxZIf0+K7L8oRrIV79qb+iRS8+TM983UoDQZdELJ5zkkEKAWwTYKnMGcLPig0WBJjoyFZFFDTjYzQrM+JGB3ZaqKBHwQfH1bkdmBDxJLggRuWin4YLMNlQhJDW6nWWKdEXINTePf91iIUrjk37///Pjh99tff/7401/+7T+/fPrjN28cPhDmezY5F0VIB02z9MGQ1UpasiyMw5A/mZKOpOMjal2IrK1B8NpyGvWRM3qPpS6o9WswI8Flwmw1nU7TyRVNKLoapeP8ajbB6IowysJVGI/TcQQ+kDHKfK1ygiQOw/39BVmLa06Qk66yjKyFxJmKfMirrheQPIrj4XAah8PJbDyaTich2+foEBJZFYUPG2UdJODIOiHXHsktu9uod/P29WHjgzbcXCe6h3fGdXMcpYaVMiW6rlqTEfhHxaM1GWjuvKJ+SNw/6qTHh0zPCD5ne85vX5pemCpVEEoW9q04g6nDH5W+powhwE++g7KbzvWqKrwe/p0lrhnnsEZH73AHy/uWJ/woyW0UQ2JNrqWL25xTs2S2Bw5VpoAENs7pJAii6NFgNhiHg3g4SWbhbBgAs+KLOpMLdKYX6Mwu0Iku0Ikv0BldoDMOgOlqKauMcLsb5mCH3a8IDRk+pe3p6QG13/04h/s9ekbOm5N1c/WGpLcyqvQeLAD3qetNiRLXFDCfHBs+qSwZkT+O4uFofBgvLQq7XHqYse8WPEKuVEu0O9m8Moph6F2/eu59o7KqJOk8IbOiyj1txBYdeShzT1dpITJ2KxyPG3ipSbIV+MDQ6bxFg3AQMgG0sq7ElsL7OXiCuTt59Dxx9N4FukDR8qjtR72H7QJQCw7Hs2vvZnng7wLqOkVLP5iiafh3N4bbpSAspgXlkKywsHQSuZ+1RwvjbDZvaHe8N7ZYVO2cbPfExUH+Z4d8IfJhlXwOvOSLERwZksWSpxlhzlBc1Huj6ywjfWx1sk/YSz8nnn07h6b5D5r9dX8=
+sidebar_class_name: "get api-method"
+info_path: docs/bitzoom/open-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"/api/v1/trades"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/trades"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+/api/v1/trades
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"symbol:","in":"query","name":"Symbol","schema":{"type":"string"}},{"description":"limit:深度限制,默认 50","in":"query","name":"Limit","schema":{"type":"int"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"acf777b6-e6e1-4b5d-86a1-ea1c0f025b51","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":null,"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      

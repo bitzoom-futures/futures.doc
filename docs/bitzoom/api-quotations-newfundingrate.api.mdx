@@ -1,0 +1,71 @@
+---
+id: api-quotations-newfundingrate
+title: "/api/quotations/newfundingrate"
+description: "/api/quotations/newfundingrate"
+sidebar_label: "/api/quotations/newfundingrate"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVVm2P2zYM/isBPzuJ4ryegWFou3XogKFd74YBC4JAtphEPVvS6eXugiD/faCc16vb8+WTTZMURT58nuxAG7TcS60+Ccigz43sPwTto8n1FT6tghJSrS33CAlYfAjo/HsttpDtoNDKo/L0yI0pZRHj+t+cVmRzxQYrTk/G0kFeoqO3nDvpliteeG0h2+0TKCxyj4LHVCttK3oCwT12vazoZL81CBk4b6Vawz6BQ2HLWFlMspHOa7tdxojLPFL5yeicQyqPa7SUZKODdUuLFZeK8raLkoIcK6lkFSrIWKOPEvi8NFYWh+ouDEung432769Vcucvwypu71++o1+2KaHSAstbX/en4bvh0jbW4ND7EitUfmnQSi2a4922ynXZmIFG4DyvTMuOesuLe5qmFM35LBf4lsEGI94GqP3JovNvWHjYk0mgK6w0hGrI4O+w/Fij7iv3mB32QVoUkHkbcE8GZ7RyNc5Txt60JfjMK1PW07K8QGoGFDezKQ4nk+5kNhl0R8N81c2LyagrBgWfrlaY5zMBCaC12n7QAiFLGTu8/4XO8TVdChJwoSjQubrUBESoFx+ymzQdDqcpG05m49F0OmEUL7jnkKlQlrQljrrn0Xmp1h1Uj5Ruo5/uYscYYelqwetgguv5lFZju7hFE+KuL9WAk7rSJkifqm1E8rE1p4+51iVydcQmNuKyDWZu69SrUHZOXFtH8rWDbA5nuoXFy+BX+bhCv6H1BEMXp5X2mzZxDu0jWjp/B8GWkMHGe5P1+4PBTW/WG7NeOpxkMzYb9mGfvOIzaeEzbeEza+EzaOGTtvAZtfAZ92G/oF4VwUq/vaU9rfH9HrnFyJ15fPp4RPaf/97ByyH+gb5zh87f6XtUnZXVVeeHDaC51bOpuOJr7NPOeQr8NTi0UvwySIejMU0wVkNIrWs5QZFyR4ARv3w96/XvZ3L5qf5CytJRl0276c3dYJyNB1k667Hp4D94XXNZg6KyWi9ZS0k8LteblJBdix07ats5WYOksbOCnf0uhIu9kKULpws1Ylda8+PmxeuudGTHK3h8sZq4o/Puy6fOb7oIVGNHqqIMomOsfOQeO1yJjgl5KYtYoqcxwmeDiqIgAdrlOtugx3osirt2vuKRdxWPQHmVFK7qOpGdx2ffNyWXkQzjwuwOPDMHbiQklxSWwIu0iyMpz2G3y7nDf2y535P5IaDdQjZfJPDIreQ53Wq+IFAhF7Re8x3c4xYy+FAraDcyOLmXgUr7Tk1ppeuId0WBxv/Ud3FBn18+39Li5of/tVVUILD8iTSeP9UCqk19x2xX23ZQcrUOtcDWOen3P8wyxgQ=
+sidebar_class_name: "post api-method"
+info_path: docs/bitzoom/open-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"/api/quotations/newfundingrate"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/quotations/newfundingrate"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+/api/quotations/newfundingrate
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"basis_factor":{},"createdat":{"format":"date-time","type":"string"},"funding_rate":{},"history_time":{"format":"int64","type":"integer"},"hours_remaining":{"format":"int64","type":"integer"},"id":{"minimum":0,"type":"integer"},"index_price":{},"index_price_source":{"type":"string"},"last_price":{},"mark_price":{},"market_id":{"minimum":0,"type":"integer"},"modelState":{"type":"integer"},"pair":{"type":"string"},"settlement_period":{"type":"integer"},"symbol":{"type":"string"},"timestamp":{"format":"int64","type":"integer"},"tracking_id":{"type":"string"},"trade_time":{"format":"int64","type":"integer"},"updatedat":{"format":"date-time","type":"string"}},"type":"object"}}},"description":"Qu_FundingRate:","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"c987e366-6861-43bf-bc64-d1ca7ffebb8d","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":null,"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      

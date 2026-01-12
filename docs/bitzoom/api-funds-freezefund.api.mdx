@@ -1,0 +1,71 @@
+---
+id: api-funds-freezefund
+title: "/api/funds/freezefund"
+description: "/api/funds/freezefund"
+sidebar_label: "/api/funds/freezefund"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1VltvG0UU/iur87yJ19c4KyFUCFRGQlTEFQ9RVI13j+1pdmeWmdlQd2WpQEUrNUUgwgtSkVqVNrwEIUCNksKv8SV96l9AZzd2nMQ2TiSePN4553zfzLnMl4CMUDHDpaj54EKORTzXjIWvc02FeBdpDTZETLEQDSoN7kYCPmpP8YjcwIVYo7rFfXe4uzd4+Kq2BjZw+v55jKoDNggWIrhwU6NKN7XXxpCBm4DpRLSjjeKiBd2ufT408zwZC3OLDAni+M8Xg4evhr8f9X9+NBPoWuZU70Q4HS/mwkxF0xpNCvPX/d7hy9qa3Tt4fPz1372Dw+Gvh29ffzkLkPwuCRUSRbf/zdHw6Ic3D75/8+zJrOCp5eWuTctYeemFDZ78Mjj8rrZmW71/HvVffHW8/6z/+Mfa2tvXO2fPtjPc3esdfjt8un+8/zyjdfx0Z/jT/f7ub72De4N7L2fwW0+xLptYqfysaEaEZkT/hOwud7UKQ6a23P7zB4M/9maE/TS1mUt50waFOpJCo6b9guPQjyeFQWFoyaIo4F7aPLnbmrCTiXh4h4VRgGloxTzk1F8MK6VKk5WXiuVSc6nUYKtLDafSWGqUinm/ylbKziqCDaiUVO9LH8EtOM7J/49Ra9YijsQ79jzUGlyjYrTBj7MmBne1UCgWVwpOsVItl1ZWKg75+8wwcEUcBDa0pTbggkFtuGhZKLYpXFt+UU8vwOnaECmaCoZnB8+ck+4kSgJNqUJGgbgwlRLYo/vjwmALFXTPnCKZtT0+1IUEjJhO2ThlOy3u+GrGmw0pA2SCNsepmFKjoy+ycRs9Ki068pnSWs9CN+PAGs/NzJO1aDJCOjph87zfrLEaomlLqosWmnTKmvYca41qezSBYxWAC21jIjeXy+dXl6vLZWe5UKy4VadazAG1xVybygI2KwvYVBewyS9gU1jAprSATTkH1LoavVhx01mnfszq+D1kChWtGunqw1EFf/RZHc5n7Doaq47a1OUWCqupZGjNvABKV5abkAnWwhz1liHHd+lp5P47+UKxVB5Nm7QiMy7jkqPYaSFx0ZRp051hc0NJKknr2o2atSa9OERhLC68IPatSPFtZtBiwreiuBFwj8JyE6TjM0JBXmADlU4WLb/sLDvUDJHUJmRpO5/MxVmld4bOuHUM3jG5KGA8ba00LclJEW8AizjYJw1hw0S0zVFnb0CSNJjGmyrodulzNqRTgcE1awTog9tkgcYLBMZTeJr4mMpuCzuTGmSbBXE6StP3Y2G0/9Qjc7DPy5KrUlhApMxjMdYqV8WfqlzmIY4EzBUB/y8xM4fyhKa5Iulp+mYO4KnMuSLeedEzB2usfU6hNumP4oQF7sYmvb3IfBqWG8lp9WI0mcUL6oeijB+06x/Uodv9FwbKdmU=
+sidebar_class_name: "get api-method"
+info_path: docs/bitzoom/open-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"/api/funds/freezefund"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/funds/freezefund"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+/api/funds/freezefund
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"user_id:用户ID","in":"query","name":"UserID","schema":{"type":"string"}},{"description":"account_type_id:账户类型ID","in":"query","name":"AccountTypeID","schema":{"type":"uint"}},{"description":"asset_id:资产ID,不能为空！","in":"query","name":"AssetID","schema":{"type":"uint"}},{"description":"amount:冻结金额","in":"query","name":"Amount","schema":{"type":"string"}},{"description":"source_id:来源ID, 例如订单ID，不能为空，用于确认冻结行的唯一性","in":"query","name":"SourceID","schema":{"type":"string"}},{"description":"order_id:订单ID","in":"query","name":"OrderID","schema":{"type":"uint"}},{"description":"remark:备注","in":"query","name":"Remark","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"ae646fa5-354f-4ba9-b06b-b431d8a7509e","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":null,"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      

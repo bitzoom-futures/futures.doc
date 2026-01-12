@@ -1,0 +1,71 @@
+---
+id: api-v-1-balance
+title: "/api/v1/balance"
+description: "/api/v1/balance"
+sidebar_label: "/api/v1/balance"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVduO20YM/RWBz1pLtry2VkAR5NIGKVA0wLrow8IPlETLk0gz05mRE0PQvxccrbT22hv4SReSh5w5h2QHSpNBJ5T8UkIGEWoRHeZRjjXKgiAEjQYbcmQsZE8dlGQLIzQHQAZONGQdNjqDEAT/+a8lc4QQJDYEGWxGBwjBFntqELIO3FGzUUi3WkLfh69hragkutbQW7CPo8M1WOuMkBX0/TYEQ1YracmyfRHH/CiUdCQdv6LWtSj88aNvlnN3J3j0Extdk4c2WJDgGyoTjJMHKu9yLNO7ZbJK79JlvL5bYpw+rNNFnicJhEDGKPNRlQTZIo6fv/8ia7HiGrnutijIWsicaSmEsh1ogOxhsUiS9SJOVun9cr1exRxfokPIZFvXIeyVdXz5ZJ2QVUDywHB79WPjLyDuQ9CGeXViOPgQ3PWnWTrYKdOgm3gIT2ihigz0Z6fo3jJPh7ogYKz0iuGl2mu409VMxlypmlCycaLikvDpCCr/RoWDnn+dS+txgN61dTAp30daKloj3NGr/AOhIQPZ05ZF5LBi8UOFjn7gEbavQS+7piG3VyyXipxvIre/6mfJHMbWak0NGeyd01kUzecPs3R2H88WySpL4zSJgPvklz6rG3zWN/ikN/jMb/BZ3OCzvMHnPgKmYWTokRt0EPbIUwe5f/tjlPSf/27gNUufyQUbsm6jvpMMdkY1wZsXwEQN3DQosaKIm81x4LvWkhHlb/NFsrwfx4+X6FDLpEHG9soScqd8F55V89Uo1mjw/uuX4JMq2oakC4Qs6rYMtBEHdBSgLAPd5rUoGFY4nkXwtybJURACS2dAm8/iWczdoZV1Dfr+fp6Vl6I7K2TqIkc/XaRrFL7LPCHds3CfALXgfHMIYcTZju39BF2Xo6V/TN33/HsY1n5bCIt5TSVkO6wtXaSeRvH5Jrla0Xc6vlooB6xbP0z9Brk51dl2+UWq0yXzkmrLH0ZwLj8fQtgTln5YdM+B74uCtDuJulgzjDKNiM+/s1ax5Zt+GXijmvJxFE0mlMcT7K4bPLyq+x7G6r1Yod/2ff8/WcCOaw==
+sidebar_class_name: "get api-method"
+info_path: docs/bitzoom/open-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"/api/v1/balance"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/balance"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+/api/v1/balance
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"timestamp:","in":"query","name":"Timestamp","schema":{"type":"int64"}},{"description":"signature:","in":"query","name":"Signature","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"d3a039ed-bad8-4368-8407-4a089782bb33","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":null,"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      

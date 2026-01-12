@@ -1,0 +1,71 @@
+---
+id: api-quotations-getfundingrate
+title: "/api/quotations/getfundingrate"
+description: "/api/quotations/getfundingrate"
+sidebar_label: "/api/quotations/getfundingrate"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVcGO2zYQ/RVhzlpLtmyvl0AQpE0bbIGgAdaLHgyjoKSxzKxEMiS1jSHonnt66Af00FuPRfM9bfobwVBr7XpXuzF6EkXOvBly3ptpQGk03Aklz3NgEHEtone1cn7LRgW6TS1zIQvDHUIImhteoUNjga0ayNFmRmgyBgYVN1fofhY5gxAE7byr0ewgBMkrBAavvcH5SwjBZlusOLAG3E7TWS2kg7YN74PaXZWqkv3z6ffPv33898+/H4G+8GZDwNYZIYsh6NqiOc/Zf7/+8fnDXz6rIeRLshpMuUdeh2DQaiUtWjqfxDF9MiUdSkdLrnUpMv+q0VtL0Zs7ePieV7pED214hoJqkeXjcYJn8xOezqcn02S2OOGbhJ/Mkhkfx9NpkqYbCAGNUeZblSOwSRzf/L9Ga3lBOVLedZahtcCcqTGEvO4KDuxsMkmS00mczBez6enpPCb/nDsOTNZlGcJWWQcMHFonZBGgvCa4rfpl6R8gbkPQhhjkRHfxzrlp70ZpYKNMxQlISDefQrh/PyEdFmigPbhF89hxf6kHBdhnOnBwm+0Qbv80/WGqVIlc0mFfigEq7XdU+hYz4i1d+YBcFx30pi6DXmOdJy9IPHArM1jfd/6qDit0W0UsKdB5WbrtMW4WzfVeu7UpgcHWOc2iaDw+Gy1Gs3g0SeZsES+SCEgvT9rMj7A5PcJmcYTN+AibyRE20yNsZhGQoi1mtRFud0Ey7ej9DXKDhlapX32/J/YPPy3hfg1foQuWaN1SXaEMNkZVwaMPQHXralNxyQuMSHKOHJ9TkxL5s/Ekmc72TcgTtculZyJhe34JuVFeiwfZvDGKmBq8eHMevFRZXaF0gZBZWeeBNuKaOwy4zANdp6XICFY46kjwo0ZJXhACUadDG4/iUUwa0cq6inuV37TLr3LwIK9eWg7fu0iXXHjp+fo0N7ReAdcCwruCCeEe7HrfAlbQNCm3eGnKtqXtrpv7YSUsT0vMgW14afFBJn27Phxkgwle4e5wnl3zsvb91o+ZoyMNTLcn4vVD7n9GezjwngjWz73bYGv6MYKiAVutqe8iz0kRq+bG60WWoXZ3vB5MPkLp29er75bQtl8AlXvW4Q==
+sidebar_class_name: "get api-method"
+info_path: docs/bitzoom/open-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"/api/quotations/getfundingrate"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/quotations/getfundingrate"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+/api/quotations/getfundingrate
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"market_id:","in":"query","name":"MarketID","schema":{"type":"uint"}},{"description":"symbol:交易对","in":"query","name":"Symbol","schema":{"type":"string"}},{"description":"userId:用户ID","in":"query","name":"UserID","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"cd113e96-ab64-4358-af3a-535a10443bbf","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":null,"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,71 @@
+---
+id: api-v-1-historytrade
+title: "/api/v1/historytrade"
+description: "/api/v1/historytrade"
+sidebar_label: "/api/v1/historytrade"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1Vl9r21YU/yriPCWgxJLtxIlgjG7rSsfGAsnYQ/DDtXRs31b/du9VWiMEGWyMspZuZG3C1q3LSCh9WJOHNSROx76MrSRP+wrjSpZjJ5ZxDHuyfM/fe8/vnPMLwfOREUE9964FBhSITwsbeqFJufBYSzBiIajgE0YcFMg4GOshWMhNRn1pBQYI6iAXxPENUIHKk68CZC1QwSUOggFrmQKowM0mOgSMEETLl0LqisUyRJF61S2nDZeIgGGe29VMYZRbLhh1G6P8+qSBxsXu27Pfv1a7f291jttavH3UOW7r6vk/P3V/+S1+dhg/edM5/vPs52+EJ4gd7xzEm6fnu4/jZ4dqfPD0YvftxenO+Zu99EiaalpOkiukMTK/3Gvb1KHCSKP0QqbBdE1T4xeb3b1XupYb7lNpfbNnFoQJWUKj+26z++r7ePvoYvuvf9897j496Jzud47bZ6/beRWQtrK6N4qIrpXEOzvdin99eZN4t13rxtF4y6l5ttFp78U7W92DEzWNEG8fxS/3zw/+iB9txi8e5V0wMb4Zvji1sBcufn7S/eFHQzl73Z5J48yqSi1ozXRODrvf7s+qCkfbnuk+ed79rj2bC3NrPMKrKjDkvudy5FJe1DT5Y3quQFfIT+L7NjWTLi/c4zLLcMAfPiSOb2PimhETqRwEWDYts2KW57BS0+fKy6jP1ZbNhTmtbpaKmraIxXodVEDGPPahZyEYRU3r/f8MOZewN0DmHZgmcg6GYAGqYAXptAFjuVgslSpFrbS4tFCuVBY1aW8RQcBwA9tWoelxIccLckHdhoLuhnTX9B6sJQ+gRSr4TI4vQdOLp8ZhNBglhLrHHCL6EFEHEIMNZBAN3SLME/cvda0AWaYjBJfZjvLbf5q+sOZ5NhJXCvulGAG57MSr3UNTQCSPhkG4mrquB7bSH/CJJUczYFS0kjn+ARKGDIz1qgSRIA053qFBBD4gLahedZqzHBwUTU9ipoEi2RWima/MkW1kayRgNhjQFMI3CgVdX55fml/Q5oulRWNJWyoVQPbWWJ3FCXQqE+gsTaCjT6BTnECnPIHOQgFkQbJarcpWTSGeVSyEWvL1cQbuT75cg6v1uoNCWUMu1rz76Cp15jlK7gPIaqW1cYhLGliQbSek4fsBR0at9/RiqbyQDaIErGkufTRK3wnGqFv3kn4cymaFeRKtyq2Vu8pHnhk46AqFuqYdWIrP6AYRqBDXUvygZlNTuqVCTiX43EdXWoEKEjqpN31em9dkn/geFw5JOr03MHOQN5RNv6kEPhQF3yY0abqkKmEPwutAfCqD6qDCkLNq1vLrEIY1wvELZkeRPE5nd8KRKCc1Gy0w6sTmeC1+fzwP86eRad3H1hUatUHsIBmwyf6ZONQQpxoTapBaTRnq/6NZY/Lusa0pU56ceo1JIWNg01ZoQjo2rngDrGzKLCajaGNyuGRq077DpLRt3ENk7G3qbpmeyY1tLmv4YaryD6Myq2QXq9BEYiWLOezZ3DJN9AdhdY3SSS/9TXznttwGJJBj7JJcZPO6lq39voi4rQHfYZhqJHsjiiBLPFkHEFWjKPoPfYFMHA==
+sidebar_class_name: "get api-method"
+info_path: docs/bitzoom/open-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"/api/v1/historytrade"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/historytrade"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+/api/v1/historytrade
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"timestamp:","in":"query","name":"Timestamp","schema":{"type":"int64"}},{"description":"signature:","in":"query","name":"Signature","schema":{"type":"string"}},{"description":"page:页码,当为0时为1,返回数据中的total是总行数,每页默认行数为100","in":"query","name":"Page","schema":{"type":"int64"}},{"description":"limit:每页行数,默认100,最大1000","in":"query","name":"Limit","schema":{"type":"int64"}},{"description":"starttime:开始时间，可以为空","in":"query","name":"StartTime","schema":{"type":"int64"}},{"description":"endtime:结束时间，可以为空","in":"query","name":"EndTime","schema":{"type":"int64"}},{"description":"symbol:交易对,为空时查询所有","in":"query","name":"Symbol","schema":{"type":"string"}},{"description":"side:交易方向: 空(所有), buy(买入), sell(卖出)","in":"query","name":"Side","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"e4cdc7c4-e7b1-49e1-b9c5-0fc32006e2ff","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":null,"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,71 @@
+---
+id: api-v-1-wallet-getchain
+title: "/api/v1/wallet/getchain"
+description: "/api/v1/wallet/getchain"
+sidebar_label: "/api/v1/wallet/getchain"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVtuO2zgM/RWDz56xc5lcDCyK7rZbdIHFFpgs9mEQGLTNOOrYkivJkwaG/31BOfYkmWQQ9CkRSR3S4uGRGlAVabRCya8ZRBBgJYKXUbDDoiAb5GTTLQoJPlSosSRL2kD01EBGJtWi4o0QgRUlGYtlFYEPgi0/atJ78EFiSRDBqg8AH0y6pRIhasDuK3YKaWdTaFv/HNaIXKKtNV2DfewDLsEaq4XML+Luy0QVV0Gd913EtQ+aTKWkIcP+cRjyT6qkJWn5L1ZVIVJ3sMF3w1mbIzz6iWVVkIPWmJLgs88SHKWL+eJunMymd9P5bHm3DBfLu4f5dBaG40mWLDfgA2mt9B8qI4jGYXhY/03GYM41ct11mpIxEFldkw9Z3TUYouV4PJnMx+FktniYzuezkPdnaNG11KpnkrErBXxwfX+zImnFRpDurFZjRnGq5EboUsg8tltNZquKDKLQh52w20zj7nqESF0/wIdSyDijShlhOwMZK0q0lMWotXjBImaSuV2HuBizTLvvPNQiDab8obFraFzronNJsjuln+MN0ZBMlHUZDwViqWp5SDwYC1H2xWj6UQtNcUmlgmiDhSEfktrshwW3XmM6FPWa/dzTWQ/f8Fliwjw4oBysn8ikp8WcxfXm10BTUSqwWInKJWCGbpXh8i2fpMw9ki8ct1W7lWNz2PpQaR5/KzoWd0xo2mPKNLBRukQ7jKl/NLWUk4b2hJLNNffA0DfT1Fd6wfFa7SXcgeeDM1GqIJTsHObqgh70FpV8p9RCy6ZThXjsoDd14Q0C6XYaSmst7N5NzO+Emmfhac3nbTFnbYQcLe1wD+tz0OviWpLdKh61nKzTWrt9N96QfumVuCPa1toqCoLRaHm/uH8I78eTWbQIF5MAWP7ejZndEDO/IWZxQ8zohpjxDTHTG2IeAjcGfcceWX07ovd9ayBx//7sKf7Xfys479oXst6KjF2xPHobrUrv6gFww7relCgxp4CHz+nqh9qQFtlvo/Fk+tDfLY6yXS0DJxnbMU3IjXJTeVLNN62Ys97Hb1+9TyqtS5LWEzIt6syrWCcteSgzr6qTQqQMKywLB/xTkeRd4ANTp0Mb3Yf3IU9LpYwt0c374Ra8Tr6TgobpsvTTBlXBIa3fNaY5EPkJsBKcd8SK5vDAhwFxkKonaJoEDf2ri7Zlc3cxu+eGMCyA2ZFSnhQx3LynT5GLtT3T/uxF8oJF7a4G91S4OdXJ8+SdVMevlF9NNbxY3svTP1xek6x5oUV3eTytWWsJM6dZzWHXxzSlyh7tevN0YZRBob585hHBmhv7qrs9iZNeEQcXyv0RdtN0EW6Y2hb60t2MQLtu2/Z/RcF8hA==
+sidebar_class_name: "get api-method"
+info_path: docs/bitzoom/open-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"/api/v1/wallet/getchain"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/wallet/getchain"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+/api/v1/wallet/getchain
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"timestamp:","in":"query","name":"Timestamp","schema":{"type":"int64"}},{"description":"signature:","in":"query","name":"Signature","schema":{"type":"string"}},{"description":"symbol:","in":"query","name":"Symbol","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"dba1c878-2b64-4769-9089-57460023db9f","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":[{"token_id":"","chain_id":"","chain_identifier":"","trade_confirming_threshold":0,"withdraw_confirming_threshold":0,"icon":"","min_deposit":"","estimated_arrival_time":0,"deposit_address":"","transaction_query_url":"","network_fee":"","minimum_withdraw_amount":"","withdraw_limit":"","require_memo":false,"busy":false,"contract_address_url":"","contract_address":"","depositEnable":false,"depositDesc":"","withdrawEnable":false,"withdrawDesc":"","specialTips":""}],"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      

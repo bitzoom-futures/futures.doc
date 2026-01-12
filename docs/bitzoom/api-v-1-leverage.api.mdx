@@ -1,0 +1,71 @@
+---
+id: api-v-1-leverage
+title: "/api/v1/leverage"
+description: "/api/v1/leverage"
+sidebar_label: "/api/v1/leverage"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVU1v20YQ/SvEnGmL1JclAkWRfgUpWjSAFfRg+LAiR9Im/OruUolAEAiCpkWA9GQYKdoETYqkaC9ODkXgunX6ZyzaPfUvFLMUacmWDTXISRRn5u1bzps3KUQxCqZ4FF7zwIEai3ltbNd8HKNgQwQTYiZYgAqFBGcrBQ+lK3hMFeCA4gFKxYLYARM4vfkqQTEBE0IWIDjQKxPABOmOMGDgpKAmMQV5qNpNyDLzLKzkw5CpROBFsJtlwjJYqQQPh0txJ0E/8p3p4c7J3pvjw7380evp3/f/efbnyZud6f0X//71cHq4k//04uTlzxT65d7R/sHxbwezNw/u5o8fTPfvTR8fXERL4/8/TuWndo5/3Muffps/eZo/+WZ697t895W9Ztdbxz98ne/+nu++MqeHO0f7B1b+6PXJs1+Pn89oHR08z7/fmb78o6i8gNlnpw09xy3hoYIs2zZBoIyjUKKkaN2y6MeNQoWhokcWxz53tVpqNyWxT+fQ8A4LYh81sGAuchKUZ9fbg67dXHObtrvWZJa3xlqWu9bdYNhttzudht0FE1CISHwYeQhO3bJm/z9HKYmyA8Q6cV2UEhwlEjTBSwrVgtOt1xuNjbrVaHdazY2NtkX1HlMMnDDxfRNGkVQkVZSKh0MDwzHBjaLbPX19KzMhFjQGihcXL4rTbP6UFAaRCJiqVGvOiRiHKCBbuEV6Ubi61DlplEyXBE7ZLsOtPk0V7EeRjyykYNWKJVIs30T9m+iSBOjKC+LcLKAHiW9URqErJbqJ4GqiPeEDZAIFOFvbJCLFhmQVMGQKb7MJbJ8FXWIyAapRRHoZotKeo0bLEyWKcWlFifDBgZFSsVOr2XZ3vbPestbrjbbTsTqNGtCsXZrTXiFnY4Wczgo59go59RVymivktGpAjSh7tEkjWki77FQKff30SSnqT7/swdk+XUVl9FCqXnQLQ2MgosC48ANQp4reBCxkQ6zRuCkqfD+RKLj3nl1vNFul/WiRFlwqFRK21hYPB5GewwU210VEKjWuXL9mfBS5SYChMnjo+olnxIKPmUKDhZ4RJ32fuwTLFbkRfBFjSFVgAkmnQLPXrXWL5iOOpAqYnvCZVS5R3QKTapAU3lG12GdcD5ruSDqT7hawmNOBNpiVw9MkFCO+BWnaZxJvCD/L6HXh1nq/csn6PnrgDJgv8dzZlR0v7t6llG7h5MwKHjM/0Yaq99DKRy3s40uOml/Lb3vUO1zRlzEtN/Vb0nz3W/sSsnPL+5TuNv0RnPhq5zVhhMzTNpzO6q64LsZqrurcAieUynuvfkwewBIS8OkqKae0X5p8FWLhZA47TYsM7RZZBiV5bQKQbWdZ9h/XF8v5
+sidebar_class_name: "get api-method"
+info_path: docs/bitzoom/open-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"/api/v1/leverage"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/leverage"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+/api/v1/leverage
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"timestamp:","in":"query","name":"Timestamp","schema":{"type":"int64"}},{"description":"signature:","in":"query","name":"Signature","schema":{"type":"string"}},{"description":"symbol:当设置时必须输入，当查询时如为空查询所有市场","in":"query","name":"Symbol","schema":{"type":"string"}},{"description":"leverage:目标杠杆倍数1-125的整数,当为0时表示查询交易对杠杆","in":"query","name":"Leverage","schema":{"type":"uint"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"d126f914-c41c-4a0d-a50c-97ae96688319","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":null,"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      

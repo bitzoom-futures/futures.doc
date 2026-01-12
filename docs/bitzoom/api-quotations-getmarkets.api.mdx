@@ -1,0 +1,71 @@
+---
+id: api-quotations-getmarkets
+title: "/api/quotations/getmarkets"
+description: "/api/quotations/getmarkets"
+sidebar_label: "/api/quotations/getmarkets"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVcGO2zYQ/RVhzlpLlm3ZS6AI0qYNtkDQAOugB8MIaGlsMyuRDEltYwi6594e+gE99NZj0X5Pk/xGMdRaa+9qXaMnUeTMmyHnvZkalEbDnVDyKgcGEdciel8p57dstEFXcnODzkIImhteokNjgS1qyNFmRmgyBAat2VuRMwhB0M77Cs0OQpC8RGDwyhtcvYAQbLbFkgOrwe00nVVCOmia8CGo3ZUrVbB//v7t868/f/rjryegr71ZH7B1RshNH3Rl0Vzl7Msvv3/++KfPqg/5DVn1ptwhL0MwaLWSFi2dJ3FMn0xJh9LRkmtdiMy/aPTOUvT6AA8/8FIX6KENz1BQHfgoT1NM+UWW8NnFeJLmF5c4nV6sp1kyXiWjLM3XEAIao8w3KkdgSRzf/b9Ca/mGcqS8qyxDa4E5U2EIedUWG9hlkoxG0yQepbPJeDpNY/LPuePAZFUUIWyVdcDAoXVCbgKUtwS3VT/N/QPETQjaEHucaC/eOtfNYZQa1sqUnICEdOkYwv37Celwgwaao1vUTx13l3pUgH2mPQf32fbhdk/THa6UKpBLOuxK0UOl/Y5avcOMeEtXPiLXdQu9roqg01fryTckHriXGCwfOp/UYIluq4ghG3Rekm77Xy4Wze1es5UpgMHWOc2iaDi8HMwGk3iQjFI2i2ejCEgnJ23SM2ymZ9jMzrAZnmGTnGEzPsNmEgEp2WJWGeF21yTPltZfIzdoaLXyq+/2hP7+xzk8rN1LdMEcrZurG5TB2qgyePIBqGZtbUou+QYjkpojx2fUnET+1TAZjSf75uMJ2ubSMZCwPa+EXCuvwaNsXhtFDA2ev74KXqisKlG6QMisqPJAG3HLHQZc5oGuVoXICFY46kTwg0ZJXhACUadFGw7iQUza0Mq6knt137XJk/w7yqmTk8MPLtIFF15uvjb1HZ0XwLWA8FAkIRxALveSX0Bdr7jFN6ZoGtpuu7cfTsLyVYE5sDUvLD7KomvPx4OrN7kb3B3Pr1teVL6/+rFydqSeaXYiXjfU/me0xwPuRLBuzt0HW9KPERQN2GJJfRZ5TkpY1Hdez7MMtTvwejTpCKVrWS+/nUPT/Avr9c8+
+sidebar_class_name: "get api-method"
+info_path: docs/bitzoom/open-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"/api/quotations/getmarkets"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/quotations/getmarkets"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+/api/quotations/getmarkets
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"market_id:","in":"query","name":"MarketID","schema":{"type":"uint"}},{"description":"symbol:交易对","in":"query","name":"Symbol","schema":{"type":"string"}},{"description":"userId:用户ID","in":"query","name":"UserID","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"a3d66e6a-c2a8-456d-9e77-f7c24b23c6df","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":null,"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,71 @@
+---
+id: api-v-1-commissionrate
+title: "/api/v1/commissionrate"
+description: "/api/v1/commissionrate"
+sidebar_label: "/api/v1/commissionrate"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVT2P4zYQ/SvC1FpLlry2V0AQXL4OFyDIAesgxcIFJY1l3kkkQ1K+MwRVV6dKkx+QJlXaywL5N5uPnxEMtdLaXtsxUlkmZ96M9N6baUAq1MxyKV7lkEDAFA824yCTVcWN4VJoZhF8UEyzCi1qA8ldAzmaTHNFeZCA5RUayyqVgA+cTn6oUW/BB8EqhAQWfQD4YLI1VgySBuxW0SUXdjqBtvUPYQ0vBLO1xlOwt33AMVhjNRfFUdxtlcoyebj/5a+ff/rzt9/9h48//vPhj4eP93//en+qlMs5W2fpg0ajpDBo6D4KQ/rJpLAoLD0ypUqeua8dvDHUS7ODh+9ZpUp00JplyIkQNpvMMY7zq1ma4tUEWXZ1E87nV1kcRVk0meIqSsEH1Frqz2WOkERh+Pj/GzSGFdQj9V1nGRoDidU1+pDXHeuQ3ERRHM+iMJ7Oryez2TSk/JxZBomoy9KHtTSWSEZjuSg8FBuCW8t3C/cBwtYHpUlGlncv3iU37W6VBlZSV8wOfPs79GOBGtq9t2hOXQ8v9YyAvtMjF0/dHsMdPs1wmUpZIhN0OVBxRFj9iUzfYGahpaN9qd120Ku69AajuUyDWa253To3fYZMo4bkbkkisqwgk0HBLL5jW1gegp40aYV2LUk1BVrnWbs+F25Qb3pD17qEBNbWqiQIxuOb0Xx0HY6ieJrMw3kcALnobMz0gpjZBTHzC2LGF8REF8RMLoi5DoBI6fm6Jbt2Mu9ZayB1T1/1Av/6+wUccvYSrbdAYxfyLQpvpWXlnfwAxFfHTcUEKzAg61lK/LQ2qHn+yTiKJ9f9MHKC7XoZFEnYTmdcrKTz5F43r7UkxXovXr/yvpBZXaGwHhdZWeee0nzDLHpM5J6q05JnBMstTSb4VqGgLPCBpNOhjUfhKCSvKGlsxZzbH8fmSe3t9TNYy+J7G6iScWc9x0vzKOM7YIpT2TH4cAC37K1/B02TMoPf6bJt6bib4m5jccPSEnNIVqw0+KyDYUzvb7Ojjb3F7cFS27CydoPWbZuLS+1tuDOldhfd/y31H0vvXPV+9z2VXtIfzam2G1s+rJHlboY1j1kvsgyV3cl6tv0IZRhZL78k07CauH6aw72s035CDldMbHewm6aLcPZqW+hbd66Bdtm27b/vefwU
+sidebar_class_name: "get api-method"
+info_path: docs/bitzoom/open-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"/api/v1/commissionrate"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/commissionrate"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+/api/v1/commissionrate
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"timestamp:","in":"query","name":"Timestamp","schema":{"type":"int64"}},{"description":"signature:","in":"query","name":"Signature","schema":{"type":"string"}},{"description":"symbol:交易对,不能为空","in":"query","name":"Symbol","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"a748e33d-7bbe-4eac-9088-c322c246ef2b","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":null,"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      

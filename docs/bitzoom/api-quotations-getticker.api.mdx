@@ -1,0 +1,71 @@
+---
+id: api-quotations-getticker
+title: "/api/quotations/getticker"
+description: "/api/quotations/getticker"
+sidebar_label: "/api/quotations/getticker"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVU2P2zYQ/SvCnLWWLH8TCIK0aYMtEHSBddCDYQS0NLaZlUSGpLYxBAO9pUB76wd6CIocesipH6egTX9O4vRnFCPZsr0ru0bQk0Ry5vGRfG8mB6lQcytkeh4BA48r4T3NpC2mjDdDa0V4hRpcUFzzBC1qA2yUQ4Qm1EJRHDBIuL5C+1hEDFwQNPM0Q70AF1KeIDB4WASc3wcXTDjHhAPLwS4UrWUitbBcujdBzSKZyJi9/euX1U/fvfvtzwPQl0VYHbCxWqSzOujMoD6P2PvvX62+fl2wqkN+RFG1lA8jKy1CfExh7O2b16uXf7//4827n79xfLZ68dXqx9/LSbfJVt8+X/2wGQZs9fL5P7+uhwfoXBD0kAjUMCrvcOyCRqNkatDQYuD79AllajG19MuVikVYvK/3xBDlfAcMn/FExVjgah6iIFV0ev0w6HA8m/qdwVm7OQ3OBl1/cBbihE+w2w/8aRtcQK2l/lhGCCzw/fX4IRrDZ0SQSGdhiMYAszpDF6KslB6wQRC0Wr3Ab3X7nXav1/UpP+KWA0uzOHZhLo0FBhaNFenMwfSa4Obyy+I6mL90QWnSshXlwcvkfLm7Sw5TqRNuy9vqEuft5eEMNSz3TpEfWq4OdUsPG6Y1C1u2dbjV1VSLEylj5CktVk9Ro7/NjJw8wZAkQEfeU+RlCT3NYqdye5nJZ+Rl2BoexjeTj1WEBO1ckkBmaIsCYef/kWFQX28KSKZjYDC3VjHPazYHjX6j4zeCVpf1/X7LA7LW0ZjuCTG9E2L6J8Q0T4gJTohpnxDT8YB8bDDMtLCLSzJnKeqPkGvU9Dcp/j7dyPmzL4Zw8+UeoHWGaOxQXmHqTLVMnIMXQE9Wvk3CUz5Dj4xmKfEuVUoR3WkGrXZnU3cKeZZcKv0RdqEqkU5l4cA9Nhdakj6dexfnzn0ZZgmm1hFpGGeRo7S45hYdnkaOyiaxCAlWWKpD8LnClLLABZJOidZs+A2fnKGksQkvvL0uksfkt0ep8pLFZ9ZTMReF14qnyddiHgFXAtxdh7iwRRxv7D6CPJ9wg490vFzSdFm5iz4pDJ/EGAGb8tjgLRJVad7vobXcrnCx30qveZwVtbXoQyfvVNNYj+xX9dcP3O12rz2yWdVyP3Cz/6n9HmG424W3JMc00IJYAhuNqREgj8iso3ydeC8MUdmdrFutmFCqovrgkyEsl/8CFDpYvA==
+sidebar_class_name: "get api-method"
+info_path: docs/bitzoom/open-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"/api/quotations/getticker"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/quotations/getticker"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+/api/quotations/getticker
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"market_id:","in":"query","name":"MarketID","schema":{"type":"uint"}},{"description":"symbol:交易对","in":"query","name":"Symbol","schema":{"type":"string"}},{"description":"userId:用户ID","in":"query","name":"UserID","schema":{"type":"string"}},{"description":"price_type:价格类型 0:最新价格,1:指数价格,2:标记价格","in":"query","name":"PriceType","schema":{"type":"int"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"578c25ae-f059-41f2-9609-cebabe6820f4","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":null,"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      
