@@ -1,6 +1,7 @@
 # Template
 
-This template is built for [Docusaurus 3](https://docusaurus.io/), a modern static website generator.
+This template is built for [Docusaurus 3](https://docusaurus.io/), a modern static website generator.  
+Plugin: [docusaurus-plugin-openapi-docs](https://github.com/PaloAltoNetworks/docusaurus-openapi-docs)
 
 ### Usage
 
