@@ -138,24 +138,24 @@ const config: Config = {
     },
     languageTabs: [
       {
-        highlight: 'python',
-        language: 'python',
-        logoClass: 'python'
-      },
-      {
         highlight: 'bash',
         language: 'curl',
         logoClass: 'curl'
       },
       {
-        highlight: 'csharp',
-        language: 'csharp',
-        logoClass: 'csharp'
-      },
-      {
         highlight: 'go',
         language: 'go',
         logoClass: 'go'
+      },
+      {
+        highlight: 'python',
+        language: 'python',
+        logoClass: 'python'
+      },
+      {
+        highlight: 'csharp',
+        language: 'csharp',
+        logoClass: 'csharp'
       },
       {
         highlight: 'javascript',
@@ -238,16 +238,16 @@ const config: Config = {
         id: 'openapi',
         docsPluginId: 'classic',
         config: {
-          petstore: {
-            specPath: 'examples/petstore.yaml',
-            outputDir: 'docs/petstore',
-            downloadUrl:
-              'https://raw.githubusercontent.com/PaloAltoNetworks/docusaurus-template-openapi-docs/main/examples/petstore.yaml',
-            sidebarOptions: {
-              groupPathsBy: 'tag',
-              categoryLinkSource: 'tag'
-            }
-          } satisfies OpenApiPlugin.Options,
+          // petstore: {
+          //   specPath: 'examples/petstore.yaml',
+          //   outputDir: 'docs/petstore',
+          //   downloadUrl:
+          //     'https://raw.githubusercontent.com/PaloAltoNetworks/docusaurus-template-openapi-docs/main/examples/petstore.yaml',
+          //   sidebarOptions: {
+          //     groupPathsBy: 'tag',
+          //     categoryLinkSource: 'tag'
+          //   }
+          // } satisfies OpenApiPlugin.Options,
           bitzoom: {
             specPath: 'examples/bitzoom.json',
             outputDir: 'docs/bitzoom',
