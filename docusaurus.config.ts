@@ -10,7 +10,7 @@ const config: Config = {
   title: 'Bitzoom API Docs',
   tagline: 'Dinosaurs are cool',
   url: 'https://bitzoom-futures.github.io',
-  baseUrl: '/',
+  baseUrl: '/futures.doc/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
