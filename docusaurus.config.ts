@@ -9,7 +9,7 @@ import type * as OpenApiPlugin from 'docusaurus-plugin-openapi-docs'
 const config: Config = {
   title: 'Bitzoom API Docs',
   tagline: 'Dinosaurs are cool',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://bitzoom-futures.github.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -17,8 +17,9 @@ const config: Config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'bitzoom-futures', // Usually your GitHub org/user name.
+  projectName: 'futures.doc', // Usually your repo name.
+  trailingSlash: false,
 
   presets: [
     [
