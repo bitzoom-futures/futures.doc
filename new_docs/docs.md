@@ -11,7 +11,7 @@
 ### 测试相关
 - 合约业务用例-用户(旧)->https://docs.google.com/spreadsheets/d/1sh4OZO4vcLVmWX-xj0jyHB-kgVKVQJiLyWdUi6TL9gk/edit?gid=2116582050#gid=2116582050
 - 合约业务用例-用户(新)-等待更新->https://docs.google.com/spreadsheets/d/15t3qKwz4cP3arCijcyU4V3l2dEmAL8gYWa9DhuU7YTM/edit?gid=1135667496#gid=1135667496
-- 合约后台管理员用例->https://docs.google.com/spreadsheets/d/1KRf_Vh4Jv_uwMS7YX67vAZmMthLsCr0sRM6bA6mlSY8/edit?gid=396201260#gid=396201260
+- 合约后台管理员用例->https://docs.google.com/spreadsheets/d/1mijfje-p2Pl1nuRxyl0a7y3ml81QxIZ7DKW5IN6Co54/edit?gid=1135667496#gid=1135667496
 - 合约特殊场景测试用例->https://docs.google.com/spreadsheets/d/14Zfkg6LEgxql3GzP5hFZm36l8ygvAbvcGMZHi06GBJQ/edit?gid=505653708#gid=505653708
 ### 运维问题反馈
 - 问题清单->https://docs.google.com/spreadsheets/d/1sh4OZO4vcLVmWX-xj0jyHB-kgVKVQJiLyWdUi6TL9gk/edit?gid=1295395322#gid=1295395322
