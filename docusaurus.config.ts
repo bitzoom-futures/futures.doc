@@ -8,7 +8,7 @@ import type * as OpenApiPlugin from 'docusaurus-plugin-openapi-docs'
 
 const config: Config = {
   title: 'Bitzoom API Docs',
-  tagline: 'Dinosaurs are cool',
+  tagline: 'Bitzoom futures API documentation',
   url: 'https://bitzoom-futures.github.io',
   baseUrl: '/futures.doc/',
   onBrokenLinks: 'throw',
@@ -29,14 +29,14 @@ const config: Config = {
           sidebarPath: require.resolve('./sidebars.ts'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/bitzoom-futures/futures.doc/tree/main/',
           docItemComponent: '@theme/ApiItem' // Derived from docusaurus-theme-openapi
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/bitzoom-futures/futures.doc/tree/main/',
           onInlineAuthors: 'ignore',
           onUntruncatedBlogPosts: 'ignore'
         },
@@ -83,7 +83,7 @@ const config: Config = {
           to: '/docs/category/bitzoom-api'
         },
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/bitzoom-futures/futures.doc',
           label: 'GitHub',
           position: 'right'
         }
@@ -106,15 +106,15 @@ const config: Config = {
           items: [
             {
               label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus'
+              href: 'https://stackoverflow.com/questions/tagged/bitzoom'
             },
             {
               label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus'
+              href: 'https://discord.gg/bitzoom'
             },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/docusaurus'
+              href: 'https://twitter.com/bitzoom'
             }
           ]
         },
@@ -127,12 +127,12 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus'
+              href: 'https://github.com/bitzoom-futures/futures.doc'
             }
           ]
         }
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`
+      copyright: `Copyright © ${new Date().getFullYear()} Bitzoom.`
     },
     prism: {
       additionalLanguages: ['ruby', 'csharp', 'php', 'java', 'powershell', 'json', 'bash', 'dart', 'objectivec', 'r']
