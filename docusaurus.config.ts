@@ -67,18 +67,12 @@ const config: Config = {
       items: [
         {
           type: 'doc',
-          docId: 'intro',
+          docId: 'getting-started',
           position: 'left',
-          label: 'Tutorial'
+          label: 'Documentation'
         },
-        { to: '/blog', label: 'Blog', position: 'left' },
-        // {
-        //   label: 'Petstore API',
-        //   position: 'left',
-        //   to: '/docs/category/petstore-api'
-        // },
         {
-          label: 'Bitzoom API',
+          label: 'API Reference',
           position: 'left',
           to: '/docs/category/bitzoom-api'
         },
@@ -93,11 +87,19 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Documentation',
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/intro'
+              label: 'Getting Started',
+              to: '/docs/getting-started'
+            },
+            {
+              label: 'Authentication',
+              to: '/docs/authentication'
+            },
+            {
+              label: 'API Reference',
+              to: '/docs/category/bitzoom-api'
             }
           ]
         },
