@@ -30,27 +30,6 @@ Plugin: [docusaurus-plugin-openapi-docs](https://github.com/PaloAltoNetworks/doc
 
 - [问题清单](https://docs.google.com/spreadsheets/d/14Zfkg6LEgxql3GzP5hFZm36l8ygvAbvcGMZHi06GBJQ/edit?gid=1295395322#gid=1295395322)
 
-### Usage
-
-```bash
-npx create-docusaurus@3.5.2 my-website --package-manager yarn
-```
-
-> When prompted to select a template choose `Git repository`.
-
-Template Repository URL:
-
-```bash
-https://github.com/PaloAltoNetworks/docusaurus-template-openapi-docs.git
-```
-
-> When asked how the template repo should be cloned choose "copy" (unless you know better).
-
-```bash
-cd my-website
-yarn
-```
-
 ### Local Development
 
 ```bash
