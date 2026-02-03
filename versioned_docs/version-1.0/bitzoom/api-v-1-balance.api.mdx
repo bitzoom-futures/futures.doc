@@ -1,0 +1,71 @@
+---
+id: api-v-1-balance
+title: "/api/v1/balance"
+description: "/api/v1/balance"
+sidebar_label: "/api/v1/balance"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVNtu40YM/RWBz4otW46jCCiK7W2xBYouEBd9CPxASbQ9u9LMdIbyriHo3wuOIsWOnaJPunB4eIbnkB0YSw5ZGf2pghzmaNX8uJgXWKMuCWKw6LAhJuchf+6gIl86ZSUBcmDVkGdsbA4xKPnzT0vuBDFobAhy2IwHIAZfHqhByDvgk5Wg0rxeQd/Hb2G92mvk1tF7sE/jgVuwnp3Se+j7bQyOvDXak5f4MknkURrNpFle0dpaleH68y9eandnePQdG1tTgHZYkpIOVSkm6SNVdwVW2d0qXWd32Sp5uFthkj0+ZMuiSFOIgZwz7mdTEeTLJHn5/oO8x71wFN5tWZL3kLNrKYaqHWSA/HG5TNOHZZKus/vVw8M6kfwKGSHXbV3HcDCepfnkWel9RPoocAfzbRMakPQxWCe6shouPiR3/XmVDnbGNciTDvGZLLQnB/3FLbr3wtOlrgQYmd4IvLK9hTu1ZgoWxtSEWoKTFNeCT1cwxRcqGXr5dWmtpwF619bR5PyQ6alsneJTcPlPhI4c5M9bMRHjXswPe2T6hifYvgW9npqG+GDELnviMER8uHnOkzuOo9W6GnI4MNt8Pl8sHmfZ7D6ZLdN1niVZBsJkJPkkHh20Hal2UIS330ZVf/97A2+JfiSONuR5Y76SjnbONNF79QLXgV6DGvc0F7+xJP7YenKq+mGxTFf34wQGlQYukwyCHZqr9M4EI16w+eyMyBR9+Pwp+sWUbUOaI6XLuq0i69QRmSLUVWTbolalwCqWcYQ/LWnJghikewPaYpbMEjGINZ4bDBZ/WRfXfb8gMhmJ6TvPbY0qGC3o0b1o9wxoldRbQAwjznZ0+DN0XYGe/nJ138vvYV+Fhak8FjVVkO+w9nRVetpGl8v0JqOvdHqzU49Yt2GfhCX6v0tdLNj/KHW+Z19LbeXDKakVRiSGA2EV5qV7SfxQlmT5LOtq0wrKNCUffxWvYiudfp350U3FOI1TCPXpDLvrhhPB1X0PI/tgVui3fd//C4WOTg8=
+sidebar_class_name: "get api-method"
+info_path: docs/bitzoom/open-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"/api/v1/balance"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/balance"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+/api/v1/balance
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"timestamp:","in":"query","name":"Timestamp","schema":{"type":"int64"}},{"description":"signature:","in":"query","name":"Signature","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"d3a039ed-bad8-4368-8407-4a089782bb33","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":null,"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      

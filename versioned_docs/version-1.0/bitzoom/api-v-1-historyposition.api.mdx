@@ -1,0 +1,71 @@
+---
+id: api-v-1-historyposition
+title: "/api/v1/historyposition"
+description: "/api/v1/historyposition"
+sidebar_label: "/api/v1/historyposition"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1Vt9rG0cQ/lfEPCVwtk6SI9sHpqRpGlJaGrBLH4wfVncjaZO72+vunhNxHDj0B03rkhY3tUnTpikOSQqNA02MI6f0n5FO9lP/hbJ7OlmyJWGr5Em6nZ35vt2ZnfkiYAFyIinzrzpgQZ4ENL9ayNepkIw3AiaosoEBAeHEQ4lcgLUcgYPC5jTQRgsk9VBI4gUWGEDVymch8gYY4BMPwYKlbAMYIOw6egSsCGQjUEbqy/IMxLFxPKygNZ/IkOOosIvZhmFhheTUrw2LG5AaWoePXnV+u220/95o7TXNZHO3tdcsGAf//Nj++dfk3ovku+etvT8797+QTBI32dpJ1vYPHq0n914Yyc7dw0evDve3Dp5vp0vK1TRHkLxGakP5jTy2Sz0qrRSlC5mCFUzTSB6stbefFMyRcB8q77NdsyRcqhRa7Tdr7SffJpu7h5sv/32z3r6709p/3Nprdp41R2VA+arsngkRfUfjdfY3kl8engXvsu+cGU00vApzrVZzO9naaO+8NlKEZHM3efj4YOf35M5a8uDOqANq5zPWV/fZCOqglazfbu1vJD+9bn//g9V51jyXwp03XObXzrW377e3X543RJ1xea7zrKm+RhVSN+widc5Y8LbLhHp/MhRW+/Vfrf2Nzje7ydrtfj6Wz3xcSB78kW4wcgHhkhJ34fDzp+2vv8pWq6HrLrS/fKpW9dIIspcU5KKGHMt1xQCOImC+QKHsRdNUPzbzJfpS/SVB4FJb96j8daHOE/XFw1vEC1zUoTmxkao2RsrzhMxX7alSdaY4NWPPzU6RklmeKjqkXCoT03EqNhiAnDN+iTkIVtE0u98foRDqxVqgeIe2jUKAJXmIBjhh2ivBmi8WS6XZolkqz12YmZ0tm8rfIZKA5Yeua0CdCak6IwpJ/VoO/VUVrs5uLukLMGMDAq6ar6TpwVPnKO5HiaDKuEdkr7qNvmLHGnKIB04RjTL3DnUiARnTIYYjtsPi9q6mZ6ww5iLxlbGXiiHFma2wynW0JcRqabBcF9PQ1dDN9caT9hRoh5zKhh5B7yLhyMFaXlFFJElNTSaoEYk3SQNWjgcdPdo8lHWmyqaGUk86WR+7XyBfzeZgyF2woC5lYOXzhcL89Nz0BXO6WCpbc+bcHChmGelFVbNprjPqEVT0v/ezLH/w6RIcJ34FZW4JhVxiN9DPVTnzcqPwNOeUnkd8UsO8qj+pHN8JBXLqLBSKpZkL2YvUWUu59NKiYuvLpn6V6cIcYHONM5W23MVrV3PvMTv00Jc56ttu6OQCTleJxBzxnVwQVlyqHpmkUj1P+DhAX3mBAer20miFaXPaVAUTMCE9oku+20BG3/8AoV6BSbwl84FLqC5AnZeom8tlIAFVuAUw4Hi8lewFLEMUVYjAT7gbx2o57Wha7VBBKi46YFWJK/AEhV63GlRCQ5ndwMYxQbRK3FD3G924Tw01oI7GQPWLpAmh3p5gGsO7q5smpHx6ETWGQqalJs3QKYXVuOT16asJWZxObI3hcKS5Jr2H0wqwcReR6bBJS/j/a7JxtToozSbk+JZl2hj+g2rtiP6K+uBU8deD1oA6EkdP3ajretG2Meh/JCf0morSm7FXLqsJR0LVl4+UQzaDKtlM75mI3+iLHUXpDj0L4xgy/nrEQbwSx/F/XtnF2w==
+sidebar_class_name: "get api-method"
+info_path: docs/bitzoom/open-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"/api/v1/historyposition"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/historyposition"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+/api/v1/historyposition
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"timestamp:","in":"query","name":"Timestamp","schema":{"type":"int64"}},{"description":"signature:","in":"query","name":"Signature","schema":{"type":"string"}},{"description":"page:页码,当为0时为1,返回数据中的total是总行数,每页默认行数为100","in":"query","name":"Page","schema":{"type":"int64"}},{"description":"limit:每页行数,默认100,最大1000","in":"query","name":"Limit","schema":{"type":"int64"}},{"description":"starttime:开始时间，可以为空","in":"query","name":"StartTime","schema":{"type":"int64"}},{"description":"endtime:结束时间，可以为空","in":"query","name":"EndTime","schema":{"type":"int64"}},{"description":"symbol:交易对,为空时查询所有","in":"query","name":"Symbol","schema":{"type":"string"}},{"description":"positionside:持仓方向:空(所有),long(多头),short(空头)","in":"query","name":"PositionSide","schema":{"type":"string"}},{"description":"closestatus:平仓状态:空(所有):none=未平仓, partial=部分平仓, full=全部平仓","in":"query","name":"CloseStatus","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"a69aa9fc-3f42-4c87-a306-2da636a0ddbc","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":null,"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      

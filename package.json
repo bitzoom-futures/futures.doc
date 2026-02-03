@@ -20,6 +20,7 @@
     "clean-api-docs:version": "docusaurus clean-api-docs:version"
   },
   "dependencies": {
+    "@easyops-cn/docusaurus-search-local": "^0.53.0",
     "@docusaurus/core": "^3.9.2",
     "@docusaurus/preset-classic": "^3.9.2",
     "@mdx-js/react": "^3.0.0",

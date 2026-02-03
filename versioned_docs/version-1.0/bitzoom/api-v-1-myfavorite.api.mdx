@@ -1,0 +1,71 @@
+---
+id: api-v-1-myfavorite
+title: "/api/v1/myfavorite"
+description: "/api/v1/myfavorite"
+sidebar_label: "/api/v1/myfavorite"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VU1v20YQ/SvEnGmJ+rJkAkWRpm2QAkUD2EUPhg7L5UjahNxld5dKBIJADgXqg9EPBGiCoJcAQZFeHPSStkbSXxPZvuUvFLMyacmWjCaHXiRyh/Pm7c7bNwWoDDWzQsnbMYTQZJloTlvNdDZiU6WFRfAhY5qlaFEbCPcLiNFwLTLKgRCsSNFYlmYh+CBo5dsc9Qx8kCxFCGGv+gB8MHyCKYOwADvLKCik3e5CWfqXYY0YS2ZzjZtgd6sP1sEaq4Ucr8WdpZFKwrOjf07fHL396/jk4OfTp9+d/Prw9OCPt8fPT548mr/8+93rw/mbRxR9/Or0d/p99/rw7NmL0+fHZz/8Of/xl7VZ84PHZ89ebKLr6r4fV84kxyQ8efJy/tNvVPXVwcnh9/Ojp1drb6h60yGsqxoplUBZDn3QaDIlDRqKtoOA/riSFqWlR5ZlieBOIc27hngVS2j4gKVZgg5YM46CRNTm3Z0o4vFWrx0PtrpBq7cV8cHOVp93MGBd3ue9bfABtVb6pooRwnYQnL9/icawMTEk1jnnaAyEVufoQ5wvlArhTrvd6fTbQWd70Ov2+9sB5cfMMghlniQ+TJSxJE40Vsixh3JKcBN1f89tPyh9yDRJ34rFxhfJRblcpYCR0imztU79JdniGDWUK7soNoXrTV1pesV0TeCC7Trc+mhWOopMUrBuxRqRVSsquovcQklLq7LbXUCP8sSrzcFlGuS5FnbmXOATZBo1hPtDEpFlYzIHGDOL99kMhpdB1xpLinaiSDFjtM5n7GTTpwb1tDKgXCcQwsTaLGw2W62dxqDRCxrtznY4CAYDID4V1V1S6qLDFeECIvf0edXbL77Zg8t0b6H19tDYPXUPpTfSKvU21XN0F/RSJtkYm6Q6S4kf5wa1iD9qtTvdXnULXa8WXOpmELY7YiFHyslxhc0drahZ3o07t71PFc9TlNYTkid57GVaTJlFj8nYy/IoEZxghaVLCV9lKCkLfKDTW6C1GkEjIJlkytiUOaGf+8Xao1/hUivK4gPbzBImnOJcS4rzDu4DywSVbFGPL6CGldr3oSgiZvBrnZQlLS9syw0XYViUYAzhiCUGr1SvnWl18KwldQ9nl+bPlCW58xZntv+51MowuqbU8kz60FL/w3y6bgfVmPpA+u83sq4hUk+uCyJDetGCmDjb8WGCLHYeVJxn3eAcM7uUdWV6EUptO7c+o5vPchLthY9WdzOqHK4OMTlbwi6KxRfOI8oSKuru6kM5LMvyX3rohMk=
+sidebar_class_name: "get api-method"
+info_path: docs/bitzoom/open-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"/api/v1/myfavorite"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/myfavorite"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+/api/v1/myfavorite
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"timestamp:","in":"query","name":"Timestamp","schema":{"type":"int64"}},{"description":"signature:","in":"query","name":"Signature","schema":{"type":"string"}},{"description":"symbol:设置为我的最爱交易对，当为时空时，表示获取我的最爱交易对列表","in":"query","name":"Symbol","schema":{"type":"string"}},{"description":"cancel:是否取消指定的最爱交易对","in":"query","name":"Cancel","schema":{"type":"bool"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"2c49bbcd-52d8-4015-bc89-7c3e0a4c7c56","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":null,"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      

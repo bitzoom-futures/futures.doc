@@ -1,0 +1,71 @@
+---
+id: api-v-1-positionmargin
+title: "/api/v1/positionmargin"
+description: "/api/v1/positionmargin"
+sidebar_label: "/api/v1/positionmargin"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVV1vG0UU/Sur+1SkTbz+StyRECpfoQhIRIJ4iPwwu3ttT7s7s8zMprVWK1HxUAmoIIqEUAURQnnpU0HiIU0p/Bk7Kf8CzWx2Yzu220R9snfuzLln7j1zbgYiQUk1E/x2CARqNGG1vXotEYqZxZjKPuPgQkIljVGjVEB2MwhRBZIlZgsQ0CxGpWmcEHCBmZWvUpRDcIHTGIHATrkBXFDBAGMKJAM9TEyQcb3Wgjx3Z2EV63OqU4mLYLfLDfNglZaM9+fiDmNfRGR0cnT688H46TN3dPzo5TcvRscnZ09OFqWyZ66WpyziNguRnH7/YPT84PSnZ+Mf96cSuqeHj0fH/4y//ps4n2x+tnFjfPR4fPTXW66z/dHm5zs3zp6cmM8FvLYmclyNHY1FyjUZ/fvry6cP/nu4/zpVuGXPXC2P2UBODx6NXvxy9ufz8eF3bp2Mfz8cf/vbReoGGT/8YfzHfrWySEcm2XwJQZ53XZCoEsEVKhNseJ75CQTXyLX5S5MkYoGVe+2OMvSyCTC8T+MkQosraYDMvIhepxV4vfbaCvVoY6XVQm+F+oG/0sS2V2/7IaWNFriAUgr5nggRSMPzzr8/RaVo3xA0pNMgQKWAaJmiC2FaPDsgNxuNZnO94TXXOu3W+vqaZ86HVFMgPI0iFwZCaVNIVJrxvoN8z8ANxD1bDuLlLiTSvGPNiosXh7N8MksGPSFjqqsH504UD/soIZ+6RbYoXF3qUu9LpnMCF2zn4ValqYK+EBFSboJVK+ZorVwR/h0MjATMlafUt11A99LIqZzOnlQYpJLpobWzd5FKlEB2u0ZEmvaNy0GfarxHh9CdBV3okjHqgTCq6aO2pqkHy7YrlHulo6YyAgIDrRNSq9XrN1c7q21vtdFcIx2v0wHDq6S8bRRbdLoknoFv/31Y9vjjL3dglvYGamcHld4Rd5E7PSliZ1E+S7mgF1NO+1gz6tPm4DupQsnCt+uNZqtdPkbbs4JL1RSDbUvNeE9YWU6x2ZLCNM25tXXbeV8EaYxcO4wHURo6iWR7VKNDeegkqR+xwMAybR4nbCbIzSlwwVSvQKuvequekUsilI6pFfy5aSws/xSfSl0a7+taElFm1Wfbkp13chdowkzaOrgwA9ct1b8LWeZThV/IKM/NcuFhdmoyRf0IQyA9Gim8xKByqumJOpfYXRzODNY9GqXWa6wHv3aqqSm7JNXksL1uqlcM3mXZy/l7zdRvehYvoTozkq9J+FXjeQmBakpfM/V1J/YynRaD+4JQ13xIZhhZ23VhgDS0HpyV1wgCTCavcWl6G5TKcjc+MI5HU/NQL+ZI6Ul+6fBViPLhBHaWFTusN+Y5lMSt5UHezfP8f/6+IQE=
+sidebar_class_name: "get api-method"
+info_path: docs/bitzoom/open-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"/api/v1/positionmargin"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/positionmargin"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+/api/v1/positionmargin
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"timestamp:","in":"query","name":"Timestamp","schema":{"type":"int64"}},{"description":"signature:","in":"query","name":"Signature","schema":{"type":"string"}},{"description":"symbol:交易对,不能为空","in":"query","name":"Symbol","schema":{"type":"string"}},{"description":"positionSide:持仓方向,不能为空,枚举值: LONG(多头), SHORT(空头)","in":"query","name":"PositionSide","schema":{"type":"string"}},{"description":"amount:保证金,不能为空","in":"query","name":"Amount","schema":{"type":"string"}},{"description":"type:操作类型,1:增加保证金,2:减少保证金","in":"query","name":"Type","schema":{"type":"int"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"f84c0f56-a0a2-44e0-abcb-3e5015bdaa24","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":null,"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      

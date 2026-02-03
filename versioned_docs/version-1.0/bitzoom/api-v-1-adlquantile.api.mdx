@@ -1,0 +1,71 @@
+---
+id: api-v-1-adlquantile
+title: "/api/v1/adlquantile"
+description: "/api/v1/adlquantile"
+sidebar_label: "/api/v1/adlquantile"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVc+L20YU/lfEO2ttWV6vbUEJ6a+QQmlgXXpYfBiNnu1JpJnJzJMTIwQ9NucU2kOhUFpoTrkl7UL/m8Tpn1FmtNLau/ZScpI0b973Ps37vjcVKI2GkVDyYQYJ9JkW/fWgz7L8ackkiRwhBM0MK5DQWEguKsjQciO0S4IESBRoiRU6gRCEW3laotlACJIVCAnM2g0QguUrLBgkFdBGu6CQdHYKdR3ehLViKRmVBo/BnrcbDsFaMkIuD+JuilTlybvL37c/v3z/+u/w/T8v3/11+eHV5fanN9tf//j39W8ffvxz+8Pb7Yvvt7+86PYdY+Hh7qQwD8Gg1UpatC4eR5F7cCUJJblXpnUuuO9C/7F1NKsdPHzOCp2jhzaMo3CN4nwwjcd8dDLkg+HJ6ZRnJ9PJcHgSp3GKo5SP0zGHENAYZT5TGUISR9HV99doLVs6jo53yTlaCwmZEkPIykYNkEzjeDgcx9HwbDI6HY/PIpefMWKQyDLPQ1gpS67/aEnIZYBy7eBW6tnMH0BUh6CNkxeJ5seb5KrerVLBQpmCUSeFcEcZuEQD9d5fVMfC3U/dakDL9EDgmu0h3O5oumCqVI5MumDXigOaa1dU+hg5Qe2W9lV43kAvyjzoDOgzLfLSCNp4o32KzKCB5GLuRERs6fwHS0b4jG1gfhP0sHkLpJVyklkieS/T6uhei2bdurw0OSSwItJJvz8YTHuT3ijqxcOzZBJNJuAYtWTPnVabHreUK0j925dtd7/6bgY3CT9ACmZoaaaeoAwWRhXBsXqeb0OvYJItse90Ry7xXmnRiOyTQTw8HbVO9N1quHTtcNj+kIVcKC/IPTaPjHLtCu4/ehh8rnhZoKRASJ6XWaCNWDPCgMks0GWaC2cuEuRsCd9olC4LQnCn16ANelEvckLRylLBvNSvZsbhs98j04mK8Dn1dc6EF53vSXXVwwtgWriaAwhhF2veKv4CqiplFr81eV275WZ4+RkuLEtzzCBZsNzirfLddNqf7wdZPcHNjTG/Znnp54ufv/+71N7Mv6PU7uj/2FIffw3cRay9Da5Zzd2HEY6WN3IIK2SZd3V1lXWfc9S0k3XrPnAonY8ffOGcxEqngevJ1Go9bWdGF2Jys4NdVc0O77m6hpa6txLU87qu/wOPDduC
+sidebar_class_name: "get api-method"
+info_path: docs/bitzoom/open-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"/api/v1/adlquantile"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/adlquantile"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+/api/v1/adlquantile
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"timestamp:","in":"query","name":"Timestamp","schema":{"type":"int64"}},{"description":"signature:","in":"query","name":"Signature","schema":{"type":"string"}},{"description":"symbol:交易对,当为空时查询用户所有交易对","in":"query","name":"Symbol","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"cc1927c5-3c13-49cd-9833-2b2be5bc7b7c","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":null,"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      

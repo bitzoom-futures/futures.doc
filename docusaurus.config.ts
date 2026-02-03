@@ -6,6 +6,24 @@ import type { Config } from '@docusaurus/types'
 import type * as Plugin from '@docusaurus/types/src/plugin'
 import type * as OpenApiPlugin from 'docusaurus-plugin-openapi-docs'
 
+const localSearchPlugin: Plugin.PluginConfig | null = (() => {
+  try {
+    return [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      {
+        hashed: true,
+        indexDocs: true,
+        indexBlog: false,
+        indexPages: false,
+        docsRouteBasePath: '/docs',
+        language: ['en', 'zh']
+      }
+    ]
+  } catch {
+    return null
+  }
+})()
+
 const config: Config = {
   title: 'Bitzoom API Docs',
   tagline: 'Bitzoom futures API documentation',
@@ -17,6 +35,10 @@ const config: Config = {
     hooks: {
       onBrokenMarkdownLinks: 'warn'
     }
+  },
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'zh-Hans']
   },
 
   // GitHub pages deployment config.
@@ -31,6 +53,12 @@ const config: Config = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.ts'),
+          lastVersion: 'current',
+          versions: {
+            current: {
+              label: 'Next'
+            }
+          },
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: 'https://github.com/bitzoom-futures/futures.doc/tree/main/',
@@ -79,6 +107,18 @@ const config: Config = {
           label: 'API Reference',
           position: 'left',
           to: '/docs/category/bitzoom-api'
+        },
+        {
+          type: 'search',
+          position: 'right'
+        },
+        {
+          type: 'docsVersionDropdown',
+          position: 'right'
+        },
+        {
+          type: 'localeDropdown',
+          position: 'right'
         },
         {
           href: 'https://github.com/bitzoom-futures/futures.doc',
@@ -239,6 +279,7 @@ const config: Config = {
   } satisfies Preset.ThemeConfig,
 
   plugins: [
+    ...(localSearchPlugin ? [localSearchPlugin] : []),
     [
       'docusaurus-plugin-openapi-docs',
       {
@@ -258,6 +299,17 @@ const config: Config = {
           bitzoom: {
             specPath: 'examples/bitzoom.gateway.json',
             outputDir: 'docs/bitzoom',
+            version: 'next',
+            label: 'Next',
+            baseUrl: '/docs',
+            versions: {
+              '1.0': {
+                specPath: 'examples/bitzoom.gateway.json',
+                outputDir: 'versioned_docs/version-1.0/bitzoom',
+                label: '1.0',
+                baseUrl: '/docs/1.0'
+              }
+            },
             sidebarOptions: {
               groupPathsBy: 'tag',
               categoryLinkSource: 'tag'

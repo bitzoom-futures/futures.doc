@@ -1,0 +1,71 @@
+---
+id: api-v-1-depth
+title: "/api/v1/depth"
+description: "/api/v1/depth"
+sidebar_label: "/api/v1/depth"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVE2P40QQ/StWnT1J24mTTCOElq/VItCuNEEcohzadiXpXbu76W5nN7Is7RFOu0e4I44gLiABf2cQ8y9QtSfZTCaDOHBy2eV6/brq1WtBG7TCS62elMBhKIwcbpNhicZvIAYjrKjRo3XAFy2U6AorDf0OHNyuznXFIQZJr183aHcQgxI1AoerkIUYXLHBWgBvwe8MZZy3Uq2h6+JTxErW0vO/fvvl+vcfb75/e/3Nr/HNH9/9/dMPUcbYe9H1m59vXn97/fpPvsjiKGFxlLI4yhjFIegjtnyA0ucEf46RVB66bhmDRWe0cugomTJGj0Irj8pTKIypZBHaNXzuiHJ7BIavRG0qDLhWFCipo5nAcpaMigt2mU4vxtmsvJjlSXYxzfIkGY8nySXLIQa0VtuPdInAU8Zu379A58SaCBLppijQOeDeNhhD2fRjA36ZpqPRNGWjySwbT6cTRvWl8AK4aqoqho12Hjh4dF6qdYRqS3Ab/XIebs+6GIwlHXjZX7wvbrvjU1pYaVsL33drMob4qHm4RgvdnVu0D6UPl7qnhz3TM4l3bM/hHlpzSOZaVygUJQ+jOKO//RedP8eCJEBXvqPIqx561VTRYVP6SrGmnYC18PhS7GB5Wnm6SjX6jSZFrNGHzfKbM385tNv9tjW2Ag4b7w0fDpPkcjAbZGyQjiZ8xmYzIL06LBor/e6KRNgP70MUFi1FeYg+3Y/ts6/mcEryMfpojs7P9QtU0crqOnrovMC0p1cLJdY4JEF5KvygcWhl+X6SjsbZfr/CGHouhz4TduieVCsdlHaHzTOraQ7Ro2dPoo910dSofCRVUTVlZKzcCo+RUGVkmrySBcFKT/sGTw0qqoIYqHs9WjJgA0YKMNr5WgQN3xrBadfv0DjoxOMrPzSVkEFHYRrt7dwWIIyk05JQTSjLvXwX0La5cPilrbqOPvcuFPxTOpFXWAJficrhvYMPVnPkrWfJvMDdscVuRdUEmwiW+p8P+R/t9l9Y7l33HcklvVhJLIEvlrT4KEoS7aK9LXpUFGiOq+5ZL6EcdurxJ3Poun8AkYpLZA==
+sidebar_class_name: "get api-method"
+info_path: docs/bitzoom/open-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"/api/v1/depth"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/depth"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+/api/v1/depth
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"symbol:","in":"query","name":"Symbol","schema":{"type":"string"}},{"description":"limit:深度限制,默认 500; 可选值:[5, 10, 20, 50, 100, 500, 1000]","in":"query","name":"Limit","schema":{"type":"int"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"5aed813c-0927-458d-8b15-75b11446190b","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":null,"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      

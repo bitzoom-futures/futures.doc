@@ -1,0 +1,71 @@
+---
+id: api-v-1-order
+title: "/api/v1/order"
+description: "/api/v1/order"
+sidebar_label: "/api/v1/order"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVduO2zYQ/RVhnmVbvnuFtEWSNkUKBLuoN+iD4QdKGstMJJLLy24cQf9eDGnZiqMUbd8sznB4Zuac4wakQs0sl+J9ASlMmOKT5+lE6gI1xKDxyaGxb2RxgrSBXAqLwtJPplTFc39z8slIQWcmP2LN6JfSVNdyNPTFzQemS+5z7EkhpJBJWSET0MbAzZZ/xeGYx0HIGqi54LWrIU3iLpELiyVqSlTScMKy5UW/VD9D87wfMlZzUVLkyTFhuT0NBs0PCxpeCmadHi5qTnUmq8GQ5TUay2pF0YPUNbOh8moBQ72Fk+8KXSIgs0+YW2jpqECTa65oFpDCg+bPzGL6apLpn985QmvuaabpeblcYwGp1Q5bOjBKChOWNkuS/7Ry/MJqVQWgmuXIiU+H9Wy5Xs2XozzbZKNFhuvRBvNstLpbLu6y1aqYr2cQA2ot9VtJk54lyfn7AxrDSuoPYjAuz9GYADWGwgXSQno3m83n61kyX22Wi/V6ldD9glkGqXBVFcNRGhqvRWO5KCMUz1TuKF8e/fAST40+W8Plpu2/8q/21OtiiC/fNjXAi4B0iEsXtIM87EYzJKDLKv4Xfbah9MFV0cUn/E2DudNeMrsG3iDTqCHd7dt9DJaVBtIdlMziCzvB/rborcfUaI+SyKKo/xgUs8eBNIP6GbXxLzpdQQpHa1U6mUynd+PNeJmMZ/NVukk2GyAYHcItETQstsPZQOZ/vetW+sdfj3CL8ne00SMa+yg/o4gOWtbRj97zSAO8mglW4oTIZuniL86g5sVP09l8saQmPBpaUcBy2QHV9pMlYf15dd3frqq6umjQQOeb4evilMmtGSYX7+t237e865npsnvG1oue/ex60rOxqyVfScvFQXo53RiSJLJFrx/eR7/K3NUobMRFXrkiUsGsIiaKSLms4rl/xVL7cK9Q0C2IgWgQqk3HyTg527+tmReqYH7At/T5BsZFDBa/2ImqGPdi8bRqzgTcAVOcXpvCebpE5aDRHTRNxgx+1FXb0vGTQ01i2MfwzDRnGWHe7UnUyAovjgY+I837bTDUkRc0pVeOkHxnrm3c3Xid56jsP+buezJ6uN8SnbPzf3btDQk0eyHLZy/BT6WfhJeFP2ugYqJ0wW9DTWIjczSKq7F0rM06yV9CTJx6CJsmZHj1tC3E51a8KKDdt237NxHJ2xE=
+sidebar_class_name: "post api-method"
+info_path: docs/bitzoom/open-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"/api/v1/order"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/v1/order"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+/api/v1/order
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"isMargin":{"type":"boolean"},"isSize":{"type":"boolean"},"orderId":{"minimum":0,"type":"integer"},"positionSide":{"type":"integer"},"price":{"type":"string"},"quantity":{"type":"string"},"side":{"type":"integer"},"signature":{"type":"string"},"symbol":{"type":"string"},"timestamp":{"format":"int64","type":"integer"},"type":{"type":"string"}},"type":"object"}}},"description":"Private:</br>FuturesOrder:","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"f7257635-cb8b-4be7-8ecb-69549b66d372","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":null,"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      
