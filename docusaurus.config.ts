@@ -256,7 +256,7 @@ const config: Config = {
           //   }
           // } satisfies OpenApiPlugin.Options,
           bitzoom: {
-            specPath: 'examples/bitzoom.json',
+            specPath: 'examples/bitzoom.gateway.json',
             outputDir: 'docs/bitzoom',
             sidebarOptions: {
               groupPathsBy: 'tag',

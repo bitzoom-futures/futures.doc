@@ -1,0 +1,3283 @@
+{
+  "components": {
+    "securitySchemes": {
+      "Bearer": {
+        "bearerFormat": "JWT",
+        "description": "Get TestToken from http://119.8.50.236:8088/api/servermanage/testtoken?userid=12345",
+        "scheme": "bearer",
+        "type": "http"
+      }
+    }
+  },
+  "info": {
+    "description": "Project API Document includ private and public",
+    "title": "Open API",
+    "version": "1.0.0"
+  },
+  "openapi": "3.0.1",
+  "paths": {
+    "/api/gateway/ping": {
+      "get": {
+        "operationId": "/api/gateway/ping",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "e94c97a2-fc19-4ed9-83b0-9a220230276b",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/gateway/time": {
+      "get": {
+        "operationId": "/api/gateway/time",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "adca3d38-c490-4ffc-b538-a6c77dcde6b3",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/adlquantile": {
+      "get": {
+        "operationId": "/api/v1/adlquantile",
+        "parameters": [
+          {
+            "description": "timestamp:",
+            "in": "query",
+            "name": "Timestamp",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "signature:",
+            "in": "query",
+            "name": "Signature",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "symbol:交易对,当为空时查询用户所有交易对",
+            "in": "query",
+            "name": "Symbol",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "cc1927c5-3c13-49cd-9833-2b2be5bc7b7c",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/balance": {
+      "get": {
+        "operationId": "/api/v1/balance",
+        "parameters": [
+          {
+            "description": "timestamp:",
+            "in": "query",
+            "name": "Timestamp",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "signature:",
+            "in": "query",
+            "name": "Signature",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "d3a039ed-bad8-4368-8407-4a089782bb33",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/commissionrate": {
+      "get": {
+        "operationId": "/api/v1/commissionrate",
+        "parameters": [
+          {
+            "description": "timestamp:",
+            "in": "query",
+            "name": "Timestamp",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "signature:",
+            "in": "query",
+            "name": "Signature",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "symbol:交易对,不能为空",
+            "in": "query",
+            "name": "Symbol",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "a748e33d-7bbe-4eac-9088-c322c246ef2b",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/deleteorder": {
+      "delete": {
+        "operationId": "/api/v1/deleteorder",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "orderId": {
+                    "minimum": 0,
+                    "type": "integer"
+                  },
+                  "origClientOrderId": {
+                    "type": "string"
+                  },
+                  "signature": {
+                    "type": "string"
+                  },
+                  "symbol": {
+                    "type": "string"
+                  },
+                  "timestamp": {
+                    "format": "int64",
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "description": "Private:</br>symbol:</br>orderId,string:</br>origClientOrderId:",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "95144dfa-2cad-4ac2-80b4-61221f48634d",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/depth": {
+      "get": {
+        "operationId": "/api/v1/depth",
+        "parameters": [
+          {
+            "description": "symbol:",
+            "in": "query",
+            "name": "Symbol",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "limit:深度限制,默认 500; 可选值:[5, 10, 20, 50, 100, 500, 1000]",
+            "in": "query",
+            "name": "Limit",
+            "schema": {
+              "type": "int"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "5aed813c-0927-458d-8b15-75b11446190b",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/exchangeinfo": {
+      "get": {
+        "operationId": "/api/v1/exchangeinfo",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "3fde48e8-4bd7-49f5-bd0d-54fbf3cd7af8",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/historyorder": {
+      "get": {
+        "operationId": "/api/v1/historyorder",
+        "parameters": [
+          {
+            "description": "timestamp:",
+            "in": "query",
+            "name": "Timestamp",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "signature:",
+            "in": "query",
+            "name": "Signature",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "page:页码,当为0时为1,返回数据中的total是总行数,每页默认行数为100",
+            "in": "query",
+            "name": "Page",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "limit:每页行数,默认100,最大1000",
+            "in": "query",
+            "name": "Limit",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "starttime:开始时间，可以为空",
+            "in": "query",
+            "name": "StartTime",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "endtime:结束时间，可以为空",
+            "in": "query",
+            "name": "EndTime",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "symbol:交易对,为空时查询所有",
+            "in": "query",
+            "name": "Symbol",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "ordertype:订单类型:空(所有订单),limit(限价单),market(市价单),stop(止盈止损单),stopLimit(止盈止损限价单)",
+            "in": "query",
+            "name": "OrderType",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "positionside:持仓方向:空(所有),long(多头),short(空头)",
+            "in": "query",
+            "name": "PositionSide",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "status:订单状态:空(所有订单),new(新订单),partiallyFilled(部分成交),filled(完全成交),canceled(已取消),pendingCancel(待取消),rejected(拒绝),expired(过期)",
+            "in": "query",
+            "name": "Status",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "5856ba40-47b1-4aa8-8855-e0c54dcb1ee8",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/historyposition": {
+      "get": {
+        "operationId": "/api/v1/historyposition",
+        "parameters": [
+          {
+            "description": "timestamp:",
+            "in": "query",
+            "name": "Timestamp",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "signature:",
+            "in": "query",
+            "name": "Signature",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "page:页码,当为0时为1,返回数据中的total是总行数,每页默认行数为100",
+            "in": "query",
+            "name": "Page",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "limit:每页行数,默认100,最大1000",
+            "in": "query",
+            "name": "Limit",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "starttime:开始时间，可以为空",
+            "in": "query",
+            "name": "StartTime",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "endtime:结束时间，可以为空",
+            "in": "query",
+            "name": "EndTime",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "symbol:交易对,为空时查询所有",
+            "in": "query",
+            "name": "Symbol",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "positionside:持仓方向:空(所有),long(多头),short(空头)",
+            "in": "query",
+            "name": "PositionSide",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "closestatus:平仓状态:空(所有):none=未平仓, partial=部分平仓, full=全部平仓",
+            "in": "query",
+            "name": "CloseStatus",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "a69aa9fc-3f42-4c87-a306-2da636a0ddbc",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/historypositionmargin": {
+      "get": {
+        "operationId": "/api/v1/historypositionmargin",
+        "parameters": [
+          {
+            "description": "timestamp:",
+            "in": "query",
+            "name": "Timestamp",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "signature:",
+            "in": "query",
+            "name": "Signature",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "page:页码,当为0时为1,返回数据中的total是总行数,每页默认行数为100",
+            "in": "query",
+            "name": "Page",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "limit:每页行数,默认100,最大1000",
+            "in": "query",
+            "name": "Limit",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "starttime:开始时间，可以为空",
+            "in": "query",
+            "name": "StartTime",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "endtime:结束时间，可以为空",
+            "in": "query",
+            "name": "EndTime",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "symbol:交易对,为空时查询所有",
+            "in": "query",
+            "name": "Symbol",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "type:操作类型,1:增加保证金,2:减少保证金",
+            "in": "query",
+            "name": "Type",
+            "schema": {
+              "type": "int"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "f13174c5-b6cc-4a6b-87b5-cdb28aa1e72f",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/historytrade": {
+      "get": {
+        "operationId": "/api/v1/historytrade",
+        "parameters": [
+          {
+            "description": "timestamp:",
+            "in": "query",
+            "name": "Timestamp",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "signature:",
+            "in": "query",
+            "name": "Signature",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "page:页码,当为0时为1,返回数据中的total是总行数,每页默认行数为100",
+            "in": "query",
+            "name": "Page",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "limit:每页行数,默认100,最大1000",
+            "in": "query",
+            "name": "Limit",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "starttime:开始时间，可以为空",
+            "in": "query",
+            "name": "StartTime",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "endtime:结束时间，可以为空",
+            "in": "query",
+            "name": "EndTime",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "symbol:交易对,为空时查询所有",
+            "in": "query",
+            "name": "Symbol",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "side:交易方向: 空(所有), buy(买入), sell(卖出)",
+            "in": "query",
+            "name": "Side",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "e4cdc7c4-e7b1-49e1-b9c5-0fc32006e2ff",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/klines": {
+      "get": {
+        "operationId": "/api/v1/klines",
+        "parameters": [
+          {
+            "description": "symbol:",
+            "in": "query",
+            "name": "Symbol",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "interval:",
+            "in": "query",
+            "name": "Interval",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "limit:深度限制,默认 100; 最大:500",
+            "in": "query",
+            "name": "Limit",
+            "schema": {
+              "type": "int"
+            }
+          },
+          {
+            "description": "startTime:开始时间,int64时间戳格式",
+            "in": "query",
+            "name": "StartTime",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "endTime:结束时间,int64时间戳格式",
+            "in": "query",
+            "name": "EndTime",
+            "schema": {
+              "type": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "989e8d31-c9d6-47d3-b1f2-9b11228e1f5e",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/leverage": {
+      "get": {
+        "operationId": "/api/v1/leverage",
+        "parameters": [
+          {
+            "description": "timestamp:",
+            "in": "query",
+            "name": "Timestamp",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "signature:",
+            "in": "query",
+            "name": "Signature",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "symbol:当设置时必须输入，当查询时如为空查询所有市场",
+            "in": "query",
+            "name": "Symbol",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "leverage:目标杠杆倍数1-125的整数,当为0时表示查询交易对杠杆",
+            "in": "query",
+            "name": "Leverage",
+            "schema": {
+              "type": "uint"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "d126f914-c41c-4a0d-a50c-97ae96688319",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/margintype": {
+      "get": {
+        "operationId": "/api/v1/margintype",
+        "parameters": [
+          {
+            "description": "timestamp:",
+            "in": "query",
+            "name": "Timestamp",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "signature:",
+            "in": "query",
+            "name": "Signature",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "symbol:交易对,不能为空",
+            "in": "query",
+            "name": "Symbol",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "marginType:保证金模式 ISOLATED(逐仓), CROSSED(全仓),空时为查询当前模式",
+            "in": "query",
+            "name": "MarginType",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "b2a6d9bc-a520-4b8c-9787-ac9b6135f271",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/myfavorite": {
+      "get": {
+        "operationId": "/api/v1/myfavorite",
+        "parameters": [
+          {
+            "description": "timestamp:",
+            "in": "query",
+            "name": "Timestamp",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "signature:",
+            "in": "query",
+            "name": "Signature",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "symbol:设置为我的最爱交易对，当为时空时，表示获取我的最爱交易对列表",
+            "in": "query",
+            "name": "Symbol",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "cancel:是否取消指定的最爱交易对",
+            "in": "query",
+            "name": "Cancel",
+            "schema": {
+              "type": "bool"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "2c49bbcd-52d8-4015-bc89-7c3e0a4c7c56",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/openinterest": {
+      "get": {
+        "operationId": "/api/v1/openinterest",
+        "parameters": [
+          {
+            "description": "symbol:",
+            "in": "query",
+            "name": "Symbol",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "a7386b9d-b246-457d-abb1-ce1e5e013a45",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/openorders": {
+      "get": {
+        "operationId": "/api/v1/openorders",
+        "parameters": [
+          {
+            "description": "timestamp:",
+            "in": "query",
+            "name": "Timestamp",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "signature:",
+            "in": "query",
+            "name": "Signature",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "symbol:",
+            "in": "query",
+            "name": "Symbol",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "16a145ee-00b9-4723-baa8-c9eb4e3d6a2b",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/order": {
+      "post": {
+        "operationId": "/api/v1/order",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "isMargin": {
+                    "type": "boolean"
+                  },
+                  "isSize": {
+                    "type": "boolean"
+                  },
+                  "orderId": {
+                    "minimum": 0,
+                    "type": "integer"
+                  },
+                  "positionSide": {
+                    "type": "integer"
+                  },
+                  "price": {
+                    "type": "string"
+                  },
+                  "quantity": {
+                    "type": "string"
+                  },
+                  "side": {
+                    "type": "integer"
+                  },
+                  "signature": {
+                    "type": "string"
+                  },
+                  "symbol": {
+                    "type": "string"
+                  },
+                  "timestamp": {
+                    "format": "int64",
+                    "type": "integer"
+                  },
+                  "type": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "description": "Private:</br>FuturesOrder:",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "f7257635-cb8b-4be7-8ecb-69549b66d372",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/positionmargin": {
+      "get": {
+        "operationId": "/api/v1/positionmargin",
+        "parameters": [
+          {
+            "description": "timestamp:",
+            "in": "query",
+            "name": "Timestamp",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "signature:",
+            "in": "query",
+            "name": "Signature",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "symbol:交易对,不能为空",
+            "in": "query",
+            "name": "Symbol",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "positionSide:持仓方向,不能为空,枚举值: LONG(多头), SHORT(空头)",
+            "in": "query",
+            "name": "PositionSide",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "amount:保证金,不能为空",
+            "in": "query",
+            "name": "Amount",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "type:操作类型,1:增加保证金,2:减少保证金",
+            "in": "query",
+            "name": "Type",
+            "schema": {
+              "type": "int"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "f84c0f56-a0a2-44e0-abcb-3e5015bdaa24",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/positionrisk": {
+      "get": {
+        "operationId": "/api/v1/positionrisk",
+        "parameters": [
+          {
+            "description": "timestamp:",
+            "in": "query",
+            "name": "Timestamp",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "signature:",
+            "in": "query",
+            "name": "Signature",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "symbol:",
+            "in": "query",
+            "name": "Symbol",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "3edceefe-51a5-4df3-a252-c3376d4470a1",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/premiumindex": {
+      "get": {
+        "operationId": "/api/v1/premiumindex",
+        "parameters": [
+          {
+            "description": "symbol:",
+            "in": "query",
+            "name": "Symbol",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "0fc11273-bb8a-43d4-a8fa-fcbcddc12296",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/symbolcategories": {
+      "get": {
+        "operationId": "/api/v1/symbolcategories",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "9fe60882-2a57-4269-90fe-d58548f3f177",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/ticker": {
+      "get": {
+        "operationId": "/api/v1/ticker",
+        "parameters": [
+          {
+            "description": "symbol:",
+            "in": "query",
+            "name": "Symbol",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "13fa40f8-3d29-45e6-8558-b3fa8528f042",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/ticker/bookticker": {
+      "get": {
+        "operationId": "/api/v1/ticker/bookticker",
+        "parameters": [
+          {
+            "description": "symbol:",
+            "in": "query",
+            "name": "Symbol",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "8fd970f6-bbfc-4267-98d1-ccbe71aed219",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/ticker/hr24": {
+      "get": {
+        "operationId": "/api/v1/ticker/hr24",
+        "parameters": [
+          {
+            "description": "symbol:",
+            "in": "query",
+            "name": "Symbol",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "0e726939-8a26-4c03-9240-71fea8663600",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/ticker/price": {
+      "get": {
+        "operationId": "/api/v1/ticker/price",
+        "parameters": [
+          {
+            "description": "symbol:",
+            "in": "query",
+            "name": "Symbol",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "167ed647-ca66-48dc-85fc-47095f9e9e99",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/trades": {
+      "get": {
+        "operationId": "/api/v1/trades",
+        "parameters": [
+          {
+            "description": "symbol:",
+            "in": "query",
+            "name": "Symbol",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "limit:深度限制,默认 50",
+            "in": "query",
+            "name": "Limit",
+            "schema": {
+              "type": "int"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "acf777b6-e6e1-4b5d-86a1-ea1c0f025b51",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/userinfohook": {
+      "post": {
+        "operationId": "/api/v1/userinfohook",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "action": {
+                    "type": "string"
+                  },
+                  "clientIp": {
+                    "type": "string"
+                  },
+                  "createdTime": {
+                    "type": "string"
+                  },
+                  "extendedUser": {
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "id": {
+                    "type": "integer"
+                  },
+                  "isTriggered": {
+                    "type": "boolean"
+                  },
+                  "method": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "organization": {
+                    "type": "string"
+                  },
+                  "owner": {
+                    "type": "string"
+                  },
+                  "requestUri": {
+                    "type": "string"
+                  },
+                  "user": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "description": "V1:</br>id:</br>owner:</br>name:</br>createdTime:</br>organization:</br>clientIp:</br>user:</br>method:</br>requestUri:</br>action:</br>isTriggered:</br>extendedUser:",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "24dbe5cf-1f00-4386-b291-8131a5a983b5",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/wallet/depositrecord": {
+      "get": {
+        "operationId": "/api/v1/wallet/depositrecord",
+        "parameters": [
+          {
+            "description": "timestamp:",
+            "in": "query",
+            "name": "Timestamp",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "signature:",
+            "in": "query",
+            "name": "Signature",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "token_id:",
+            "in": "query",
+            "name": "TokenId",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "page:",
+            "in": "query",
+            "name": "Page",
+            "schema": {
+              "type": "int"
+            }
+          },
+          {
+            "description": "size:",
+            "in": "query",
+            "name": "Size",
+            "schema": {
+              "type": "int"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "f819e3a4-e067-4338-84ae-a7ba1c387492",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": {
+                      "rows": [
+                        {
+                          "symbol": "",
+                          "chain_id": "",
+                          "token_id": "",
+                          "deposit_amount": "",
+                          "deposit_address": "",
+                          "memo": "",
+                          "date": 0,
+                          "status": "",
+                          "txn_id": "",
+                          "confirmations": 0
+                        }
+                      ],
+                      "total": 0,
+                      "page": 0,
+                      "size": 0
+                    },
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/wallet/getaddresswhite": {
+      "get": {
+        "operationId": "/api/v1/wallet/getaddresswhite",
+        "parameters": [
+          {
+            "description": "timestamp:",
+            "in": "query",
+            "name": "Timestamp",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "signature:",
+            "in": "query",
+            "name": "Signature",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "chain_identifier:",
+            "in": "query",
+            "name": "ChainIdentifier",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "0b0e131f-e958-45f9-a1a2-a958988ef7b1",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": [
+                      {
+                        "address": "",
+                        "chain_identifier": "",
+                        "memo": "",
+                        "description": ""
+                      }
+                    ],
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/wallet/getchain": {
+      "get": {
+        "operationId": "/api/v1/wallet/getchain",
+        "parameters": [
+          {
+            "description": "timestamp:",
+            "in": "query",
+            "name": "Timestamp",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "signature:",
+            "in": "query",
+            "name": "Signature",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "symbol:",
+            "in": "query",
+            "name": "Symbol",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "dba1c878-2b64-4769-9089-57460023db9f",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": [
+                      {
+                        "token_id": "",
+                        "chain_id": "",
+                        "chain_identifier": "",
+                        "trade_confirming_threshold": 0,
+                        "withdraw_confirming_threshold": 0,
+                        "icon": "",
+                        "min_deposit": "",
+                        "estimated_arrival_time": 0,
+                        "deposit_address": "",
+                        "transaction_query_url": "",
+                        "network_fee": "",
+                        "minimum_withdraw_amount": "",
+                        "withdraw_limit": "",
+                        "require_memo": false,
+                        "busy": false,
+                        "contract_address_url": "",
+                        "contract_address": "",
+                        "depositEnable": false,
+                        "depositDesc": "",
+                        "withdrawEnable": false,
+                        "withdrawDesc": "",
+                        "specialTips": ""
+                      }
+                    ],
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/wallet/gettoken": {
+      "get": {
+        "operationId": "/api/v1/wallet/gettoken",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "1acf9001-8fc9-4009-87c2-0789cf063e5a",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": [
+                      {
+                        "symbol": "USDT",
+                        "chains": {
+                          "ETH": {
+                            "token_id": "",
+                            "chain_id": "ETH_USDT",
+                            "chain_identifier": "ETH",
+                            "can_deposit": true,
+                            "can_withdraw": true,
+                            "custodial_minimum_deposit_threshold": "",
+                            "decimal": 18,
+                            "token_icon_url": "https://static.cobo.com/img/asset/icon_usdt.png",
+                            "confirming_threshold": 12,
+                            "explorer_address_url": "https://etherscan.io/address/{address}",
+                            "explorer_tx_url": "https://etherscan.io/tx/{tx}",
+                            "chain_icon_url": "https://static.cobo.com/img/chain/icon_eth.png",
+                            "require_memo": false,
+                            "is_enabled": true,
+                            "deposit_desc": "Please ensure to deposit only USDT to this address. Depositing any other tokens may result in permanent loss.",
+                            "withdraw_desc": "Withdrawals may take up to 30 minutes to process. Please ensure the address is correct before confirming.",
+                            "special_tips": "For large transactions, consider using a wallet that supports higher security measures.",
+                            "network_fee": "",
+                            "min_withdraw_amount": "0",
+                            "max_withdraw_amount": "0"
+                          }
+                        },
+                        "updated_at": "2026-01-09T13:27:54.326452129+08:00",
+                        "version": 1,
+                        "icon_url": "https://static.cobo.com/img/asset/icon_usdt.png"
+                      }
+                    ],
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/wallet/setaddresswhite": {
+      "post": {
+        "operationId": "/api/v1/wallet/setaddresswhite",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "address": {
+                    "type": "string"
+                  },
+                  "chain_identifier": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "is_delete": {
+                    "type": "boolean"
+                  },
+                  "memo": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "description": "-:</br>address:</br>chain_identifier:</br>memo:</br>description:</br>is_delete:",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "e832a133-295b-48ca-9908-06e3bc3fe66c",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": [
+                      {
+                        "address": "",
+                        "chain_identifier": "",
+                        "memo": "",
+                        "description": ""
+                      }
+                    ],
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/wallet/withdraw": {
+      "post": {
+        "operationId": "/api/v1/wallet/withdraw",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "address": {
+                    "type": "string"
+                  },
+                  "amount": {
+                    "type": "string"
+                  },
+                  "chainId": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "memo": {
+                    "type": "string"
+                  },
+                  "symbol": {
+                    "type": "string"
+                  },
+                  "tokenId": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "description": "-:</br>symbol:</br>chainId:</br>tokenId:</br>address:</br>memo:</br>amount:</br>description:",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "431ccf99-5047-4846-b5fd-d274a37d93c0",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": {
+                      "fund_tx_id": 0,
+                      "account_type_id": 0,
+                      "account_tx_id": 0,
+                      "bill_tx_id": 0,
+                      "retry_count": 0,
+                      "fund_message": "",
+                      "fund_status": "",
+                      "is_processed": false,
+                      "symbol": "",
+                      "asset_id": 0,
+                      "request_id": "",
+                      "chain_id": "",
+                      "token_id": "",
+                      "address": "",
+                      "memo": "",
+                      "amount": "",
+                      "description": "",
+                      "status": "",
+                      "txn_id": "",
+                      "network_fee": ""
+                    },
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/wallet/withdrawrecord": {
+      "get": {
+        "operationId": "/api/v1/wallet/withdrawrecord",
+        "parameters": [
+          {
+            "description": "timestamp:",
+            "in": "query",
+            "name": "Timestamp",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "signature:",
+            "in": "query",
+            "name": "Signature",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "token_id:",
+            "in": "query",
+            "name": "TokenId",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "page:",
+            "in": "query",
+            "name": "Page",
+            "schema": {
+              "type": "int"
+            }
+          },
+          {
+            "description": "size:",
+            "in": "query",
+            "name": "Size",
+            "schema": {
+              "type": "int"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "4484f9ac-6958-4963-a813-8b2390d132fd",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": {
+                      "rows": [
+                        {
+                          "fund_tx_id": 0,
+                          "account_type_id": 0,
+                          "account_tx_id": 0,
+                          "bill_tx_id": 0,
+                          "retry_count": 0,
+                          "fund_message": "",
+                          "fund_status": "",
+                          "is_processed": false,
+                          "symbol": "",
+                          "asset_id": 0,
+                          "request_id": "",
+                          "chain_id": "",
+                          "token_id": "",
+                          "address": "",
+                          "memo": "",
+                          "amount": "",
+                          "description": "",
+                          "status": "",
+                          "txn_id": "",
+                          "network_fee": ""
+                        }
+                      ],
+                      "total": 0,
+                      "page": 0,
+                      "size": 0
+                    },
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "gateway"
+        ]
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "http://119.8.50.236:8088"
+    }
+  ],
+  "tags": [
+    {
+      "description": "http://119.8.50.236:8088",
+      "name": "gateway"
+    }
+  ]
+}
