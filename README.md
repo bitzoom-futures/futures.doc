@@ -29,19 +29,3 @@ Plugin: [docusaurus-plugin-openapi-docs](https://github.com/PaloAltoNetworks/doc
 ### 运维问题反馈
 
 - [问题清单](https://docs.google.com/spreadsheets/d/14Zfkg6LEgxql3GzP5hFZm36l8ygvAbvcGMZHi06GBJQ/edit?gid=1295395322#gid=1295395322)
-
-### Local Development
-
-```bash
-yarn start
-```
-
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-### Build
-
-```bash
-yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
