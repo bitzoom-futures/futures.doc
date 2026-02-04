@@ -32,6 +32,16 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'WebSocket Testing',
+      collapsed: false,
+      items: [
+        'websocket-playground',
+        'websocket-test/ticker',
+        'websocket-test/openorders'
+      ]
+    },
+    {
+      type: 'category',
       label: 'Guides',
       collapsed: false,
       items: [

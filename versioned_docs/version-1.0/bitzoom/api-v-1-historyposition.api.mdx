@@ -1,0 +1,71 @@
+---
+id: api-v-1-historyposition
+title: "/api/v1/historyposition"
+description: "/api/v1/historyposition"
+sidebar_label: "/api/v1/historyposition"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1Vt9vE0cQ/leseQLpEp/t4CQnRRUgWlG1KlJS9SHKw/pubS/c3V539wLu6aRELS2UlFClEETT0pRQoD8IUiENTtr+M75z8pR/odo9n2MH20pc8WTfzs583+7MznwBUA8zJAh1L1pgQBZ5JDufy1YJF5TVPMqJtIEGHmLIwQIzDsZsABbmJiOeMhogiIO5QI5ngAZErnzqY1YDDVzkYDBgJt0AGnCzih0ERgCi5kkjcUVxDMJQOxqWk4qLhM9wv7DT6YZeYblgxK30iuuhCjb21181f1rUor9XGtt1PV7damzXc9rev99F3/8Y330Rf/O8sf1H88EXggpkx/c344WdvfWl+O4LLd5c3l9/tb9zf+/5RrIkXXW9D8lLqNKTX99j28QhwkhQWpAJWE7XtXhtIdp4ktP7wn0gvU92zQIxIVNoRLsL0ZNb8erW/urLg92laHmzsfO4sV1vPqv3y4D0ldk9ESJ2LYXX3FmJf3h4ErwLrnViNF5zStQ2GvWN+P5KtPlaSxDi1a344eO9zZ/jmwvx2s1+B1TOJ6yv1rPhxMJGvLTY2FmJ772O7nxrNJ/VTyVwpzWbupVT0caDaOPlaY1XKROnms/q8qtfIbXCThPrhAVv2pTL9yd8bkSv/2zsrDS/3ooXFjv5GC518VS89muyQct4iAmC7Kn9z59GN75MV8u+bU9F15/KVbXUh+x5CTmtIAdyndOAYe5Rl2Mu7Xldlz8mdQV2hfyLPM8mpupR2ctcnifoiIevIcezsQrNkImJbGOoOInQZNkcKZTH8iNj5sT4CCroxZG8hYqFItItq2SCBpgxys5TC4OR1/XW94eYc/liDZC8fdPEnIMhmI81sPykV4Ixmc8XCuN5vVCcODM2Pl7Upb+FBALD9W1bgyrlQnZGzAVxKxnszstwVXp1Rl2AHmrgMdl8BUkOnjgHYSdKAGXKHCTa1a11FDuuYAZh1ymCfub2od5IQMq0h+GQba+47atpG0uU2hi50thORY/iTFdo6TI2BYRyqbtcp5PQZd/OtMeT8uTY9BkRNTWCzmHEMANjdk4WkUAVOZmgggS+imowdzRo/9HmYFGlsmwqWKhJJ6oD93PM5tM56DMbDKgK4RnZbC43OToxekYfzReKxoQ+MQGSWUp6WtZskuuUegAl9e/dNMvvfzIDR4nHr27tbd7NzNAr2M3s3f4rWr7X3Kg3/rl1sPugH7Ain/B0kIsqOCsLUcgQ7/gcM2JN5fKFsTPp01TpS0i18yNjq1snbpmqCu2idY6Izyh1MtGdG836L5mzly5m4ntfxeuPDnZvREvXozu/Rdd/j3YXGtu3m08W47Wb8e3H0fKjg13ZaQUR8s3CRx52pStoIK80iZwb1Ud1WUUe5cJB6h20ukr/pHSRa1edwNdE1rMRUVWpkhW0EjwLyCMSNwcaHI03lz6LWQiCEuL4Y2aHoVxO2pySQISjko0tMMrI5vgNCu0W1i2PejK7gmtHVNI8sn3VhFQ3PzZUl2QaANWpnIaEensqagDvlpgakvLxldUACqnAGjZDx1Rbg5LXIbqGZHE8BTaAw6EQG/YejqvKBl1EKs6GLeH/L9QG1Wq3XhuS41vWbgP4d0u4Q/pz8oMRyV9NXw2qGFlqFAct17Omib3OR/KGiJNR2oP3vQty7CFf9uVDOZHOo1I66Nsm5NY6YgdBskNNyDCElL8adxDOhWH4H4oO42I=
+sidebar_class_name: "get api-method"
+info_path: versioned_docs/version-1.0/bitzoom/open-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"/api/v1/historyposition"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/historyposition"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+/api/v1/historyposition
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"timestamp:","in":"query","name":"Timestamp","schema":{"type":"int64"}},{"description":"signature:","in":"query","name":"Signature","schema":{"type":"string"}},{"description":"page:页码,当为0时为1,返回数据中的total是总行数,每页默认行数为100","in":"query","name":"Page","schema":{"type":"int64"}},{"description":"limit:每页行数,默认100,最大1000","in":"query","name":"Limit","schema":{"type":"int64"}},{"description":"starttime:开始时间，可以为空","in":"query","name":"StartTime","schema":{"type":"int64"}},{"description":"endtime:结束时间，可以为空","in":"query","name":"EndTime","schema":{"type":"int64"}},{"description":"symbol:交易对,为空时查询所有","in":"query","name":"Symbol","schema":{"type":"string"}},{"description":"positionside:持仓方向:空(所有),long(多头),short(空头)","in":"query","name":"PositionSide","schema":{"type":"string"}},{"description":"closestatus:平仓状态:空(所有):none=未平仓, partial=部分平仓, full=全部平仓","in":"query","name":"CloseStatus","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"a69aa9fc-3f42-4c87-a306-2da636a0ddbc","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":null,"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      

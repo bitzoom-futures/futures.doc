@@ -1,0 +1,71 @@
+---
+id: api-v-1-margintype
+title: "/api/v1/margintype"
+description: "/api/v1/margintype"
+sidebar_label: "/api/v1/margintype"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1VV1vG0UU/SvWfSrSJl6vE3+shFDaBhREFVQH8RD5YXZ9Y0+7X8zMpjWrlVqhqI1Kk6CIghAIlbbQCqQ8AcGk8Ge8tvuUv4BmNruxEztApT55PTP33DNzzz03Aj9ARgT1vZUWmFAkAS1uloouYW3qiW6AoEFAGHFRIONgrkfQQm4zGsgYMEFQF7kgbmCCBlSufBIi64IGHnERTFjLDoAG3O6gS8CMQEGbQD1RWYA41s7Cctr2iAgZzoJtZAemwXLBqNeeitt1Ld8x+72ng6/3k4M/tP7hw9FnL/uHveGL3qxUKub/5UkfcK0boNn/+7vRwd1X974YPH+cHO0WVhqrHyytLV+99OrOXv/P/be0wpXrq43G8tVLydZztTB80Rt89Vv/sDf4/tno4Ifk5X6y/TCNnkHxWp7uQppNDRjywPc4crlv6Lr8sX1PoCfkJwkCh9pKEMUbXF4lGsPD28QNHFTQjNhIpWYsg1RadcueI4uGPrdg1ey5erVWnSN23aqUyosbRrUEGiBjPrvitxBMQ9dP/l9DzklbcpS8Q9tGzsEULEQNWmEqTDDrhlEuVw29XKktLlSrFV3Gt4ggYHqh42jQ8bmQWkQuqNcuoLcp4Tr+LfUiph5rEDCpdEHTi6fBUTyeJYINn7lE5LLUxlSKbWQQT9wimrWdX+pcATKmUzZO2U7DzZ8m37R830Hiyc28FFN0ma341g20BcRyaVKpjRR6I3QKuReoSI52yKjoqqa/jIQhA3O9KUUkSFt6AbSJwFukC82zoFN9xEXR8aVi2iiUrYjOrKMc2WbmNyFzwISOEIFZLJZK9fna/KI+b5QrZk2v1UDyyag2pFLTCmeEI7DU17tZbd//eA3O0h38+mB08GVhzb+JXmG083uy+2j4tNf/68Hx0TezEiveKU+XeKSNRSk/ISHeCTky2nq7ZJQXFrOGVEVLSeVVkdjqram34StdTtC6TMWnvu8Wkr37w96PhaUPVwqDR/cGj58cH91PPt9K9n5Otn5Jju70D3eGP90dfLs92HmW7D45PtqWKaiQnQqrAXoyFDSQT5oil+b1eV1qJ/C5cIlS/4mVTK3HBK9cZgJvi2LgEKpkqOoUnZR1HUhAZUrZ+mNQzawF1iGKLMLxI+bEsVxOHU0NGMqJ5WALzA3icDyXPberyeEzldRN7J6ZQZvECZXhKNP+z6kmBtIFqcbn0uum+pcZdVH2bFS9Zuo3OLYuYD0xvU6ZN+UfRiV1ZTwadJC0lAtFJ5FLto2BGIs6N78kSm487y3L3iehVOipk2ZNaWUel28RrzuGHUXpCWUTcQwZfdXzEDfjOP4H/mxtgw==
+sidebar_class_name: "get api-method"
+info_path: versioned_docs/version-1.0/bitzoom/open-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"/api/v1/margintype"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/margintype"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+/api/v1/margintype
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"timestamp:","in":"query","name":"Timestamp","schema":{"type":"int64"}},{"description":"signature:","in":"query","name":"Signature","schema":{"type":"string"}},{"description":"symbol:交易对,不能为空","in":"query","name":"Symbol","schema":{"type":"string"}},{"description":"marginType:保证金模式 ISOLATED(逐仓), CROSSED(全仓),空时为查询当前模式","in":"query","name":"MarginType","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"b2a6d9bc-a520-4b8c-9787-ac9b6135f271","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":null,"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      

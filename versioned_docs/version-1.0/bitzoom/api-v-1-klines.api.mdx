@@ -1,0 +1,71 @@
+---
+id: api-v-1-klines
+title: "/api/v1/klines"
+description: "/api/v1/klines"
+sidebar_label: "/api/v1/klines"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVV1v40QU/SvRfXYT2/loYoTQLlpQEQikBu1DlIeJfZPM1vaYmXF2gxWpPKzoqqu2EmIX0CJAW7YPIBACdlE34tes3fapfwGNnbhp8yHaJ499fc85c+fMvRGwADmRlPkbDlhQIgEtDYzSlkt9FKBBQDjxUCIXYLUicFDYnAbqf7BADL0Ocy3QgKrXz0LkQ9DAJx6CBZtpFDQQdh89AlYEchioiJCc+j0YjbSriNSXyAdkKebGJH49VJd6VFrJqz/i4xdn3x7EOy+1s9ffnP52WDB0/a1C8mw7Pjyyqrq+hPVDlb+IkvpyEZ+QhMsm9dCKx9vx0W7y9OXZ07806staJVsnO38mP47j8f6y2k0RlrDWKot40XdS1pPXXyXf/3B91jtZ/irOtgYcRcB8gUKFTV1XD5v5En2pliQIXGqnlirdE0pXNAOHD4gXuJgic2IjVa5r1BtYd8rGmt1wamuVdae81jG65lqjYximWUejW1WikHPG32UOgmXq+uT9IxSC9JREJTu0bRQCLMlD1MAJM2uD1TDNcnnd1Mu1erWyvl7TVb5DJAHLD11Xgz4TEiyQKCT1ewX0Bwquz+430/3rIw0Cru6KpNnGs+RoNMsSQZdxj8i8XtpM+bCHHEaXdhEtC+ebmjP3VOmCwIXaRbh5afJghzEXia+C+VEsuEzTL6xzD21ld7XlS7bbzKC7oVvIu0mWSXqqbUCPSLxPhtC+mjnXbjyUfaYs0UOZdh/ZX/SbQD6YtqSQu2BBX8rAKpUMo1GsF6t60SzXrLper4NyrEA75FQON5UNs+O7jYQjV6tOunpvenAf3G3CVZnJ37unv39daLIt9Aune6/i/Scnh8dv/t09H3+3jDjVnOn0iE96WFLekgrinVAgp87bhlmuVKeXLT2RTFRecoWdFpL6XZaa7pKs21R+zphXiA92To5fFG59slFInnyZ/PT8fLwTP34YH/wSP/w1Hm+/+Wfv5OiL5NmjZO/neP/5+fiRoqBSXUP4OEBfpYIGqqQZslHUi7oyRsCE9Ehq7UmPmDuLS5py/0h8IEuBS2jqr/SMoslxtoAEVNEZoMEEpj31dQuiqEMEfsrd0Uh9zlpUOnuoIB0XHbC6xBU4x5z3oJm5tFDNFg5nx9OAuGHaP9KG+r9JZkfVCpqZiXVDoutMrxVCpkPshiquN9NW1X1mtN1Qy3Xm3AolF+PuQkdbvXCqhIDVaqt+i8RRnaIVTdJu2TYGs5Wcm3gKJe9k799pwmj0HxLic20=
+sidebar_class_name: "get api-method"
+info_path: versioned_docs/version-1.0/bitzoom/open-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"/api/v1/klines"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/klines"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+/api/v1/klines
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"symbol:","in":"query","name":"Symbol","schema":{"type":"string"}},{"description":"interval:","in":"query","name":"Interval","schema":{"type":"string"}},{"description":"limit:深度限制,默认 100; 最大:500","in":"query","name":"Limit","schema":{"type":"int"}},{"description":"startTime:开始时间,int64时间戳格式","in":"query","name":"StartTime","schema":{"type":"int64"}},{"description":"endTime:结束时间,int64时间戳格式","in":"query","name":"EndTime","schema":{"type":"int64"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"989e8d31-c9d6-47d3-b1f2-9b11228e1f5e","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":null,"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      

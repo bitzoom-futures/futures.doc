@@ -1,0 +1,71 @@
+---
+id: api-v-1-adlquantile
+title: "/api/v1/adlquantile"
+description: "/api/v1/adlquantile"
+sidebar_label: "/api/v1/adlquantile"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVV1r3EYU/SvLfZZ3tZLXuysIJSltSaG0YJc+mH0YSdfaSSSNMjNyshWC5CHUJsUJJE1LCZQ2ST9owU9t0sXtr7G0fvNfKDOy5F1715Q8SZo799yjuefcyYAlyImkLL7pgwMdktDObrdD/PBOSmJJQwQDEsJJhBK5AGc7Ax+Fx2miksABSSMUkkSJAwZQtXInRT4BA2ISITiwVW8AA4Q3xoiAk4GcJCpIY7mxDnluXIQVNIiJTDmugt2sNyyDFZLTOFiKO4lcFjrH01fld0+Lw7+N4p+nx2+ns9+m5bd/lT+8Pjn8afbs13LvTbl/v3yx3+xbxULDXUlhZABHkbBYoFBxyzTVw2OxxFiqV5IkIfV0Fzq3hKKZzeHhPRIlIWpoTjykqlGe1x1afa+3Zntde2196Plrw4Ftr1mu5WLP9fpu3wMDkHPG32c+gmOZ5tn3JygECRRHxTv1PBQCHMlTNMBPKzWAM7Qs2+5bpr0x6K33+xumyveJJODEaRgaMGZCqv6jkDQOWhjvKrgxu7ulD8DMDUi4kpek1Y9XyVk+XyWDHcYjIhspGHPKwAA55At/ka0KNz91qQE10yWBc7bLcJujaYIuYyGSWAWbVizRXL3C3FvoScjV0qIKNyvonTRsNQbUmQK9lFM50Ua7gYQjB2d7pEQkSaD8BwGReJdMYHQRdLl5I5RjpiQToNReluOVewXy3drlKQ/BgbGUidPpdLvD9qDdM9uWveEMzMEAFKOa7KbSatXjmnIGrn77sO7ux19swUXC5Z+PTg6/aW2x2xi3Tg7eFI+fz15Nj/99dHr0/arCmnjFMyIxCbCjBCgVxHupQE79a13LXu/VltRtq0g1fVHY+rRpvMO0Mhdo3aDyS8aiVvFkbzb9uXX9s5ut8vlX5Y8vT4/2iq8fFk9+Lx7+URzdP357MPvlQflivzx4XTx+eXq0r0pQqbwKnyYYq1QwQB1phdxtm21TqSdhQkZE6/9skCxvyAKxRmkS78lOEhKqlagblZ01dhtIQlXNLhgwjzWqbbANWeYSgZ/zMM/VcjXR9GCngrgh+uDskFDgpfLNyFoc+ktZ3cbJhdm/S8JUDx09lP93qYWL4IpS8/fBu5Z697vhKmL1FXHOaqQ+OFW0tLsNGCPxtdWzs6zrnoeJnMu6dEkolMbcH32g7EVSpYHzcVXr3q0HSRMi8WQOO8uqHdqJeQ41dW0ryEd5nv8HqM75CQ==
+sidebar_class_name: "get api-method"
+info_path: versioned_docs/version-1.0/bitzoom/open-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"/api/v1/adlquantile"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/adlquantile"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+/api/v1/adlquantile
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"timestamp:","in":"query","name":"Timestamp","schema":{"type":"int64"}},{"description":"signature:","in":"query","name":"Signature","schema":{"type":"string"}},{"description":"symbol:交易对,当为空时查询用户所有交易对","in":"query","name":"Symbol","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"cc1927c5-3c13-49cd-9833-2b2be5bc7b7c","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":null,"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      

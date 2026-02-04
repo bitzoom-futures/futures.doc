@@ -1,0 +1,71 @@
+---
+id: api-v-1-wallet-depositrecord
+title: "/api/v1/wallet/depositrecord"
+description: "/api/v1/wallet/depositrecord"
+sidebar_label: "/api/v1/wallet/depositrecord"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVUtv20YQ/ivCnGmJeliSCRRFUrSFCxQNYBc9GEIwIkfSJiSX3V3alggC7SFoghROLs2h6KVIH4cW6KloERj9NZGdm/9CMUuRlmzJbn2SuLPzzeOb/SYDmZBCI2S8G4AHDUxE47DZOMIwJNMIKJFaGEW+VAE4kKDCiAwpDd5BBgFpX4mEvcEDIyLSBqPEAwcEn3yZkpqCAzFGBB7slxfAAe1PKELwMjDThI0iNt0O5LlzFVaLcYwmVbQJdq+8sA5WGyXi8TpcIx9T/FAEG7Nl+27w/0ATHG/M8wGO16YoYrO+7tkNJc9ugBo4oEgnMtak2dhyXf7xZWwoNvwXkyQUvqW98UhzuGwJjI4xSkKyuAp9EjwZo35zh9rY2SK329vqtNv9rX4HaQt7Q2z67X6vs9MCB0gpqT6QAYHXct3F96ekNRfvASed+j5pDZ5RKTkQpMX4gbfTarXbvZbb7va3O71e12X/AI3NScmjYub0NBrKsIDyJyiYwuKrJLT4WozuQ4xkykWvnAWBsinwYUSRXJjREHiuA9qgSRdmc3yJ6ct4JFRk89XgudxpIw2G1iuxJbI7s+O5uQMTqTm0IW1EPK5RfMgNmMijfcsXX0kUv0AjCqoW5ebLfclgJDlo9UicJbppTArylb5nm8wVDdcGucx0jeEy23W4FZmVcShlSBizsRqeNQ+nPJHDR+Tz0HLJK/O/V0CP0rBWaZT11OSnSpipHYf7hIoUeAcDSwaOeUpgjIaOcAqDq6C36FtEZiKZ7DEZK3dmcruTJnVYKmKqeDQnxiReo9Fs7tT79W233mp3vb7b7wPnWKa/x++tYL0sIoOh/fdRyfcnX+zD1RLO/nz+7o/valaeau9O/pq/eHX+05u3/zy/OP1+U2BbQZFnhDGOqcEjaR/M+6kmJYL3mq12Z7vUFEtkkVTFFGPb/ot4JO2srqR1X5iZlFFt/vLp+Ztfavce7NbOXn1z9uPri9On82+fzF/+Nn/y+/z0q7d/n5z/+vXZD8/OTn6ev3h9cfqMQwjDegOfJRSzKzjALS2Qm3W37vI8JVKbCO2LWOjgLcysZFgNoaFj00hCFHZILWPZguoDwERw8CY4UIBeysYCdlA+lgPIsiFq+lyFec7HhUjbxSg0DkMKwBthqOlaJpUUry7NtQk+pumV3XmIYWrF1C6N/xxqZZHeEGp5n94x1PJuvamoasXeMU65bm+Isdi6d+7Z7PZ2zVYDDPhDCY5gdcmBCWFgRSpb+NzzfUrMkte1hcwolRp9/CHLAKY8opdCW77PYSmBlQnj6RJ2lhU3bLfzHMrELUmQD/I8/xd4R29j
+sidebar_class_name: "get api-method"
+info_path: versioned_docs/version-1.0/bitzoom/open-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"/api/v1/wallet/depositrecord"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/wallet/depositrecord"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+/api/v1/wallet/depositrecord
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"timestamp:","in":"query","name":"Timestamp","schema":{"type":"int64"}},{"description":"signature:","in":"query","name":"Signature","schema":{"type":"string"}},{"description":"token_id:","in":"query","name":"TokenId","schema":{"type":"string"}},{"description":"page:","in":"query","name":"Page","schema":{"type":"int"}},{"description":"size:","in":"query","name":"Size","schema":{"type":"int"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"f819e3a4-e067-4338-84ae-a7ba1c387492","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":{"rows":[{"symbol":"","chain_id":"","token_id":"","deposit_amount":"","deposit_address":"","memo":"","date":0,"status":"","txn_id":"","confirmations":0}],"total":0,"page":0,"size":0},"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      

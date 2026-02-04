@@ -30,18 +30,42 @@ Plugin: [docusaurus-plugin-openapi-docs](https://github.com/PaloAltoNetworks/doc
 
 - [问题清单](https://docs.google.com/spreadsheets/d/14Zfkg6LEgxql3GzP5hFZm36l8ygvAbvcGMZHi06GBJQ/edit?gid=1295395322#gid=1295395322)
 
-### Local Development
+## Local Development
+
+Use Node.js 22 (recommended) or Node.js 18+.
 
 ```bash
 yarn start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+Run a specific locale in development:
 
-### Build
+```bash
+yarn start -- --locale zh-Hans
+```
+
+## Build
 
 ```bash
 yarn build
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+## Search
+
+The site uses local search (`@easyops-cn/docusaurus-search-local`) and indexes docs only.
+
+## Docs Versioning Workflow
+
+Detailed bilingual guide: `internal/versioning-and-locales.md`
+
+Create a new docs version:
+
+```bash
+yarn docusaurus docs:version <version>
+```
+
+Generate OpenAPI docs for a version:
+
+```bash
+yarn docusaurus gen-api-docs:version bitzoom:<version>
+```

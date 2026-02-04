@@ -5,6 +5,37 @@ import type * as Preset from '@docusaurus/preset-classic'
 import type { Config } from '@docusaurus/types'
 import type * as Plugin from '@docusaurus/types/src/plugin'
 import type * as OpenApiPlugin from 'docusaurus-plugin-openapi-docs'
+import fs from 'fs'
+import path from 'path'
+
+const localSearchPlugin: Plugin.PluginConfig | null = (() => {
+  try {
+    return [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      {
+        hashed: true,
+        indexDocs: true,
+        indexBlog: false,
+        indexPages: false,
+        docsRouteBasePath: '/docs',
+        language: ['en', 'zh']
+      }
+    ]
+  } catch {
+    return null
+  }
+})()
+
+const gatewayServerUrl: string = (() => {
+  try {
+    const gatewaySpecPath = path.join(process.cwd(), 'examples', 'bitzoom.gateway.json')
+    const spec = JSON.parse(fs.readFileSync(gatewaySpecPath, 'utf8'))
+    const url = spec && spec.servers && spec.servers[0] && spec.servers[0].url
+    return typeof url === 'string' ? url.replace(/\/+$/, '') : 'http://119.8.50.236:8088'
+  } catch {
+    return 'http://119.8.50.236:8088'
+  }
+})()
 
 const config: Config = {
   title: 'Bitzoom API Docs',
@@ -12,8 +43,19 @@ const config: Config = {
   url: 'https://bitzoom-futures.github.io',
   baseUrl: '/futures.doc/',
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn'
+    }
+  },
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'zh-Hans']
+  },
+  customFields: {
+    gatewayServerUrl
+  },
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -27,6 +69,12 @@ const config: Config = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.ts'),
+          lastVersion: 'current',
+          versions: {
+            current: {
+              label: 'Next'
+            }
+          },
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: 'https://github.com/bitzoom-futures/futures.doc/tree/main/',
@@ -75,6 +123,18 @@ const config: Config = {
           label: 'API Reference',
           position: 'left',
           to: '/docs/category/bitzoom-api'
+        },
+        {
+          type: 'search',
+          position: 'right'
+        },
+        {
+          type: 'docsVersionDropdown',
+          position: 'right'
+        },
+        {
+          type: 'localeDropdown',
+          position: 'right'
         },
         {
           href: 'https://github.com/bitzoom-futures/futures.doc',
@@ -235,6 +295,7 @@ const config: Config = {
   } satisfies Preset.ThemeConfig,
 
   plugins: [
+    ...(localSearchPlugin ? [localSearchPlugin] : []),
     [
       'docusaurus-plugin-openapi-docs',
       {
@@ -252,8 +313,19 @@ const config: Config = {
           //   }
           // } satisfies OpenApiPlugin.Options,
           bitzoom: {
-            specPath: 'examples/bitzoom.json',
+            specPath: 'examples/bitzoom.gateway.json',
             outputDir: 'docs/bitzoom',
+            version: 'next',
+            label: 'Next',
+            baseUrl: '/docs',
+            versions: {
+              '1.0': {
+                specPath: 'examples/bitzoom.gateway.json',
+                outputDir: 'versioned_docs/version-1.0/bitzoom',
+                label: '1.0',
+                baseUrl: '/docs/1.0'
+              }
+            },
             sidebarOptions: {
               groupPathsBy: 'tag',
               categoryLinkSource: 'tag'

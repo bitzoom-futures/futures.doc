@@ -1,0 +1,71 @@
+---
+id: api-v-1-wallet-getaddresswhite
+title: "/api/v1/wallet/getaddresswhite"
+description: "/api/v1/wallet/getaddresswhite"
+sidebar_label: "/api/v1/wallet/getaddresswhite"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVU1v20YQ/SvCnGmJkixbIlAUSdAWLlC0gF30YAjBiBxRm5BcdndpRyUIpIegCRI4uTSHopci/Ti0QE9Fi8Dor4nk3PwXilmKtL7sBD2J2tl5MzvvzUwOMiWFRsjkIAAPWpiK1km7dYpRRKYVksEgUKT16UQYAgdSVBiTIaXBO84hIO0rkbI/eGBETNpgnHrggOCTrzNSU3AgwZjAg6PqAjig/QnFCF4OZpqyUSRmbxeKwlmH1SJM0GSKroM9rC5sg9VGiSTchutPUCR3RUCJEWNB6jr4O3zvoL52Y5ChA4p0KhNNmu0d1+UfXyaGEsOfmKaR8G3JW/c0J5Iv4dEDjNOILLRCnwSz4o5canfb4x0a9Po7u73xYAfb2NnBQa8/6PdpvD9qgwOklFR3ZEDgdVx38f8z0hpDzpHzznyftAbPqIwcCLKSevAGnU63u99xu3v93u7+/p7L/gEatCwvNFBirFetPI0pluXXao2BKzKR2rA8SBuRhA1KTjiXiTw9stVzCwdSxUI0oqxaGTkvllPMYSxVjKZWirMkHApJQbFSgvw6c12RDfaqTLcYrrLdhlvXtTaOpIwIEzbWPG6RZHUiR/fIN1Dw0WoBD0vocRY16la1npr8TAkztQzdJlRMxfGQ620w5PaEEA2d4hSG66DvbPOYzESy9EIytuvN5H3cNKmTajRkKgIPJsakXqvVbg+a/WbPbXa6e17f7fetLqonHLL8S+arh+Qwsl8fV5x/+tXRhrjmfz19++f3jSN5n5LG27O/Z89fXvz8+s2/Ty/Pf7gusH1DmWeMCYbUYlkahvgw06RE8EG7093tVV1uySyTqtlibMuBSMbS6nUlrdvCfCNl3Ji9eHzx+tfGrS8OGvOX381/enV5/nj27NHsxe+zR3/Mzh+++efs4rdv5z8+mZ/9Mnv+6vL8CYcQhtsfPk8pYVdwgEtaIrebbtNlTaVSmxhtVyyG1Du5WcmxlqKhB6aVRiisVC1n+YLuY8BUcHieLSUsOLAOXLf3MeT5CDV9qaKi4ONyitotITSOIgrAG2OkaSOXejqubpCtKd6n6doiOcEos/PNTvj3DrWyVW4Itbxc/meobYvmhoib++Yq7pD/KMGBbbc7MCEMbOvnC/dbvk+pWfLa2DiMUnf4Jx9xY2HGlF+Nr0rxo2qw1CZMpkvYeV7esD1YFFC9wTYUFMOiKP4DOZzq2g==
+sidebar_class_name: "get api-method"
+info_path: versioned_docs/version-1.0/bitzoom/open-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"/api/v1/wallet/getaddresswhite"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/wallet/getaddresswhite"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+/api/v1/wallet/getaddresswhite
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"timestamp:","in":"query","name":"Timestamp","schema":{"type":"int64"}},{"description":"signature:","in":"query","name":"Signature","schema":{"type":"string"}},{"description":"chain_identifier:","in":"query","name":"ChainIdentifier","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"0b0e131f-e958-45f9-a1a2-a958988ef7b1","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":[{"address":"","chain_identifier":"","memo":"","description":""}],"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      

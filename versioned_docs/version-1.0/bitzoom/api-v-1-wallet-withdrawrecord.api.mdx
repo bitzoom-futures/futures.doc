@@ -1,0 +1,71 @@
+---
+id: api-v-1-wallet-withdrawrecord
+title: "/api/v1/wallet/withdrawrecord"
+description: "/api/v1/wallet/withdrawrecord"
+sidebar_label: "/api/v1/wallet/withdrawrecord"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVk1v20YQ/SvCnGmL+rAsESiKpGgLFygaIC56MARhRY6kjUkuszu0LBME2kPQBCmcXJpD0UuRfhxaoKeiRWD010R2bv4LxSxFWrJlu/GJ3K83b3bevt0MVIJakFTxTgAe1EUi6weN+lSEIVJ9KmkSaDHV6CsdgAOJ0CJCQm3A28sgQONrmfBy8IBkhIZElHjggOSexynqGTgQiwjBg91yAjhg/AlGArwMaJbwoIyp04Y8dy7DGjmOBaUar4N9WE5YB2tIy3i8DpfUPsYDGVzLlsd3gvcDTcT4Wp4PxHgtRRnT+ryPbkj56AaovgMaTaJig4YHm67LH1/FhDHxr0iSUPq27vVHhsNlS2B4KKIkRIurhY+SpdFud9ujnvA3Or2t7ka712ltiG6jtdEdNls9N2i0miPeK9Ra6Y9UgOA1XXfR/hyN4eQ9YNKp76Mx4JFO0YEgLfQHXq/ZbLW2m26r091qb293XF4fCLKctJoWmhulcTCgwwGTch0Qvq/SmAa8AVf6qllDGYZLTY2kZwM7ybYtZrRM0vYYEpSaokOaQaIVE8cAvJEIDTpgZtFQhcUEYQzSRYDHKZqiyYP+RMi4apXKWywMAm33gxsRRmrRHRX0+H9VGLyHS8zo8AIrRpoqvT8Yoc2DlUCKRGhJJTY717HKAs/NHZgowyEIDcl4XMP4gMEnarpr9cRTEs0WQbKQ0qIc+XLdMhgpHQmqDrGzJEcco4Z8RRfZdcOVTK4ctJLpmoELtutwK7FVg0OlQhQxD1biXnOwyx41fIQ+H6r8chkeFtCjNKxVJmpXGvRTLWlm5XofhUYN3l7fFkOMWcUwFoRTMYP+ZdDbDDhCmigu9hjJ+jFN/scqg/qg9OxUs2AnRIlXrzcavc3u5pa72Wx1vK7b7VrJlAk8ZEco6l6mkcHQ/n1SVvyzr3avCPT0r+fv/vy+Zg209u747/mLV2c/v3n77/Pzkx+uC2xTKHhGIhZjrLMo7Un5MDWoZfBBo9lqb5WuZ0tZkKpqxdi2AjIeKavWFVr3JR0pFdXmL5+evfm1du/BTu301benP70+P3k6/+7J/OXv8yd/zE++fvvP8dlv35z++Oz0+Jf5i9fnJ884hCR2RPgiwZiXggO8pQVyY9PddFlRiTIUCXsmFk59W2lWKFY6JDykehIKaXVqS5Ytir0HIpEcvQEOFKj8s4rbLw/MHmTZUBj8Uod5zt3FRWIvb2nEMFxys0tUquti9WJfy3AfZ5fu9wMRpoUHOe8TauWyvyHU8p1/x1DL9/9NSVXPgDvGKZ8EN8RYvAzuvGdHt2/X0WqAPje05AjWmxyYoAisUWWLNfd8HxNaWnXl0cAolSF9+jEbgUhZoxdmW57QYWmD1ZCIZ0vYWVbMsLud51ASt0WCvJ/n+X8iP6Y7
+sidebar_class_name: "get api-method"
+info_path: versioned_docs/version-1.0/bitzoom/open-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"/api/v1/wallet/withdrawrecord"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/wallet/withdrawrecord"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+/api/v1/wallet/withdrawrecord
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"timestamp:","in":"query","name":"Timestamp","schema":{"type":"int64"}},{"description":"signature:","in":"query","name":"Signature","schema":{"type":"string"}},{"description":"token_id:","in":"query","name":"TokenId","schema":{"type":"string"}},{"description":"page:","in":"query","name":"Page","schema":{"type":"int"}},{"description":"size:","in":"query","name":"Size","schema":{"type":"int"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"4484f9ac-6958-4963-a813-8b2390d132fd","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":{"rows":[{"fund_tx_id":0,"account_type_id":0,"account_tx_id":0,"bill_tx_id":0,"retry_count":0,"fund_message":"","fund_status":"","is_processed":false,"symbol":"","asset_id":0,"request_id":"","chain_id":"","token_id":"","address":"","memo":"","amount":"","description":"","status":"","txn_id":"","network_fee":""}],"total":0,"page":0,"size":0},"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      

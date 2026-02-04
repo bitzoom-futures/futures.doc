@@ -1,0 +1,71 @@
+---
+id: api-v-1-openorders
+title: "/api/v1/openorders"
+description: "/api/v1/openorders"
+sidebar_label: "/api/v1/openorders"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVE1v20YQ/SvCnGmJomRZJlAUSdEWKVC0gF30YOgwJMfSJuQuu7t0ohIE2kPQBCmcXJpD0UuRfhxaoKeiRWD010Rybv4LxSxNWrIlo+iJ5M7um8d9814JKieNVih5L4EQepiL3km/p3KSSiekDXiQo8aMLH+ERyUkZGItcj4DIViRkbGY5SF4IHjli4L0HDyQmBGEcNhsAA9MPKMMISzBznMuCmlHQ6gq7zqsEVOJttC0Dfag2bAJ1lgt5HQj7jyLVLoV1FVvRZx4oMnkShoyXA98nx+xkpak5VfM81TE7k579w13LVfw6BFmeUoOWmNMgq+9P8L+cJdox/ej/Z3hXjDYiRDHO/E+RUMaJCMMIvCAtFb6PZUQhIHvX35/TMbglDky7yKOyRgIrS7Ig6SotYVwPwgGg73AH4zGu8O9vZHP5xO0CKEs0tSDmTKW5SRjhZx2SJ4w3Ew9PHQX4Fce5JqHxYr6x+vDZbXapYRjpTO0rbLeitA0JQ3V2l+U28rtT90QoGG6oXDFdhNuezVtMVIqJZRcbKXYMELNioruU2yh4qX1oTqooY+LtNPayZ00FBda2LnzzV1CTRrCowkPkcUp2wmmaOkhzmFyHXSjFTOyM8UTMyXrnGln27Ya0ieNZQudQggza/Ow1+v397vj7q7fDQajcOyPx8B8GqoHPKm1wg3hEiL39kGj7UefH8J1uss/n73947vOoXpAsvP29K/F85fnP71+88+zi7PvtzV2vGueGUqcUo/HzzLEu4UhLZJ3+sFguNsY0olWk2pVYWx310IeKzeXa7TuCvulUlln8eLJ+etfOnc+vddZvvxm+eOri7Mni28fL178tnj8++Lsqzd/n57/+vXyh6fL058Xz19dnD3lFsKyU+GTnCQfBQ/4Smvkftfv+jw7uTI2Qzf9lzGyUY81Xu2YWXpke3mKwo2h06m8lPUIMBfcsg8erEBNGgscQVlGaOgznVYVL9dp5jJaGIxSSiA8xtTQje5tXK3n90ZSD2h+LcZPMC1c4Lh8/c+t1jL9llar0f5/W7Uxf1ufJu2vmkz4Qwvu4ozqwYwwca4tL0/diWPK7cqpG3nPKK1RP3yfvYIFK3qVPM0QR00mtCWU8xXssqx3OFtVFTTUnUegmlRV9S9rIrFZ
+sidebar_class_name: "get api-method"
+info_path: versioned_docs/version-1.0/bitzoom/open-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"/api/v1/openorders"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/openorders"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+/api/v1/openorders
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"timestamp:","in":"query","name":"Timestamp","schema":{"type":"int64"}},{"description":"signature:","in":"query","name":"Signature","schema":{"type":"string"}},{"description":"symbol:","in":"query","name":"Symbol","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"16a145ee-00b9-4723-baa8-c9eb4e3d6a2b","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":null,"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      

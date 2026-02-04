@@ -1,0 +1,71 @@
+---
+id: api-v-1-balance
+title: "/api/v1/balance"
+description: "/api/v1/balance"
+sidebar_label: "/api/v1/balance"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVE1v20YQ/SvCnGmJEmWJJlAUSdEWKVC0gF30YOgwJMfUJuSS3V06UQkC7SFoghROLs2h6KVIPw4t0FPRIjD6ayI5N/+FYpYmLVly0RM/ZufN23lvpoK8IIVG5PJeDAEMsBCD0+EgxBRlROBAgQozMqQ0BMcVxKQjJQpOgACMyEgbzIoAHBD854uS1AIckJgRBHDUHgAHdDSnDCGowCwKDgppJmOoa+cmrBaJRFMqug32sD2wC1YbJWQCdT1zQJEucqlJc3zkuvyIcmlIGn7FokhFZK8/uK+5drWGR48wK1Ky0AojEtyh2EPXO6B4L8TY3xt7E3/PH7vTvTG6/sHUH4Wh54EDpFSu3stjgmDkulffH5PWmDBH5l1GEWkNgVElORCXjQwQHIxGnjcdud7E3x9PpxOX82M0CIEs09SBea4NN5+0ETLpkTxluHn+8Mg2wK0dKBTrakRz8Sa5qterVHCSqwxNp4OzJgslpKDeuEV1W7i71JYALdMdgWu2u3C71nTBMM9TQsnBToptwbsr5OF9igzU/GvTWocN9EmZ9jrn20xNUamEWViX3yVUpCA4nrGJDCZsfkjQ0ENcwOwm6PbUZGTmOdslIWOHyMx3ntOkTtvRKlUKAcyNKYLBYDg86Pv9fbc/8iaB7/o+MJOW5CF7tNG2pVpBaN8+aFX96PMjuEl09eezt3981zvKH5DsvT37a/n85cVPr9/88+zy/PvbClvSDc8MJSY0YOMZhni31KRE/M5w5I3321G0cjWkOj0Y23ZZyJPcOnKD1l1hvszzrLd88eTi9S+9O5/e661efrP68dXl+ZPlt4+XL35bPv59ef7Vm7/PLn79evXD09XZz8vnry7Pn3IJYXhG4ZOCJKeCA9zSBnnYd/suu6bItcnQ+v5qh2yLsUGqc5ehR2ZQpCis+6xI1ZWgx4CF4HpDcKDFmbW2P4aqClHTZyqta/7dLDG7RYXGMKUYghNMNW2V7lbU5obdyegBLW4s2lNMS7tk7Gb936U2tu5/lFpfvtelZvyhBNeyc+PAnDC2Q1RdJd6JIirMWtbW+mWUbnQ+fJ8NjCV3+noRtM4K2xHtQigXa9hV1ZywXq9raNlb40I9q+v6X8RHa5Y=
+sidebar_class_name: "get api-method"
+info_path: versioned_docs/version-1.0/bitzoom/open-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"/api/v1/balance"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/balance"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+/api/v1/balance
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"timestamp:","in":"query","name":"Timestamp","schema":{"type":"int64"}},{"description":"signature:","in":"query","name":"Signature","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"d3a039ed-bad8-4368-8407-4a089782bb33","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":null,"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      

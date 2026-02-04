@@ -1,0 +1,71 @@
+---
+id: api-v-1-deleteorder
+title: "/api/v1/deleteorder"
+description: "/api/v1/deleteorder"
+sidebar_label: "/api/v1/deleteorder"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVVU1v20YQ/SvCnCmJomRZJtIWsesCKVokaBz0IOiwIkfUJuQus7uUoxAE2kPQBCmcXJpD0UuRfhxaoKeiRWD010Rybv4Lxezqy7ZcpLfl7M7Mm5n3hiXIHBUzXIpbMYTQZDlvTlrNGFM0KFWMCjxQ+LBAbfZlPIWwhEgKg8LQkeV5yiPr37yvpSCbjsaYMTrliqIbjpq+bDTKUkLGBc+KDELfAzPNEULgwmCCCioPpOLJQcpRmNtrl8UzbRQXCb3SPBHMFAq3306zoUy3XhmeoTYsy+l2JFXGjMvf7cBVONXKJIf3MTJQkSlGHSmeU90Qwh3FJ8xgeKM5VB+6zO68KNlzyZe2S9WFiw5zhTGERhVYkUHnUmjXucD3/1ff8RHL8tQ1RrEIOY12b6fV6cQjVg8iFtc7LArqPX/YqXdbQdAadXrddicGD1ApqQ5kjBAGvr/4/hy1Zgk1ATzQRRSh1g6qB3Hh+APhXhC027uB3+72djq7u12f/GNmGISiSFMPxlJTqw1qw0VSQzGhcGN5fGQ77FfeJco457LazPIeM7tQRXnd9aqoLRxxSLfxaoV2W9xVa1aXQylTZMLybjmKK2Hfh2N3XehRkdZWkrWeGqNCcTOFsF/CPjKFCsL+oBp4YFiiIexDwgwesykMLgfdLvcMzVgSZZwZPMiZGV/7XKOaoNI2f6FSCGFsTB42m63WXqPX2PEbQbsb9vxeDwjUEu9doqsb8xJ1CUN7+mQ54E+/PILLmOd/Pn/3x3e1I/kARe3dyV+zF6/Ofnrz9p/n56ffX5fYAnc4MyZYgk3ioKEQHxUaFY8/aAXtzg5VY2HR5Byo1Wgotm046e2L9UY8XIttteH8rUtsOe8Lu2vDuFhZa8vGpiJtcDGSVhUX+rHPzWMps9rs5dOzN7/Ubt65VZu/+mb+4+vz06ezb5/MXv42e/L77PSrt3+fnP369fyHZ/OTn2cvXp+fPrMZDEGH2zkKcgUPaJYucqvhN3xibi61yZjVnmC2OduZcAHYiuUGH5lmnjJuVWAZUi4Y1QeWc8rZst7rWIOlBPtQlkOm8Z5Kq4rMDwtUxPWBBxOmOBsS/v6ANIssttwv4QFOIYQDty/rVq/0PC0Iz5XdWXlLj5tRhLn5z7eDDX18fPjZ4dEheDBc/Bkzu3FAsWPa6ezYLUxpO2KZbm0lpEwkhVuoLirxihXUkvXmWPJvuNT06oqJ6QbGsnQvrCKqCrxFMZbeUA2qqvoXwC7CEg==
+sidebar_class_name: "delete api-method"
+info_path: versioned_docs/version-1.0/bitzoom/open-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"/api/v1/deleteorder"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/api/v1/deleteorder"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+/api/v1/deleteorder
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"orderId":{"minimum":0,"type":"integer"},"origClientOrderId":{"type":"string"},"signature":{"type":"string"},"symbol":{"type":"string"},"timestamp":{"format":"int64","type":"integer"}},"type":"object"}}},"description":"Private:</br>symbol:</br>orderId,string:</br>origClientOrderId:","required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"95144dfa-2cad-4ac2-80b4-61221f48634d","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":null,"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      

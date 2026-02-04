@@ -1,0 +1,71 @@
+---
+id: api-v-1-historytrade
+title: "/api/v1/historytrade"
+description: "/api/v1/historytrade"
+sidebar_label: "/api/v1/historytrade"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1VltvG0UU/ivWeWqkTbx27ish1KKCikBUShAPkR/Gu8f2tHtjZjatWa2USkRt1EuKQi4qgRKaUFVA0wcSUifAn/Guk6f8BTS7XsdObCuxxJPXM3PO9805Z875fHBcZERQx75lgAZZ4tLsfC5boVw4rCoYMRAUcAkjFgpkHLQ5HwzkOqOutAINBLWQC2K5GihA5crXHrIqKGATC0GD2fQAKMD1CloENB9E1ZWb1BYTYxAEynm3nJZtIjyGvdzOpAe6ueWCUbvcza9LyqidbO01fn6ghH+v1A9qarS+Xz+o5ZTjf78Pf/gpWn0XPX1bP/ij8eJb4QhiRhu70cLh8daTaPWdEu0un2ztnRxuHL/dTpakqar2IHmblLvy63ltk1pUaAlKEzIBy6mqEm0uhNuvc2pPuM+k9dXCLAgTMoVaeLQQvn4cre+frP95evQkXN6tH+7UD2qNN7VeGZC2MrtXQkTbiPEahyvRjy+vgnfTNq6MxqtW0TG1em072lgJd98rCUK0vh+93Dne/SVaWog2l3pdMDa+Wn1xamATLlp7Hz7/Tss03tSuJThDSqboVa/V378LF3eGlAxH07wWPl0LH9aGepa50b/CCwow5K5jc+RyP6+q8kd3bIG2kJ/EdU2qx688e4dLln6bP7xPLNfE2DUjOlLZCHBMN/RJfWwYJ4u54bFpzA0Xp/XxYbWkj+ZVdQLzpRIogIw57CPHQNDyqtr8/zlyLsteA8nb03XkHDTBPFTA8JJuA9p0Pj86OplXRyemxscmJydUaW8QQUCzPdNUoOJwIdsLckHtcgbteemu4tybjQOgBgq4TLYvQZOLJ8Z+0I7iQ8lhFhGtElHaKgbLyCDouIXfa7t1qQsJSJl22Thj281vKzStzaLjmEhsudlKRZeSS1ec4h3UBQRyqbMIZxLXJc/MtBp8bMlR9xgV1biP30DCkIE2V5BFJEhZtncoE4H3SBUK5532GA4Wiooja6aMIp4VotL7MEc2n44Rj5mgQUUIV8tmc7npkamRcXUkPzqhTalTUyA5pXRnZLUmWU5J+1CMvz5O8/vpV7NwnnK09/h4dzUz69xFO3P87K9wea2xXav/8/j06EUv4Jh5wtMiNiljVpagkC4+9DgyanyQy4+OjaePMk5cQqqVGek7jje1S05cmx20blDxjeNYmfD5o0bt18z127cy0drDaOvV6dGj8Mli+Py3cPH38GihfvCs8fpBtLkUPdsJl1+dHslGJaiQrxW+cNGWpqCADGniOTeijqiyflyHC4vEL6DZSHpkpINZq9gE3hdZ1yQ0LsY4U34ztXNAXCpBc6BAh7NC+hTmwPeLhOOXzAwCuZz0tFg7UE6KJhqglYjJ8QJ+q2116oqutO5i9Zy8mCemFzeeuC9fGqpDa/SBapccA0L9f/KjD++mChmQ8uUlSR8KqTIZNEOXlCn9ktemVgZkcTnp0ofDmYIZNA6XlTP9ApGqmoFfy+AKp+/jMjoDU5B/GJWs4hmlQAWJEQ8sv2lzXdfRbS+rC1JHemlNqE9uyhFBPNnGzoZu2ruL6ThsbRG72ubb95MT8TQJAkiJx6MBgkIQBP8BPQ8pRw==
+sidebar_class_name: "get api-method"
+info_path: versioned_docs/version-1.0/bitzoom/open-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"/api/v1/historytrade"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/historytrade"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+/api/v1/historytrade
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"timestamp:","in":"query","name":"Timestamp","schema":{"type":"int64"}},{"description":"signature:","in":"query","name":"Signature","schema":{"type":"string"}},{"description":"page:页码,当为0时为1,返回数据中的total是总行数,每页默认行数为100","in":"query","name":"Page","schema":{"type":"int64"}},{"description":"limit:每页行数,默认100,最大1000","in":"query","name":"Limit","schema":{"type":"int64"}},{"description":"starttime:开始时间，可以为空","in":"query","name":"StartTime","schema":{"type":"int64"}},{"description":"endtime:结束时间，可以为空","in":"query","name":"EndTime","schema":{"type":"int64"}},{"description":"symbol:交易对,为空时查询所有","in":"query","name":"Symbol","schema":{"type":"string"}},{"description":"side:交易方向: 空(所有), buy(买入), sell(卖出)","in":"query","name":"Side","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"e4cdc7c4-e7b1-49e1-b9c5-0fc32006e2ff","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":null,"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      

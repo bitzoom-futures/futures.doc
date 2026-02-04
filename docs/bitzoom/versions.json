@@ -1,0 +1,12 @@
+[
+  {
+    "version": "next",
+    "label": "Next",
+    "baseUrl": "/docs"
+  },
+  {
+    "version": "1.0",
+    "label": "1.0",
+    "baseUrl": "/docs/1.0"
+  }
+]
