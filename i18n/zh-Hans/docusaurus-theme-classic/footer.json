@@ -1,26 +1,26 @@
 {
   "link.title.Documentation": {
-    "message": "Documentation",
+    "message": "文档",
     "description": "The title of the footer links column with title=Documentation in the footer"
   },
   "link.title.Community": {
-    "message": "Community",
+    "message": "社区",
     "description": "The title of the footer links column with title=Community in the footer"
   },
   "link.title.More": {
-    "message": "More",
+    "message": "更多",
     "description": "The title of the footer links column with title=More in the footer"
   },
   "link.item.label.Getting Started": {
-    "message": "Getting Started",
+    "message": "快速开始",
     "description": "The label of footer link with label=Getting Started linking to /docs/getting-started"
   },
   "link.item.label.Authentication": {
-    "message": "Authentication",
+    "message": "身份认证",
     "description": "The label of footer link with label=Authentication linking to /docs/authentication"
   },
   "link.item.label.API Reference": {
-    "message": "API Reference",
+    "message": "API 参考",
     "description": "The label of footer link with label=API Reference linking to /docs/category/bitzoom-api"
   },
   "link.item.label.Stack Overflow": {
@@ -32,11 +32,11 @@
     "description": "The label of footer link with label=Discord linking to https://discord.gg/bitzoom"
   },
   "link.item.label.Twitter": {
-    "message": "Twitter",
+    "message": "X (Twitter)",
     "description": "The label of footer link with label=Twitter linking to https://twitter.com/bitzoom"
   },
   "link.item.label.Blog": {
-    "message": "Blog",
+    "message": "博客",
     "description": "The label of footer link with label=Blog linking to /blog"
   },
   "link.item.label.GitHub": {
@@ -44,7 +44,7 @@
     "description": "The label of footer link with label=GitHub linking to https://github.com/bitzoom-futures/futures.doc"
   },
   "copyright": {
-    "message": "Copyright © 2026 Bitzoom.",
+    "message": "版权所有 © 2026 Bitzoom。",
     "description": "The footer copyright"
   }
 }

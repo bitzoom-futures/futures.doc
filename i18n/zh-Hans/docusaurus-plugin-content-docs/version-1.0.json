@@ -4,39 +4,39 @@
     "description": "The label for version 1.0"
   },
   "sidebar.docsSidebar.category.Guides": {
-    "message": "Guides",
+    "message": "指南",
     "description": "The label for category 'Guides' in sidebar 'docsSidebar'"
   },
   "sidebar.docsSidebar.category.Reference": {
-    "message": "Reference",
+    "message": "参考",
     "description": "The label for category 'Reference' in sidebar 'docsSidebar'"
   },
   "sidebar.docsSidebar.doc.Getting Started": {
-    "message": "Getting Started",
+    "message": "快速开始",
     "description": "The label for the doc item 'Getting Started' in sidebar 'docsSidebar', linking to the doc getting-started"
   },
   "sidebar.docsSidebar.doc.Authentication": {
-    "message": "Authentication",
+    "message": "身份认证",
     "description": "The label for the doc item 'Authentication' in sidebar 'docsSidebar', linking to the doc authentication"
   },
   "sidebar.docsSidebar.doc.WebSocket Streams": {
-    "message": "WebSocket Streams",
+    "message": "WebSocket 流",
     "description": "The label for the doc item 'WebSocket Streams' in sidebar 'docsSidebar', linking to the doc websocket"
   },
   "sidebar.openApiSidebar.category.API Reference": {
-    "message": "API Reference",
+    "message": "API 参考",
     "description": "The label for category 'API Reference' in sidebar 'openApiSidebar'"
   },
   "sidebar.openApiSidebar.category.API Reference.link.generated-index.title": {
-    "message": "Bitzoom Futures API",
+    "message": "Bitzoom 合约 API",
     "description": "The generated-index page title for category 'API Reference' in sidebar 'openApiSidebar'"
   },
   "sidebar.openApiSidebar.category.API Reference.link.generated-index.description": {
-    "message": "Complete API reference for the Bitzoom Futures trading platform. Includes endpoints for market data, trading, account management, and wallet operations.",
+    "message": "Bitzoom 合约交易平台的完整 API 参考，包含行情、交易、账户管理与钱包相关接口。",
     "description": "The generated-index page description for category 'API Reference' in sidebar 'openApiSidebar'"
   },
   "sidebar.openApiSidebar.category.gateway": {
-    "message": "gateway",
+    "message": "网关",
     "description": "The label for category 'gateway' in sidebar 'openApiSidebar'"
   },
   "sidebar.openApiSidebar.doc./api/gateway/ping": {
