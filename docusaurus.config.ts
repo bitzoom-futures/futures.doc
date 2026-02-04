@@ -125,6 +125,11 @@ const config: Config = {
           to: '/docs/category/bitzoom-api'
         },
         {
+          label: 'WebSocket Playground',
+          position: 'left',
+          to: '/docs/websocket-playground'
+        },
+        {
           type: 'search',
           position: 'right'
         },

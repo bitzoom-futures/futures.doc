@@ -32,16 +32,6 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'WebSocket Testing',
-      collapsed: false,
-      items: [
-        'websocket-playground',
-        'websocket-test/ticker',
-        'websocket-test/openorders'
-      ]
-    },
-    {
-      type: 'category',
       label: 'Guides',
       collapsed: false,
       items: [
@@ -73,6 +63,16 @@ const sidebars: SidebarsConfig = {
         slug: '/category/bitzoom-api'
       },
       items: require('./docs/bitzoom/sidebar.js')
+    },
+    {
+      type: 'category',
+      label: 'WebSocket Testing',
+      collapsed: false,
+      items: [
+        'websocket-playground',
+        'websocket-test/ticker',
+        'websocket-test/openorders'
+      ]
     }
   ]
 }
