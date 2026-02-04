@@ -1,3 +1,7 @@
+---
+unlisted: true
+---
+
 # Versioning and Locales Guide / 版本与多语言发布指南
 
 This guide explains how to release and maintain docs/API versions with multiple locales.  
