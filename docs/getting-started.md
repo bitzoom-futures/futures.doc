@@ -13,7 +13,7 @@ The Bitzoom Futures API provides programmatic access to:
 ## Base URL
 
 ```
-https://api.bitzoom.com
+http://119.8.50.236:8088
 ```
 
 ## Quick Start
@@ -34,7 +34,7 @@ Never share your API secret. Store it securely and never commit it to version co
 Test your connection with a public endpoint that doesn't require authentication:
 
 ```bash
-curl -X GET "https://api.bitzoom.com/api/gateway/ping"
+curl -X GET "http://119.8.50.236:8088/api/gateway/ping"
 ```
 
 Expected response:
@@ -50,7 +50,7 @@ Expected response:
 Fetch available trading pairs:
 
 ```bash
-curl -X GET "https://api.bitzoom.com/api/v1/exchangeinfo"
+curl -X GET "http://119.8.50.236:8088/api/v1/exchangeinfo"
 ```
 
 ### Step 4: Authenticate and Get Your Balance
@@ -58,7 +58,7 @@ curl -X GET "https://api.bitzoom.com/api/v1/exchangeinfo"
 Once you have your API credentials, you can access private endpoints:
 
 ```bash
-curl -X GET "https://api.bitzoom.com/api/v1/balance" \
+curl -X GET "http://119.8.50.236:8088/api/v1/balance" \
   -H "Authorization: Bearer YOUR_JWT_TOKEN"
 ```
 

@@ -6,13 +6,13 @@ WebSocket 可以提供实时行情与账户更新，避免频繁轮询 REST API�
 
 | 环境 | WebSocket URL |
 |------|---------------|
-| 生产 | `wss://stream.bitzoom.com/ws` |
-| 测试 | `wss://stream-testnet.bitzoom.com/ws` |
+| 生产 | `ws://119.8.50.236:8088/ws` |
+| 测试 | `ws://119.8.50.236:8088/ws` |
 
 ## 连接示例
 
 ```javascript
-const ws = new WebSocket('wss://stream.bitzoom.com/ws');
+const ws = new WebSocket('ws://119.8.50.236:8088/ws');
 
 ws.onopen = () => console.log('Connected');
 ws.onmessage = (event) => console.log('Received:', JSON.parse(event.data));

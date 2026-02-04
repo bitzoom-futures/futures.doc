@@ -14,7 +14,7 @@ Bitzoom 合约 API 的私有接口使用 JWT Bearer Token 鉴权。
 ### 测试环境
 
 ```bash
-curl -X GET "https://api.bitzoom.com/api/servermanage/testtoken?userid=YOUR_USER_ID"
+curl -X GET "http://119.8.50.236:8088/api/servermanage/testtoken?userid=YOUR_USER_ID"
 ```
 
 ### 生产环境
@@ -27,7 +27,7 @@ curl -X GET "https://api.bitzoom.com/api/servermanage/testtoken?userid=YOUR_USER
 ## 使用方式
 
 ```bash
-curl -X GET "https://api.bitzoom.com/api/v1/balance"   -H "Authorization: Bearer YOUR_JWT_TOKEN"
+curl -X GET "http://119.8.50.236:8088/api/v1/balance"   -H "Authorization: Bearer YOUR_JWT_TOKEN"
 ```
 
 ## Token 过期
@@ -51,7 +51,7 @@ Token 过期后通常会返回 `-1002 Unauthorized`：
 
 ```bash
 export BITZOOM_API_TOKEN="your_jwt_token"
-curl -X GET "https://api.bitzoom.com/api/v1/balance"   -H "Authorization: Bearer $BITZOOM_API_TOKEN"
+curl -X GET "http://119.8.50.236:8088/api/v1/balance"   -H "Authorization: Bearer $BITZOOM_API_TOKEN"
 ```
 
 ## 常见问题排查

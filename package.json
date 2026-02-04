@@ -12,7 +12,7 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "build-gateway-spec": "node scripts/build-gateway-spec.cjs",
+    "build-gateway-spec": "node scripts/build-gateway-spec.cjs && node scripts/sync-doc-base-urls.cjs",
     "gen-docs": "yarn build-gateway-spec && docusaurus gen-api-docs bitzoom",
     "gen-api-docs": "docusaurus gen-api-docs bitzoom",
     "clean-api-docs": "docusaurus clean-api-docs bitzoom",

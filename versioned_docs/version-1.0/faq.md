@@ -27,7 +27,7 @@ Yes, you can test your integration without risking real funds:
 
 | Environment | Base URL |
 |-------------|----------|
-| Production | `https://api.bitzoom.com` |
+| Production | `http://119.8.50.236:8088` |
 | Testnet | `https://testnet.bitzoom.com` |
 
 Testnet API keys are separate from production keys.
@@ -82,7 +82,7 @@ Yes, but we recommend creating separate API keys for each application for better
 ### How do I set leverage?
 
 ```bash
-curl -X POST "https://api.bitzoom.com/api/v1/leverage" \
+curl -X POST "http://119.8.50.236:8088/api/v1/leverage" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{"symbol": "BTCUSDT", "leverage": 10}'
@@ -109,7 +109,7 @@ Common rejection reasons:
 ### How do I check my open positions?
 
 ```bash
-curl -X GET "https://api.bitzoom.com/api/v1/openpositions" \
+curl -X GET "http://119.8.50.236:8088/api/v1/openpositions" \
   -H "Authorization: Bearer YOUR_TOKEN"
 ```
 
@@ -137,7 +137,7 @@ Use the `/api/v1/positionrisk` endpoint to get your current liquidation price.
 ### How do I connect to WebSocket streams?
 
 ```javascript
-const ws = new WebSocket('wss://stream.bitzoom.com/ws');
+const ws = new WebSocket('ws://119.8.50.236:8088/ws');
 
 ws.onopen = () => {
   ws.send(JSON.stringify({
@@ -168,7 +168,7 @@ Common reasons:
 ### How do I check my balance?
 
 ```bash
-curl -X GET "https://api.bitzoom.com/api/v1/balance" \
+curl -X GET "http://119.8.50.236:8088/api/v1/balance" \
   -H "Authorization: Bearer YOUR_TOKEN"
 ```
 

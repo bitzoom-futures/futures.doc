@@ -16,7 +16,7 @@ The Bitzoom Futures API uses JWT (JSON Web Token) Bearer authentication for priv
 Get a test token for development:
 
 ```bash
-curl -X GET "https://api.bitzoom.com/api/servermanage/testtoken?userid=YOUR_USER_ID"
+curl -X GET "http://119.8.50.236:8088/api/servermanage/testtoken?userid=YOUR_USER_ID"
 ```
 
 ### For Production
@@ -31,7 +31,7 @@ curl -X GET "https://api.bitzoom.com/api/servermanage/testtoken?userid=YOUR_USER
 Include the JWT token in the `Authorization` header:
 
 ```bash
-curl -X GET "https://api.bitzoom.com/api/v1/balance" \
+curl -X GET "http://119.8.50.236:8088/api/v1/balance" \
   -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
 ```
 
@@ -42,7 +42,7 @@ curl -X GET "https://api.bitzoom.com/api/v1/balance" \
 ```python
 import requests
 
-BASE_URL = "https://api.bitzoom.com"
+BASE_URL = "http://119.8.50.236:8088"
 TOKEN = "your_jwt_token"
 
 headers = {
@@ -60,7 +60,7 @@ print(response.json())
 ```javascript
 const axios = require('axios');
 
-const BASE_URL = 'https://api.bitzoom.com';
+const BASE_URL = 'http://119.8.50.236:8088';
 const TOKEN = 'your_jwt_token';
 
 const client = axios.create({
@@ -93,7 +93,7 @@ import (
 
 func main() {
     client := &http.Client{}
-    req, _ := http.NewRequest("GET", "https://api.bitzoom.com/api/v1/balance", nil)
+    req, _ := http.NewRequest("GET", "http://119.8.50.236:8088/api/v1/balance", nil)
     req.Header.Set("Authorization", "Bearer your_jwt_token")
 
     resp, err := client.Do(req)
@@ -132,7 +132,7 @@ Implement automatic token refresh in your application to handle expiration grace
 export BITZOOM_API_TOKEN="your_jwt_token"
 
 # Use in your scripts
-curl -X GET "https://api.bitzoom.com/api/v1/balance" \
+curl -X GET "http://119.8.50.236:8088/api/v1/balance" \
   -H "Authorization: Bearer $BITZOOM_API_TOKEN"
 ```
 

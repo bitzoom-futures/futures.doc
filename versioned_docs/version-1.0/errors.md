@@ -81,7 +81,7 @@ All API responses follow a standard format. When an error occurs, the response i
 
 1. **Verify timestamp**: Must be within 5000ms of server time
    ```bash
-   curl https://api.bitzoom.com/api/gateway/time
+   curl http://119.8.50.236:8088/api/gateway/time
    ```
 
 2. **Check signature algorithm**: Use HMAC-SHA256
@@ -184,7 +184,7 @@ In addition to API error codes, standard HTTP status codes indicate request outc
 import requests
 
 def api_request(endpoint, params=None):
-    response = requests.get(f"https://api.bitzoom.com{endpoint}", params=params)
+    response = requests.get(f"http://119.8.50.236:8088{endpoint}", params=params)
     data = response.json()
 
     if data.get("code") != 0:

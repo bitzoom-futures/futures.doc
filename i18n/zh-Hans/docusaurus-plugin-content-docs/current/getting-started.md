@@ -13,7 +13,7 @@ Bitzoom 合约 API 支持以下能力：
 ## 基础地址
 
 ```
-https://api.bitzoom.com
+http://119.8.50.236:8088
 ```
 
 ## 快速上手
@@ -34,7 +34,7 @@ https://api.bitzoom.com
 先调用无需鉴权的公开接口：
 
 ```bash
-curl -X GET "https://api.bitzoom.com/api/gateway/ping"
+curl -X GET "http://119.8.50.236:8088/api/gateway/ping"
 ```
 
 预期返回：
@@ -48,13 +48,13 @@ curl -X GET "https://api.bitzoom.com/api/gateway/ping"
 ### 第三步：查询行情数据
 
 ```bash
-curl -X GET "https://api.bitzoom.com/api/v1/exchangeinfo"
+curl -X GET "http://119.8.50.236:8088/api/v1/exchangeinfo"
 ```
 
 ### 第四步：鉴权并获取余额
 
 ```bash
-curl -X GET "https://api.bitzoom.com/api/v1/balance"   -H "Authorization: Bearer YOUR_JWT_TOKEN"
+curl -X GET "http://119.8.50.236:8088/api/v1/balance"   -H "Authorization: Bearer YOUR_JWT_TOKEN"
 ```
 
 JWT 获取方式见 [鉴权](./authentication.md)。

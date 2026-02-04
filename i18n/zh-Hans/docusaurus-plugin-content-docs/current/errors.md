@@ -51,5 +51,5 @@
 4. URL 编码参数值
 
 ```bash
-curl https://api.bitzoom.com/api/gateway/time
+curl http://119.8.50.236:8088/api/gateway/time
 ```

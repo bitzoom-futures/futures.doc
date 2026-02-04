@@ -57,10 +57,10 @@ If you were using the beta API, note the following changes:
 1. **Base URL Change**
    ```
    # Old (Beta)
-   https://beta-api.bitzoom.com
+   http://119.8.50.236:8088
 
    # New (v1.0.0)
-   https://api.bitzoom.com
+   http://119.8.50.236:8088
    ```
 
 2. **Authentication Header**

@@ -13,7 +13,7 @@ This guide walks you through placing your first futures order on Bitzoom.
 First, get the list of available trading pairs:
 
 ```bash
-curl -X GET "https://api.bitzoom.com/api/v1/exchangeinfo"
+curl -X GET "http://119.8.50.236:8088/api/v1/exchangeinfo"
 ```
 
 Response:
@@ -39,7 +39,7 @@ Response:
 Verify you have sufficient margin:
 
 ```bash
-curl -X GET "https://api.bitzoom.com/api/v1/balance" \
+curl -X GET "http://119.8.50.236:8088/api/v1/balance" \
   -H "Authorization: Bearer YOUR_TOKEN"
 ```
 
@@ -48,7 +48,7 @@ curl -X GET "https://api.bitzoom.com/api/v1/balance" \
 Check the current market price:
 
 ```bash
-curl -X GET "https://api.bitzoom.com/api/v1/ticker/price?symbol=BTCUSDT"
+curl -X GET "http://119.8.50.236:8088/api/v1/ticker/price?symbol=BTCUSDT"
 ```
 
 ## Step 4: Set Leverage (Optional)
@@ -56,7 +56,7 @@ curl -X GET "https://api.bitzoom.com/api/v1/ticker/price?symbol=BTCUSDT"
 Adjust your leverage before placing orders:
 
 ```bash
-curl -X POST "https://api.bitzoom.com/api/v1/leverage" \
+curl -X POST "http://119.8.50.236:8088/api/v1/leverage" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
@@ -72,7 +72,7 @@ curl -X POST "https://api.bitzoom.com/api/v1/leverage" \
 Execute immediately at the best available price:
 
 ```bash
-curl -X POST "https://api.bitzoom.com/api/v1/order" \
+curl -X POST "http://119.8.50.236:8088/api/v1/order" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
@@ -88,7 +88,7 @@ curl -X POST "https://api.bitzoom.com/api/v1/order" \
 Execute at a specific price or better:
 
 ```bash
-curl -X POST "https://api.bitzoom.com/api/v1/order" \
+curl -X POST "http://119.8.50.236:8088/api/v1/order" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
@@ -136,14 +136,14 @@ curl -X POST "https://api.bitzoom.com/api/v1/order" \
 ### Check Order Status
 
 ```bash
-curl -X GET "https://api.bitzoom.com/api/v1/order?symbol=BTCUSDT&orderId=123456789" \
+curl -X GET "http://119.8.50.236:8088/api/v1/order?symbol=BTCUSDT&orderId=123456789" \
   -H "Authorization: Bearer YOUR_TOKEN"
 ```
 
 ### List Open Orders
 
 ```bash
-curl -X GET "https://api.bitzoom.com/api/v1/openorders?symbol=BTCUSDT" \
+curl -X GET "http://119.8.50.236:8088/api/v1/openorders?symbol=BTCUSDT" \
   -H "Authorization: Bearer YOUR_TOKEN"
 ```
 
@@ -152,7 +152,7 @@ curl -X GET "https://api.bitzoom.com/api/v1/openorders?symbol=BTCUSDT" \
 If needed, cancel your pending order:
 
 ```bash
-curl -X DELETE "https://api.bitzoom.com/api/v1/order" \
+curl -X DELETE "http://119.8.50.236:8088/api/v1/order" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
@@ -166,7 +166,7 @@ curl -X DELETE "https://api.bitzoom.com/api/v1/order" \
 ```python
 import requests
 
-BASE_URL = "https://api.bitzoom.com"
+BASE_URL = "http://119.8.50.236:8088"
 TOKEN = "your_jwt_token"
 
 headers = {

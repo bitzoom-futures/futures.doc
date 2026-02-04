@@ -8,13 +8,13 @@ WebSocket connections provide real-time market data and account updates without 
 
 | Environment | WebSocket URL |
 |-------------|---------------|
-| Production | `wss://stream.bitzoom.com/ws` |
-| Testnet | `wss://stream-testnet.bitzoom.com/ws` |
+| Production | `ws://119.8.50.236:8088/ws` |
+| Testnet | `ws://119.8.50.236:8088/ws` |
 
 ### Connection Example
 
 ```javascript
-const ws = new WebSocket('wss://stream.bitzoom.com/ws');
+const ws = new WebSocket('ws://119.8.50.236:8088/ws');
 
 ws.onopen = () => {
   console.log('Connected');
@@ -320,7 +320,7 @@ User data streams provide real-time updates for your account. These require auth
 ### Get Listen Key
 
 ```bash
-curl -X POST "https://api.bitzoom.com/api/v1/listenKey" \
+curl -X POST "http://119.8.50.236:8088/api/v1/listenKey" \
   -H "Authorization: Bearer YOUR_TOKEN"
 ```
 
@@ -338,7 +338,7 @@ Response:
 
 ```javascript
 const listenKey = 'pqia91ma19a5s61cv6a81va65sdf19v8a65a1a5s61cv6a81va65sdf19v8a65a1';
-const ws = new WebSocket(`wss://stream.bitzoom.com/ws/${listenKey}`);
+const ws = new WebSocket(`ws://119.8.50.236:8088/ws/${listenKey}`);
 ```
 
 ### Keep Listen Key Alive
@@ -346,7 +346,7 @@ const ws = new WebSocket(`wss://stream.bitzoom.com/ws/${listenKey}`);
 Listen keys expire after 60 minutes. Send a keepalive every 30 minutes:
 
 ```bash
-curl -X PUT "https://api.bitzoom.com/api/v1/listenKey" \
+curl -X PUT "http://119.8.50.236:8088/api/v1/listenKey" \
   -H "Authorization: Bearer YOUR_TOKEN"
 ```
 
@@ -514,7 +514,7 @@ import threading
 
 class BitzoomWebSocket:
     def __init__(self):
-        self.url = "wss://stream.bitzoom.com/ws"
+        self.url = "ws://119.8.50.236:8088/ws"
         self.ws = None
         self.subscriptions = []
 

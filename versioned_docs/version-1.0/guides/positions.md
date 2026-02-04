@@ -30,7 +30,7 @@ Bitzoom supports two position modes:
 ### Change Position Mode
 
 ```bash
-curl -X POST "https://api.bitzoom.com/api/v1/positionSide/dual" \
+curl -X POST "http://119.8.50.236:8088/api/v1/positionSide/dual" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{"dualSidePosition": true}'
@@ -45,7 +45,7 @@ You must close all positions before changing position mode.
 ### Get All Open Positions
 
 ```bash
-curl -X GET "https://api.bitzoom.com/api/v1/openpositions" \
+curl -X GET "http://119.8.50.236:8088/api/v1/openpositions" \
   -H "Authorization: Bearer YOUR_TOKEN"
 ```
 
@@ -72,7 +72,7 @@ Response:
 ### Get Position Risk
 
 ```bash
-curl -X GET "https://api.bitzoom.com/api/v1/positionrisk?symbol=BTCUSDT" \
+curl -X GET "http://119.8.50.236:8088/api/v1/positionrisk?symbol=BTCUSDT" \
   -H "Authorization: Bearer YOUR_TOKEN"
 ```
 
@@ -95,7 +95,7 @@ curl -X GET "https://api.bitzoom.com/api/v1/positionrisk?symbol=BTCUSDT" \
 ### Set Leverage
 
 ```bash
-curl -X POST "https://api.bitzoom.com/api/v1/leverage" \
+curl -X POST "http://119.8.50.236:8088/api/v1/leverage" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
@@ -121,7 +121,7 @@ Maximum leverage varies by position size:
 ### Change Margin Type
 
 ```bash
-curl -X POST "https://api.bitzoom.com/api/v1/margintype" \
+curl -X POST "http://119.8.50.236:8088/api/v1/margintype" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
@@ -143,7 +143,7 @@ curl -X POST "https://api.bitzoom.com/api/v1/margintype" \
 
 ```bash
 # Add margin to position
-curl -X POST "https://api.bitzoom.com/api/v1/positionMargin" \
+curl -X POST "http://119.8.50.236:8088/api/v1/positionMargin" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
@@ -153,7 +153,7 @@ curl -X POST "https://api.bitzoom.com/api/v1/positionMargin" \
   }'
 
 # Remove margin from position
-curl -X POST "https://api.bitzoom.com/api/v1/positionMargin" \
+curl -X POST "http://119.8.50.236:8088/api/v1/positionMargin" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
@@ -169,7 +169,7 @@ curl -X POST "https://api.bitzoom.com/api/v1/positionMargin" \
 
 ```bash
 # Close a long position
-curl -X POST "https://api.bitzoom.com/api/v1/order" \
+curl -X POST "http://119.8.50.236:8088/api/v1/order" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
@@ -184,7 +184,7 @@ curl -X POST "https://api.bitzoom.com/api/v1/order" \
 ### Close with Limit Order
 
 ```bash
-curl -X POST "https://api.bitzoom.com/api/v1/order" \
+curl -X POST "http://119.8.50.236:8088/api/v1/order" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
@@ -201,7 +201,7 @@ curl -X POST "https://api.bitzoom.com/api/v1/order" \
 ### Close All Positions for Symbol
 
 ```bash
-curl -X DELETE "https://api.bitzoom.com/api/v1/allOpenOrders" \
+curl -X DELETE "http://119.8.50.236:8088/api/v1/allOpenOrders" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{"symbol": "BTCUSDT"}'
@@ -214,7 +214,7 @@ curl -X DELETE "https://api.bitzoom.com/api/v1/allOpenOrders" \
 Protect against losses by setting a stop-loss:
 
 ```bash
-curl -X POST "https://api.bitzoom.com/api/v1/order" \
+curl -X POST "http://119.8.50.236:8088/api/v1/order" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
@@ -231,7 +231,7 @@ curl -X POST "https://api.bitzoom.com/api/v1/order" \
 Lock in profits at a target price:
 
 ```bash
-curl -X POST "https://api.bitzoom.com/api/v1/order" \
+curl -X POST "http://119.8.50.236:8088/api/v1/order" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
@@ -248,7 +248,7 @@ curl -X POST "https://api.bitzoom.com/api/v1/order" \
 ```python
 import requests
 
-BASE_URL = "https://api.bitzoom.com"
+BASE_URL = "http://119.8.50.236:8088"
 TOKEN = "your_jwt_token"
 headers = {
     "Authorization": f"Bearer {TOKEN}",
@@ -354,14 +354,14 @@ print(f"Estimated liquidation: ${liq:.2f}")  # ~$45200
 ### Get Closed Positions
 
 ```bash
-curl -X GET "https://api.bitzoom.com/api/v1/historyposition?symbol=BTCUSDT&limit=50" \
+curl -X GET "http://119.8.50.236:8088/api/v1/historyposition?symbol=BTCUSDT&limit=50" \
   -H "Authorization: Bearer YOUR_TOKEN"
 ```
 
 ### Get Trade History
 
 ```bash
-curl -X GET "https://api.bitzoom.com/api/v1/userTrades?symbol=BTCUSDT&limit=100" \
+curl -X GET "http://119.8.50.236:8088/api/v1/userTrades?symbol=BTCUSDT&limit=100" \
   -H "Authorization: Bearer YOUR_TOKEN"
 ```
 

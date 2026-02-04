@@ -5,6 +5,8 @@ import type * as Preset from '@docusaurus/preset-classic'
 import type { Config } from '@docusaurus/types'
 import type * as Plugin from '@docusaurus/types/src/plugin'
 import type * as OpenApiPlugin from 'docusaurus-plugin-openapi-docs'
+import fs from 'fs'
+import path from 'path'
 
 const localSearchPlugin: Plugin.PluginConfig | null = (() => {
   try {
@@ -24,6 +26,17 @@ const localSearchPlugin: Plugin.PluginConfig | null = (() => {
   }
 })()
 
+const gatewayServerUrl: string = (() => {
+  try {
+    const gatewaySpecPath = path.join(process.cwd(), 'examples', 'bitzoom.gateway.json')
+    const spec = JSON.parse(fs.readFileSync(gatewaySpecPath, 'utf8'))
+    const url = spec && spec.servers && spec.servers[0] && spec.servers[0].url
+    return typeof url === 'string' ? url.replace(/\/+$/, '') : 'http://119.8.50.236:8088'
+  } catch {
+    return 'http://119.8.50.236:8088'
+  }
+})()
+
 const config: Config = {
   title: 'Bitzoom API Docs',
   tagline: 'Bitzoom futures API documentation',
@@ -39,6 +52,9 @@ const config: Config = {
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'zh-Hans']
+  },
+  customFields: {
+    gatewayServerUrl
   },
 
   // GitHub pages deployment config.

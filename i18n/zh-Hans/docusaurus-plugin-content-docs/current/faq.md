@@ -25,7 +25,7 @@
 
 | 环境 | Base URL |
 |------|----------|
-| 生产 | `https://api.bitzoom.com` |
+| 生产 | `http://119.8.50.236:8088` |
 | 测试 | `https://testnet.bitzoom.com` |
 
 ## 鉴权

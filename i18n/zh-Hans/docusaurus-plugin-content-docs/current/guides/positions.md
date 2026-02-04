@@ -24,7 +24,7 @@ Bitzoom 支持两种模式：
 切换模式：
 
 ```bash
-curl -X POST "https://api.bitzoom.com/api/v1/positionSide/dual"   -H "Authorization: Bearer YOUR_TOKEN"   -H "Content-Type: application/json"   -d '{"dualSidePosition": true}'
+curl -X POST "http://119.8.50.236:8088/api/v1/positionSide/dual"   -H "Authorization: Bearer YOUR_TOKEN"   -H "Content-Type: application/json"   -d '{"dualSidePosition": true}'
 ```
 
 :::warning
@@ -34,11 +34,11 @@ curl -X POST "https://api.bitzoom.com/api/v1/positionSide/dual"   -H "Authorizat
 ## 查询仓位
 
 ```bash
-curl -X GET "https://api.bitzoom.com/api/v1/openpositions"   -H "Authorization: Bearer YOUR_TOKEN"
+curl -X GET "http://119.8.50.236:8088/api/v1/openpositions"   -H "Authorization: Bearer YOUR_TOKEN"
 ```
 
 ```bash
-curl -X GET "https://api.bitzoom.com/api/v1/positionrisk?symbol=BTCUSDT"   -H "Authorization: Bearer YOUR_TOKEN"
+curl -X GET "http://119.8.50.236:8088/api/v1/positionrisk?symbol=BTCUSDT"   -H "Authorization: Bearer YOUR_TOKEN"
 ```
 
 ## 杠杆与保证金
@@ -46,17 +46,17 @@ curl -X GET "https://api.bitzoom.com/api/v1/positionrisk?symbol=BTCUSDT"   -H "A
 设置杠杆：
 
 ```bash
-curl -X POST "https://api.bitzoom.com/api/v1/leverage"   -H "Authorization: Bearer YOUR_TOKEN"   -H "Content-Type: application/json"   -d '{"symbol":"BTCUSDT","leverage":20}'
+curl -X POST "http://119.8.50.236:8088/api/v1/leverage"   -H "Authorization: Bearer YOUR_TOKEN"   -H "Content-Type: application/json"   -d '{"symbol":"BTCUSDT","leverage":20}'
 ```
 
 切换保证金模式：
 
 ```bash
-curl -X POST "https://api.bitzoom.com/api/v1/margintype"   -H "Authorization: Bearer YOUR_TOKEN"   -H "Content-Type: application/json"   -d '{"symbol":"BTCUSDT","marginType":"ISOLATED"}'
+curl -X POST "http://119.8.50.236:8088/api/v1/margintype"   -H "Authorization: Bearer YOUR_TOKEN"   -H "Content-Type: application/json"   -d '{"symbol":"BTCUSDT","marginType":"ISOLATED"}'
 ```
 
 ## 平仓
 
 ```bash
-curl -X POST "https://api.bitzoom.com/api/v1/order"   -H "Authorization: Bearer YOUR_TOKEN"   -H "Content-Type: application/json"   -d '{"symbol":"BTCUSDT","side":"SELL","type":"MARKET","quantity":0.1,"reduceOnly":true}'
+curl -X POST "http://119.8.50.236:8088/api/v1/order"   -H "Authorization: Bearer YOUR_TOKEN"   -H "Content-Type: application/json"   -d '{"symbol":"BTCUSDT","side":"SELL","type":"MARKET","quantity":0.1,"reduceOnly":true}'
 ```
