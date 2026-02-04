@@ -3,14 +3,14 @@
     "securitySchemes": {
       "Bearer": {
         "bearerFormat": "JWT",
-        "description": "Get TestToken from http://119.8.50.236:8083/api/servermanage/testtoken?userid=12345",
+        "description": "测试 Token 获取示例：http://119.8.50.236:8083/api/servermanage/testtoken?userid=12345",
         "scheme": "bearer",
         "type": "http"
       }
     }
   },
   "info": {
-    "description": "Project API Document includ private and public",
+    "description": "Bitzoom 合约 API 文档（包含公开与私有接口）",
     "title": "Open API",
     "version": "1.0.0"
   },

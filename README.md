@@ -56,6 +56,8 @@ The site uses local search (`@easyops-cn/docusaurus-search-local`) and indexes d
 
 ## Docs Versioning Workflow
 
+Detailed bilingual guide: `docs/guides/versioning-and-locales.md`
+
 Create a new docs version:
 
 ```bash

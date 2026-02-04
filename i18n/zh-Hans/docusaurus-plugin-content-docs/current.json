@@ -1,0 +1,186 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.docsSidebar.category.Guides": {
+    "message": "Guides",
+    "description": "The label for category 'Guides' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Reference": {
+    "message": "Reference",
+    "description": "The label for category 'Reference' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.doc.Getting Started": {
+    "message": "Getting Started",
+    "description": "The label for the doc item 'Getting Started' in sidebar 'docsSidebar', linking to the doc getting-started"
+  },
+  "sidebar.docsSidebar.doc.Authentication": {
+    "message": "Authentication",
+    "description": "The label for the doc item 'Authentication' in sidebar 'docsSidebar', linking to the doc authentication"
+  },
+  "sidebar.docsSidebar.doc.WebSocket Streams": {
+    "message": "WebSocket Streams",
+    "description": "The label for the doc item 'WebSocket Streams' in sidebar 'docsSidebar', linking to the doc websocket"
+  },
+  "sidebar.openApiSidebar.category.API Reference": {
+    "message": "API Reference",
+    "description": "The label for category 'API Reference' in sidebar 'openApiSidebar'"
+  },
+  "sidebar.openApiSidebar.category.API Reference.link.generated-index.title": {
+    "message": "Bitzoom Futures API",
+    "description": "The generated-index page title for category 'API Reference' in sidebar 'openApiSidebar'"
+  },
+  "sidebar.openApiSidebar.category.API Reference.link.generated-index.description": {
+    "message": "Complete API reference for the Bitzoom Futures trading platform. Includes endpoints for market data, trading, account management, and wallet operations.",
+    "description": "The generated-index page description for category 'API Reference' in sidebar 'openApiSidebar'"
+  },
+  "sidebar.openApiSidebar.category.gateway": {
+    "message": "gateway",
+    "description": "The label for category 'gateway' in sidebar 'openApiSidebar'"
+  },
+  "sidebar.openApiSidebar.doc./api/gateway/ping": {
+    "message": "/api/gateway/ping",
+    "description": "The label for the doc item '/api/gateway/ping' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-gateway-ping"
+  },
+  "sidebar.openApiSidebar.doc./api/gateway/time": {
+    "message": "/api/gateway/time",
+    "description": "The label for the doc item '/api/gateway/time' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-gateway-time"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/adlquantile": {
+    "message": "/api/v1/adlquantile",
+    "description": "The label for the doc item '/api/v1/adlquantile' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-adlquantile"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/balance": {
+    "message": "/api/v1/balance",
+    "description": "The label for the doc item '/api/v1/balance' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-balance"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/commissionrate": {
+    "message": "/api/v1/commissionrate",
+    "description": "The label for the doc item '/api/v1/commissionrate' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-commissionrate"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/deleteorder": {
+    "message": "/api/v1/deleteorder",
+    "description": "The label for the doc item '/api/v1/deleteorder' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-deleteorder"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/depth": {
+    "message": "/api/v1/depth",
+    "description": "The label for the doc item '/api/v1/depth' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-depth"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/exchangeinfo": {
+    "message": "/api/v1/exchangeinfo",
+    "description": "The label for the doc item '/api/v1/exchangeinfo' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-exchangeinfo"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/historyorder": {
+    "message": "/api/v1/historyorder",
+    "description": "The label for the doc item '/api/v1/historyorder' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-historyorder"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/historyposition": {
+    "message": "/api/v1/historyposition",
+    "description": "The label for the doc item '/api/v1/historyposition' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-historyposition"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/historypositionmargin": {
+    "message": "/api/v1/historypositionmargin",
+    "description": "The label for the doc item '/api/v1/historypositionmargin' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-historypositionmargin"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/historytrade": {
+    "message": "/api/v1/historytrade",
+    "description": "The label for the doc item '/api/v1/historytrade' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-historytrade"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/klines": {
+    "message": "/api/v1/klines",
+    "description": "The label for the doc item '/api/v1/klines' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-klines"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/leverage": {
+    "message": "/api/v1/leverage",
+    "description": "The label for the doc item '/api/v1/leverage' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-leverage"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/margintype": {
+    "message": "/api/v1/margintype",
+    "description": "The label for the doc item '/api/v1/margintype' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-margintype"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/myfavorite": {
+    "message": "/api/v1/myfavorite",
+    "description": "The label for the doc item '/api/v1/myfavorite' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-myfavorite"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/openinterest": {
+    "message": "/api/v1/openinterest",
+    "description": "The label for the doc item '/api/v1/openinterest' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-openinterest"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/openorders": {
+    "message": "/api/v1/openorders",
+    "description": "The label for the doc item '/api/v1/openorders' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-openorders"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/order": {
+    "message": "/api/v1/order",
+    "description": "The label for the doc item '/api/v1/order' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-order"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/positionmargin": {
+    "message": "/api/v1/positionmargin",
+    "description": "The label for the doc item '/api/v1/positionmargin' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-positionmargin"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/positionrisk": {
+    "message": "/api/v1/positionrisk",
+    "description": "The label for the doc item '/api/v1/positionrisk' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-positionrisk"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/premiumindex": {
+    "message": "/api/v1/premiumindex",
+    "description": "The label for the doc item '/api/v1/premiumindex' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-premiumindex"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/symbolcategories": {
+    "message": "/api/v1/symbolcategories",
+    "description": "The label for the doc item '/api/v1/symbolcategories' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-symbolcategories"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/ticker": {
+    "message": "/api/v1/ticker",
+    "description": "The label for the doc item '/api/v1/ticker' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-ticker"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/ticker/bookticker": {
+    "message": "/api/v1/ticker/bookticker",
+    "description": "The label for the doc item '/api/v1/ticker/bookticker' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-ticker-bookticker"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/ticker/hr24": {
+    "message": "/api/v1/ticker/hr24",
+    "description": "The label for the doc item '/api/v1/ticker/hr24' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-ticker-hr-24"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/ticker/price": {
+    "message": "/api/v1/ticker/price",
+    "description": "The label for the doc item '/api/v1/ticker/price' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-ticker-price"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/trades": {
+    "message": "/api/v1/trades",
+    "description": "The label for the doc item '/api/v1/trades' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-trades"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/userinfohook": {
+    "message": "/api/v1/userinfohook",
+    "description": "The label for the doc item '/api/v1/userinfohook' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-userinfohook"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/wallet/depositrecord": {
+    "message": "/api/v1/wallet/depositrecord",
+    "description": "The label for the doc item '/api/v1/wallet/depositrecord' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-wallet-depositrecord"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/wallet/getaddresswhite": {
+    "message": "/api/v1/wallet/getaddresswhite",
+    "description": "The label for the doc item '/api/v1/wallet/getaddresswhite' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-wallet-getaddresswhite"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/wallet/getchain": {
+    "message": "/api/v1/wallet/getchain",
+    "description": "The label for the doc item '/api/v1/wallet/getchain' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-wallet-getchain"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/wallet/gettoken": {
+    "message": "/api/v1/wallet/gettoken",
+    "description": "The label for the doc item '/api/v1/wallet/gettoken' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-wallet-gettoken"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/wallet/setaddresswhite": {
+    "message": "/api/v1/wallet/setaddresswhite",
+    "description": "The label for the doc item '/api/v1/wallet/setaddresswhite' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-wallet-setaddresswhite"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/wallet/withdraw": {
+    "message": "/api/v1/wallet/withdraw",
+    "description": "The label for the doc item '/api/v1/wallet/withdraw' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-wallet-withdraw"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/wallet/withdrawrecord": {
+    "message": "/api/v1/wallet/withdrawrecord",
+    "description": "The label for the doc item '/api/v1/wallet/withdrawrecord' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-wallet-withdrawrecord"
+  }
+}

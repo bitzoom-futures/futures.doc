@@ -36,7 +36,8 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         'guides/place-order',
-        'guides/positions'
+        'guides/positions',
+        'guides/versioning-and-locales'
       ]
     },
     {
