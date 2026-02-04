@@ -43,7 +43,7 @@ const config: Config = {
   url: 'https://bitzoom-futures.github.io',
   baseUrl: '/futures.doc/',
   onBrokenLinks: 'throw',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/icon.png',
   markdown: {
     hooks: {
       onBrokenMarkdownLinks: 'warn'
@@ -107,10 +107,10 @@ const config: Config = {
       }
     },
     navbar: {
-      title: 'Bitzoom API Docs',
+      title: 'Bitzoom API',
       logo: {
         alt: 'Bitzoom API Docs Logo',
-        src: 'img/logo.svg'
+        src: 'img/icon.png'
       },
       items: [
         {
@@ -123,6 +123,11 @@ const config: Config = {
           label: 'API Reference',
           position: 'left',
           to: '/docs/category/bitzoom-api'
+        },
+        {
+          label: 'WebSocket Playground',
+          position: 'left',
+          to: '/docs/websocket-playground'
         },
         {
           type: 'search',
