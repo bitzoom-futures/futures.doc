@@ -1,0 +1,10 @@
+---
+title: Ticker Price Channel Test
+sidebar_label: /api/v1/ticker/price
+---
+
+import { WebSocketTester, getChannel } from '@site/src/components/WebSocketTester'
+
+Test `/api/v1/ticker/price` using `event: "sub"` with `{ symbol }`.
+
+<WebSocketTester channel={getChannel('ticker-price')} />

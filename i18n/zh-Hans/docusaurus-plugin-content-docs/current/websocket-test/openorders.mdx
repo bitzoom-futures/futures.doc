@@ -1,0 +1,10 @@
+---
+title: Open Orders 频道测试
+sidebar_label: /api/v1/openorders
+---
+
+import { WebSocketTester, getChannel } from '@site/src/components/WebSocketTester'
+
+`/api/v1/openorders` 为私有频道。先连接并执行 `logon`，再订阅。
+
+<WebSocketTester channel={getChannel('openorders')} />

@@ -1,0 +1,10 @@
+---
+title: Exchange Info Channel Test
+sidebar_label: /api/v1/exchangeinfo
+---
+
+import { WebSocketTester, getChannel } from '@site/src/components/WebSocketTester'
+
+Test `/api/v1/exchangeinfo` using `event: "sub"` with `{}`.
+
+<WebSocketTester channel={getChannel('exchangeinfo')} />

@@ -1,0 +1,10 @@
+---
+title: 24h Ticker Channel Test
+sidebar_label: /api/v1/ticker/hr24
+---
+
+import { WebSocketTester, getChannel } from '@site/src/components/WebSocketTester'
+
+Test `/api/v1/ticker/hr24` using `event: "sub"` with optional `{ symbol }`.
+
+<WebSocketTester channel={getChannel('ticker-hr24')} />

@@ -1,0 +1,10 @@
+---
+title: Balance 频道测试
+sidebar_label: /api/v1/balance
+---
+
+import { WebSocketTester, getChannel } from '@site/src/components/WebSocketTester'
+
+`/api/v1/balance` 为私有频道。先连接并执行 `logon`，再订阅。
+
+<WebSocketTester channel={getChannel('balance')} />

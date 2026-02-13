@@ -1,0 +1,10 @@
+---
+title: Premium Index 频道测试
+sidebar_label: /api/v1/premiumindex
+---
+
+import { WebSocketTester, getChannel } from '@site/src/components/WebSocketTester'
+
+使用 `{ symbol }` 和 `event: "sub"` 测试 `/api/v1/premiumindex`。
+
+<WebSocketTester channel={getChannel('premiumindex')} />

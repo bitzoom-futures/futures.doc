@@ -174,15 +174,15 @@ The keys in `data` are `subId` values.
 | `/api/v1/depth` | `{ symbol, limit }` |
 | `/api/v1/klines` | `{ symbol, interval, limit }` |
 | `/api/v1/trades` | `{ symbol, limit }` |
-| `/api/v1/leverage` | `{ symbol? }` |
-| `/api/v1/margintype` | `{ symbol }` |
 | `/api/v1/exchangeinfo` | `{}` |
-| `/api/v1/adlquantile` | `{ symbol? }` |
 
 ### Private Channels (logon required)
 
 | Channel | Parameters |
 |---------|------------|
+| `/api/v1/adlquantile` | `{ symbol? }` |
+| `/api/v1/margintype` | `{ symbol }` |
+| `/api/v1/leverage` | `{ symbol? }` |
 | `/api/v1/balance` | `{}` |
 | `/api/v1/openorders` | `{ symbol? }` |
 | `/api/v1/positionrisk` | `{ symbol? }` |
