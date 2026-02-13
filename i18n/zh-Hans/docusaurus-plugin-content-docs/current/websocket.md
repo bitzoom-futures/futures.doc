@@ -174,15 +174,15 @@ ws.onerror = (error) => console.error('ws error', error);
 | `/api/v1/depth` | `{ symbol, limit }` |
 | `/api/v1/klines` | `{ symbol, interval, limit }` |
 | `/api/v1/trades` | `{ symbol, limit }` |
-| `/api/v1/leverage` | `{ symbol? }` |
-| `/api/v1/margintype` | `{ symbol }` |
 | `/api/v1/exchangeinfo` | `{}` |
-| `/api/v1/adlquantile` | `{ symbol? }` |
 
 ### 私有频道（需要先 logon）
 
 | Channel | 参数 |
 |---------|------------|
+| `/api/v1/adlquantile` | `{ symbol? }` |
+| `/api/v1/margintype` | `{ symbol }` |
+| `/api/v1/leverage` | `{ symbol? }` |
 | `/api/v1/balance` | `{}` |
 | `/api/v1/openorders` | `{ symbol? }` |
 | `/api/v1/positionrisk` | `{ symbol? }` |
