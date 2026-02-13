@@ -1,0 +1,10 @@
+---
+title: Depth Channel Test
+sidebar_label: /api/v1/depth
+---
+
+import { WebSocketTester, getChannel } from '@site/src/components/WebSocketTester'
+
+Test `/api/v1/depth` using `event: "sub"` with `{ symbol, limit }`.
+
+<WebSocketTester channel={getChannel('depth')} />

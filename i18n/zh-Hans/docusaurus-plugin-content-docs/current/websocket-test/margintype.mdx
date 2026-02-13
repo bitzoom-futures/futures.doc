@@ -1,0 +1,10 @@
+---
+title: Margin Type 频道测试
+sidebar_label: /api/v1/margintype
+---
+
+import { WebSocketTester, getChannel } from '@site/src/components/WebSocketTester'
+
+`/api/v1/margintype` 为私有频道。先连接并执行 `logon`，再用 `{ symbol }` 订阅。
+
+<WebSocketTester channel={getChannel('margintype')} />

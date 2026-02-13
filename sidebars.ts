@@ -71,7 +71,19 @@ const sidebars: SidebarsConfig = {
       items: [
         'websocket-playground',
         'websocket-test/ticker',
-        'websocket-test/openorders'
+        'websocket-test/ticker-price',
+        'websocket-test/premiumindex',
+        'websocket-test/ticker-hr24',
+        'websocket-test/depth',
+        'websocket-test/klines',
+        'websocket-test/trades',
+        'websocket-test/exchangeinfo',
+        'websocket-test/adlquantile',
+        'websocket-test/margintype',
+        'websocket-test/leverage',
+        'websocket-test/balance',
+        'websocket-test/openorders',
+        'websocket-test/positionrisk'
       ]
     }
   ]

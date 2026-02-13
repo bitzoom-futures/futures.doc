@@ -1,0 +1,10 @@
+---
+title: Position Risk Channel Test
+sidebar_label: /api/v1/positionrisk
+---
+
+import { WebSocketTester, getChannel } from '@site/src/components/WebSocketTester'
+
+`/api/v1/positionrisk` is private. Connect, run `logon`, then subscribe with optional `{ symbol }`.
+
+<WebSocketTester channel={getChannel('positionrisk')} />

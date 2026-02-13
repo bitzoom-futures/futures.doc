@@ -1,0 +1,9 @@
+{
+  "label": "WebSocket 频道测试",
+  "position": 20,
+  "link": {
+    "type": "generated-index",
+    "title": "WebSocket 频道测试页",
+    "description": "按频道拆分的可交互 WebSocket 测试页面"
+  }
+}

@@ -1,0 +1,10 @@
+---
+title: Klines 频道测试
+sidebar_label: /api/v1/klines
+---
+
+import { WebSocketTester, getChannel } from '@site/src/components/WebSocketTester'
+
+使用 `{ symbol, interval, limit }` 和 `event: "sub"` 测试 `/api/v1/klines`。
+
+<WebSocketTester channel={getChannel('klines')} />

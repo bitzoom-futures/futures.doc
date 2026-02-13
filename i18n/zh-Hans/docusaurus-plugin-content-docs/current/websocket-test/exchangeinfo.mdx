@@ -1,0 +1,10 @@
+---
+title: Exchange Info 频道测试
+sidebar_label: /api/v1/exchangeinfo
+---
+
+import { WebSocketTester, getChannel } from '@site/src/components/WebSocketTester'
+
+使用 `{}` 和 `event: "sub"` 测试 `/api/v1/exchangeinfo`。
+
+<WebSocketTester channel={getChannel('exchangeinfo')} />
