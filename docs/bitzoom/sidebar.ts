@@ -64,6 +64,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "bitzoom/api-v-1-fundingfeehistory",
+          label: "/api/v1/fundingfeehistory",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
           id: "bitzoom/api-v-1-historyorder",
           label: "/api/v1/historyorder",
           className: "api-method get",
@@ -130,6 +136,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "bitzoom/api-v-1-overview",
+          label: "/api/v1/overview",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
           id: "bitzoom/api-v-1-positionmargin",
           label: "/api/v1/positionmargin",
           className: "api-method get",
@@ -150,6 +162,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "bitzoom/api-v-1-symbolcategories",
           label: "/api/v1/symbolcategories",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "bitzoom/api-v-1-symbolinfo",
+          label: "/api/v1/symbolinfo",
           className: "api-method get",
         },
         {
@@ -178,6 +196,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "bitzoom/api-v-1-tradeinfo",
+          label: "/api/v1/tradeinfo",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
           id: "bitzoom/api-v-1-trades",
           label: "/api/v1/trades",
           className: "api-method get",
@@ -187,6 +211,12 @@ const sidebar: SidebarsConfig = {
           id: "bitzoom/api-v-1-userinfohook",
           label: "/api/v1/userinfohook",
           className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "bitzoom/api-v-1-volumeintervaltype",
+          label: "/api/v1/volumeintervaltype",
+          className: "api-method get",
         },
         {
           type: "doc",

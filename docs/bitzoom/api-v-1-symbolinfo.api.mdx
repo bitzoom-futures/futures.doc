@@ -1,0 +1,71 @@
+---
+id: api-v-1-symbolinfo
+title: "/api/v1/symbolinfo"
+description: "/api/v1/symbolinfo"
+sidebar_label: "/api/v1/symbolinfo"
+hide_title: true
+hide_table_of_contents: true
+api: eJx1Vdtu40YM/RWBz0osXxI7AhbFdtNuUzRogLjdByMP1Ii2ZzOamc5QvkDwvxeUbMeJnSeLpHl4O+Q04DwFZO3sQwk59NDr3qrfi9uqcEbbuYMUPAasiClEyGcNlBRV0F58IIfunzmkoEX8r6awhRQsVgQ5PLdWSCGqJVUIeQO89WKJHLRdwG73kkKg6J2NFMU+yDL5Uc4yWZZP9N5o1SbZ+xklanOCRxusvKEWOqAiLXUM5tloclOWVzgq+lejMd5dTbJxdnU3yYpsko1KxAJSoBBc+OZKgnyQZXv5kWLEheQoeddKUYyQc6gphbLumgX53WAwHI4H2fB2cjMaj28z8S+R25y6pnQIWrV9ghRUGwjeugMpVBheif9FU+8V89qY7b02NVP5+NFYukpbtIoebEmbTrdypj6gKR1UbZC1XTzX3pttp2bHaE4VFW5ORefJPlimQJG/OavI8qHMtoIYa7pHphPxKWi1l9GYqa7oD71YvlP85dadvKYi6oP3eqmZntBT2DfYKY3mkUqNnYI23rhwML8nG+xSWLrIkANTlDITsitBWbr1tCVWtkvBB2E1645Q+6HsTqfXwNyFCgVIW74dSZM6XmrLtKAgkU7Y0XxmPpLljNiHTC8Y3rK9hHuk3NFYOGcIrRiPFD9fpGMJrvhJimEnqvf9e+6g57VJjnvfeeJClhsWyLTGLbx89Lx4GCripZN1WxC3d4KXn/01UlgdDkgdZDWWzD7v9fr9u+vJ9U12PRje5pNsMgG5CJFUHTRvn2XNuzH+StiyooGi/fr9MMA/f0zPiPKdOJlS5Kl7JZvMg6uSz+K16XbpVWhxQT2hFovjL3WkoMsv/cFwdHM4Yu1AulyOHRfsto9ttfnHG/kUnEwk+fr0kNw7VVdkOdFWmbpMfNArZErQlomvC6OVwGqWiwZ/e7LiJWtOIXZo/evsOhMueBe5wpbN+4NysfXvcjnShmnDPW9Qt7RqR9LsJzgD9FpC9qXmN6iXA6Vn0DQFRvonmN1O1N3Vbx8HHbEwVEI+RxPpLPrxrJ88HBczeqXt6fuxOhxBYccKg5YokM9eZM8IS2HGrNl7fVWKPJ94nb0ggnJk7/ffprDb/Q8nIFSN
+sidebar_class_name: "get api-method"
+info_path: docs/bitzoom/open-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"/api/v1/symbolinfo"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/symbolinfo"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+/api/v1/symbolinfo
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"symbol:","in":"query","name":"Symbol","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"2f0485dd-a4b1-47a9-8070-980b0804daab","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":{"symbol":"","icon":"","code":"","name":"","marketValue":"","fullyDilutedMarketValue":"","dominanceIndex":"","volume":"","circulatingSupply":"","totalSupply":"","maxSupply":"","openInterestConcentration":"","issueDate":"","issuePrice":"","allTimeHigh":"","allTimeLow":"","website":"","whitePaper":"","socialMedia":"","explorer":"","description":""},"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      

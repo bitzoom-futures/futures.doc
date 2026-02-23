@@ -182,5 +182,29 @@
   "sidebar.openApiSidebar.doc./api/v1/wallet/withdrawrecord": {
     "message": "/api/v1/wallet/withdrawrecord",
     "description": "The label for the doc item '/api/v1/wallet/withdrawrecord' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-wallet-withdrawrecord"
+  },
+  "sidebar.openApiSidebar.category.WebSocket Testing": {
+    "message": "WebSocket Testing",
+    "description": "The label for category 'WebSocket Testing' in sidebar 'openApiSidebar'"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/fundingfeehistory": {
+    "message": "/api/v1/fundingfeehistory",
+    "description": "The label for the doc item '/api/v1/fundingfeehistory' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-fundingfeehistory"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/overview": {
+    "message": "/api/v1/overview",
+    "description": "The label for the doc item '/api/v1/overview' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-overview"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/symbolinfo": {
+    "message": "/api/v1/symbolinfo",
+    "description": "The label for the doc item '/api/v1/symbolinfo' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-symbolinfo"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/tradeinfo": {
+    "message": "/api/v1/tradeinfo",
+    "description": "The label for the doc item '/api/v1/tradeinfo' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-tradeinfo"
+  },
+  "sidebar.openApiSidebar.doc./api/v1/volumeintervaltype": {
+    "message": "/api/v1/volumeintervaltype",
+    "description": "The label for the doc item '/api/v1/volumeintervaltype' in sidebar 'openApiSidebar', linking to the doc bitzoom/api-v-1-volumeintervaltype"
   }
 }

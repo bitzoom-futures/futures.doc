@@ -3,14 +3,14 @@
     "securitySchemes": {
       "Bearer": {
         "bearerFormat": "JWT",
-        "description": "测试 Token 获取示例：http://119.8.50.236:8083/api/servermanage/testtoken?userid=12345",
+        "description": "Get TestToken from http://119.8.50.236:8088/api/servermanage/testtoken?userid=12345",
         "scheme": "bearer",
         "type": "http"
       }
     }
   },
   "info": {
-    "description": "Bitzoom 合约 API 文档（包含公开与私有接口）",
+    "description": "Project API Document includ private and public",
     "title": "Open API",
     "version": "1.0.0"
   },
@@ -25,11 +25,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "7005f08b-934a-48d4-badc-f3e38f768ef5",
+                    "traceid": "d3198496-746d-4287-b11e-f5316dfc204b",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -99,7 +99,7 @@
               }
             }
           },
-          "description": "chain:\u003c/br\u003etoken:\u003c/br\u003eaddress:\u003c/br\u003epage:\u003c/br\u003esize:",
+          "description": "chain:</br>token:</br>address:</br>page:</br>size:",
           "required": true
         },
         "responses": {
@@ -108,11 +108,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "83d2cccd-e8b0-44b9-9640-776effbd9290",
+                    "traceid": "297f6f57-aae7-418e-94b4-0427ef6c25e1",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -173,7 +173,7 @@
               }
             }
           },
-          "description": "tokenId:\u003c/br\u003echainIdentifier:",
+          "description": "tokenId:</br>chainIdentifier:",
           "required": true
         },
         "responses": {
@@ -182,11 +182,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "41b793d8-58d0-4f1d-8cf3-1e518c020d6c",
+                    "traceid": "ee6ae252-87cf-4324-9503-a6fda76211af",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -253,11 +253,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "4f8b78ef-633d-4a09-9d8b-ae043d99bc6e",
+                    "traceid": "1339aa05-c80d-4429-a403-bf1550c1bc8a",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -308,11 +308,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "c4a8e2e6-f14e-436b-8130-92035ed77d08",
+                    "traceid": "d774c8e1-91a0-41c0-b26c-01e091664295",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -363,11 +363,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "53a361df-742f-4ec6-8efb-ef4c69adf783",
+                    "traceid": "36e471c9-3c61-450d-8cbf-c18bdc63f4e9",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -469,7 +469,7 @@
               }
             }
           },
-          "description": "WithdrawRequest:\u003c/br\u003ecoboService:",
+          "description": "WithdrawRequest:</br>coboService:",
           "required": true
         },
         "responses": {
@@ -478,11 +478,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "6b5e76e6-0622-49d6-ba09-d731cee9f6bf",
+                    "traceid": "892c9d8e-9710-4721-94bf-343d0b54c8ab",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -575,11 +575,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "946024f4-225d-4acc-9d03-6ed87f18e3a9",
+                    "traceid": "6d5eba4a-0736-446b-9a3a-091c626f3164",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -630,11 +630,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "068e27f0-15b1-438e-a3ed-477378e29bb3",
+                    "traceid": "828c1444-24d1-4be8-ac8c-726aa7ad9d12",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -695,11 +695,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "822ea218-d997-4aad-847a-2146d2e84986",
+                    "traceid": "af95269c-6c97-46e0-87dd-14c64a7d608f",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -760,11 +760,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "c5a12451-2450-4679-850f-f0491f77372c",
+                    "traceid": "828c0388-ef8c-42ff-91f7-e99eaf48f66d",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -825,11 +825,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "964e034b-9eb9-4759-a928-7ed5da5eb8ac",
+                    "traceid": "0f0243f6-51fb-4ac4-b009-12862e93cded",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -903,6 +903,12 @@
                   },
                   "createdat": {
                     "format": "date-time",
+                    "type": "string"
+                  },
+                  "err_msg": {
+                    "type": "string"
+                  },
+                  "hashcode": {
                     "type": "string"
                   },
                   "id": {
@@ -990,11 +996,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "af070620-6448-43a2-bf54-0d7debce7fb2",
+                    "traceid": "bf0eacd5-3b24-4978-8dc4-e3c2a7691ec2",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -1044,10 +1050,6 @@
             "application/json": {
               "schema": {
                 "properties": {
-                  "account_id": {
-                    "minimum": 0,
-                    "type": "integer"
-                  },
                   "account_type_id": {
                     "minimum": 0,
                     "type": "integer"
@@ -1068,7 +1070,7 @@
               }
             }
           },
-          "description": "FuApi:\u003c/br\u003eaccount_id:\u003c/br\u003easset_id:\u003c/br\u003eamount:\u003c/br\u003easset_name:",
+          "description": "FuApi:</br>asset_id:</br>amount:</br>asset_name:",
           "required": true
         },
         "responses": {
@@ -1077,11 +1079,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "3c43f84c-b7ba-4683-a36b-c7544538a3da",
+                    "traceid": "a2afca99-dda4-4227-8482-950d2af4797b",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -1152,6 +1154,14 @@
             }
           },
           {
+            "description": "market_id:市场ID, 可选",
+            "in": "query",
+            "name": "MarketID",
+            "schema": {
+              "type": "uint"
+            }
+          },
+          {
             "description": "amount:冻结金额",
             "in": "query",
             "name": "Amount",
@@ -1166,22 +1176,6 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "description": "order_id:订单ID",
-            "in": "query",
-            "name": "OrderID",
-            "schema": {
-              "type": "uint"
-            }
-          },
-          {
-            "description": "remark:备注",
-            "in": "query",
-            "name": "Remark",
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -1190,11 +1184,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "ae646fa5-354f-4ba9-b06b-b431d8a7509e",
+                    "traceid": "f58384e1-e5ec-4789-8c4e-fd2e92dc02ad",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -1263,11 +1257,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "55326691-68fb-42ed-a8b1-2a0e9f953e4b",
+                    "traceid": "3f5fd103-91e0-4967-8e7d-9487d79795ed",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -1336,11 +1330,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "e368c1cc-0d85-475c-b637-cf6cd869bf30",
+                    "traceid": "f6e9bb76-5ca1-42d9-8f90-8bc111ff4926",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -1409,11 +1403,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "f2ca7341-84ce-4791-8a1e-b3a804a2f3a9",
+                    "traceid": "14262b9d-314e-490c-91b2-7e2cb004f6ba",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -1474,87 +1468,14 @@
             "schema": {
               "type": "uint"
             }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "example": {
-                    "traceid": "27a8e342-4872-44b5-a639-0e1668da372e",
-                    "errorCode": 200,
-                    "errorMessage": "",
-                    "success": true,
-                    "duration": 9223372036854775807,
-                    "data": null,
-                    "host": "testing env",
-                    "showType": 0
-                  },
-                  "properties": {
-                    "data": {},
-                    "duration": {
-                      "format": "int64",
-                      "type": "integer"
-                    },
-                    "errorCode": {
-                      "type": "integer"
-                    },
-                    "errorMessage": {
-                      "type": "string"
-                    },
-                    "host": {
-                      "type": "string"
-                    },
-                    "showType": {
-                      "type": "integer"
-                    },
-                    "success": {
-                      "type": "boolean"
-                    },
-                    "traceid": {
-                      "type": "string"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Successful operation"
-          }
-        },
-        "tags": [
-          "funds"
-        ]
-      }
-    },
-    "/api/funds/getmarketaccount": {
-      "get": {
-        "operationId": "/api/funds/getmarketaccount",
-        "parameters": [
-          {
-            "description": "user_id:用户ID",
-            "in": "query",
-            "name": "UserID",
-            "schema": {
-              "type": "string"
-            }
           },
           {
-            "description": "account_type_id:账户类型ID",
+            "description": "asset_id:资产ID",
             "in": "query",
-            "name": "AccountTypeID",
+            "name": "AssetID",
             "schema": {
               "type": "uint"
             }
-          },
-          {
-            "description": "symbol:",
-            "in": "query",
-            "name": "Symbol",
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -1563,11 +1484,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "d0059009-8301-4433-b6f0-fd4178fbbe2b",
+                    "traceid": "eaed654e-2795-4edd-8952-6ef11a67f8bc",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -1638,19 +1559,27 @@
             }
           },
           {
+            "description": "market_id:市场ID",
+            "in": "query",
+            "name": "MarketID",
+            "schema": {
+              "type": "uint"
+            }
+          },
+          {
+            "description": "asset_id:资产ID",
+            "in": "query",
+            "name": "AssetID",
+            "schema": {
+              "type": "uint"
+            }
+          },
+          {
             "description": "amount:解冻数量",
             "in": "query",
             "name": "Amount",
             "schema": {
               "type": "string"
-            }
-          },
-          {
-            "description": "is_all:是否全部解冻",
-            "in": "query",
-            "name": "IsAll",
-            "schema": {
-              "type": "bool"
             }
           }
         ],
@@ -1660,11 +1589,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "9a4e736a-ae8a-4603-8ddb-bfa7ae008b8e",
+                    "traceid": "dade5af6-caf3-45cc-92ce-921a1c061684",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -1714,10 +1643,6 @@
             "application/json": {
               "schema": {
                 "properties": {
-                  "account_id": {
-                    "minimum": 0,
-                    "type": "integer"
-                  },
                   "account_type_id": {
                     "minimum": 0,
                     "type": "integer"
@@ -1747,11 +1672,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "95c614e2-c992-48dd-a199-b8a044ec7feb",
+                    "traceid": "7e547a53-f33a-47b9-b1a8-bf0ed76c83f0",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -1802,11 +1727,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "e94c97a2-fc19-4ed9-83b0-9a220230276b",
+                    "traceid": "e075f752-5eaa-480d-81fc-4e3bc9d4abfc",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -1857,11 +1782,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "adca3d38-c490-4ffc-b538-a6c77dcde6b3",
+                    "traceid": "2fa6b2ee-cf6f-4554-8da0-1f66b37ea2ac",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -1938,11 +1863,489 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "9718c65c-d3a8-421a-82de-9a3e540d0966",
+                    "traceid": "cbb489c3-cfcc-4022-b5da-81f0f9797b7d",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "positions"
+        ]
+      }
+    },
+    "/api/positions/cancelordernotice": {
+      "post": {
+        "operationId": "/api/positions/cancelordernotice",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "Data": {
+                    "properties": {
+                      "CancelOrders": {
+                        "items": {
+                          "properties": {
+                            "account_type_id": {
+                              "minimum": 0,
+                              "type": "integer"
+                            },
+                            "activation_price": {},
+                            "amount": {},
+                            "avg_price": {},
+                            "base_asset_id": {
+                              "minimum": 0,
+                              "type": "integer"
+                            },
+                            "callback_rate": {},
+                            "cancel_amount": {},
+                            "cancel_error": {
+                              "type": "string"
+                            },
+                            "cancel_freeze": {
+                              "type": "boolean"
+                            },
+                            "cancel_freeze_error": {
+                              "type": "string"
+                            },
+                            "createdat": {
+                              "format": "date-time",
+                              "type": "string"
+                            },
+                            "customer_order_id": {
+                              "type": "string"
+                            },
+                            "customer_type": {
+                              "type": "integer"
+                            },
+                            "freeze_id": {
+                              "minimum": 0,
+                              "type": "integer"
+                            },
+                            "gateway_server": {
+                              "type": "string"
+                            },
+                            "hashcode": {
+                              "type": "string"
+                            },
+                            "id": {
+                              "minimum": 0,
+                              "type": "integer"
+                            },
+                            "maker_fee_rate": {},
+                            "mark_price": {},
+                            "market_id": {
+                              "minimum": 0,
+                              "type": "integer"
+                            },
+                            "modelState": {
+                              "type": "integer"
+                            },
+                            "order_id": {
+                              "minimum": 0,
+                              "type": "integer"
+                            },
+                            "order_type": {
+                              "type": "string"
+                            },
+                            "price": {},
+                            "quote_asset_id": {
+                              "minimum": 0,
+                              "type": "integer"
+                            },
+                            "quote_asset_name": {
+                              "type": "string"
+                            },
+                            "recv_window": {
+                              "format": "int64",
+                              "type": "integer"
+                            },
+                            "referral_code": {
+                              "type": "string"
+                            },
+                            "side": {
+                              "maximum": 127,
+                              "minimum": -128,
+                              "type": "integer"
+                            },
+                            "source_ip": {
+                              "type": "string"
+                            },
+                            "source_port": {
+                              "type": "integer"
+                            },
+                            "source_server": {
+                              "type": "string"
+                            },
+                            "source_type": {
+                              "type": "integer"
+                            },
+                            "state": {
+                              "type": "integer"
+                            },
+                            "stop_price": {},
+                            "symbol": {
+                              "type": "string"
+                            },
+                            "take_profit_price": {},
+                            "taker_fee_rate": {},
+                            "time_in_force": {
+                              "type": "string"
+                            },
+                            "timestamp": {
+                              "format": "int64",
+                              "type": "integer"
+                            },
+                            "tracking_id": {
+                              "type": "string"
+                            },
+                            "trade_port": {
+                              "type": "integer"
+                            },
+                            "trade_server": {
+                              "type": "string"
+                            },
+                            "updatedat": {
+                              "format": "date-time",
+                              "type": "string"
+                            },
+                            "user_id": {
+                              "type": "string"
+                            },
+                            "user_level": {
+                              "type": "integer"
+                            },
+                            "volume": {}
+                          },
+                          "type": "object"
+                        },
+                        "type": "array"
+                      },
+                      "Depth": {
+                        "properties": {
+                          "ask_json": {
+                            "type": "string"
+                          },
+                          "asks": {
+                            "items": {
+                              "properties": {
+                                "amount": {
+                                  "type": "string"
+                                },
+                                "createdat": {
+                                  "format": "date-time",
+                                  "type": "string"
+                                },
+                                "depth_id": {
+                                  "minimum": 0,
+                                  "type": "integer"
+                                },
+                                "hashcode": {
+                                  "type": "string"
+                                },
+                                "history_time": {
+                                  "format": "int64",
+                                  "type": "integer"
+                                },
+                                "id": {
+                                  "minimum": 0,
+                                  "type": "integer"
+                                },
+                                "market_id": {
+                                  "minimum": 0,
+                                  "type": "integer"
+                                },
+                                "modelState": {
+                                  "type": "integer"
+                                },
+                                "pair": {
+                                  "type": "string"
+                                },
+                                "price": {
+                                  "type": "string"
+                                },
+                                "symbol": {
+                                  "type": "string"
+                                },
+                                "tracking_id": {
+                                  "type": "string"
+                                },
+                                "updatedat": {
+                                  "format": "date-time",
+                                  "type": "string"
+                                }
+                              },
+                              "type": "object"
+                            },
+                            "type": "array"
+                          },
+                          "bid_json": {
+                            "type": "string"
+                          },
+                          "bids": {
+                            "items": {
+                              "properties": {
+                                "amount": {
+                                  "type": "string"
+                                },
+                                "createdat": {
+                                  "format": "date-time",
+                                  "type": "string"
+                                },
+                                "depth_id": {
+                                  "minimum": 0,
+                                  "type": "integer"
+                                },
+                                "hashcode": {
+                                  "type": "string"
+                                },
+                                "history_time": {
+                                  "format": "int64",
+                                  "type": "integer"
+                                },
+                                "id": {
+                                  "minimum": 0,
+                                  "type": "integer"
+                                },
+                                "market_id": {
+                                  "minimum": 0,
+                                  "type": "integer"
+                                },
+                                "modelState": {
+                                  "type": "integer"
+                                },
+                                "pair": {
+                                  "type": "string"
+                                },
+                                "price": {
+                                  "type": "string"
+                                },
+                                "symbol": {
+                                  "type": "string"
+                                },
+                                "tracking_id": {
+                                  "type": "string"
+                                },
+                                "updatedat": {
+                                  "format": "date-time",
+                                  "type": "string"
+                                }
+                              },
+                              "type": "object"
+                            },
+                            "type": "array"
+                          },
+                          "createdat": {
+                            "format": "date-time",
+                            "type": "string"
+                          },
+                          "engine_time": {
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "hashcode": {
+                            "type": "string"
+                          },
+                          "history_time": {
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "id": {
+                            "minimum": 0,
+                            "type": "integer"
+                          },
+                          "last_trade_amount": {
+                            "type": "string"
+                          },
+                          "last_trade_price": {
+                            "type": "string"
+                          },
+                          "last_trade_time": {
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "last_update_id": {
+                            "minimum": 0,
+                            "type": "integer"
+                          },
+                          "market_id": {
+                            "minimum": 0,
+                            "type": "integer"
+                          },
+                          "message_time": {
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "modelState": {
+                            "type": "integer"
+                          },
+                          "order": {
+                            "properties": {
+                              "avg_price": {},
+                              "client_order_id": {
+                                "type": "string"
+                              },
+                              "created_at": {
+                                "format": "int64",
+                                "type": "integer"
+                              },
+                              "createdat": {
+                                "format": "date-time",
+                                "type": "string"
+                              },
+                              "customer_type": {
+                                "type": "integer"
+                              },
+                              "executed_qty": {},
+                              "hashcode": {
+                                "type": "string"
+                              },
+                              "history_time": {
+                                "format": "int64",
+                                "type": "integer"
+                              },
+                              "id": {
+                                "minimum": 0,
+                                "type": "integer"
+                              },
+                              "is_adl": {
+                                "type": "boolean"
+                              },
+                              "is_cancel": {
+                                "type": "boolean"
+                              },
+                              "is_liquidation": {
+                                "type": "boolean"
+                              },
+                              "market_id": {
+                                "minimum": 0,
+                                "type": "integer"
+                              },
+                              "modelState": {
+                                "type": "integer"
+                              },
+                              "order_id": {
+                                "minimum": 0,
+                                "type": "integer"
+                              },
+                              "orig_qty": {},
+                              "pair": {
+                                "type": "string"
+                              },
+                              "position_side": {
+                                "type": "string"
+                              },
+                              "price": {},
+                              "side": {
+                                "type": "string"
+                              },
+                              "size": {},
+                              "source_type": {
+                                "type": "integer"
+                              },
+                              "status": {
+                                "type": "string"
+                              },
+                              "symbol": {
+                                "type": "string"
+                              },
+                              "time_in_force": {
+                                "type": "string"
+                              },
+                              "tracking_id": {
+                                "type": "string"
+                              },
+                              "type": {
+                                "type": "string"
+                              },
+                              "updatedat": {
+                                "format": "date-time",
+                                "type": "string"
+                              },
+                              "user_id": {
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "pair": {
+                            "type": "string"
+                          },
+                          "symbol": {
+                            "type": "string"
+                          },
+                          "tracking_id": {
+                            "type": "string"
+                          },
+                          "updatedat": {
+                            "format": "date-time",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "market_id": {
+                    "minimum": 0,
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "description": "PoApi:</br>Data:",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "b166c1f5-4d96-45b4-8b36-abe91b28498f",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -2003,11 +2406,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "1237c880-0988-40d1-ba34-77942e830700",
+                    "traceid": "6877fdc6-490e-422a-bf35-355cf8dafccf",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -2068,11 +2471,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "99be18a0-5ff0-4e36-9d81-48a9dd78b9dd",
+                    "traceid": "c0ff390b-b027-425e-862d-61a3653b602e",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -2157,11 +2560,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "657dcb13-6b65-4fb6-a574-297fe42c63e2",
+                    "traceid": "3ceda788-ce7e-40d5-9159-2386e64421f1",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -2238,11 +2641,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "9bd77590-09ba-4ea6-8467-8f6c5b74f4b6",
+                    "traceid": "96e58ed2-034d-441d-945e-bae9c23e3f1e",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -2311,11 +2714,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "101c631d-bf04-473f-9a30-74b0126f2d56",
+                    "traceid": "a319aa70-0b88-4ca3-b892-2494327e96ae",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -2376,11 +2779,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "8bb29fa0-0867-44ab-bb95-6b5500906ca9",
+                    "traceid": "1cc8a0ca-6427-41ed-a8b1-792030c0de1e",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -2430,17 +2833,17 @@
             "application/json": {
               "schema": {
                 "properties": {
-                  "is_point_time": {
+                  "ispointtime": {
                     "type": "boolean"
                   },
                   "market": {
                     "type": "string"
                   },
-                  "market_id": {
+                  "marketid": {
                     "minimum": 0,
                     "type": "integer"
                   },
-                  "market_servers": {
+                  "marketservers": {
                     "items": {
                       "properties": {
                         "createdat": {
@@ -2450,6 +2853,9 @@
                         "ex_release_market_model_id": {
                           "minimum": 0,
                           "type": "integer"
+                        },
+                        "hashcode": {
+                          "type": "string"
                         },
                         "id": {
                           "minimum": 0,
@@ -2478,6 +2884,9 @@
                                   },
                                   "frequency_limit": {
                                     "type": "integer"
+                                  },
+                                  "hashcode": {
+                                    "type": "string"
                                   },
                                   "id": {
                                     "minimum": 0,
@@ -2528,6 +2937,9 @@
                             },
                             "data_machine_id": {
                               "type": "integer"
+                            },
+                            "hashcode": {
+                              "type": "string"
                             },
                             "id": {
                               "minimum": 0,
@@ -2588,10 +3000,10 @@
                     },
                     "type": "array"
                   },
-                  "market_type": {
+                  "markettype": {
                     "type": "integer"
                   },
-                  "release_time": {
+                  "releasetime": {
                     "format": "date-time",
                     "type": "string"
                   },
@@ -2615,11 +3027,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "f2a910df-ce8b-4404-9ddd-dd4335300ae3",
+                    "traceid": "4830070c-ec09-40f4-ade4-8c6119d29ce9",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -2673,32 +3085,64 @@
                     "minimum": 0,
                     "type": "integer"
                   },
+                  "activation_price": {},
                   "amount": {},
+                  "avg_price": {},
                   "base_asset_id": {
                     "minimum": 0,
                     "type": "integer"
                   },
+                  "callback_rate": {},
+                  "createdat": {
+                    "format": "date-time",
+                    "type": "string"
+                  },
                   "customer_order_id": {
                     "type": "string"
                   },
+                  "customer_type": {
+                    "type": "integer"
+                  },
+                  "freeze_amount": {},
                   "freeze_id": {
                     "minimum": 0,
                     "type": "integer"
                   },
+                  "gateway_server": {
+                    "type": "string"
+                  },
+                  "hashcode": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "minimum": 0,
+                    "type": "integer"
+                  },
                   "leverage": {},
+                  "maker_fee_rate": {},
                   "margin": {},
                   "margin_mode": {
                     "type": "integer"
                   },
+                  "margin_rate": {},
+                  "mark_price": {},
                   "market_id": {
                     "minimum": 0,
                     "type": "integer"
                   },
-                  "order_id": {
-                    "minimum": 0,
+                  "modelState": {
                     "type": "integer"
                   },
+                  "only_close_position": {
+                    "type": "boolean"
+                  },
                   "order_type": {
+                    "type": "string"
+                  },
+                  "position_port": {
+                    "type": "integer"
+                  },
+                  "position_server": {
                     "type": "string"
                   },
                   "position_side": {
@@ -2707,6 +3151,13 @@
                   "price": {},
                   "quote_asset_id": {
                     "minimum": 0,
+                    "type": "integer"
+                  },
+                  "quote_asset_name": {
+                    "type": "string"
+                  },
+                  "recv_window": {
+                    "format": "int64",
                     "type": "integer"
                   },
                   "referral_code": {
@@ -2718,16 +3169,26 @@
                     "type": "integer"
                   },
                   "size": {},
-                  "source_port": {
-                    "type": "integer"
-                  },
-                  "source_server": {
+                  "source_ip": {
                     "type": "string"
                   },
                   "source_type": {
                     "type": "integer"
                   },
+                  "stop_price": {},
+                  "symbol": {
+                    "type": "string"
+                  },
+                  "take_profit_price": {},
+                  "taker_fee_rate": {},
                   "time_in_force": {
+                    "type": "string"
+                  },
+                  "timestamp": {
+                    "format": "int64",
+                    "type": "integer"
+                  },
+                  "tracking_id": {
                     "type": "string"
                   },
                   "trade_port": {
@@ -2736,10 +3197,18 @@
                   "trade_server": {
                     "type": "string"
                   },
+                  "updatedat": {
+                    "format": "date-time",
+                    "type": "string"
+                  },
                   "user_id": {
                     "type": "string"
                   },
                   "user_level": {
+                    "type": "integer"
+                  },
+                  "volume": {},
+                  "working_type": {
                     "type": "integer"
                   }
                 },
@@ -2747,7 +3216,7 @@
               }
             }
           },
-          "description": "PlaceOrder:\u003c/br\u003eposition_side:\u003c/br\u003eleverage:\u003c/br\u003esize:\u003c/br\u003emargin:\u003c/br\u003emargin_mode:\u003c/br\u003etrade_server:\u003c/br\u003etrade_port:",
+          "description": "Ex_FutureOrderModel:",
           "required": true
         },
         "responses": {
@@ -2756,11 +3225,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "37f2811b-1b06-4602-9c13-31dd394f239d",
+                    "traceid": "5f77f627-210f-46d2-ac3a-50b4d5dc528a",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -2819,6 +3288,9 @@
                       },
                       "down": {},
                       "funding_rate": {},
+                      "hashcode": {
+                        "type": "string"
+                      },
                       "hours_remaining": {
                         "format": "double",
                         "type": "number"
@@ -2874,7 +3346,7 @@
               }
             }
           },
-          "description": "PoApi:\u003c/br\u003eTestPrice:",
+          "description": "PoApi:</br>TestPrice:",
           "required": true
         },
         "responses": {
@@ -2883,11 +3355,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "f302fd2f-660b-45c6-b4e9-6cf6b151bbfb",
+                    "traceid": "b1a52417-b36f-48e8-a9c3-fe31a1a4431c",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -2961,6 +3433,9 @@
                         "minimum": 0,
                         "type": "integer"
                       },
+                      "hashcode": {
+                        "type": "string"
+                      },
                       "id": {
                         "minimum": 0,
                         "type": "integer"
@@ -2982,6 +3457,18 @@
                         "type": "integer"
                       },
                       "modelState": {
+                        "type": "integer"
+                      },
+                      "notify_error_by_buy": {
+                        "type": "string"
+                      },
+                      "notify_error_by_sell": {
+                        "type": "string"
+                      },
+                      "notify_status_by_buy": {
+                        "type": "integer"
+                      },
+                      "notify_status_by_sell": {
                         "type": "integer"
                       },
                       "order_id_buy": {
@@ -3032,7 +3519,7 @@
               }
             }
           },
-          "description": "PoApi:\u003c/br\u003eRecord:\u003c/br\u003eTargetAddress:\u003c/br\u003eTargetPort:",
+          "description": "PoApi:</br>Record:</br>TargetAddress:</br>TargetPort:",
           "required": true
         },
         "responses": {
@@ -3041,11 +3528,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "53b8bf3c-1c2b-4fb6-9956-de9b5979dbf1",
+                    "traceid": "b325d46f-1e4d-45b0-b6a1-5f8a7d5ff8cb",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -3122,11 +3609,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "f80730fd-3f55-49d5-81b3-e5db48c711ad",
+                    "traceid": "d8aa8589-f573-4a7b-851a-db26ca3684dc",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -3203,11 +3690,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "cd113e96-ab64-4358-af3a-535a10443bbf",
+                    "traceid": "601bf313-93c3-4d0a-84cc-8fbb60aa7904",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -3324,92 +3811,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "a6772626-f6d6-4984-b503-a0291eb7955a",
+                    "traceid": "48f76f9a-fdcb-4e16-af80-7157db7bdd0a",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
-                    "data": null,
-                    "host": "testing env",
-                    "showType": 0
-                  },
-                  "properties": {
-                    "data": {},
-                    "duration": {
-                      "format": "int64",
-                      "type": "integer"
-                    },
-                    "errorCode": {
-                      "type": "integer"
-                    },
-                    "errorMessage": {
-                      "type": "string"
-                    },
-                    "host": {
-                      "type": "string"
-                    },
-                    "showType": {
-                      "type": "integer"
-                    },
-                    "success": {
-                      "type": "boolean"
-                    },
-                    "traceid": {
-                      "type": "string"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Successful operation"
-          }
-        },
-        "tags": [
-          "quotations"
-        ]
-      }
-    },
-    "/api/quotations/getmarkets": {
-      "get": {
-        "operationId": "/api/quotations/getmarkets",
-        "parameters": [
-          {
-            "description": "market_id:",
-            "in": "query",
-            "name": "MarketID",
-            "schema": {
-              "type": "uint"
-            }
-          },
-          {
-            "description": "symbol:交易对",
-            "in": "query",
-            "name": "Symbol",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "userId:用户ID",
-            "in": "query",
-            "name": "UserID",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "example": {
-                    "traceid": "a3d66e6a-c2a8-456d-9e77-f7c24b23c6df",
-                    "errorCode": 200,
-                    "errorMessage": "",
-                    "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -3494,11 +3900,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "0c1b30ad-73cc-4309-8b1a-1f24deaa021c",
+                    "traceid": "78e7114d-8067-4df6-9eed-be068a4d9c65",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -3575,11 +3981,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "d675201d-9e10-4f6c-bc6e-b77dd4012205",
+                    "traceid": "91dbbc3e-5965-429c-b3d6-134fbb7a5934",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -3656,11 +4062,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "dbf5b3d0-ef28-48d0-b1e9-eb2f502f9699",
+                    "traceid": "07c86c24-44d7-4d95-ad2a-63a439fae8e0",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -3745,11 +4151,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "578c25ae-f059-41f2-9609-cebabe6820f4",
+                    "traceid": "baa6b0ab-594b-4fa4-8170-bb6ca2f79304",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -3834,11 +4240,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "c484aec7-a4b9-4cde-a9c1-0bb84e7a3c00",
+                    "traceid": "0151553d-6275-4703-a813-25edb6d29c59",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -3921,11 +4327,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "8cd25b3b-97bb-454a-837d-dec550807b78",
+                    "traceid": "e2a7a6e7-04b5-4c5e-9b18-5cc0b8b00cb9",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -3981,6 +4387,9 @@
                     "type": "string"
                   },
                   "funding_rate": {},
+                  "hashcode": {
+                    "type": "string"
+                  },
                   "history_time": {
                     "format": "int64",
                     "type": "integer"
@@ -4044,274 +4453,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "c987e366-6861-43bf-bc64-d1ca7ffebb8d",
+                    "traceid": "f8c01d99-31d1-468c-9641-16f2cd6940db",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
-                    "data": null,
-                    "host": "testing env",
-                    "showType": 0
-                  },
-                  "properties": {
-                    "data": {},
-                    "duration": {
-                      "format": "int64",
-                      "type": "integer"
-                    },
-                    "errorCode": {
-                      "type": "integer"
-                    },
-                    "errorMessage": {
-                      "type": "string"
-                    },
-                    "host": {
-                      "type": "string"
-                    },
-                    "showType": {
-                      "type": "integer"
-                    },
-                    "success": {
-                      "type": "boolean"
-                    },
-                    "traceid": {
-                      "type": "string"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Successful operation"
-          }
-        },
-        "tags": [
-          "quotations"
-        ]
-      }
-    },
-    "/api/quotations/newmarket": {
-      "post": {
-        "operationId": "/api/quotations/newmarket",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "properties": {
-                  "createdat": {
-                    "format": "date-time",
-                    "type": "string"
-                  },
-                  "id": {
-                    "minimum": 0,
-                    "type": "integer"
-                  },
-                  "isRun": {
-                    "type": "boolean"
-                  },
-                  "is_point_time": {
-                    "type": "boolean"
-                  },
-                  "market": {
-                    "type": "string"
-                  },
-                  "market_id": {
-                    "minimum": 0,
-                    "type": "integer"
-                  },
-                  "market_servers": {
-                    "items": {
-                      "properties": {
-                        "createdat": {
-                          "format": "date-time",
-                          "type": "string"
-                        },
-                        "ex_release_market_model_id": {
-                          "minimum": 0,
-                          "type": "integer"
-                        },
-                        "id": {
-                          "minimum": 0,
-                          "type": "integer"
-                        },
-                        "modelState": {
-                          "type": "integer"
-                        },
-                        "server_address": {
-                          "type": "string"
-                        },
-                        "server_port": {
-                          "type": "integer"
-                        },
-                        "server_routing_model": {
-                          "properties": {
-                            "BlackList": {
-                              "items": {
-                                "properties": {
-                                  "black_type": {
-                                    "type": "integer"
-                                  },
-                                  "createdat": {
-                                    "format": "date-time",
-                                    "type": "string"
-                                  },
-                                  "frequency_limit": {
-                                    "type": "integer"
-                                  },
-                                  "id": {
-                                    "minimum": 0,
-                                    "type": "integer"
-                                  },
-                                  "ip": {
-                                    "type": "string"
-                                  },
-                                  "is_forbidden": {
-                                    "type": "boolean"
-                                  },
-                                  "modelState": {
-                                    "type": "integer"
-                                  },
-                                  "source_id": {
-                                    "minimum": 0,
-                                    "type": "integer"
-                                  },
-                                  "tracking_id": {
-                                    "type": "string"
-                                  },
-                                  "updatedat": {
-                                    "format": "date-time",
-                                    "type": "string"
-                                  },
-                                  "user_id": {
-                                    "type": "string"
-                                  }
-                                },
-                                "type": "object"
-                              },
-                              "type": "array"
-                            },
-                            "app_service_model_id": {
-                              "minimum": 0,
-                              "type": "integer"
-                            },
-                            "cpu_threshold": {
-                              "format": "int64",
-                              "type": "integer"
-                            },
-                            "createdat": {
-                              "format": "date-time",
-                              "type": "string"
-                            },
-                            "data_center_id": {
-                              "type": "integer"
-                            },
-                            "data_machine_id": {
-                              "type": "integer"
-                            },
-                            "id": {
-                              "minimum": 0,
-                              "type": "integer"
-                            },
-                            "max_bytes": {
-                              "format": "int64",
-                              "type": "integer"
-                            },
-                            "max_conns": {
-                              "type": "integer"
-                            },
-                            "modelState": {
-                              "type": "integer"
-                            },
-                            "server_addr": {
-                              "type": "string"
-                            },
-                            "server_name": {
-                              "type": "string"
-                            },
-                            "server_port": {
-                              "type": "integer"
-                            },
-                            "timeout": {
-                              "format": "int64",
-                              "type": "integer"
-                            },
-                            "tracking_id": {
-                              "type": "string"
-                            },
-                            "updatedat": {
-                              "format": "date-time",
-                              "type": "string"
-                            }
-                          },
-                          "type": "object"
-                        },
-                        "server_routing_model_id": {
-                          "minimum": 0,
-                          "type": "integer"
-                        },
-                        "service_name": {
-                          "type": "string"
-                        },
-                        "status": {
-                          "type": "integer"
-                        },
-                        "tracking_id": {
-                          "type": "string"
-                        },
-                        "updatedat": {
-                          "format": "date-time",
-                          "type": "string"
-                        }
-                      },
-                      "type": "object"
-                    },
-                    "type": "array"
-                  },
-                  "market_type": {
-                    "type": "integer"
-                  },
-                  "modelState": {
-                    "type": "integer"
-                  },
-                  "pair": {
-                    "type": "string"
-                  },
-                  "release_time": {
-                    "format": "date-time",
-                    "type": "string"
-                  },
-                  "symbol": {
-                    "type": "string"
-                  },
-                  "tracking_id": {
-                    "type": "string"
-                  },
-                  "updatedat": {
-                    "format": "date-time",
-                    "type": "string"
-                  },
-                  "version": {
-                    "type": "integer"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          },
-          "description": "Qu_Market:",
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "example": {
-                    "traceid": "7fcf35cd-767f-4342-82a4-30aa22b4e095",
-                    "errorCode": 200,
-                    "errorMessage": "",
-                    "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -4380,6 +4526,9 @@
                               "minimum": 0,
                               "type": "integer"
                             },
+                            "hashcode": {
+                              "type": "string"
+                            },
                             "history_time": {
                               "format": "int64",
                               "type": "integer"
@@ -4433,6 +4582,9 @@
                               "minimum": 0,
                               "type": "integer"
                             },
+                            "hashcode": {
+                              "type": "string"
+                            },
                             "history_time": {
                               "format": "int64",
                               "type": "integer"
@@ -4476,6 +4628,9 @@
                       "engine_time": {
                         "format": "int64",
                         "type": "integer"
+                      },
+                      "hashcode": {
+                        "type": "string"
                       },
                       "history_time": {
                         "format": "int64",
@@ -4524,7 +4679,13 @@
                             "format": "date-time",
                             "type": "string"
                           },
+                          "customer_type": {
+                            "type": "integer"
+                          },
                           "executed_qty": {},
+                          "hashcode": {
+                            "type": "string"
+                          },
                           "history_time": {
                             "format": "int64",
                             "type": "integer"
@@ -4565,6 +4726,9 @@
                             "type": "string"
                           },
                           "size": {},
+                          "source_type": {
+                            "type": "integer"
+                          },
                           "status": {
                             "type": "string"
                           },
@@ -4620,7 +4784,13 @@
                         "format": "date-time",
                         "type": "string"
                       },
+                      "customer_type": {
+                        "type": "integer"
+                      },
                       "executed_qty": {},
+                      "hashcode": {
+                        "type": "string"
+                      },
                       "history_time": {
                         "format": "int64",
                         "type": "integer"
@@ -4661,6 +4831,9 @@
                         "type": "string"
                       },
                       "size": {},
+                      "source_type": {
+                        "type": "integer"
+                      },
                       "status": {
                         "type": "string"
                       },
@@ -4694,7 +4867,7 @@
               }
             }
           },
-          "description": "Order:\u003c/br\u003eDepth:\u003c/br\u003eisVirtual:",
+          "description": "Order:</br>Depth:</br>isVirtual:",
           "required": true
         },
         "responses": {
@@ -4703,11 +4876,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "4f7cfea0-37af-4f63-add4-fd9b0d274446",
+                    "traceid": "e88f2e5d-1a4d-40c6-998f-ec3a33983bd2",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -4758,6 +4931,8 @@
               "schema": {
                 "properties": {
                   "amount": {},
+                  "buy_fee": {},
+                  "buy_fee_rate": {},
                   "buy_order": {
                     "properties": {
                       "avg_price": {},
@@ -4772,7 +4947,13 @@
                         "format": "date-time",
                         "type": "string"
                       },
+                      "customer_type": {
+                        "type": "integer"
+                      },
                       "executed_qty": {},
+                      "hashcode": {
+                        "type": "string"
+                      },
                       "history_time": {
                         "format": "int64",
                         "type": "integer"
@@ -4813,6 +4994,9 @@
                         "type": "string"
                       },
                       "size": {},
+                      "source_type": {
+                        "type": "integer"
+                      },
                       "status": {
                         "type": "string"
                       },
@@ -4857,6 +5041,9 @@
                       },
                       "entry_price": {},
                       "fees_incurred": {},
+                      "hashcode": {
+                        "type": "string"
+                      },
                       "id": {
                         "minimum": 0,
                         "type": "integer"
@@ -4917,6 +5104,9 @@
                     "format": "date-time",
                     "type": "string"
                   },
+                  "hashcode": {
+                    "type": "string"
+                  },
                   "history_time": {
                     "format": "int64",
                     "type": "integer"
@@ -4948,6 +5138,8 @@
                     "type": "string"
                   },
                   "price": {},
+                  "sell_fee": {},
+                  "sell_fee_rate": {},
                   "sell_order": {
                     "properties": {
                       "avg_price": {},
@@ -4962,7 +5154,13 @@
                         "format": "date-time",
                         "type": "string"
                       },
+                      "customer_type": {
+                        "type": "integer"
+                      },
                       "executed_qty": {},
+                      "hashcode": {
+                        "type": "string"
+                      },
                       "history_time": {
                         "format": "int64",
                         "type": "integer"
@@ -5003,6 +5201,9 @@
                         "type": "string"
                       },
                       "size": {},
+                      "source_type": {
+                        "type": "integer"
+                      },
                       "status": {
                         "type": "string"
                       },
@@ -5047,6 +5248,9 @@
                       },
                       "entry_price": {},
                       "fees_incurred": {},
+                      "hashcode": {
+                        "type": "string"
+                      },
                       "id": {
                         "minimum": 0,
                         "type": "integer"
@@ -5122,7 +5326,7 @@
               }
             }
           },
-          "description": "Qu_Trades:\u003c/br\u003eisVirtual:",
+          "description": "Qu_Trades:</br>isVirtual:",
           "required": true
         },
         "responses": {
@@ -5131,11 +5335,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "338d0d9f-1dd6-46ee-ad3e-d4a0fff7f35e",
+                    "traceid": "5d031a8c-1f2b-4d18-8b9a-2ffa5c0080cb",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -5198,20 +5402,10 @@
             }
           },
           {
-            "description": "order_id,string:",
+            "description": "order_ids:",
             "in": "query",
-            "name": "OrderID",
-            "schema": {
-              "type": "uint"
-            }
-          },
-          {
-            "description": "client_order_id:",
-            "in": "query",
-            "name": "ClientOrderID",
-            "schema": {
-              "type": "string"
-            }
+            "name": "OrderIDs",
+            "schema": {}
           }
         ],
         "responses": {
@@ -5220,11 +5414,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "132bfe95-1162-43d6-924a-3a8b132ed10f",
+                    "traceid": "b920a41a-9cc7-4c73-bac0-9662127cac0d",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -5285,11 +5479,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "e305a293-6a91-465c-a281-2c225930150a",
+                    "traceid": "8e0ad90d-fa1c-463d-8c5f-8e70e3a01e0a",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -5366,11 +5560,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "b25197c9-04f6-4051-9ddd-3839cf8b84d1",
+                    "traceid": "c9396bad-ad8d-4624-9df9-1216be96ecb5",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -5431,11 +5625,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "7683c8b2-d368-4e7c-84c8-66a58e7e5df9",
+                    "traceid": "eb5f32e3-0feb-4a4b-87e7-babecff2e48f",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -5496,11 +5690,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "5fe2510e-1cf7-4e9e-992f-5b8cec285188",
+                    "traceid": "7ea80e11-eedd-4c92-af94-6be03994043c",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -5577,11 +5771,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "4aaba5ee-23b7-4932-a02c-83c74d567f7f",
+                    "traceid": "3880fdcc-7ec9-45ab-9cb9-d164dc44eb06",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -5636,14 +5830,6 @@
             }
           },
           {
-            "description": "last_id:",
-            "in": "query",
-            "name": "LastID",
-            "schema": {
-              "type": "uint"
-            }
-          },
-          {
             "description": "limit:",
             "in": "query",
             "name": "Limit",
@@ -5658,11 +5844,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "2963afe7-3990-41aa-87ef-bd41b70c3d79",
+                    "traceid": "2a24eaca-8882-4ea1-ba78-701122d3163e",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -5712,17 +5898,17 @@
             "application/json": {
               "schema": {
                 "properties": {
-                  "is_point_time": {
+                  "ispointtime": {
                     "type": "boolean"
                   },
                   "market": {
                     "type": "string"
                   },
-                  "market_id": {
+                  "marketid": {
                     "minimum": 0,
                     "type": "integer"
                   },
-                  "market_servers": {
+                  "marketservers": {
                     "items": {
                       "properties": {
                         "createdat": {
@@ -5732,6 +5918,9 @@
                         "ex_release_market_model_id": {
                           "minimum": 0,
                           "type": "integer"
+                        },
+                        "hashcode": {
+                          "type": "string"
                         },
                         "id": {
                           "minimum": 0,
@@ -5760,6 +5949,9 @@
                                   },
                                   "frequency_limit": {
                                     "type": "integer"
+                                  },
+                                  "hashcode": {
+                                    "type": "string"
                                   },
                                   "id": {
                                     "minimum": 0,
@@ -5810,6 +6002,9 @@
                             },
                             "data_machine_id": {
                               "type": "integer"
+                            },
+                            "hashcode": {
+                              "type": "string"
                             },
                             "id": {
                               "minimum": 0,
@@ -5870,10 +6065,10 @@
                     },
                     "type": "array"
                   },
-                  "market_type": {
+                  "markettype": {
                     "type": "integer"
                   },
-                  "release_time": {
+                  "releasetime": {
                     "format": "date-time",
                     "type": "string"
                   },
@@ -5897,11 +6092,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "9da5f660-ca48-49d1-a54b-096991b4911e",
+                    "traceid": "b35d1bc5-0813-4013-8381-66feacf46bed",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -6014,7 +6209,7 @@
               }
             }
           },
-          "description": "TrApi:\u003c/br\u003eorder_id:\u003c/br\u003euser_id:\u003c/br\u003euser_level:\u003c/br\u003efreeze_id:\u003c/br\u003ebase_asset_id:\u003c/br\u003equote_asset_id:\u003c/br\u003ereferral_code:\u003c/br\u003eside:\u003c/br\u003eorder_type:\u003c/br\u003eamount:\u003c/br\u003eprice:\u003c/br\u003eaccount_type_id:\u003c/br\u003esource_type:\u003c/br\u003etime_in_force:\u003c/br\u003ecustomer_order_id:\u003c/br\u003esource_server:\u003c/br\u003esource_port:",
+          "description": "TrApi:</br>order_id:</br>user_id:</br>user_level:</br>freeze_id:</br>base_asset_id:</br>quote_asset_id:</br>referral_code:</br>side:</br>order_type:</br>amount:</br>price:</br>account_type_id:</br>source_type:</br>time_in_force:</br>customer_order_id:</br>source_server:</br>source_port:",
           "required": true
         },
         "responses": {
@@ -6023,11 +6218,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "18587944-e232-4d42-ac76-aa75ecb621c8",
+                    "traceid": "278346fd-f2a1-43c3-ac0e-945e404d7cb2",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -6069,6 +6264,85 @@
         ]
       }
     },
+    "/api/users/cancelorder": {
+      "post": {
+        "operationId": "/api/users/cancelorder",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "market_id": {
+                    "minimum": 0,
+                    "type": "integer"
+                  },
+                  "order_id": {
+                    "minimum": 0,
+                    "type": "integer"
+                  },
+                  "user_id": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "description": "User_API:</br>market_id:市场ID</br>order_id:订单ID</br>user_id:用户ID",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "a0fad4fe-4ca5-4713-8ea0-3b762a2a9330",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "users"
+        ]
+      }
+    },
     "/api/users/depositrecord": {
       "post": {
         "operationId": "/api/users/depositrecord",
@@ -6094,7 +6368,7 @@
               }
             }
           },
-          "description": "user_id:\u003c/br\u003etoken_id:\u003c/br\u003epage:\u003c/br\u003esize:",
+          "description": "User_API:</br>user_id:</br>token_id:</br>page:</br>size:",
           "required": true
         },
         "responses": {
@@ -6103,11 +6377,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "9d72562d-88b0-4c32-8c07-81441045e477",
+                    "traceid": "36c00dd9-68e2-463a-af9f-5617f4320a2e",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -6168,7 +6442,7 @@
               }
             }
           },
-          "description": "userId:\u003c/br\u003echainIdentifier:",
+          "description": "User_API:</br>userId:</br>chainIdentifier:",
           "required": true
         },
         "responses": {
@@ -6177,11 +6451,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "ce676647-551a-4409-b24a-0ef8b297bef3",
+                    "traceid": "c2856c73-b69e-4a7c-80b0-de7cf6e2f1a4",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -6242,7 +6516,7 @@
               }
             }
           },
-          "description": "user_id:\u003c/br\u003echain_identifier:",
+          "description": "User_API:</br>user_id:</br>chain_identifier:",
           "required": true
         },
         "responses": {
@@ -6251,11 +6525,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "e7d6166d-0144-492e-a862-8b88a1090983",
+                    "traceid": "4ba2783a-389d-4233-bae1-29201bdb3753",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -6316,7 +6590,7 @@
               }
             }
           },
-          "description": "user_id:\u003c/br\u003esymbol:",
+          "description": "User_API:</br>user_id:</br>symbol:",
           "required": true
         },
         "responses": {
@@ -6325,11 +6599,530 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "8cb2c14d-5b61-497f-9910-90ed2df8698d",
+                    "traceid": "b20669c7-f3c9-486e-ba82-3642c2a2d2da",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "users"
+        ]
+      }
+    },
+    "/api/users/login": {
+      "post": {
+        "operationId": "/api/users/login",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "info": {
+                    "properties": {
+                      "device_info": {
+                        "properties": {
+                          "app_version": {
+                            "type": "string"
+                          },
+                          "createdat": {
+                            "format": "date-time",
+                            "type": "string"
+                          },
+                          "device_id": {
+                            "type": "string"
+                          },
+                          "device_name": {
+                            "type": "string"
+                          },
+                          "device_type": {
+                            "type": "string"
+                          },
+                          "hashcode": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "minimum": 0,
+                            "type": "integer"
+                          },
+                          "modelState": {
+                            "type": "integer"
+                          },
+                          "os_version": {
+                            "type": "string"
+                          },
+                          "tracking_id": {
+                            "type": "string"
+                          },
+                          "updatedat": {
+                            "format": "date-time",
+                            "type": "string"
+                          },
+                          "user_agent": {
+                            "type": "string"
+                          },
+                          "user_information_id": {
+                            "minimum": 0,
+                            "type": "integer"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "user_info": {
+                        "properties": {
+                          "action": {
+                            "type": "string"
+                          },
+                          "clientIp": {
+                            "type": "string"
+                          },
+                          "createdTime": {
+                            "type": "string"
+                          },
+                          "createdat": {
+                            "format": "date-time",
+                            "type": "string"
+                          },
+                          "devices": {
+                            "items": {
+                              "properties": {
+                                "app_version": {
+                                  "type": "string"
+                                },
+                                "createdat": {
+                                  "format": "date-time",
+                                  "type": "string"
+                                },
+                                "device_id": {
+                                  "type": "string"
+                                },
+                                "device_name": {
+                                  "type": "string"
+                                },
+                                "device_type": {
+                                  "type": "string"
+                                },
+                                "hashcode": {
+                                  "type": "string"
+                                },
+                                "id": {
+                                  "minimum": 0,
+                                  "type": "integer"
+                                },
+                                "modelState": {
+                                  "type": "integer"
+                                },
+                                "os_version": {
+                                  "type": "string"
+                                },
+                                "tracking_id": {
+                                  "type": "string"
+                                },
+                                "updatedat": {
+                                  "format": "date-time",
+                                  "type": "string"
+                                },
+                                "user_agent": {
+                                  "type": "string"
+                                },
+                                "user_information_id": {
+                                  "minimum": 0,
+                                  "type": "integer"
+                                }
+                              },
+                              "type": "object"
+                            },
+                            "type": "array"
+                          },
+                          "first_login_time": {
+                            "format": "date-time",
+                            "type": "string"
+                          },
+                          "hashcode": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "minimum": 0,
+                            "type": "integer"
+                          },
+                          "isTriggered": {
+                            "type": "boolean"
+                          },
+                          "last_active_time": {
+                            "format": "date-time",
+                            "type": "string"
+                          },
+                          "last_login_time": {
+                            "format": "date-time",
+                            "type": "string"
+                          },
+                          "method": {
+                            "type": "string"
+                          },
+                          "modelState": {
+                            "type": "integer"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "organization": {
+                            "type": "string"
+                          },
+                          "owner": {
+                            "type": "string"
+                          },
+                          "requestUri": {
+                            "type": "string"
+                          },
+                          "sessions": {
+                            "items": {
+                              "properties": {
+                                "app_version": {
+                                  "type": "string"
+                                },
+                                "createdat": {
+                                  "format": "date-time",
+                                  "type": "string"
+                                },
+                                "device_id": {
+                                  "type": "string"
+                                },
+                                "device_name": {
+                                  "type": "string"
+                                },
+                                "device_type": {
+                                  "type": "string"
+                                },
+                                "hashcode": {
+                                  "type": "string"
+                                },
+                                "id": {
+                                  "minimum": 0,
+                                  "type": "integer"
+                                },
+                                "ip_address": {
+                                  "type": "string"
+                                },
+                                "is_logged_in": {
+                                  "type": "boolean"
+                                },
+                                "last_active": {
+                                  "format": "date-time",
+                                  "type": "string"
+                                },
+                                "login_time": {
+                                  "format": "date-time",
+                                  "type": "string"
+                                },
+                                "modelState": {
+                                  "type": "integer"
+                                },
+                                "os_version": {
+                                  "type": "string"
+                                },
+                                "out_time": {
+                                  "format": "date-time",
+                                  "type": "string"
+                                },
+                                "server_id": {
+                                  "type": "string"
+                                },
+                                "session_id": {
+                                  "type": "string"
+                                },
+                                "tracking_id": {
+                                  "type": "string"
+                                },
+                                "updatedat": {
+                                  "format": "date-time",
+                                  "type": "string"
+                                },
+                                "user_agent": {
+                                  "type": "string"
+                                },
+                                "user_id": {
+                                  "type": "string"
+                                },
+                                "user_information_id": {
+                                  "minimum": 0,
+                                  "type": "integer"
+                                }
+                              },
+                              "type": "object"
+                            },
+                            "type": "array"
+                          },
+                          "tracking_id": {
+                            "type": "string"
+                          },
+                          "updatedat": {
+                            "format": "date-time",
+                            "type": "string"
+                          },
+                          "user": {
+                            "type": "string"
+                          },
+                          "user_id": {
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      }
+                    },
+                    "type": "object"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "description": "info:登录信息",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "24b85188-ed09-45ce-bb84-fbd9ad576b03",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "users"
+        ]
+      }
+    },
+    "/api/users/placeorder": {
+      "post": {
+        "operationId": "/api/users/placeorder",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "account_type_id": {
+                    "minimum": 0,
+                    "type": "integer"
+                  },
+                  "activation_price": {},
+                  "amount": {},
+                  "avg_price": {},
+                  "base_asset_id": {
+                    "minimum": 0,
+                    "type": "integer"
+                  },
+                  "callback_rate": {},
+                  "createdat": {
+                    "format": "date-time",
+                    "type": "string"
+                  },
+                  "customer_order_id": {
+                    "type": "string"
+                  },
+                  "customer_type": {
+                    "type": "integer"
+                  },
+                  "freeze_amount": {},
+                  "freeze_id": {
+                    "minimum": 0,
+                    "type": "integer"
+                  },
+                  "gateway_server": {
+                    "type": "string"
+                  },
+                  "hashcode": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "minimum": 0,
+                    "type": "integer"
+                  },
+                  "leverage": {},
+                  "maker_fee_rate": {},
+                  "margin": {},
+                  "margin_mode": {
+                    "type": "integer"
+                  },
+                  "margin_rate": {},
+                  "mark_price": {},
+                  "market_id": {
+                    "minimum": 0,
+                    "type": "integer"
+                  },
+                  "modelState": {
+                    "type": "integer"
+                  },
+                  "only_close_position": {
+                    "type": "boolean"
+                  },
+                  "order_type": {
+                    "type": "string"
+                  },
+                  "position_port": {
+                    "type": "integer"
+                  },
+                  "position_server": {
+                    "type": "string"
+                  },
+                  "position_side": {
+                    "type": "integer"
+                  },
+                  "price": {},
+                  "quote_asset_id": {
+                    "minimum": 0,
+                    "type": "integer"
+                  },
+                  "quote_asset_name": {
+                    "type": "string"
+                  },
+                  "recv_window": {
+                    "format": "int64",
+                    "type": "integer"
+                  },
+                  "referral_code": {
+                    "type": "string"
+                  },
+                  "side": {
+                    "maximum": 127,
+                    "minimum": -128,
+                    "type": "integer"
+                  },
+                  "size": {},
+                  "source_ip": {
+                    "type": "string"
+                  },
+                  "source_type": {
+                    "type": "integer"
+                  },
+                  "stop_price": {},
+                  "symbol": {
+                    "type": "string"
+                  },
+                  "take_profit_price": {},
+                  "taker_fee_rate": {},
+                  "time_in_force": {
+                    "type": "string"
+                  },
+                  "timestamp": {
+                    "format": "int64",
+                    "type": "integer"
+                  },
+                  "tracking_id": {
+                    "type": "string"
+                  },
+                  "trade_port": {
+                    "type": "integer"
+                  },
+                  "trade_server": {
+                    "type": "string"
+                  },
+                  "updatedat": {
+                    "format": "date-time",
+                    "type": "string"
+                  },
+                  "user_id": {
+                    "type": "string"
+                  },
+                  "user_level": {
+                    "type": "integer"
+                  },
+                  "volume": {},
+                  "working_type": {
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "description": "Ex_FutureOrderModel:",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "3e6e3a84-2077-4fd8-8e96-52223432bbd9",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -6416,11 +7209,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "0bb89188-d27c-4f78-a6c6-ff28bb186a3c",
+                    "traceid": "43fb03f2-30ac-495a-a5d8-9a0f658ca347",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -6516,11 +7309,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "e6d7aaaa-4b9c-45d7-803c-c5df56af840f",
+                    "traceid": "917c5757-67b1-4c0a-aae2-5641296d2ca0",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -6612,6 +7405,9 @@
                     "minimum": 0,
                     "type": "integer"
                   },
+                  "hashcode": {
+                    "type": "string"
+                  },
                   "id": {
                     "minimum": 0,
                     "type": "integer"
@@ -6670,11 +7466,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "74bd427f-6bce-4f67-a3ae-6d2948fa5924",
+                    "traceid": "4a0599b2-2c18-4d6d-a3c5-3d35838fb735",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -6767,11 +7563,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "30a627bc-5edc-43fb-8f68-d1fbc7414a8a",
+                    "traceid": "03769294-ed98-4315-864b-a5719705d476",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -6847,11 +7643,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "1edf8671-7f82-4f69-ae0a-2735c486b15a",
+                    "traceid": "f3cefa9c-72c7-40c7-812d-06a56ee16194",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -6928,11 +7724,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "cc1927c5-3c13-49cd-9833-2b2be5bc7b7c",
+                    "traceid": "6c8e4888-a6e7-449c-a4f3-43212eab6290",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -7006,11 +7802,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "d3a039ed-bad8-4368-8407-4a089782bb33",
+                    "traceid": "7d88aa20-1f7f-4aec-80f1-7c68ba781100",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -7092,11 +7888,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "a748e33d-7bbe-4eac-9088-c322c246ef2b",
+                    "traceid": "85fe7195-2713-4e8d-9663-f8792927c1d5",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -7173,7 +7969,7 @@
               }
             }
           },
-          "description": "Private:\u003c/br\u003esymbol:\u003c/br\u003eorderId,string:\u003c/br\u003eorigClientOrderId:",
+          "description": "Private:</br>symbol:</br>orderId,string:</br>origClientOrderId:",
           "required": true
         },
         "responses": {
@@ -7182,11 +7978,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "95144dfa-2cad-4ac2-80b4-61221f48634d",
+                    "traceid": "e578cd23-bf86-44a3-a7f0-e0be29865c08",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -7260,11 +8056,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "5aed813c-0927-458d-8b15-75b11446190b",
+                    "traceid": "afdb13d0-7152-4749-8daa-73f932ad42ae",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -7315,11 +8111,76 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "3fde48e8-4bd7-49f5-bd0d-54fbf3cd7af8",
+                    "traceid": "95a047fa-f52f-42f6-b456-49a25929e339",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/fundingfeehistory": {
+      "get": {
+        "operationId": "/api/v1/fundingfeehistory",
+        "parameters": [
+          {
+            "description": "symbol:",
+            "in": "query",
+            "name": "Symbol",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "f9bf7c03-52da-432a-bb42-3680d3b70ebf",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -7452,11 +8313,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "5856ba40-47b1-4aa8-8855-e0c54dcb1ee8",
+                    "traceid": "94ca4f43-7821-41f5-8ee0-d2a8d5dd2adb",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -7586,11 +8447,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "a69aa9fc-3f42-4c87-a306-2da636a0ddbc",
+                    "traceid": "65769d88-18c6-467f-8317-907af8655c7a",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -7712,11 +8573,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "f13174c5-b6cc-4a6b-87b5-cdb28aa1e72f",
+                    "traceid": "43f1b376-1482-40b0-b3d9-2a99b99d43db",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -7838,11 +8699,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "e4cdc7c4-e7b1-49e1-b9c5-0fc32006e2ff",
+                    "traceid": "a1ad7ff2-86b1-40ea-9aa3-fa507b4ffdac",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -7940,11 +8801,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "989e8d31-c9d6-47d3-b1f2-9b11228e1f5e",
+                    "traceid": "549093a1-adaf-4498-8578-69f027db7dd0",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -8029,11 +8890,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "d126f914-c41c-4a0d-a50c-97ae96688319",
+                    "traceid": "5a442022-3c37-4234-9f5d-a6a6224a9843",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -8123,11 +8984,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "b2a6d9bc-a520-4b8c-9787-ac9b6135f271",
+                    "traceid": "78122039-d556-4a70-abdc-9ccc6018227e",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -8217,11 +9078,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "2c49bbcd-52d8-4015-bc89-7c3e0a4c7c56",
+                    "traceid": "f5a9de7e-81f1-42e6-ac2b-cfe827e2bb45",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -8287,11 +9148,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "a7386b9d-b246-457d-abb1-ce1e5e013a45",
+                    "traceid": "9095323d-c22a-4311-8f18-2ec59bfaf620",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -8368,11 +9229,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "16a145ee-00b9-4723-baa8-c9eb4e3d6a2b",
+                    "traceid": "c99c08ff-21da-43c6-b123-5fe6ffc4fbd2",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -8427,6 +9288,9 @@
             "application/json": {
               "schema": {
                 "properties": {
+                  "customer_order_id": {
+                    "type": "string"
+                  },
                   "isMargin": {
                     "type": "boolean"
                   },
@@ -8455,6 +9319,9 @@
                   "symbol": {
                     "type": "string"
                   },
+                  "time_in_force": {
+                    "type": "string"
+                  },
                   "timestamp": {
                     "format": "int64",
                     "type": "integer"
@@ -8467,7 +9334,7 @@
               }
             }
           },
-          "description": "Private:\u003c/br\u003eFuturesOrder:",
+          "description": "Private:</br>FuturesOrder:",
           "required": true
         },
         "responses": {
@@ -8476,12 +9343,136 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "f7257635-cb8b-4be7-8ecb-69549b66d372",
+                    "traceid": "6fccfc8e-5d2e-4d32-8ce6-edc29c5b08c4",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/overview": {
+      "get": {
+        "operationId": "/api/v1/overview",
+        "parameters": [
+          {
+            "description": "timestamp:",
+            "in": "query",
+            "name": "Timestamp",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "signature:",
+            "in": "query",
+            "name": "Signature",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "190492ee-05b6-45d1-8aa2-a0b5e2c5c5f7",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": {
+                      "estimated_total_value": "125680.50",
+                      "profit_loss_today": "3250.80",
+                      "profit_loss_percentage": "2.65",
+                      "account_details": [
+                        {
+                          "accountTypeName": "合约账户",
+                          "accountTypeId": 1,
+                          "accountBalance": "85430.25",
+                          "availableBalance": "72350.40"
+                        },
+                        {
+                          "accountTypeName": "现货账户",
+                          "accountTypeId": 2,
+                          "accountBalance": "32180.15",
+                          "availableBalance": "32180.15"
+                        },
+                        {
+                          "accountTypeName": "资金账户",
+                          "accountTypeId": 3,
+                          "accountBalance": "8070.10",
+                          "availableBalance": "8070.10"
+                        }
+                      ],
+                      "asset_details": [
+                        {
+                          "assetName": "USDT",
+                          "assetAmount": "95430.50",
+                          "assetPercentage": "75.92"
+                        },
+                        {
+                          "assetName": "BTC",
+                          "assetAmount": "0.32500000",
+                          "assetPercentage": "16.38"
+                        },
+                        {
+                          "assetName": "ETH",
+                          "assetAmount": "2.85000000",
+                          "assetPercentage": "5.24"
+                        },
+                        {
+                          "assetName": "BNB",
+                          "assetAmount": "8.50000000",
+                          "assetPercentage": "2.46"
+                        }
+                      ]
+                    },
                     "host": "testing env",
                     "showType": 0
                   },
@@ -8586,11 +9577,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "f84c0f56-a0a2-44e0-abcb-3e5015bdaa24",
+                    "traceid": "07f61b5f-f44f-4e12-8e0d-dc36d72f5ba2",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -8672,11 +9663,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "3edceefe-51a5-4df3-a252-c3376d4470a1",
+                    "traceid": "fb7223f9-506c-45a8-ae35-c91b89089fe8",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -8742,11 +9733,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "0fc11273-bb8a-43d4-a8fa-fcbcddc12296",
+                    "traceid": "ef081afb-86ad-4dc6-b978-755599a054f5",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -8797,12 +9788,99 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "9fe60882-2a57-4269-90fe-d58548f3f177",
+                    "traceid": "93022e8c-ff21-4771-910f-f29abebb6644",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/symbolinfo": {
+      "get": {
+        "operationId": "/api/v1/symbolinfo",
+        "parameters": [
+          {
+            "description": "symbol:",
+            "in": "query",
+            "name": "Symbol",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "2f0485dd-a4b1-47a9-8070-980b0804daab",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": {
+                      "symbol": "",
+                      "icon": "",
+                      "code": "",
+                      "name": "",
+                      "marketValue": "",
+                      "fullyDilutedMarketValue": "",
+                      "dominanceIndex": "",
+                      "volume": "",
+                      "circulatingSupply": "",
+                      "totalSupply": "",
+                      "maxSupply": "",
+                      "openInterestConcentration": "",
+                      "issueDate": "",
+                      "issuePrice": "",
+                      "allTimeHigh": "",
+                      "allTimeLow": "",
+                      "website": "",
+                      "whitePaper": "",
+                      "socialMedia": "",
+                      "explorer": "",
+                      "description": ""
+                    },
                     "host": "testing env",
                     "showType": 0
                   },
@@ -8862,11 +9940,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "13fa40f8-3d29-45e6-8558-b3fa8528f042",
+                    "traceid": "49c52237-779c-45ce-91c6-53f66d2f0eca",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -8927,11 +10005,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "8fd970f6-bbfc-4267-98d1-ccbe71aed219",
+                    "traceid": "66812a48-8afe-4104-a52e-a0ed4a6e105c",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -8992,11 +10070,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "0e726939-8a26-4c03-9240-71fea8663600",
+                    "traceid": "a8822374-bc3d-4aa5-8a44-297d42127197",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -9057,12 +10135,98 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "167ed647-ca66-48dc-85fc-47095f9e9e99",
+                    "traceid": "044740d2-f3e0-4454-8ef3-542c689e3c9e",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/tradeinfo": {
+      "get": {
+        "operationId": "/api/v1/tradeinfo",
+        "parameters": [
+          {
+            "description": "symbol:",
+            "in": "query",
+            "name": "Symbol",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "volumeInterval:交易量统计时间间隔，例如  \"5m\", \"1h\"，通过VolumeIntervalType接口获取支持的时间间隔列表，默认为 \"5m\"",
+            "in": "query",
+            "name": "VolumeInterval",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "indicatorType:交易指标类型，\"longShortRatio\", \"openInterest\"，当为空时获取到所有指标数据",
+            "in": "query",
+            "name": "IndicatorType",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "86d84bf0-919b-4475-814c-2940a8f7c6e3",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": {
+                      "symbol": "",
+                      "volumeInterval": "",
+                      "openInterest": null,
+                      "longShortRatio": null
+                    },
                     "host": "testing env",
                     "showType": 0
                   },
@@ -9130,11 +10294,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "acf777b6-e6e1-4b5d-86a1-ea1c0f025b51",
+                    "traceid": "66589984-1c5b-48f8-9040-8a54cb7876ee",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -9201,9 +10365,6 @@
                     },
                     "type": "object"
                   },
-                  "id": {
-                    "type": "integer"
-                  },
                   "isTriggered": {
                     "type": "boolean"
                   },
@@ -9230,7 +10391,7 @@
               }
             }
           },
-          "description": "V1:\u003c/br\u003eid:\u003c/br\u003eowner:\u003c/br\u003ename:\u003c/br\u003ecreatedTime:\u003c/br\u003eorganization:\u003c/br\u003eclientIp:\u003c/br\u003euser:\u003c/br\u003emethod:\u003c/br\u003erequestUri:\u003c/br\u003eaction:\u003c/br\u003eisTriggered:\u003c/br\u003eextendedUser:",
+          "description": "V1:</br>owner:</br>name:</br>createdTime:</br>organization:</br>clientIp:</br>user:</br>method:</br>requestUri:</br>action:</br>isTriggered:</br>extendedUser:",
           "required": true
         },
         "responses": {
@@ -9239,11 +10400,76 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "24dbe5cf-1f00-4386-b291-8131a5a983b5",
+                    "traceid": "0270e0bd-e85e-45b2-9682-743ec8a423bc",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/volumeintervaltype": {
+      "get": {
+        "operationId": "/api/v1/volumeintervaltype",
+        "parameters": [
+          {
+            "description": "symbol:",
+            "in": "query",
+            "name": "Symbol",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "7c8ce450-5fbe-4f52-9466-10b6c28f4a2a",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -9336,11 +10562,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "f819e3a4-e067-4338-84ae-a7ba1c387492",
+                    "traceid": "7511474c-093c-45d5-9416-fe10a1c5a93c",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": {
                       "rows": [
                         {
@@ -9440,11 +10666,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "0b0e131f-e958-45f9-a1a2-a958988ef7b1",
+                    "traceid": "5b61cbdd-03ea-48fe-b7e2-20058690366e",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": [
                       {
                         "address": "",
@@ -9533,11 +10759,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "dba1c878-2b64-4769-9089-57460023db9f",
+                    "traceid": "600961ec-f870-4af0-b293-199afb08becd",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": [
                       {
                         "token_id": "",
@@ -9618,11 +10844,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "1acf9001-8fc9-4009-87c2-0789cf063e5a",
+                    "traceid": "35fa2788-d9e9-4d09-bddd-88d7dcd2b2e2",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": [
                       {
                         "symbol": "USDT",
@@ -9650,7 +10876,7 @@
                             "max_withdraw_amount": "0"
                           }
                         },
-                        "updated_at": "2026-01-09T13:27:54.326452129+08:00",
+                        "updated_at": "2026-02-23T16:16:19.711680876+08:00",
                         "version": 1,
                         "icon_url": "https://static.cobo.com/img/asset/icon_usdt.png"
                       }
@@ -9723,7 +10949,7 @@
               }
             }
           },
-          "description": "-:\u003c/br\u003eaddress:\u003c/br\u003echain_identifier:\u003c/br\u003ememo:\u003c/br\u003edescription:\u003c/br\u003eis_delete:",
+          "description": "-:</br>address:</br>chain_identifier:</br>memo:</br>description:</br>is_delete:",
           "required": true
         },
         "responses": {
@@ -9732,11 +10958,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "e832a133-295b-48ca-9908-06e3bc3fe66c",
+                    "traceid": "63f964b5-c392-41bd-8040-5dfa9af4dc6d",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": [
                       {
                         "address": "",
@@ -9824,7 +11050,7 @@
               }
             }
           },
-          "description": "-:\u003c/br\u003esymbol:\u003c/br\u003echainId:\u003c/br\u003etokenId:\u003c/br\u003eaddress:\u003c/br\u003ememo:\u003c/br\u003eamount:\u003c/br\u003edescription:",
+          "description": "-:</br>symbol:</br>chainId:</br>tokenId:</br>address:</br>memo:</br>amount:</br>description:",
           "required": true
         },
         "responses": {
@@ -9833,11 +11059,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "431ccf99-5047-4846-b5fd-d274a37d93c0",
+                    "traceid": "cb666917-6aae-4b51-9bc9-44ce55be2835",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": {
                       "fund_tx_id": 0,
                       "account_type_id": 0,
@@ -9956,11 +11182,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "4484f9ac-6958-4963-a813-8b2390d132fd",
+                    "traceid": "86399722-d694-41c6-a510-aebe5158da86",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": {
                       "rows": [
                         {
@@ -10038,13 +11264,7 @@
   },
   "servers": [
     {
-      "url": "http://119.8.50.236:8083/"
-    },
-    {
       "url": "http://119.8.50.236:8086/"
-    },
-    {
-      "url": "http://119.8.50.236:8087/"
     },
     {
       "url": "http://119.8.50.236:8088/"
@@ -10053,27 +11273,25 @@
       "url": "http://119.8.50.236:8081/"
     },
     {
-      "url": "http://119.8.50.236:8082/"
+      "url": "http://119.8.50.236:8083/"
     },
     {
       "url": "http://119.8.50.236:8084/"
     },
     {
       "url": "http://119.8.50.236:8085/"
+    },
+    {
+      "url": "http://119.8.50.236:8087/"
+    },
+    {
+      "url": "http://119.8.50.236:8082/"
     }
   ],
   "tags": [
     {
-      "description": "http://119.8.50.236:8083/",
-      "name": "quotations"
-    },
-    {
       "description": "http://119.8.50.236:8086/",
       "name": "cobo"
-    },
-    {
-      "description": "http://119.8.50.236:8087/",
-      "name": "users"
     },
     {
       "description": "http://119.8.50.236:8088/",
@@ -10084,8 +11302,8 @@
       "name": "exchange"
     },
     {
-      "description": "http://119.8.50.236:8082/",
-      "name": "funds"
+      "description": "http://119.8.50.236:8083/",
+      "name": "quotations"
     },
     {
       "description": "http://119.8.50.236:8084/",
@@ -10094,6 +11312,14 @@
     {
       "description": "http://119.8.50.236:8085/",
       "name": "trades"
+    },
+    {
+      "description": "http://119.8.50.236:8087/",
+      "name": "users"
+    },
+    {
+      "description": "http://119.8.50.236:8082/",
+      "name": "funds"
     }
   ]
 }

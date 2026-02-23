@@ -3,14 +3,14 @@
     "securitySchemes": {
       "Bearer": {
         "bearerFormat": "JWT",
-        "description": "测试 Token 获取示例：http://119.8.50.236:8088/api/servermanage/testtoken?userid=12345",
+        "description": "Get TestToken from http://119.8.50.236:8088/api/servermanage/testtoken?userid=12345",
         "scheme": "bearer",
         "type": "http"
       }
     }
   },
   "info": {
-    "description": "Bitzoom 合约 API 文档（包含公开与私有接口）",
+    "description": "Project API Document includ private and public",
     "title": "Open API",
     "version": "1.0.0"
   },
@@ -25,7 +25,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "e94c97a2-fc19-4ed9-83b0-9a220230276b",
+                    "traceid": "e075f752-5eaa-480d-81fc-4e3bc9d4abfc",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -80,7 +80,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "adca3d38-c490-4ffc-b538-a6c77dcde6b3",
+                    "traceid": "2fa6b2ee-cf6f-4554-8da0-1f66b37ea2ac",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -161,7 +161,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "cc1927c5-3c13-49cd-9833-2b2be5bc7b7c",
+                    "traceid": "6c8e4888-a6e7-449c-a4f3-43212eab6290",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -239,7 +239,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "d3a039ed-bad8-4368-8407-4a089782bb33",
+                    "traceid": "7d88aa20-1f7f-4aec-80f1-7c68ba781100",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -325,7 +325,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "a748e33d-7bbe-4eac-9088-c322c246ef2b",
+                    "traceid": "85fe7195-2713-4e8d-9663-f8792927c1d5",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -415,7 +415,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "95144dfa-2cad-4ac2-80b4-61221f48634d",
+                    "traceid": "e578cd23-bf86-44a3-a7f0-e0be29865c08",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -493,7 +493,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "5aed813c-0927-458d-8b15-75b11446190b",
+                    "traceid": "afdb13d0-7152-4749-8daa-73f932ad42ae",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -548,7 +548,72 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "3fde48e8-4bd7-49f5-bd0d-54fbf3cd7af8",
+                    "traceid": "95a047fa-f52f-42f6-b456-49a25929e339",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/fundingfeehistory": {
+      "get": {
+        "operationId": "/api/v1/fundingfeehistory",
+        "parameters": [
+          {
+            "description": "symbol:",
+            "in": "query",
+            "name": "Symbol",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "f9bf7c03-52da-432a-bb42-3680d3b70ebf",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -685,7 +750,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "5856ba40-47b1-4aa8-8855-e0c54dcb1ee8",
+                    "traceid": "94ca4f43-7821-41f5-8ee0-d2a8d5dd2adb",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -819,7 +884,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "a69aa9fc-3f42-4c87-a306-2da636a0ddbc",
+                    "traceid": "65769d88-18c6-467f-8317-907af8655c7a",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -945,7 +1010,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "f13174c5-b6cc-4a6b-87b5-cdb28aa1e72f",
+                    "traceid": "43f1b376-1482-40b0-b3d9-2a99b99d43db",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -1071,7 +1136,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "e4cdc7c4-e7b1-49e1-b9c5-0fc32006e2ff",
+                    "traceid": "a1ad7ff2-86b1-40ea-9aa3-fa507b4ffdac",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -1173,7 +1238,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "989e8d31-c9d6-47d3-b1f2-9b11228e1f5e",
+                    "traceid": "549093a1-adaf-4498-8578-69f027db7dd0",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -1262,7 +1327,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "d126f914-c41c-4a0d-a50c-97ae96688319",
+                    "traceid": "5a442022-3c37-4234-9f5d-a6a6224a9843",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -1356,7 +1421,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "b2a6d9bc-a520-4b8c-9787-ac9b6135f271",
+                    "traceid": "78122039-d556-4a70-abdc-9ccc6018227e",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -1450,7 +1515,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "2c49bbcd-52d8-4015-bc89-7c3e0a4c7c56",
+                    "traceid": "f5a9de7e-81f1-42e6-ac2b-cfe827e2bb45",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -1520,7 +1585,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "a7386b9d-b246-457d-abb1-ce1e5e013a45",
+                    "traceid": "9095323d-c22a-4311-8f18-2ec59bfaf620",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -1601,7 +1666,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "16a145ee-00b9-4723-baa8-c9eb4e3d6a2b",
+                    "traceid": "c99c08ff-21da-43c6-b123-5fe6ffc4fbd2",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -1660,6 +1725,9 @@
             "application/json": {
               "schema": {
                 "properties": {
+                  "customer_order_id": {
+                    "type": "string"
+                  },
                   "isMargin": {
                     "type": "boolean"
                   },
@@ -1688,6 +1756,9 @@
                   "symbol": {
                     "type": "string"
                   },
+                  "time_in_force": {
+                    "type": "string"
+                  },
                   "timestamp": {
                     "format": "int64",
                     "type": "integer"
@@ -1709,12 +1780,136 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "f7257635-cb8b-4be7-8ecb-69549b66d372",
+                    "traceid": "6fccfc8e-5d2e-4d32-8ce6-edc29c5b08c4",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
                     "duration": 9223372036854776000,
                     "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/overview": {
+      "get": {
+        "operationId": "/api/v1/overview",
+        "parameters": [
+          {
+            "description": "timestamp:",
+            "in": "query",
+            "name": "Timestamp",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "signature:",
+            "in": "query",
+            "name": "Signature",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "190492ee-05b6-45d1-8aa2-a0b5e2c5c5f7",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": {
+                      "estimated_total_value": "125680.50",
+                      "profit_loss_today": "3250.80",
+                      "profit_loss_percentage": "2.65",
+                      "account_details": [
+                        {
+                          "accountTypeName": "合约账户",
+                          "accountTypeId": 1,
+                          "accountBalance": "85430.25",
+                          "availableBalance": "72350.40"
+                        },
+                        {
+                          "accountTypeName": "现货账户",
+                          "accountTypeId": 2,
+                          "accountBalance": "32180.15",
+                          "availableBalance": "32180.15"
+                        },
+                        {
+                          "accountTypeName": "资金账户",
+                          "accountTypeId": 3,
+                          "accountBalance": "8070.10",
+                          "availableBalance": "8070.10"
+                        }
+                      ],
+                      "asset_details": [
+                        {
+                          "assetName": "USDT",
+                          "assetAmount": "95430.50",
+                          "assetPercentage": "75.92"
+                        },
+                        {
+                          "assetName": "BTC",
+                          "assetAmount": "0.32500000",
+                          "assetPercentage": "16.38"
+                        },
+                        {
+                          "assetName": "ETH",
+                          "assetAmount": "2.85000000",
+                          "assetPercentage": "5.24"
+                        },
+                        {
+                          "assetName": "BNB",
+                          "assetAmount": "8.50000000",
+                          "assetPercentage": "2.46"
+                        }
+                      ]
+                    },
                     "host": "testing env",
                     "showType": 0
                   },
@@ -1819,7 +2014,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "f84c0f56-a0a2-44e0-abcb-3e5015bdaa24",
+                    "traceid": "07f61b5f-f44f-4e12-8e0d-dc36d72f5ba2",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -1905,7 +2100,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "3edceefe-51a5-4df3-a252-c3376d4470a1",
+                    "traceid": "fb7223f9-506c-45a8-ae35-c91b89089fe8",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -1975,7 +2170,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "0fc11273-bb8a-43d4-a8fa-fcbcddc12296",
+                    "traceid": "ef081afb-86ad-4dc6-b978-755599a054f5",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -2030,12 +2225,99 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "9fe60882-2a57-4269-90fe-d58548f3f177",
+                    "traceid": "93022e8c-ff21-4771-910f-f29abebb6644",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
                     "duration": 9223372036854776000,
                     "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/symbolinfo": {
+      "get": {
+        "operationId": "/api/v1/symbolinfo",
+        "parameters": [
+          {
+            "description": "symbol:",
+            "in": "query",
+            "name": "Symbol",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "2f0485dd-a4b1-47a9-8070-980b0804daab",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": {
+                      "symbol": "",
+                      "icon": "",
+                      "code": "",
+                      "name": "",
+                      "marketValue": "",
+                      "fullyDilutedMarketValue": "",
+                      "dominanceIndex": "",
+                      "volume": "",
+                      "circulatingSupply": "",
+                      "totalSupply": "",
+                      "maxSupply": "",
+                      "openInterestConcentration": "",
+                      "issueDate": "",
+                      "issuePrice": "",
+                      "allTimeHigh": "",
+                      "allTimeLow": "",
+                      "website": "",
+                      "whitePaper": "",
+                      "socialMedia": "",
+                      "explorer": "",
+                      "description": ""
+                    },
                     "host": "testing env",
                     "showType": 0
                   },
@@ -2095,7 +2377,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "13fa40f8-3d29-45e6-8558-b3fa8528f042",
+                    "traceid": "49c52237-779c-45ce-91c6-53f66d2f0eca",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -2160,7 +2442,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "8fd970f6-bbfc-4267-98d1-ccbe71aed219",
+                    "traceid": "66812a48-8afe-4104-a52e-a0ed4a6e105c",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -2225,7 +2507,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "0e726939-8a26-4c03-9240-71fea8663600",
+                    "traceid": "a8822374-bc3d-4aa5-8a44-297d42127197",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -2290,12 +2572,98 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "167ed647-ca66-48dc-85fc-47095f9e9e99",
+                    "traceid": "044740d2-f3e0-4454-8ef3-542c689e3c9e",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
                     "duration": 9223372036854776000,
                     "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/tradeinfo": {
+      "get": {
+        "operationId": "/api/v1/tradeinfo",
+        "parameters": [
+          {
+            "description": "symbol:",
+            "in": "query",
+            "name": "Symbol",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "volumeInterval:交易量统计时间间隔，例如  \"5m\", \"1h\"，通过VolumeIntervalType接口获取支持的时间间隔列表，默认为 \"5m\"",
+            "in": "query",
+            "name": "VolumeInterval",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "indicatorType:交易指标类型，\"longShortRatio\", \"openInterest\"，当为空时获取到所有指标数据",
+            "in": "query",
+            "name": "IndicatorType",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "86d84bf0-919b-4475-814c-2940a8f7c6e3",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": {
+                      "symbol": "",
+                      "volumeInterval": "",
+                      "openInterest": null,
+                      "longShortRatio": null
+                    },
                     "host": "testing env",
                     "showType": 0
                   },
@@ -2363,7 +2731,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "acf777b6-e6e1-4b5d-86a1-ea1c0f025b51",
+                    "traceid": "66589984-1c5b-48f8-9040-8a54cb7876ee",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -2434,9 +2802,6 @@
                     },
                     "type": "object"
                   },
-                  "id": {
-                    "type": "integer"
-                  },
                   "isTriggered": {
                     "type": "boolean"
                   },
@@ -2463,7 +2828,7 @@
               }
             }
           },
-          "description": "V1:</br>id:</br>owner:</br>name:</br>createdTime:</br>organization:</br>clientIp:</br>user:</br>method:</br>requestUri:</br>action:</br>isTriggered:</br>extendedUser:",
+          "description": "V1:</br>owner:</br>name:</br>createdTime:</br>organization:</br>clientIp:</br>user:</br>method:</br>requestUri:</br>action:</br>isTriggered:</br>extendedUser:",
           "required": true
         },
         "responses": {
@@ -2472,7 +2837,72 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "24dbe5cf-1f00-4386-b291-8131a5a983b5",
+                    "traceid": "0270e0bd-e85e-45b2-9682-743ec8a423bc",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/volumeintervaltype": {
+      "get": {
+        "operationId": "/api/v1/volumeintervaltype",
+        "parameters": [
+          {
+            "description": "symbol:",
+            "in": "query",
+            "name": "Symbol",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "7c8ce450-5fbe-4f52-9466-10b6c28f4a2a",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -2569,7 +2999,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "f819e3a4-e067-4338-84ae-a7ba1c387492",
+                    "traceid": "7511474c-093c-45d5-9416-fe10a1c5a93c",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -2673,7 +3103,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "0b0e131f-e958-45f9-a1a2-a958988ef7b1",
+                    "traceid": "5b61cbdd-03ea-48fe-b7e2-20058690366e",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -2766,7 +3196,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "dba1c878-2b64-4769-9089-57460023db9f",
+                    "traceid": "600961ec-f870-4af0-b293-199afb08becd",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -2851,7 +3281,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "1acf9001-8fc9-4009-87c2-0789cf063e5a",
+                    "traceid": "35fa2788-d9e9-4d09-bddd-88d7dcd2b2e2",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -2883,7 +3313,7 @@
                             "max_withdraw_amount": "0"
                           }
                         },
-                        "updated_at": "2026-01-09T13:27:54.326452129+08:00",
+                        "updated_at": "2026-02-23T16:16:19.711680876+08:00",
                         "version": 1,
                         "icon_url": "https://static.cobo.com/img/asset/icon_usdt.png"
                       }
@@ -2965,7 +3395,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "e832a133-295b-48ca-9908-06e3bc3fe66c",
+                    "traceid": "63f964b5-c392-41bd-8040-5dfa9af4dc6d",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -3066,7 +3496,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "431ccf99-5047-4846-b5fd-d274a37d93c0",
+                    "traceid": "cb666917-6aae-4b51-9bc9-44ce55be2835",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -3189,7 +3619,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "4484f9ac-6958-4963-a813-8b2390d132fd",
+                    "traceid": "86399722-d694-41c6-a510-aebe5158da86",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
