@@ -10,7 +10,7 @@
 - 全仓模式下的订单类型->https://docs.google.com/spreadsheets/d/1sh4OZO4vcLVmWX-xj0jyHB-kgVKVQJiLyWdUi6TL9gk/edit?gid=78915208#gid=78915208
 ### 测试相关
 - 合约业务用例-用户(旧)->https://docs.google.com/spreadsheets/d/1sh4OZO4vcLVmWX-xj0jyHB-kgVKVQJiLyWdUi6TL9gk/edit?gid=2116582050#gid=2116582050
-- 合约业务用例-用户(新)-等待更新->https://docs.google.com/spreadsheets/d/15t3qKwz4cP3arCijcyU4V3l2dEmAL8gYWa9DhuU7YTM/edit?gid=1135667496#gid=1135667496
+- 合约业务用例-用户(新)-https://docs.google.com/spreadsheets/d/1SFjDmPVSWabEROC6UzHSD-pApSl9PnXCk6WxCD3kkow/edit?gid=1203826040#gid=1203826040
 - 合约后台管理员用例->https://docs.google.com/spreadsheets/d/1mijfje-p2Pl1nuRxyl0a7y3ml81QxIZ7DKW5IN6Co54/edit?gid=1135667496#gid=1135667496
 - 合约特殊场景测试用例->https://docs.google.com/spreadsheets/d/14Zfkg6LEgxql3GzP5hFZm36l8ygvAbvcGMZHi06GBJQ/edit?gid=505653708#gid=505653708
 - 合约演示用测试用例->https://docs.google.com/spreadsheets/d/1GZkYDTW0IpnmpO3i9sU6sJe4jbS2oDw6DYXMddODgKU/edit?gid=1217277829#gid=1217277829
