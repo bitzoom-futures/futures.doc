@@ -4,7 +4,7 @@ name: doc_web
 # 不对外暴露 Traefik 路由，仅在 infra-network 内网可达
 
 services:
-  web-doc:
+  web-www:
     build:
       context: .
       dockerfile: Dockerfile
