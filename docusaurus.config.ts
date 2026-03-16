@@ -17,7 +17,7 @@ const localSearchPlugin: Plugin.PluginConfig | null = (() => {
         indexDocs: true,
         indexBlog: false,
         indexPages: false,
-        docsRouteBasePath: '/docs',
+        docsRouteBasePath: '/',
         language: ['en', 'zh']
       }
     ]
@@ -40,8 +40,8 @@ const gatewayServerUrl: string = (() => {
 const config: Config = {
   title: 'Bitzoom API Docs',
   tagline: 'Bitzoom futures API documentation',
-  url: 'https://bitzoom-futures.github.io',
-  baseUrl: '/futures.doc/',
+  url: 'https://test.riverwa.com',
+  baseUrl: '/docs/',
   onBrokenLinks: 'throw',
   favicon: 'img/icon.png',
   markdown: {
@@ -68,6 +68,7 @@ const config: Config = {
       'classic',
       {
         docs: {
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.ts'),
           lastVersion: 'current',
           versions: {
@@ -122,12 +123,12 @@ const config: Config = {
         {
           label: 'API Reference',
           position: 'left',
-          to: '/docs/category/bitzoom-api'
+          to: '/category/bitzoom-api'
         },
         {
           label: 'WebSocket Playground',
           position: 'left',
-          to: '/docs/websocket-playground'
+          to: '/websocket-playground'
         },
         {
           type: 'search',
@@ -156,15 +157,15 @@ const config: Config = {
           items: [
             {
               label: 'Getting Started',
-              to: '/docs/getting-started'
+              to: '/getting-started'
             },
             {
               label: 'Authentication',
-              to: '/docs/authentication'
+              to: '/authentication'
             },
             {
               label: 'API Reference',
-              to: '/docs/category/bitzoom-api'
+              to: '/category/bitzoom-api'
             }
           ]
         },
@@ -322,13 +323,13 @@ const config: Config = {
             outputDir: 'docs/bitzoom',
             version: 'next',
             label: 'Next',
-            baseUrl: '/docs',
+            baseUrl: '/',
             versions: {
               '1.0': {
                 specPath: 'examples/bitzoom.gateway.json',
                 outputDir: 'versioned_docs/version-1.0/bitzoom',
                 label: '1.0',
-                baseUrl: '/docs/1.0'
+                baseUrl: '/1.0'
               }
             },
             sidebarOptions: {
