@@ -1,23 +1,16 @@
 name: doc_web
 
-# 环境变量（在 Dokploy 项目的 Environment Variables 中设置）：
-#   BASE_DOMAIN = test.riverwa.com | riverwa.com
+# 文档站内网服务，通过 test-www 的 nginx 反代 /docs 路由访问
+# 不对外暴露 Traefik 路由，仅在 infra-network 内网可达
 
 services:
-  web-www:
+  web-doc:
     build:
       context: .
       dockerfile: Dockerfile
     restart: unless-stopped
     environment:
       - BASE_DOMAIN=${BASE_DOMAIN:-riverwa.com}
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.doc-web.rule=Host(`${BASE_DOMAIN:-test.riverwa.com}`)"
-      - "traefik.http.routers.doc-web.entrypoints=websecure"
-      - "traefik.http.routers.doc-web.tls=true"
-      - "traefik.http.routers.doc-web.tls.certresolver=letsencrypt"
-      - "traefik.http.services.doc-web.loadbalancer.server.port=80"
     networks:
       - dokploy-network
       - infra-network
