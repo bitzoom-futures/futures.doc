@@ -228,6 +228,6 @@ print("Order status:", status.json())
 
 ## Next Steps
 
-- [API Reference](/docs/category/bitzoom-api) - Explore all endpoints
+- [API Reference](/1.0/category/bitzoom-api) - Explore all endpoints
 - [Getting Started](../getting-started.md) - Back to overview
 - [Authentication](../authentication.md) - Review authentication setup

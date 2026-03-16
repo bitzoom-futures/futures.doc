@@ -148,4 +148,4 @@ curl -X GET "http://119.8.50.236:8088/api/v1/balance" \
 
 - [Getting Started](./getting-started.md) - Back to overview
 - [Place Your First Order](./guides/place-order.md) - Start trading
-- [API Reference](/docs/category/bitzoom-api) - Explore all endpoints
+- [API Reference](/category/bitzoom-api) - Explore all endpoints

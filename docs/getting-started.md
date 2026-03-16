@@ -70,7 +70,7 @@ See [Authentication](./authentication.md) for details on obtaining your JWT toke
 - [WebSocket Streams](./websocket.md) - Real-time market data
 - [Place Your First Order](./guides/place-order.md) - Trading tutorial
 - [Position Management](./guides/positions.md) - Manage your positions
-- [API Reference](/docs/category/bitzoom-api) - Explore all available endpoints
+- [API Reference](/category/bitzoom-api) - Explore all available endpoints
 - [Error Codes](./errors.md) - Complete error reference
 - [FAQ](./faq.md) - Frequently asked questions
 

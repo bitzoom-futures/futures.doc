@@ -228,6 +228,6 @@ print("Order status:", status.json())
 
 ## 下一步
 
-- [API 参考](/docs/category/bitzoom-api) - 浏览全部接口
+- [API 参考](/category/bitzoom-api) - 浏览全部接口
 - [快速开始](../getting-started.md) - 回到总览
 - [鉴权](../authentication.md) - 复查鉴权配置

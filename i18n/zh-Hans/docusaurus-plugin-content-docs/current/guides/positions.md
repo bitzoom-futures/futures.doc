@@ -376,5 +376,5 @@ curl -X GET "http://119.8.50.236:8088/api/v1/userTrades?symbol=BTCUSDT&limit=100
 ## 下一步
 
 - [下第一笔订单](./place-order.md) - 先掌握交易基础
-- [API 参考](/docs/category/bitzoom-api) - 全量接口文档
+- [API 参考](/category/bitzoom-api) - 全量接口文档
 - [错误码](../errors.md) - 定位与排查问题

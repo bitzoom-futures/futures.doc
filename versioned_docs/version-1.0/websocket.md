@@ -585,4 +585,4 @@ if __name__ == "__main__":
 
 - [Getting Started](./getting-started.md) - API overview
 - [Authentication](./authentication.md) - Set up API access
-- [API Reference](/docs/category/bitzoom-api) - REST API documentation
+- [API Reference](/1.0/category/bitzoom-api) - REST API documentation

@@ -148,4 +148,4 @@ curl -X GET "http://119.8.50.236:8088/api/v1/balance" \
 
 - [快速开始](./getting-started.md) - 返回总览
 - [下第一笔订单](./guides/place-order.md) - 开始交易
-- [API 参考](/docs/category/bitzoom-api) - 浏览全部接口
+- [API 参考](/category/bitzoom-api) - 浏览全部接口
