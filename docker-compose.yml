@@ -9,7 +9,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: web-www-${ENV:-test}
     restart: unless-stopped
     environment:
       - BASE_DOMAIN=${BASE_DOMAIN:-riverwa.com}
