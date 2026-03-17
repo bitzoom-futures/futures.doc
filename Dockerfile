@@ -13,8 +13,7 @@ RUN yarn build
 # Stage 2: nginx 服务静态文件 + API 反代
 FROM nginx:alpine
 RUN apk add --no-cache gettext
-# 将 Docusaurus build 输出放到 /docs/ 子目录，与 baseUrl=/docs/ 保持一致
-COPY --from=builder /app/build /usr/share/nginx/html/docs
+COPY --from=builder /app/build /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/nginx.conf.template
 EXPOSE 80
 # 启动时用 envsubst 替换 ${BASE_DOMAIN}，只替换此变量避免干扰 nginx 的 $variable 语法
