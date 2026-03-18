@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 
-const GATEWAY_URL = 'http://docker-futures-gateway:8081/api/servermanage/openapi'
+const GATEWAY_URL = 'http://exchange:8081/api/servermanage/openapi'
 const TARGET_SPEC = path.join(process.cwd(), 'examples', 'bitzoom.gateway.json')
 
 async function main() {
