@@ -6,7 +6,7 @@ const TARGET_SPEC = path.join(process.cwd(), 'examples', 'bitzoom.gateway.json')
 
 async function main() {
   console.log(`Fetching OpenAPI spec from ${GATEWAY_URL} ...`)
-  const res = await fetch(GATEWAY_URL)
+  const res = await fetch(GATEWAY_URL, { method: 'POST' })
   if (!res.ok) {
     throw new Error(`Request failed: ${res.status} ${res.statusText}`)
   }
