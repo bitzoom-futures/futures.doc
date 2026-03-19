@@ -1,0 +1,122 @@
+
+<style>
+  .card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1.5rem; max-width: 520px; margin: 1.5rem auto; }
+  .label { font-size: 13px; color: var(--color-text-secondary); margin-bottom: 6px; }
+  .row { display: flex; gap: 8px; margin-bottom: 1rem; }
+  .row input { flex: 1; font-size: 13px; font-family: var(--font-mono); }
+  .metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 1rem; }
+  .metric { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 1rem; }
+  .metric-label { font-size: 12px; color: var(--color-text-secondary); margin-bottom: 4px; }
+  .metric-value { font-size: 20px; font-weight: 500; color: var(--color-text-primary); }
+  .error { color: var(--color-text-danger); font-size: 13px; margin-top: 8px; display: none; }
+  .net-badge { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: var(--border-radius-md); background: var(--color-background-warning); color: var(--color-text-warning); }
+</style>
+
+<div class="card">
+  <div style="display:flex; align-items:center; gap:8px; margin-bottom:1rem;">
+    <span style="font-size:14px; font-weight:500; color:var(--color-text-primary);">TRON wallet checker</span>
+    <span class="net-badge">Nile testnet</span>
+  </div>
+  <div class="label">TRON address</div>
+  <div class="row">
+    <input type="text" id="addr" placeholder="T…" />
+    <button id="btn" onclick="checkAll()">Check ↗</button>
+  </div>
+  <div class="error" id="err"></div>
+  <div id="results" style="display:none;">
+    <div class="metrics">
+      <div class="metric">
+        <div class="metric-label">TRX balance</div>
+        <div class="metric-value" id="trx-val">—</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">USDT (TRC-20)</div>
+        <div class="metric-value" id="usdt-val">—</div>
+      </div>
+    </div>
+    <div style="font-size:11px; color:var(--color-text-tertiary); margin-top:10px;">
+      via nile.trongrid.io
+    </div>
+  </div>
+</div>
+
+<script>
+const BASE = 'https://nile.trongrid.io';
+const USDT_CONTRACT = 'TXYZopYRdj2D9XRtbG411XZZ3kM5VkAeBf';
+
+function toHex(tronAddr) {
+  const ALPHABET = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz';
+  let num = BigInt(0);
+  for (const c of tronAddr) {
+    num = num * 58n + BigInt(ALPHABET.indexOf(c));
+  }
+  let hex = num.toString(16);
+  while (hex.length < 50) hex = '0' + hex;
+  return hex.slice(0, 42);
+}
+
+async function checkAll() {
+  const addr = document.getElementById('addr').value.trim();
+  const errEl = document.getElementById('err');
+  const resultsEl = document.getElementById('results');
+  errEl.style.display = 'none';
+  resultsEl.style.display = 'none';
+
+  if (!addr.startsWith('T') || addr.length !== 34) {
+    errEl.textContent = 'Enter a valid TRON address (starts with T, 34 chars).';
+    errEl.style.display = 'block';
+    return;
+  }
+
+  const btn = document.getElementById('btn');
+  btn.textContent = '…';
+  btn.disabled = true;
+
+  try {
+    const [trxRes, usdtRes] = await Promise.all([
+      fetch(`${BASE}/wallet/getaccount`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ address: addr, visible: true })
+      }),
+      fetch(`${BASE}/wallet/triggersmartcontract`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contract_address: USDT_CONTRACT,
+          function_selector: 'balanceOf(address)',
+          parameter: '0000000000000000000000' + toHex(addr),
+          owner_address: addr,
+          visible: true
+        })
+      })
+    ]);
+
+    const trxJson = await trxRes.json();
+    const usdtJson = await usdtRes.json();
+
+    const sun = trxJson.balance || 0;
+    const trx = (sun / 1_000_000).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+    let usdt = '0.00';
+    if (usdtJson?.constant_result?.[0]) {
+      const raw = BigInt('0x' + usdtJson.constant_result[0]);
+      usdt = (Number(raw) / 1_000_000).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+
+    document.getElementById('trx-val').textContent = trx + ' TRX';
+    document.getElementById('usdt-val').textContent = usdt + ' USDT';
+    resultsEl.style.display = 'block';
+  } catch (e) {
+    errEl.textContent = 'Request failed — CORS may be blocking this. Try a backend proxy or add a TronGrid API key.';
+    errEl.style.display = 'block';
+  } finally {
+    btn.textContent = 'Check ↗';
+    btn.disabled = false;
+  }
+}
+
+document.getElementById('addr').addEventListener('keydown', e => {
+  if (e.key === 'Enter') checkAll();
+});
+</script>
