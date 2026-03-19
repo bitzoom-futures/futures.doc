@@ -85,7 +85,7 @@ JWT 有有效期。过期后：
 curl -X POST "http://119.8.50.236:8088/api/v1/leverage" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
-  -d '{"symbol": "BTCUSDT", "leverage": 10}'
+  -d '{"symbol": "ETH/USDT", "leverage": 10}'
 ```
 
 不同交易对的最大杠杆不同，请通过 `/api/v1/exchangeinfo` 查看限制。
@@ -142,7 +142,7 @@ const ws = new WebSocket('ws://119.8.50.236:8088/ws');
 ws.onopen = () => {
   ws.send(JSON.stringify({
     method: 'SUBSCRIBE',
-    params: ['btcusdt@ticker'],
+    params: ['ETH/USDT@ticker'],
     id: 1
   }));
 };

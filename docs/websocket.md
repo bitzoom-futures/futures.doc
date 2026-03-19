@@ -115,7 +115,7 @@ Private channels require successful `logon` before subscribing.
 {
   "channel": "/api/v1/ticker",
   "event": "sub",
-  "data": { "symbol": "BTCUSDT" }
+  "data": { "symbol": "ETH/USDT" }
 }
 ```
 
@@ -137,7 +137,7 @@ The keys in `data` are `subId` values.
 {
   "channel": "/api/v1/ticker",
   "event": "abc123",
-  "data": { "symbol": "BTCUSDT", "price": "50000.00" }
+  "data": { "symbol": "ETH/USDT", "price": "50000.00" }
 }
 ```
 
@@ -147,7 +147,7 @@ The keys in `data` are `subId` values.
 {
   "channel": "/api/v1/ticker",
   "event": "unsub",
-  "data": { "symbol": "BTCUSDT" }
+  "data": { "symbol": "ETH/USDT" }
 }
 ```
 

@@ -23,7 +23,7 @@ curl -X GET "http://119.8.50.236:8088/api/v1/exchangeinfo"
   "data": {
     "symbols": [
       {
-        "symbol": "BTCUSDT",
+        "symbol": "ETH/USDT",
         "baseAsset": "BTC",
         "quoteAsset": "USDT",
         "pricePrecision": 2,
@@ -48,7 +48,7 @@ curl -X GET "http://119.8.50.236:8088/api/v1/balance" \
 先看最新市场价格：
 
 ```bash
-curl -X GET "http://119.8.50.236:8088/api/v1/ticker/price?symbol=BTCUSDT"
+curl -X GET "http://119.8.50.236:8088/api/v1/ticker/price?symbol=ETH/USDT"
 ```
 
 ## 第四步：设置杠杆（可选）
@@ -60,7 +60,7 @@ curl -X POST "http://119.8.50.236:8088/api/v1/leverage" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "symbol": "BTCUSDT",
+    "symbol": "ETH/USDT",
     "leverage": 10
   }'
 ```
@@ -76,7 +76,7 @@ curl -X POST "http://119.8.50.236:8088/api/v1/order" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "symbol": "BTCUSDT",
+    "symbol": "ETH/USDT",
     "side": "BUY",
     "type": "MARKET",
     "quantity": 0.001
@@ -92,7 +92,7 @@ curl -X POST "http://119.8.50.236:8088/api/v1/order" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "symbol": "BTCUSDT",
+    "symbol": "ETH/USDT",
     "side": "BUY",
     "type": "LIMIT",
     "quantity": 0.001,
@@ -105,7 +105,7 @@ curl -X POST "http://119.8.50.236:8088/api/v1/order" \
 
 | 参数 | 类型 | 必填 | 说明 |
 |-----------|------|----------|-------------|
-| `symbol` | string | 是 | 交易对（如 `BTCUSDT`） |
+| `symbol` | string | 是 | 交易对（如 `ETH/USDT`） |
 | `side` | string | 是 | `BUY` 或 `SELL` |
 | `type` | string | 是 | `MARKET`、`LIMIT`、`STOP`、`TAKE_PROFIT` |
 | `quantity` | decimal | 是 | 以标的资产计的下单数量 |
@@ -120,7 +120,7 @@ curl -X POST "http://119.8.50.236:8088/api/v1/order" \
   "code": 0,
   "data": {
     "orderId": 123456789,
-    "symbol": "BTCUSDT",
+    "symbol": "ETH/USDT",
     "side": "BUY",
     "type": "LIMIT",
     "price": "50000.00",
@@ -136,14 +136,14 @@ curl -X POST "http://119.8.50.236:8088/api/v1/order" \
 ### 查询订单状态
 
 ```bash
-curl -X GET "http://119.8.50.236:8088/api/v1/order?symbol=BTCUSDT&orderId=123456789" \
+curl -X GET "http://119.8.50.236:8088/api/v1/order?symbol=ETH/USDT&orderId=123456789" \
   -H "Authorization: Bearer YOUR_TOKEN"
 ```
 
 ### 查询当前挂单
 
 ```bash
-curl -X GET "http://119.8.50.236:8088/api/v1/openorders?symbol=BTCUSDT" \
+curl -X GET "http://119.8.50.236:8088/api/v1/openorders?symbol=ETH/USDT" \
   -H "Authorization: Bearer YOUR_TOKEN"
 ```
 
@@ -156,7 +156,7 @@ curl -X DELETE "http://119.8.50.236:8088/api/v1/order" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "symbol": "BTCUSDT",
+    "symbol": "ETH/USDT",
     "orderId": 123456789
   }'
 ```
@@ -179,12 +179,12 @@ balance = requests.get(f"{BASE_URL}/api/v1/balance", headers=headers)
 print("Balance:", balance.json())
 
 # 2. 获取当前价格
-price = requests.get(f"{BASE_URL}/api/v1/ticker/price?symbol=BTCUSDT")
+price = requests.get(f"{BASE_URL}/api/v1/ticker/price?symbol=ETH/USDT")
 print("Current price:", price.json())
 
 # 3. 提交限价单
 order_data = {
-    "symbol": "BTCUSDT",
+    "symbol": "ETH/USDT",
     "side": "BUY",
     "type": "LIMIT",
     "quantity": 0.001,
@@ -202,7 +202,7 @@ print("Order placed:", order.json())
 # 4. 查询订单状态
 order_id = order.json()["data"]["orderId"]
 status = requests.get(
-    f"{BASE_URL}/api/v1/order?symbol=BTCUSDT&orderId={order_id}",
+    f"{BASE_URL}/api/v1/order?symbol=ETH/USDT&orderId={order_id}",
     headers=headers
 )
 print("Order status:", status.json())
