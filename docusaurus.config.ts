@@ -131,6 +131,11 @@ const config: Config = {
           to: '/websocket-playground'
         },
         {
+          label: 'User Guide',
+          position: 'left',
+          to: '/category/user-guide'
+        },
+        {
           type: 'search',
           position: 'right'
         },

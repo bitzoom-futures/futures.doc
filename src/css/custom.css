@@ -76,6 +76,20 @@
   background-color: var(--openapi-code-orange);
 }
 
+/* User guide: borderless layout tables */
+.user-guide-layout table,
+.user-guide-layout td,
+.user-guide-layout tr,
+.user-guide-layout th {
+  border: none !important;
+  background: transparent !important;
+}
+
+.user-guide-layout table {
+  display: table;
+  width: 100%;
+}
+
 /* Show lock icon in heading for authenticated endpoints */
 article:has(.openapi-security__details) .openapi__heading::after {
   content: "";

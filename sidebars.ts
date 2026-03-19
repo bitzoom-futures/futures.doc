@@ -50,6 +50,25 @@ const sidebars: SidebarsConfig = {
       ]
     }
   ],
+  // User Guide sidebar
+  userGuideSidebar: [
+    {
+      type: 'category',
+      label: 'User Guide',
+      collapsed: false,
+      link: {
+        type: 'generated-index',
+        title: 'Bitzoom User Guide',
+        description: 'Step-by-step guides for using the Bitzoom trading platform — web, mobile, and wallet setup.',
+        slug: '/category/user-guide'
+      },
+      items: [
+        'user-guide/WEB_USER_GUIDE',
+        'user-guide/USER_GUIDE',
+        'user-guide/WALLET_SETUP_GUIDE'
+      ]
+    }
+  ],
   // API Reference sidebar
   openApiSidebar: [
     {
