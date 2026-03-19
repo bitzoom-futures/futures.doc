@@ -7,6 +7,8 @@ sidebar_label: Mobile App Guide
 
 Your complete guide to trading futures on Bitzoom.
 
+<a href={require("./USER_GUIDE.pdf").default} target="_blank">Download PDF</a>
+
 ---
 
 <div className="user-guide-layout">

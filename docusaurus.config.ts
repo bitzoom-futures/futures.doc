@@ -210,6 +210,13 @@ const config: Config = {
     prism: {
       additionalLanguages: ['ruby', 'csharp', 'php', 'java', 'powershell', 'json', 'bash', 'dart', 'objectivec', 'r']
     },
+    zoom: {
+      selector: '.markdown img',
+      background: {
+        light: 'rgba(255, 255, 255, 0.9)',
+        dark: 'rgba(0, 0, 0, 0.9)'
+      }
+    },
     languageTabs: [
       {
         highlight: 'bash',
@@ -306,6 +313,7 @@ const config: Config = {
   } satisfies Preset.ThemeConfig,
 
   plugins: [
+    'docusaurus-plugin-image-zoom',
     ...(localSearchPlugin ? [localSearchPlugin] : []),
     [
       'docusaurus-plugin-openapi-docs',

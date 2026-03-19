@@ -7,6 +7,8 @@ sidebar_label: Wallet Setup Guide
 
 Your complete guide to setting up a test wallet for testing deposit and withdrawal on Bitzoom.
 
+<a href={require("./WALLET_SETUP_GUIDE.pdf").default} target="_blank">Download PDF</a>
+
 ---
 
 <div className="user-guide-layout">

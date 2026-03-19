@@ -76,6 +76,11 @@
   background-color: var(--openapi-code-orange);
 }
 
+/* User guide: click-to-zoom hint */
+.markdown img {
+  cursor: zoom-in;
+}
+
 /* User guide: borderless layout tables */
 .user-guide-layout table,
 .user-guide-layout td,

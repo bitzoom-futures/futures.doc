@@ -7,6 +7,8 @@ sidebar_label: Web Platform Guide
 
 Your complete guide to futures trading on the Bitzoom web platform.
 
+<a href={require("./WEB_USER_GUIDE.pdf").default} target="_blank">Download PDF</a>
+
 ---
 
 <div className="user-guide-layout">
