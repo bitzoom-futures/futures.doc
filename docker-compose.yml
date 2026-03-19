@@ -8,6 +8,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      network: infra-network  # 让 build 阶段可以访问内网（exchange 等服务）
     hostname: web-doc
     restart: unless-stopped
     environment:
