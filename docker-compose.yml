@@ -8,7 +8,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      network: infra-network
     hostname: web-doc
     restart: unless-stopped
     environment:
