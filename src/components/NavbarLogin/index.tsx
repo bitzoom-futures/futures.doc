@@ -18,6 +18,22 @@ interface CasdoorConfig {
 }
 
 const STORAGE_KEY = 'user'
+const BEARER_KEY = 'Bearer'
+
+/** Sync our JWT into the 'Bearer' localStorage key used by the openapi plugin */
+function syncBearerToken(token: string | null | undefined) {
+  try {
+    if (!token) {
+      localStorage.removeItem(BEARER_KEY)
+      return
+    }
+    const raw = token.replace(/^Bearer\s+/i, '')
+    const newValue = JSON.stringify({ token: raw })
+    if (localStorage.getItem(BEARER_KEY) !== newValue) {
+      localStorage.setItem(BEARER_KEY, newValue)
+    }
+  } catch { /* ignore */ }
+}
 
 /** Decode a JWT payload without any library */
 function decodeJwtPayload(token: string): any {
@@ -65,7 +81,10 @@ export default function NavbarLogin() {
         if (e.newValue) {
           try {
             const parsed = JSON.parse(e.newValue)
-            if (parsed?.token) setUser(parsed)
+            if (parsed?.token) {
+              setUser(parsed)
+              syncBearerToken(parsed?.token)
+            }
           } catch { setUser(null) }
         } else {
           setUser(null)
@@ -187,6 +206,7 @@ export default function NavbarLogin() {
 
   const handleLogout = useCallback(() => {
     localStorage.removeItem(STORAGE_KEY)
+    localStorage.removeItem(BEARER_KEY)
     setUser(null)
     setDropdownOpen(false)
   }, [])

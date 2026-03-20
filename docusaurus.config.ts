@@ -318,6 +318,20 @@ const config: Config = {
 
   plugins: [
     'docusaurus-plugin-image-zoom',
+    function polyfillPlugin() {
+      return {
+        name: 'node-polyfill-plugin',
+        configureWebpack() {
+          return {
+            resolve: {
+              fallback: {
+                path: require.resolve('path-browserify'),
+              },
+            },
+          }
+        },
+      }
+    },
     ...(localSearchPlugin ? [localSearchPlugin] : []),
     [
       'docusaurus-plugin-openapi-docs',

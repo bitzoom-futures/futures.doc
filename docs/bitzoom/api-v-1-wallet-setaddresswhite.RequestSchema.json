@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"properties":{"address":{"type":"string"},"chain_identifier":{"type":"string"},"description":{"type":"string"},"is_delete":{"type":"boolean"},"memo":{"type":"string"}},"type":"object"}}},"description":"-:<br>address:<br>chain_identifier:<br>memo:<br>description:<br>is_delete:","required":true}}

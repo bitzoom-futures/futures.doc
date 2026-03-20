@@ -18,6 +18,7 @@ import StatusCodes from "@theme/StatusCodes";
 import OperationTabs from "@theme/OperationTabs";
 import TabItem from "@theme/TabItem";
 import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
 
 <Heading
   as={"h1"}
@@ -42,8 +43,8 @@ Withdraw
   id={"request"}
   as={"h2"}
   className={"openapi-tabs__heading"}
-  children={"Request"}
 >
+  <Translate id="theme.openapi.request.title">Request</Translate>
 </Heading>
 
 <ParamsDetails
@@ -53,16 +54,13 @@ Withdraw
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
-  body={{"content":{"application/json":{"schema":{"properties":{"address":{"type":"string"},"amount":{"type":"string"},"chainId":{"type":"string"},"description":{"type":"string"},"memo":{"type":"string"},"symbol":{"type":"string"},"tokenId":{"type":"string"}},"type":"object"}}},"description":"-:<br>symbol:<br>chainId:<br>tokenId:<br>address:<br>memo:<br>amount:<br>description:","required":true}}
+  {...require("./api-v-1-wallet-withdraw.RequestSchema.json")}
 >
   
 </RequestSchema>
 
 <StatusCodes
-  id={undefined}
-  label={undefined}
-  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"c0a335cc-7588-422d-bdcf-3f72b32ebcd7","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":{"asset_id":0,"fund_tx_id":0,"account_type_id":0,"account_tx_id":0,"bill_tx_id":0,"retry_count":0,"fund_message":"","fund_status":"","is_processed":false,"symbol":"","assetId":0,"requestId":"","chainId":"","tokenId":"","address":"","memo":"","amount":"","description":"","status":"","txnId":"","networkFee":""},"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+  {...require("./api-v-1-wallet-withdraw.StatusCodes.json")}
 >
   
 </StatusCodes>

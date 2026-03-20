@@ -18,6 +18,7 @@ import StatusCodes from "@theme/StatusCodes";
 import OperationTabs from "@theme/OperationTabs";
 import TabItem from "@theme/TabItem";
 import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
 
 <Heading
   as={"h1"}
@@ -42,27 +43,24 @@ WithdrawRecord
   id={"request"}
   as={"h2"}
   className={"openapi-tabs__heading"}
-  children={"Request"}
 >
+  <Translate id="theme.openapi.request.title">Request</Translate>
 </Heading>
 
 <ParamsDetails
-  parameters={[{"description":"timestamp:","in":"query","name":"Timestamp","schema":{"type":"int64"}},{"description":"signature:","in":"query","name":"Signature","schema":{"type":"string"}},{"description":"token_id:","in":"query","name":"TokenId","schema":{"type":"string"}},{"description":"page:","in":"query","name":"Page","schema":{"type":"int"}},{"description":"size:","in":"query","name":"Size","schema":{"type":"int"}}]}
+  {...require("./api-v-1-wallet-withdrawrecord.ParamsDetails.json")}
 >
   
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
-  body={undefined}
+  {...require("./api-v-1-wallet-withdrawrecord.RequestSchema.json")}
 >
   
 </RequestSchema>
 
 <StatusCodes
-  id={undefined}
-  label={undefined}
-  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"0a6e64b6-26f3-486c-a43b-c231cb7c6192","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":{"rows":[{"asset_id":0,"fund_tx_id":0,"account_type_id":0,"account_tx_id":0,"bill_tx_id":0,"retry_count":0,"fund_message":"","fund_status":"","is_processed":false,"symbol":"","assetId":0,"requestId":"","chainId":"","tokenId":"","address":"","memo":"","amount":"","description":"","status":"","txnId":"","networkFee":""}],"total":0,"page":0,"size":0},"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+  {...require("./api-v-1-wallet-withdrawrecord.StatusCodes.json")}
 >
   
 </StatusCodes>

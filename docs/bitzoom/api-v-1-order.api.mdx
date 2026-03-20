@@ -18,6 +18,7 @@ import StatusCodes from "@theme/StatusCodes";
 import OperationTabs from "@theme/OperationTabs";
 import TabItem from "@theme/TabItem";
 import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
 
 <Heading
   as={"h1"}
@@ -42,8 +43,8 @@ Order
   id={"request"}
   as={"h2"}
   className={"openapi-tabs__heading"}
-  children={"Request"}
 >
+  <Translate id="theme.openapi.request.title">Request</Translate>
 </Heading>
 
 <ParamsDetails
@@ -53,16 +54,13 @@ Order
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
-  body={{"content":{"application/json":{"schema":{"properties":{"customer_order_id":{"type":"string"},"isMargin":{"type":"boolean"},"isSize":{"type":"boolean"},"orderId":{"minimum":0,"type":"integer"},"positionSide":{"type":"integer"},"price":{"type":"string"},"quantity":{"type":"string"},"side":{"type":"integer"},"signature":{"type":"string"},"symbol":{"type":"string"},"time_in_force":{"type":"string"},"timestamp":{"format":"int64","type":"integer"},"type":{"type":"string"}},"type":"object"}}},"description":"Private:<br>FuturesOrder:","required":true}}
+  {...require("./api-v-1-order.RequestSchema.json")}
 >
   
 </RequestSchema>
 
 <StatusCodes
-  id={undefined}
-  label={undefined}
-  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"1a082f84-a34d-40f5-be08-da7a65c341f8","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":null,"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+  {...require("./api-v-1-order.StatusCodes.json")}
 >
   
 </StatusCodes>

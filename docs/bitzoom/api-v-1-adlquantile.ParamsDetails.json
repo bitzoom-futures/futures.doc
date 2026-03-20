@@ -1,0 +1,1 @@
+{"parameters":[{"description":"timestamp:","in":"query","name":"Timestamp","schema":{"type":"int64"}},{"description":"signature:","in":"query","name":"Signature","schema":{"type":"string"}},{"description":"symbol:交易对,当为空时查询用户所有交易对","in":"query","name":"Symbol","schema":{"type":"string"}}]}
