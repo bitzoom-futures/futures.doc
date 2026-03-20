@@ -105,7 +105,7 @@ export const channels: ChannelConfig[] = [
     id: 'leverage',
     label: '/api/v1/leverage',
     path: '/api/v1/leverage',
-    requiresAuth: false,
+    requiresAuth: true,
     description: 'Leverage information.',
     params: [{ name: 'symbol', label: 'Symbol', type: 'string', required: false, placeholder: 'ETH/USDT' }]
   },
@@ -113,7 +113,7 @@ export const channels: ChannelConfig[] = [
     id: 'margintype',
     label: '/api/v1/margintype',
     path: '/api/v1/margintype',
-    requiresAuth: false,
+    requiresAuth: true,
     description: 'Margin type data.',
     params: [{ name: 'symbol', label: 'Symbol', type: 'string', required: true, placeholder: 'ETH/USDT' }]
   },
@@ -129,7 +129,7 @@ export const channels: ChannelConfig[] = [
     id: 'adlquantile',
     label: '/api/v1/adlquantile',
     path: '/api/v1/adlquantile',
-    requiresAuth: false,
+    requiresAuth: true,
     description: 'ADL quantile data.',
     params: [{ name: 'symbol', label: 'Symbol', type: 'string', required: false, placeholder: 'ETH/USDT' }]
   },
