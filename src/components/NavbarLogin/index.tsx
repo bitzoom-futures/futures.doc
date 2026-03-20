@@ -75,9 +75,11 @@ export default function NavbarLogin() {
   const dropdownRef = useRef<HTMLDivElement>(null)
   const pollRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
-  // Read user from localStorage on mount
+  // Read user from localStorage on mount and sync Bearer token
   useEffect(() => {
-    setUser(readUserFromStorage())
+    const stored = readUserFromStorage()
+    setUser(stored)
+    syncBearerToken(stored?.token)
   }, [])
 
   // Listen for storage changes (e.g. login from popup) and reload to sync openapi plugin
