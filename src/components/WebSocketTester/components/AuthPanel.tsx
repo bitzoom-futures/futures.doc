@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import Sdk from 'casdoor-js-sdk'
+import { useUser } from '../../../context/UserContext'
 import styles from '../styles/WebSocketTester.module.css'
 
 interface AuthPanelProps {
@@ -11,59 +12,26 @@ interface AuthPanelProps {
   isAuthenticated: boolean
 }
 
-function getStoredToken(): string {
-  try {
-    const stored = localStorage.getItem('user')
-    if (stored) {
-      const parsed = JSON.parse(stored)
-      if (parsed?.token?.trim()) return parsed.token.replace(/^Bearer\s+/i, '')
-    }
-  } catch { /* ignore */ }
-  return ''
-}
-
 export default function AuthPanel({ token, onTokenChange, onLogon, isConnected, isAuthenticated }: AuthPanelProps) {
   const { siteConfig } = useDocusaurusContext()
   const gatewayServerUrl = (siteConfig.customFields?.gatewayServerUrl as string) || ''
+  const { rawToken } = useUser()
   const [loading, setLoading] = useState(false)
-  // Track whether we should auto-logon after login completes
   const pendingLogonRef = useRef(false)
 
-  // Auto-fill token from localStorage on mount
+  // Auto-fill token from global user state
   useEffect(() => {
-    if (!token) {
-      const stored = getStoredToken()
-      if (stored) onTokenChange(stored)
-    }
-  }, [])
-
-  // Listen for login from other tabs/popups (storage event fires for cross-tab changes)
-  useEffect(() => {
-    const storageHandler = (e: StorageEvent) => {
-      if (e.key === 'user' && e.newValue) {
-        try {
-          const parsed = JSON.parse(e.newValue)
-          if (parsed?.token) {
-            const newToken = parsed.token.replace(/^Bearer\s+/i, '')
-            onTokenChange(newToken)
-            if (pendingLogonRef.current) {
-              pendingLogonRef.current = false
-              onLogon(newToken)
-            }
-          }
-        } catch { /* ignore */ }
+    if (rawToken && rawToken !== token) {
+      onTokenChange(rawToken)
+      if (pendingLogonRef.current) {
+        pendingLogonRef.current = false
+        onLogon(rawToken)
       }
     }
-    // Listen for same-tab logout from navbar
-    const logoutHandler = () => onTokenChange('')
-
-    window.addEventListener('storage', storageHandler)
-    window.addEventListener('user-logout', logoutHandler)
-    return () => {
-      window.removeEventListener('storage', storageHandler)
-      window.removeEventListener('user-logout', logoutHandler)
+    if (!rawToken && token) {
+      onTokenChange('')
     }
-  }, [onTokenChange, onLogon])
+  }, [rawToken])
 
   const openLoginPopup = useCallback(async () => {
     try {
@@ -95,7 +63,6 @@ export default function AuthPanel({ token, onTokenChange, onLogon, isConnected, 
   }, [gatewayServerUrl])
 
   const handleLogon = useCallback(() => {
-    // If no token, open login popup and auto-logon when done
     if (!token.trim()) {
       pendingLogonRef.current = true
       openLoginPopup()

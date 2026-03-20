@@ -14,6 +14,7 @@ import FormTextInput from "@theme/ApiExplorer/FormTextInput";
 import { useTypedDispatch, useTypedSelector } from "@theme/ApiItem/hooks";
 import { OPENAPI_AUTH } from "@theme/translationIds";
 
+import { useUser } from "../../../context/UserContext";
 import { setAuthData, setSelectedAuth } from "./slice";
 
 function Authorization() {
@@ -22,54 +23,21 @@ function Authorization() {
   const selected = useTypedSelector((state: any) => state.auth.selected);
 
   const dispatch = useTypedDispatch();
+  const { rawToken } = useUser();
 
-  // [CUSTOM] Auto-sync Bearer token from user localStorage (set by NavbarLogin)
+  // [CUSTOM] Auto-sync Bearer token from global UserContext (login fills, logout clears)
   useEffect(() => {
-    function syncFromUser() {
-      try {
-        const stored = localStorage.getItem("user");
-        if (!stored) return;
-        const parsed = JSON.parse(stored);
-        const token = parsed?.token?.replace(/^Bearer\s+/i, "");
-        if (!token) return;
-        // Find Bearer auth schemes and sync
-        for (const [schemeId, schemeData] of Object.entries(data)) {
-          const currentToken = (schemeData as any)?.token;
-          if (currentToken !== token) {
-            // Check if this scheme is a bearer type
-            const allSchemes = Object.values(options).flat();
-            const scheme = allSchemes.find(
-              (s: any) => s.key === schemeId && s.type === "http" && s.scheme === "bearer"
-            );
-            if (scheme) {
-              dispatch(setAuthData({ scheme: schemeId, key: "token", value: token }));
-            }
-          }
-        }
-      } catch { /* ignore */ }
-    }
-
-    // Sync on mount
-    syncFromUser();
-
-    // Listen for cross-tab login
-    const storageHandler = (e: StorageEvent) => {
-      if (e.key === "user") syncFromUser();
-    };
-    // Listen for same-tab logout
-    const logoutHandler = () => {
-      for (const schemeId of Object.keys(data)) {
-        dispatch(setAuthData({ scheme: schemeId, key: "token", value: undefined }));
+    const allSchemes = Object.values(options).flat();
+    for (const [schemeId, schemeData] of Object.entries(data)) {
+      const currentToken = (schemeData as any)?.token;
+      const scheme = allSchemes.find(
+        (s: any) => s.key === schemeId && s.type === "http" && s.scheme === "bearer"
+      );
+      if (scheme && currentToken !== (rawToken || undefined)) {
+        dispatch(setAuthData({ scheme: schemeId, key: "token", value: rawToken || undefined }));
       }
-    };
-
-    window.addEventListener("storage", storageHandler);
-    window.addEventListener("user-logout", logoutHandler);
-    return () => {
-      window.removeEventListener("storage", storageHandler);
-      window.removeEventListener("user-logout", logoutHandler);
-    };
-  }, [data, options, dispatch]);
+    }
+  }, [rawToken, data, options, dispatch]);
 
   if (selected === undefined) {
     return null;

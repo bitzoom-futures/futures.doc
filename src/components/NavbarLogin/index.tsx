@@ -1,13 +1,8 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import Sdk from 'casdoor-js-sdk'
+import { useUser } from '../../context/UserContext'
 import styles from './styles.module.css'
-
-interface UserInfo {
-  email: string
-  token: string
-  avatar: string
-}
 
 interface CasdoorConfig {
   Endpoint: string
@@ -17,59 +12,15 @@ interface CasdoorConfig {
   BackgroundCallbackURL: string
 }
 
-const STORAGE_KEY = 'user'
-
-/** Decode a JWT payload without any library */
-function decodeJwtPayload(token: string): any {
-  try {
-    const jwt = token.replace(/^Bearer\s+/i, '')
-    const parts = jwt.split('.')
-    if (parts.length !== 3) return null
-    const payload = parts[1].replace(/-/g, '+').replace(/_/g, '/')
-    return JSON.parse(atob(payload))
-  } catch {
-    return null
-  }
-}
-
-function readUserFromStorage(): UserInfo | null {
-  try {
-    const stored = localStorage.getItem(STORAGE_KEY)
-    if (stored) {
-      const parsed = JSON.parse(stored)
-      if (parsed?.token?.trim()) return parsed
-    }
-  } catch { /* ignore */ }
-  return null
-}
-
 export default function NavbarLogin() {
   const { siteConfig } = useDocusaurusContext()
   const gatewayServerUrl = (siteConfig.customFields?.gatewayServerUrl as string) || ''
-  const [user, setUser] = useState<UserInfo | null>(null)
+  const { user, logout } = useUser()
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const [copied, setCopied] = useState(false)
   const [loading, setLoading] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
   const pollRef = useRef<ReturnType<typeof setInterval> | null>(null)
-
-  // Read user from localStorage on mount
-  useEffect(() => {
-    setUser(readUserFromStorage())
-  }, [])
-
-  // Listen for storage changes (e.g. login from popup)
-  useEffect(() => {
-    const handler = (e: StorageEvent) => {
-      if (e.key === STORAGE_KEY && e.newValue) {
-        const parsed = JSON.parse(e.newValue)
-        setUser(parsed?.token?.trim() ? parsed : null)
-        setLoading(false)
-      }
-    }
-    window.addEventListener('storage', handler)
-    return () => window.removeEventListener('storage', handler)
-  }, [])
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -93,7 +44,6 @@ export default function NavbarLogin() {
     try {
       setLoading(true)
 
-      // Step 1: Fetch Casdoor config from gateway
       const apiBase = gatewayServerUrl || window.location.origin
       const res = await fetch(`${apiBase}/api/casdoor`)
       const json = await res.json()
@@ -104,7 +54,6 @@ export default function NavbarLogin() {
         return
       }
 
-      // Step 2: Use Casdoor SDK to build OAuth URL
       const sdk = new Sdk({
         serverUrl: config.Endpoint,
         clientId: config.ClientID,
@@ -114,7 +63,6 @@ export default function NavbarLogin() {
       })
       const authUrl = sdk.getSigninUrl()
 
-      // Step 3: Open popup
       const w = 500
       const h = 600
       const left = window.screenX + (window.outerWidth - w) / 2
@@ -125,7 +73,6 @@ export default function NavbarLogin() {
         `width=${w},height=${h},left=${left},top=${top},popup=yes`
       )
 
-      // Poll for popup close (user cancelled login)
       if (popup) {
         pollRef.current = setInterval(() => {
           try {
@@ -163,12 +110,9 @@ export default function NavbarLogin() {
   }, [user])
 
   const handleLogout = useCallback(() => {
-    localStorage.removeItem(STORAGE_KEY)
-    setUser(null)
+    logout()
     setDropdownOpen(false)
-    // Notify same-tab components (storage event only fires cross-tab)
-    window.dispatchEvent(new CustomEvent('user-logout'))
-  }, [])
+  }, [logout])
 
   if (!user) {
     return (
