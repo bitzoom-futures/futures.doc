@@ -135,10 +135,11 @@ export default function WebSocketTester({
     setParamValues((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleLogon = () => {
+  const handleLogon = (tokenOverride?: string) => {
+    const t = tokenOverride || token
     setLastError('')
     try {
-      const payload = { channel: 'logon', event: 'sub' as const, data: { token } }
+      const payload = { channel: 'logon', event: 'sub' as const, data: { token: t } }
       send(payload)
       addMessage({ direction: 'out', kind: 'logon', payload })
     } catch (error) {
@@ -199,6 +200,16 @@ export default function WebSocketTester({
         onDisconnect={disconnect}
       />
 
+      {channel.requiresAuth ? (
+        <AuthPanel
+          token={token}
+          onTokenChange={setToken}
+          onLogon={handleLogon}
+          isConnected={isConnected}
+          isAuthenticated={isAuthenticated}
+        />
+      ) : null}
+
       <div className={styles.panel}>
         <h3>{channel.path}</h3>
         <p className={styles.helperText}>{channel.description}</p>
@@ -212,16 +223,6 @@ export default function WebSocketTester({
           <span className={styles.helperText}>SubId: {subIdByKey[subscriptionKey] ?? 'not assigned'}</span>
         </div>
       </div>
-
-      {channel.requiresAuth ? (
-        <AuthPanel
-          token={token}
-          onTokenChange={setToken}
-          onLogon={handleLogon}
-          isConnected={isConnected}
-          isAuthenticated={isAuthenticated}
-        />
-      ) : null}
 
       <ParameterForm params={channel.params} values={paramValues} onChange={handleParamChange} />
 

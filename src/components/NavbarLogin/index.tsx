@@ -20,6 +20,12 @@ interface CasdoorConfig {
 const STORAGE_KEY = 'user'
 const BEARER_KEY = 'Bearer'
 
+/** Only reload on API doc pages where the openapi plugin needs Bearer from localStorage */
+function shouldReloadForAuth(): boolean {
+  const path = window.location.pathname
+  return /\/bitzoom\/api-/.test(path)
+}
+
 /** Sync our JWT into the 'Bearer' localStorage key used by the openapi plugin */
 function syncBearerToken(token: string | null | undefined) {
   try {
@@ -78,8 +84,13 @@ export default function NavbarLogin() {
   useEffect(() => {
     const handler = (e: StorageEvent) => {
       if (e.key === STORAGE_KEY && e.newValue) {
-        syncBearerToken(JSON.parse(e.newValue)?.token)
-        window.location.reload()
+        const parsed = JSON.parse(e.newValue)
+        syncBearerToken(parsed?.token)
+        setUser(parsed)
+        setLoading(false)
+        if (shouldReloadForAuth()) {
+          window.location.reload()
+        }
       }
     }
     window.addEventListener('storage', handler)
@@ -180,7 +191,11 @@ export default function NavbarLogin() {
   const handleLogout = useCallback(() => {
     localStorage.removeItem(STORAGE_KEY)
     localStorage.removeItem(BEARER_KEY)
-    window.location.reload()
+    setUser(null)
+    setDropdownOpen(false)
+    if (shouldReloadForAuth()) {
+      window.location.reload()
+    }
   }, [])
 
   if (!user) {

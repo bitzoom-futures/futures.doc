@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import Sdk from 'casdoor-js-sdk'
 import styles from '../styles/WebSocketTester.module.css'
@@ -6,7 +6,7 @@ import styles from '../styles/WebSocketTester.module.css'
 interface AuthPanelProps {
   token: string
   onTokenChange: (value: string) => void
-  onLogon: () => void
+  onLogon: (token?: string) => void
   isConnected: boolean
   isAuthenticated: boolean
 }
@@ -26,6 +26,8 @@ export default function AuthPanel({ token, onTokenChange, onLogon, isConnected, 
   const { siteConfig } = useDocusaurusContext()
   const gatewayServerUrl = (siteConfig.customFields?.gatewayServerUrl as string) || ''
   const [loading, setLoading] = useState(false)
+  // Track whether we should auto-logon after login completes
+  const pendingLogonRef = useRef(false)
 
   // Auto-fill token from localStorage on mount
   useEffect(() => {
@@ -35,23 +37,28 @@ export default function AuthPanel({ token, onTokenChange, onLogon, isConnected, 
     }
   }, [])
 
-  // Listen for login from other tabs/popups
+  // Listen for login from other tabs/popups (storage event fires for cross-tab changes)
   useEffect(() => {
     const handler = (e: StorageEvent) => {
       if (e.key === 'user' && e.newValue) {
         try {
           const parsed = JSON.parse(e.newValue)
           if (parsed?.token) {
-            onTokenChange(parsed.token.replace(/^Bearer\s+/i, ''))
+            const newToken = parsed.token.replace(/^Bearer\s+/i, '')
+            onTokenChange(newToken)
+            if (pendingLogonRef.current) {
+              pendingLogonRef.current = false
+              onLogon(newToken)
+            }
           }
         } catch { /* ignore */ }
       }
     }
     window.addEventListener('storage', handler)
     return () => window.removeEventListener('storage', handler)
-  }, [onTokenChange])
+  }, [onTokenChange, onLogon])
 
-  const handleLogin = async () => {
+  const openLoginPopup = useCallback(async () => {
     try {
       setLoading(true)
       const apiBase = gatewayServerUrl || window.location.origin
@@ -78,9 +85,17 @@ export default function AuthPanel({ token, onTokenChange, onLogon, isConnected, 
     } finally {
       setLoading(false)
     }
-  }
+  }, [gatewayServerUrl])
 
-  const hasStoredUser = !!getStoredToken()
+  const handleLogon = useCallback(() => {
+    // If no token, open login popup and auto-logon when done
+    if (!token.trim()) {
+      pendingLogonRef.current = true
+      openLoginPopup()
+      return
+    }
+    onLogon()
+  }, [token, openLoginPopup, onLogon])
 
   return (
     <div className={styles.panel}>
@@ -91,28 +106,34 @@ export default function AuthPanel({ token, onTokenChange, onLogon, isConnected, 
         </span>
       </div>
       <label className={styles.fieldLabel}>JWT Token</label>
-      <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-        <input
-          type="text"
-          className={styles.input}
-          value={token}
-          onChange={(e) => onTokenChange(e.target.value)}
-          placeholder="Paste JWT token or login"
-          style={{ flex: 1 }}
-        />
-        {!hasStoredUser && (
+      <input
+        type="text"
+        className={styles.input}
+        value={token}
+        onChange={(e) => onTokenChange(e.target.value)}
+        placeholder="Paste JWT token or press Logon to login"
+      />
+      <div style={{ display: 'flex', gap: '8px', marginTop: '8px' }}>
+        <button
+          className={styles.buttonPrimary}
+          onClick={handleLogon}
+          disabled={!isConnected || loading}
+        >
+          {loading ? 'Opening login...' : 'Logon'}
+        </button>
+        {token.trim() && (
           <button
-            className={styles.buttonSmall}
-            onClick={handleLogin}
-            disabled={loading}
+            className={styles.buttonDanger}
+            onClick={() => {
+              onTokenChange('')
+              localStorage.removeItem('user')
+              localStorage.removeItem('Bearer')
+            }}
           >
-            {loading ? '...' : 'Login'}
+            Logout
           </button>
         )}
       </div>
-      <button className={styles.buttonPrimary} onClick={onLogon} disabled={!isConnected || !token.trim()} style={{ marginTop: '8px' }}>
-        Logon
-      </button>
     </div>
   )
 }
