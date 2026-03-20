@@ -76,7 +76,7 @@ export default function HostWalletPanel({
           </button>
         </div>
         <button className={styles.button} onClick={onCheckBalance} disabled={balance.loading}>
-          {balance.loading ? '...' : 'Check Balance'}
+          {balance.loading ? '...' : 'Check Faucet Balance'}
         </button>
       </div>
 
