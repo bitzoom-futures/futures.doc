@@ -93,6 +93,12 @@
 .user-guide-layout table {
   display: table;
   width: 100%;
+  table-layout: fixed;
+}
+
+.user-guide-layout td {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 /* Show lock icon in heading for authenticated endpoints */

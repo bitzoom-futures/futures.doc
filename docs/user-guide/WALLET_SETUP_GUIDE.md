@@ -14,8 +14,8 @@ Your complete guide to setting up a test wallet for testing deposit and withdraw
 <div className="user-guide-layout">
 <table>
 <tr>
-<td width="50%" align="center">
-<img src={require("./wallet-screenshots/01-tronlink-install.png").default} width="680" />
+<td width="50%" align="center" style={{verticalAlign: 'top'}}>
+<img src={require("./wallet-screenshots/01-tronlink-install.png").default} width="100%" />
 </td>
 <td width="50%" valign="top">
 
