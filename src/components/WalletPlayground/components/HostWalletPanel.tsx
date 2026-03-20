@@ -94,10 +94,11 @@ export default function HostWalletPanel({
       {sending && <p className={styles.helperText}>Sending transaction...</p>}
 
       {lastResult && (
-        <div className={lastResult.success ? styles.success : styles.error}>
+        <div className={lastResult.success && lastResult.status !== 'failed' ? styles.success : styles.error}>
           {lastResult.success ? (
             <>
-              Transaction sent!{' '}
+              Transaction {lastResult.status === 'confirmed' ? 'confirmed' : lastResult.status === 'failed' ? 'failed' : 'sent (pending...)'}
+              {' '}
               <a
                 href={TRONSCAN_TX_URL + lastResult.txId}
                 target="_blank"

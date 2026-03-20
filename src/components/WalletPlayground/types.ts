@@ -24,6 +24,7 @@ export interface SendResult {
   success: boolean
   txId?: string
   error?: string
+  status?: 'pending' | 'confirmed' | 'failed'
 }
 
 declare global {

@@ -7,6 +7,7 @@ import { useTransactions } from './hooks/useTransactions'
 import { useTransactionHistory } from './hooks/useTransactionHistory'
 import HostWalletPanel from './components/HostWalletPanel'
 import UserWalletPanel from './components/UserWalletPanel'
+import SendPanel from './components/SendPanel'
 import BalancePanel from './components/BalancePanel'
 import TransactionHistory from './components/TransactionHistory'
 import styles from './styles/WalletPlayground.module.css'
@@ -21,6 +22,7 @@ export default function WalletPlayground() {
   const { balance: checkerBalance, checkBalance: checkCheckerBalance } = useBalances()
   const {
     sendTRX, sendUSDT, sending, lastResult,
+    userSendTRX, userSendUSDT, userSending, userSendResult,
     recycleToFaucet, recycling, recycleResult
   } = useTransactions()
   const { history, loading: histLoading, error: histError, fetchHistory } = useTransactionHistory()
@@ -66,6 +68,20 @@ export default function WalletPlayground() {
     }
   }, [lastResult, wallet, checkHostBalance, checkUserBalance, fetchHistory])
 
+  // Auto-refresh after user send completes
+  useEffect(() => {
+    if (userSendResult?.success) {
+      const timer = setTimeout(() => {
+        checkHostBalance(FUNDED_ADDR)
+        if (wallet) {
+          checkUserBalance(wallet.address)
+          fetchHistory(wallet.address)
+        }
+      }, 3000)
+      return () => clearTimeout(timer)
+    }
+  }, [userSendResult, wallet, checkHostBalance, checkUserBalance, fetchHistory])
+
   // Auto-refresh after recycle completes
   useEffect(() => {
     if (recycleResult?.success) {
@@ -87,6 +103,22 @@ export default function WalletPlayground() {
   const handleSendUSDT = useCallback(async () => {
     if (wallet) await sendUSDT(wallet.address, 100)
   }, [wallet, sendUSDT])
+
+  const handleUserSendTRX = useCallback(
+    async (toAddress: string, amount: number) => {
+      if (!wallet) return { success: false, error: 'No wallet' }
+      return userSendTRX(wallet.address, wallet.privateKey, toAddress, amount)
+    },
+    [wallet, userSendTRX]
+  )
+
+  const handleUserSendUSDT = useCallback(
+    async (toAddress: string, amount: number) => {
+      if (!wallet) return { success: false, error: 'No wallet' }
+      return userSendUSDT(wallet.address, wallet.privateKey, toAddress, amount)
+    },
+    [wallet, userSendUSDT]
+  )
 
   const handleRefreshHistory = useCallback(() => {
     if (wallet) fetchHistory(wallet.address)
@@ -152,6 +184,14 @@ export default function WalletPlayground() {
         tronWebReady={!!tronWeb}
         recycling={recycling}
         recycleResult={recycleResult}
+      />
+
+      <SendPanel
+        onSendTRX={handleUserSendTRX}
+        onSendUSDT={handleUserSendUSDT}
+        sending={userSending}
+        sendResult={userSendResult}
+        hasWallet={!!wallet}
       />
 
       <TransactionHistory
