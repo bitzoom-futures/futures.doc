@@ -59,7 +59,7 @@ function readUserFromStorage(): UserInfo | null {
     const stored = localStorage.getItem(STORAGE_KEY)
     if (stored) {
       const parsed = JSON.parse(stored)
-      if (parsed?.token) return parsed
+      if (parsed?.token?.trim()) return parsed
     }
   } catch { /* ignore */ }
   return null
@@ -193,6 +193,8 @@ export default function NavbarLogin() {
     localStorage.removeItem(BEARER_KEY)
     setUser(null)
     setDropdownOpen(false)
+    // Notify same-tab components (storage event only fires cross-tab)
+    window.dispatchEvent(new CustomEvent('user-logout'))
     if (shouldReloadForAuth()) {
       window.location.reload()
     }

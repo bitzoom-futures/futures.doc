@@ -16,7 +16,7 @@ function getStoredToken(): string {
     const stored = localStorage.getItem('user')
     if (stored) {
       const parsed = JSON.parse(stored)
-      if (parsed?.token) return parsed.token.replace(/^Bearer\s+/i, '')
+      if (parsed?.token?.trim()) return parsed.token.replace(/^Bearer\s+/i, '')
     }
   } catch { /* ignore */ }
   return ''
@@ -39,7 +39,7 @@ export default function AuthPanel({ token, onTokenChange, onLogon, isConnected, 
 
   // Listen for login from other tabs/popups (storage event fires for cross-tab changes)
   useEffect(() => {
-    const handler = (e: StorageEvent) => {
+    const storageHandler = (e: StorageEvent) => {
       if (e.key === 'user' && e.newValue) {
         try {
           const parsed = JSON.parse(e.newValue)
@@ -54,8 +54,15 @@ export default function AuthPanel({ token, onTokenChange, onLogon, isConnected, 
         } catch { /* ignore */ }
       }
     }
-    window.addEventListener('storage', handler)
-    return () => window.removeEventListener('storage', handler)
+    // Listen for same-tab logout from navbar
+    const logoutHandler = () => onTokenChange('')
+
+    window.addEventListener('storage', storageHandler)
+    window.addEventListener('user-logout', logoutHandler)
+    return () => {
+      window.removeEventListener('storage', storageHandler)
+      window.removeEventListener('user-logout', logoutHandler)
+    }
   }, [onTokenChange, onLogon])
 
   const openLoginPopup = useCallback(async () => {
@@ -102,7 +109,7 @@ export default function AuthPanel({ token, onTokenChange, onLogon, isConnected, 
       <div className={styles.panelHeader}>
         <h3>Authentication</h3>
         <span className={isAuthenticated ? styles.status_success : styles.status_warn}>
-          {isAuthenticated ? 'Authenticated' : 'Not authenticated'}
+          {isAuthenticated ? 'Websocket Authenticated' : 'Websocket Not authenticated'}
         </span>
       </div>
       <label className={styles.fieldLabel}>JWT Token</label>
@@ -111,7 +118,7 @@ export default function AuthPanel({ token, onTokenChange, onLogon, isConnected, 
         className={styles.input}
         value={token}
         onChange={(e) => onTokenChange(e.target.value)}
-        placeholder="Paste JWT token or press Logon to login"
+        placeholder="Paste JWT token or Press Logon to automatically get a token"
       />
       <button
         className={styles.buttonPrimary}
