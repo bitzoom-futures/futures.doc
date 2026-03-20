@@ -195,11 +195,17 @@
 
 /* Transaction History */
 .historyList {
-  max-height: 350px;
-  overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+.historyListScroll {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-height: 300px;
+  overflow-y: auto;
 }
 
 .historyItem {

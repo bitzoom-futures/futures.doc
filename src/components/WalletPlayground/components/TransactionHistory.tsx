@@ -51,7 +51,7 @@ export default function TransactionHistory({
       )}
 
       {history.length > 0 && (
-        <div className={styles.historyList}>
+        <div className={history.length > 5 ? styles.historyListScroll : styles.historyList}>
           {history.map((tx) => (
             <div key={tx.txId} className={styles.historyItem}>
               <div className={styles.historyRow}>

@@ -29,7 +29,7 @@ export default function HostWalletPanel({
         <span className={styles.netBadge}>Nile Testnet</span>
       </div>
       <p className={styles.helperText}>
-        This funded testnet wallet sends test tokens to your wallet. Please use sparingly — faucet funds are limited. Remember to recycle tokens back when you're done testing.
+        This funded testnet wallet sends test tokens to your wallet. Please use responsibly — faucet funds are limited. Remember to recycle tokens back when you're done testing.
       </p>
 
       <div className={styles.addressRow}>
