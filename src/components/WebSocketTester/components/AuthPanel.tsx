@@ -113,27 +113,14 @@ export default function AuthPanel({ token, onTokenChange, onLogon, isConnected, 
         onChange={(e) => onTokenChange(e.target.value)}
         placeholder="Paste JWT token or press Logon to login"
       />
-      <div style={{ display: 'flex', gap: '8px', marginTop: '8px' }}>
-        <button
-          className={styles.buttonPrimary}
-          onClick={handleLogon}
-          disabled={!isConnected || loading}
-        >
-          {loading ? 'Opening login...' : 'Logon'}
-        </button>
-        {token.trim() && (
-          <button
-            className={styles.buttonDanger}
-            onClick={() => {
-              onTokenChange('')
-              localStorage.removeItem('user')
-              localStorage.removeItem('Bearer')
-            }}
-          >
-            Logout
-          </button>
-        )}
-      </div>
+      <button
+        className={styles.buttonPrimary}
+        onClick={handleLogon}
+        disabled={!isConnected || loading}
+        style={{ marginTop: '8px' }}
+      >
+        {loading ? 'Opening login...' : 'Logon'}
+      </button>
     </div>
   )
 }
