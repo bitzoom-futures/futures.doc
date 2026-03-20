@@ -136,6 +136,10 @@ const config: Config = {
           to: '/category/user-guide'
         },
         {
+          type: 'custom-login' as any,
+          position: 'right'
+        },
+        {
           type: 'search',
           position: 'right'
         },
