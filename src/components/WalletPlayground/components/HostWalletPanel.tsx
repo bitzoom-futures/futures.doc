@@ -75,6 +75,18 @@ export default function HostWalletPanel({
         </button>
       </div>
 
+      <p className={styles.helperText}>
+        Balance low? Get tokens from the{' '}
+        <a href="https://nileex.io/join/getJoinPage" target="_blank" rel="noopener noreferrer">
+          Nile Faucet
+        </a>
+        . See guide for{' '}
+        <a href="/docs/user-guide/WALLET_SETUP_GUIDE#step-8--get-test-trx-gas">TRX</a>
+        {' / '}
+        <a href="/docs/user-guide/WALLET_SETUP_GUIDE#step-9--get-test-usdt">USDT</a>
+        .
+      </p>
+
       {!hasUserWallet && (
         <p className={styles.helperText}>Create or import a user wallet below to enable sending.</p>
       )}
