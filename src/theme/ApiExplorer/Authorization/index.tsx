@@ -67,6 +67,8 @@ function Authorization() {
       )}
       {selectedAuth.map((a: any) => {
         if (a.type === "http" && a.scheme === "bearer") {
+          // [CUSTOM] Bearer token is auto-managed by UserContext — read-only display
+          const tokenValue = data[a.key].token ?? "";
           return (
             <FormItem
               label={translate({
@@ -75,23 +77,14 @@ function Authorization() {
               })}
               key={a.key + "-bearer"}
             >
-              <FormTextInput
-                placeholder={translate({
-                  id: OPENAPI_AUTH.BEARER_TOKEN,
-                  message: "Bearer Token",
-                })}
-                password
-                value={data[a.key].token ?? ""}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                  const value = e.target.value;
-                  dispatch(
-                    setAuthData({
-                      scheme: a.key,
-                      key: "token",
-                      value: value ? value : undefined,
-                    })
-                  );
-                }}
+              <input
+                className="openapi-explorer__form-item-input"
+                type="password"
+                value={tokenValue}
+                readOnly
+                placeholder={rawToken ? "Auto-filled from login" : "Login via Get Token to auto-fill"}
+                title={tokenValue}
+                style={{ opacity: 0.7, cursor: "default" }}
               />
             </FormItem>
           );
