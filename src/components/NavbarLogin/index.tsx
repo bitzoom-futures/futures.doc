@@ -74,21 +74,12 @@ export default function NavbarLogin() {
     setUser(readUserFromStorage())
   }, [])
 
-  // Listen for storage changes from other tabs
+  // Listen for storage changes (e.g. login from popup) and reload to sync openapi plugin
   useEffect(() => {
     const handler = (e: StorageEvent) => {
-      if (e.key === STORAGE_KEY) {
-        if (e.newValue) {
-          try {
-            const parsed = JSON.parse(e.newValue)
-            if (parsed?.token) {
-              setUser(parsed)
-              syncBearerToken(parsed?.token)
-            }
-          } catch { setUser(null) }
-        } else {
-          setUser(null)
-        }
+      if (e.key === STORAGE_KEY && e.newValue) {
+        syncBearerToken(JSON.parse(e.newValue)?.token)
+        window.location.reload()
       }
     }
     window.addEventListener('storage', handler)
@@ -149,32 +140,14 @@ export default function NavbarLogin() {
         `width=${w},height=${h},left=${left},top=${top},popup=yes`
       )
 
-      // Step 4: Listen for postMessage from our callback page + poll as fallback
+      // Poll for popup close (user cancelled login)
       if (popup) {
-        const onMessage = (e: MessageEvent) => {
-          if (e.data?.type === 'casdoor-callback-done') {
-            const found = readUserFromStorage()
-            if (found) setUser(found)
-            setLoading(false)
-            if (pollRef.current) clearInterval(pollRef.current)
-            pollRef.current = null
-            window.removeEventListener('message', onMessage)
-            try { popup.close() } catch { /* */ }
-          }
-        }
-        window.addEventListener('message', onMessage)
-
-        // Fallback: poll for popup close
         pollRef.current = setInterval(() => {
           try {
             if (popup.closed) {
-              setLoading(false)
               if (pollRef.current) clearInterval(pollRef.current)
               pollRef.current = null
-              window.removeEventListener('message', onMessage)
-              // Check if token was saved before popup closed
-              const found = readUserFromStorage()
-              if (found) setUser(found)
+              setLoading(false)
             }
           } catch { /* cross-origin, ignore */ }
         }, 500)
@@ -207,8 +180,7 @@ export default function NavbarLogin() {
   const handleLogout = useCallback(() => {
     localStorage.removeItem(STORAGE_KEY)
     localStorage.removeItem(BEARER_KEY)
-    setUser(null)
-    setDropdownOpen(false)
+    window.location.reload()
   }, [])
 
   if (!user) {
