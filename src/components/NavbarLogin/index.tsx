@@ -18,28 +18,6 @@ interface CasdoorConfig {
 }
 
 const STORAGE_KEY = 'user'
-const BEARER_KEY = 'Bearer'
-
-/** Only reload on API doc pages where the openapi plugin needs Bearer from localStorage */
-function shouldReloadForAuth(): boolean {
-  const path = window.location.pathname
-  return /\/bitzoom\/api-/.test(path)
-}
-
-/** Sync our JWT into the 'Bearer' localStorage key used by the openapi plugin */
-function syncBearerToken(token: string | null | undefined) {
-  try {
-    if (!token) {
-      localStorage.removeItem(BEARER_KEY)
-      return
-    }
-    const raw = token.replace(/^Bearer\s+/i, '')
-    const newValue = JSON.stringify({ token: raw })
-    if (localStorage.getItem(BEARER_KEY) !== newValue) {
-      localStorage.setItem(BEARER_KEY, newValue)
-    }
-  } catch { /* ignore */ }
-}
 
 /** Decode a JWT payload without any library */
 function decodeJwtPayload(token: string): any {
@@ -75,24 +53,18 @@ export default function NavbarLogin() {
   const dropdownRef = useRef<HTMLDivElement>(null)
   const pollRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
-  // Read user from localStorage on mount and sync Bearer token
+  // Read user from localStorage on mount
   useEffect(() => {
-    const stored = readUserFromStorage()
-    setUser(stored)
-    syncBearerToken(stored?.token)
+    setUser(readUserFromStorage())
   }, [])
 
-  // Listen for storage changes (e.g. login from popup) and reload to sync openapi plugin
+  // Listen for storage changes (e.g. login from popup)
   useEffect(() => {
     const handler = (e: StorageEvent) => {
       if (e.key === STORAGE_KEY && e.newValue) {
         const parsed = JSON.parse(e.newValue)
-        syncBearerToken(parsed?.token)
-        setUser(parsed)
+        setUser(parsed?.token?.trim() ? parsed : null)
         setLoading(false)
-        if (shouldReloadForAuth()) {
-          window.location.reload()
-        }
       }
     }
     window.addEventListener('storage', handler)
@@ -192,14 +164,10 @@ export default function NavbarLogin() {
 
   const handleLogout = useCallback(() => {
     localStorage.removeItem(STORAGE_KEY)
-    localStorage.removeItem(BEARER_KEY)
     setUser(null)
     setDropdownOpen(false)
     // Notify same-tab components (storage event only fires cross-tab)
     window.dispatchEvent(new CustomEvent('user-logout'))
-    if (shouldReloadForAuth()) {
-      window.location.reload()
-    }
   }, [])
 
   if (!user) {
