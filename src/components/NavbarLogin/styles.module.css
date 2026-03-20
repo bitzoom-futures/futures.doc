@@ -26,16 +26,14 @@
   font: inherit;
   font-size: 0.85rem;
   padding: 0.25rem 0.5rem;
-  border: 1px solid var(--ifm-color-emphasis-300);
-  border-radius: 8px;
-  background: var(--ifm-background-surface-color);
+  border: none;
+  background: none;
   cursor: pointer;
   white-space: nowrap;
-  max-width: 180px;
 }
 
 .userBtn:hover {
-  border-color: var(--ifm-color-primary);
+  opacity: 0.8;
 }
 
 .avatar {

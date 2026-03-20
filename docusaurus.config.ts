@@ -99,7 +99,7 @@ const config: Config = {
   themeConfig: {
     api: {
       // proxy: 'https://cors.pan.dev', // Site-wide proxy (can be overridden per-spec in plugin config)
-      authPersistance: 'localStorage',
+      authPersistence: 'localStorage',
       requestTimeout: 60000 // 60 seconds
     },
     docs: {

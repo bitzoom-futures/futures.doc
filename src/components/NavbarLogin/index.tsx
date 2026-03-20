@@ -19,7 +19,6 @@ interface CasdoorConfig {
 
 const STORAGE_KEY = 'user'
 
-
 /** Decode a JWT payload without any library */
 function decodeJwtPayload(token: string): any {
   try {
@@ -58,7 +57,6 @@ export default function NavbarLogin() {
   useEffect(() => {
     setUser(readUserFromStorage())
   }, [])
-
 
   // Listen for storage changes from other tabs
   useEffect(() => {
