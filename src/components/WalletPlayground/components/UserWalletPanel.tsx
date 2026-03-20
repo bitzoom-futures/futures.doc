@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import CopyButton from './CopyButton'
 import type { BalanceInfo, SendResult, WalletInfo } from '../types'
 import styles from '../styles/WalletPlayground.module.css'
 
@@ -70,12 +71,7 @@ export default function UserWalletPanel({
           <label className={styles.fieldLabel}>Address</label>
           <div className={styles.addressRow}>
             <code className={styles.address}>{wallet.address}</code>
-            <button
-              className={styles.buttonSmall}
-              onClick={() => navigator.clipboard.writeText(wallet.address)}
-            >
-              Copy
-            </button>
+            <CopyButton text={wallet.address} />
           </div>
         </div>
 
@@ -92,12 +88,7 @@ export default function UserWalletPanel({
           {showPrivKey && (
             <div className={styles.addressRow}>
               <code className={styles.address}>{wallet.privateKey}</code>
-              <button
-                className={styles.buttonSmall}
-                onClick={() => navigator.clipboard.writeText(wallet.privateKey)}
-              >
-                Copy
-              </button>
+              <CopyButton text={wallet.privateKey} />
             </div>
           )}
         </div>

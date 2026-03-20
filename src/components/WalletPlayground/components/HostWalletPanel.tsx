@@ -1,4 +1,5 @@
 import React from 'react'
+import CopyButton from './CopyButton'
 import { FUNDED_ADDR, TRONSCAN_TX_URL } from '../constants'
 import type { BalanceInfo, SendResult } from '../types'
 import styles from '../styles/WalletPlayground.module.css'
@@ -34,13 +35,7 @@ export default function HostWalletPanel({
 
       <div className={styles.addressRow}>
         <code className={styles.address}>{FUNDED_ADDR}</code>
-        <button
-          className={styles.buttonSmall}
-          onClick={() => navigator.clipboard.writeText(FUNDED_ADDR)}
-          title="Copy address"
-        >
-          Copy
-        </button>
+        <CopyButton text={FUNDED_ADDR} />
       </div>
 
       <div className={styles.metricsGrid}>
