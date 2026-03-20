@@ -65,7 +65,8 @@ const sidebars: SidebarsConfig = {
       items: [
         'user-guide/WEB_USER_GUIDE',
         'user-guide/USER_GUIDE',
-        'user-guide/WALLET_SETUP_GUIDE'
+        'user-guide/WALLET_SETUP_GUIDE',
+        'user-guide/wallet-playground'
       ]
     }
   ],

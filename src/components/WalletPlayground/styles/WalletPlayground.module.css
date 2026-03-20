@@ -1,0 +1,270 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.panel {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 10px;
+  padding: 1rem;
+  background: var(--ifm-background-surface-color);
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.panelTitle {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.netBadge {
+  display: inline-block;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: #fef3c7;
+  color: #92400e;
+  font-weight: 600;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.rowSpaceBetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 0.75rem 0;
+}
+
+.metric {
+  background: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+
+.metricLabel {
+  font-size: 12px;
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 4px;
+}
+
+.metricValue {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.addressRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.4rem 0;
+}
+
+.address {
+  font-size: 13px;
+  word-break: break-all;
+  background: var(--ifm-background-color);
+  padding: 0.3rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  flex: 1;
+}
+
+.fieldGroup {
+  margin: 0.75rem 0;
+}
+
+.fieldLabel {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.input {
+  font: inherit;
+  width: 100%;
+  min-width: 0;
+  flex: 1;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  padding: 0.5rem 0.625rem;
+  background: var(--ifm-background-color);
+  font-size: 13px;
+  font-family: var(--ifm-font-family-monospace);
+}
+
+.button,
+.buttonPrimary,
+.buttonSmall,
+.buttonDanger {
+  font: inherit;
+  font-size: 0.85rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  padding: 0.45rem 0.8rem;
+  cursor: pointer;
+  background: var(--ifm-background-surface-color);
+  white-space: nowrap;
+}
+
+.buttonPrimary {
+  border-color: var(--ifm-color-primary);
+  background: var(--ifm-color-primary);
+  color: #fff;
+}
+
+.buttonDanger {
+  border-color: #ef4444;
+  background: #fef2f2;
+  color: #991b1b;
+}
+
+.button:disabled,
+.buttonPrimary:disabled,
+.buttonSmall:disabled,
+.buttonDanger:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.divider {
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  margin: 0.75rem 0;
+}
+
+.helperText {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.85rem;
+  margin: 0.4rem 0;
+}
+
+.error {
+  border: 1px solid #ef4444;
+  border-radius: 8px;
+  background: #fef2f2;
+  color: #991b1b;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.success {
+  border: 1px solid #22c55e;
+  border-radius: 8px;
+  background: #f0fdf4;
+  color: #166534;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.success a {
+  color: #166534;
+  text-decoration: underline;
+}
+
+/* Transaction History */
+.historyList {
+  max-height: 350px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.historyItem {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  padding: 0.55rem 0.75rem;
+}
+
+.historyRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.historyAmount {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.historyTime {
+  margin-left: auto;
+  font-size: 0.75rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.historyDetail {
+  font-size: 0.78rem;
+  color: var(--ifm-color-emphasis-600);
+  margin-top: 0.25rem;
+  font-family: var(--ifm-font-family-monospace);
+}
+
+.historyDetail a {
+  color: var(--ifm-color-primary);
+}
+
+.badgeTRX,
+.badgeUSDT {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.badgeTRX {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.badgeUSDT {
+  background: #dcfce7;
+  color: #166534;
+}
+
+@media (max-width: 640px) {
+  .panel {
+    padding: 0.8rem;
+  }
+
+  .metricsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
