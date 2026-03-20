@@ -136,10 +136,6 @@ const config: Config = {
           to: '/category/user-guide'
         },
         {
-          type: 'custom-login' as any,
-          position: 'right'
-        },
-        {
           type: 'search',
           position: 'right'
         },
@@ -155,7 +151,11 @@ const config: Config = {
           href: 'https://github.com/bitzoom-futures/futures.doc',
           label: 'GitHub',
           position: 'right'
-        }
+        },
+        {
+          type: 'custom-login' as any,
+          position: 'right'
+        },
       ]
     },
     footer: {

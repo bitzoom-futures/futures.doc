@@ -19,6 +19,7 @@ interface CasdoorConfig {
 
 const STORAGE_KEY = 'user'
 
+
 /** Decode a JWT payload without any library */
 function decodeJwtPayload(token: string): any {
   try {
@@ -57,6 +58,7 @@ export default function NavbarLogin() {
   useEffect(() => {
     setUser(readUserFromStorage())
   }, [])
+
 
   // Listen for storage changes from other tabs
   useEffect(() => {
@@ -193,14 +195,14 @@ export default function NavbarLogin() {
 
   if (!user) {
     return (
-      <button
-        className={styles.getTokenBtn}
+      <a
+        className="navbar__item navbar__link"
         onClick={handleGetToken}
-        disabled={loading}
+        style={{ cursor: loading ? 'wait' : 'pointer' }}
         title="Login to get Bearer token for API/WS requests"
       >
         {loading ? 'Loading...' : 'Get Token'}
-      </button>
+      </a>
     )
   }
 

@@ -2,17 +2,17 @@
   font: inherit;
   font-size: 0.85rem;
   padding: 0.35rem 0.75rem;
-  border: 1px solid var(--ifm-color-primary);
-  border-radius: 8px;
-  background: var(--ifm-color-primary);
-  color: #fff;
+  border: none;
+  background: none;
+  color: var(--ifm-font-color-base);
+  font-weight: 700;
   cursor: pointer;
   white-space: nowrap;
-  transition: opacity 0.15s;
+  transition: color 0.15s;
 }
 
 .getTokenBtn:hover {
-  opacity: 0.85;
+  color: var(--ifm-color-primary);
 }
 
 .userContainer {
