@@ -88,6 +88,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "bitzoom/api-v-1-getbilltype",
+          label: "/api/v1/getbilltype",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
           id: "bitzoom/api-v-1-historybill",
           label: "/api/v1/historybill",
           className: "api-method get",

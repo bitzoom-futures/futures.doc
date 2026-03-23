@@ -3,7 +3,7 @@
     "securitySchemes": {
       "Bearer": {
         "bearerFormat": "JWT",
-        "description": "Get TestToken from top right corner navbar",
+        "description": "Get TestToken from https://test.riverwa.com/api/servermanage/testtoken?userid=12345",
         "scheme": "bearer",
         "type": "http"
       }
@@ -25,7 +25,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "8fa4e02d-454f-449c-87c8-8fe1f2bc9e8a",
+                    "traceid": "2ba26353-4a4d-4b7e-bcab-38464af1b15f",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -80,7 +80,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "6d72c577-17c6-4dac-b376-9dc55407fe6a",
+                    "traceid": "adb3523d-d9d9-4323-b1f5-8a4a9041164c",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -161,7 +161,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "9b34c39d-d44f-4657-aa38-daea50dd16f1",
+                    "traceid": "6ae2a4ed-2a5a-4be7-8e8e-cd03f54c7f0f",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -247,7 +247,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "48775f03-d37e-4fba-abca-c003a7c23437",
+                    "traceid": "34f3d34f-e4fa-4f3f-b5f4-afa99335c1f6",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -333,7 +333,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "51be05d3-a24b-44d1-aa3c-b0935efffd84",
+                    "traceid": "2b63db5e-a3c9-42e2-a400-b2fc8c953487",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -403,7 +403,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "70e97702-2841-4b26-a730-a282d901cf94",
+                    "traceid": "3dc62ae9-d1bf-4b76-bfa3-ff757757e8ac",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -488,7 +488,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "142780cb-f036-4d3b-a022-9cb88d5f97b1",
+                    "traceid": "7991faf0-51ed-4784-b342-d6fbf81ac7f3",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -566,7 +566,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "53e72228-8486-4f67-93a9-65bbc0ae42ce",
+                    "traceid": "68708781-9a36-43c5-a8fe-833a6237e753",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -621,7 +621,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "ef0e1975-700e-4187-af8b-138f0569bee6",
+                    "traceid": "1326ebea-deab-4f67-82ea-c54f53ce26c4",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -676,7 +676,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "14e90371-6443-4719-b2bd-6c9d79b63421",
+                    "traceid": "25a6b89a-334c-4d7a-a830-00447f7c49b1",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -754,7 +754,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "0f9f74c0-187f-467e-bb46-11bbb1521526",
+                    "traceid": "d3b8ef57-0515-4849-be4f-f9e100887951",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -819,7 +819,72 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "19855937-e423-4cba-838d-07c76ee042f7",
+                    "traceid": "46da8d08-e40a-48f0-a24d-71eee46693d5",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/getbilltype": {
+      "get": {
+        "operationId": "/api/v1/getbilltype",
+        "parameters": [
+          {
+            "description": "symbol:",
+            "in": "query",
+            "name": "Symbol",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "a51bf687-9f91-4210-a8fc-ae4e101bc5c9",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -956,7 +1021,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "4c50fef7-be5d-4089-afbe-922101080c30",
+                    "traceid": "339cab5e-b602-4465-bb82-fae6451e0add",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -1098,7 +1163,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "980c23cf-7f39-45aa-b788-d3a82ba7ba27",
+                    "traceid": "1a2a5738-61e5-4df2-b2f3-5892c2c44c03",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -1232,7 +1297,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "86edcb7b-7eeb-44c8-ae7a-dafbaa65462e",
+                    "traceid": "2e3ff9de-d05c-4b94-a459-87ce4aea145a",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -1358,7 +1423,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "621fdce4-e95a-4639-a57f-d73aea4524b7",
+                    "traceid": "8964a127-b90b-49b2-875f-8a6ff880eaa0",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -1484,7 +1549,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "0d0f42ea-1cea-453a-95fc-7ed4772927d5",
+                    "traceid": "4a3b7d90-e1f2-42b4-95cd-3ededbdf9036",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -1554,7 +1619,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "06e5a26e-e2d4-4b6f-9970-c647765ca009",
+                    "traceid": "4253fd85-978d-496c-80b9-5961e4266de7",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -1662,7 +1727,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "a6bf50d8-08bb-4b2c-b23c-19a2aa0a630b",
+                    "traceid": "b0789f26-962c-4ac3-a385-fb1d0230a005",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -1751,7 +1816,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "c171ce13-f1fd-4b70-9cf1-b463523af206",
+                    "traceid": "20bf5cf1-199a-4119-ae04-d9d1efb58284",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -1845,7 +1910,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "c1ba4167-1878-483a-8b4b-eb5a78428136",
+                    "traceid": "a6ee008e-95a3-466e-941d-2c662aef11b2",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -1939,7 +2004,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "8b82cb35-edd0-4680-b678-efb59ef4c450",
+                    "traceid": "8ff9769c-2063-4c22-a20e-767f5ff9572c",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -2009,7 +2074,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "80ab63d1-c4e9-4c1b-b8aa-5df05e6b8642",
+                    "traceid": "b866ef53-1ec3-4998-9acc-f367c359bc63",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -2090,7 +2155,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "9c540efd-fa26-4e06-a2da-fba7932ef1d0",
+                    "traceid": "72beb7be-b078-4f45-9e99-75e270cdbd15",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -2204,7 +2269,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "8bd34753-c3ab-4329-b1e1-fc7b6ff7d164",
+                    "traceid": "f2b41088-06a4-413b-9028-4e470399a2f4",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -2282,7 +2347,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "a2ba7838-bc0a-43a5-b169-b808e6272eae",
+                    "traceid": "35eababa-d535-44e2-9ca2-8a5f8da9fee1",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -2438,7 +2503,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "a11ee934-cf44-460c-a4e5-1e8cc8462768",
+                    "traceid": "ce4a8dcc-b745-440b-90e2-680cc583726e",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -2524,7 +2589,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "182ae80a-d388-4129-9380-098ecdafbe69",
+                    "traceid": "75e11094-d2e2-473b-9444-728870380989",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -2594,7 +2659,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "72065f2a-9ee5-47c9-b8c0-7312c71dffe2",
+                    "traceid": "bedca59d-6a98-4020-9a35-37b9586f091a",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -2649,7 +2714,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "3bd84bd7-aca0-4509-a561-7fde88198f62",
+                    "traceid": "fd1dcb44-119b-44c5-9582-7d27cae1e372",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -2714,7 +2779,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "12ea091f-c6b6-42e7-8259-d71245ea6b27",
+                    "traceid": "303b9b52-53b9-40b4-8266-7c4be613eeea",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -2801,7 +2866,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "447f783f-c34a-42d7-aa86-408ec7b96c7e",
+                    "traceid": "4c53e588-e63d-46a2-bcc4-7a85df3aa9c3",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -2866,7 +2931,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "353e5e86-14e4-4a3e-aad8-8a6031e6c514",
+                    "traceid": "4f1ef774-60e2-4abb-b0d6-66cab1b9574a",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -2931,7 +2996,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "e2b08b4c-0f8d-4777-b27e-8a1739c3f125",
+                    "traceid": "bc5d2047-9602-47e9-98cc-2faea70cce3b",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -2996,7 +3061,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "d88b419e-7068-4bda-9725-56ac4c89730d",
+                    "traceid": "4d21f3e6-07d6-4b3e-a95f-f9d77f9d39e6",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -3077,7 +3142,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "6a1d8c56-8d4f-4866-959d-37177fbf6316",
+                    "traceid": "a1436ac1-cda7-4f75-8fe3-95db190bfe64",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -3155,7 +3220,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "38d43b65-8e01-49b1-ac0b-ecc26b82ac82",
+                    "traceid": "a35cf6b0-505c-408e-823a-b9ed713473b6",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -3261,7 +3326,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "1220e33c-1c08-446e-baff-db3d6dd58a6b",
+                    "traceid": "fd356242-fb3f-4fac-8a47-d009a201135f",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -3326,7 +3391,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "6b79d4de-8bcf-4a16-9c0d-040635539cac",
+                    "traceid": "b6f12125-4d95-44a2-9624-d174053c11c4",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -3423,7 +3488,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "0419679e-a826-48c5-9a64-811a65ef4242",
+                    "traceid": "f9545139-fabf-48a5-bcac-56183f7ba1c5",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -3527,7 +3592,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "43481460-9d60-44a2-8a61-5ebc963a3cc3",
+                    "traceid": "c547b9b6-ddcb-42d8-a6e5-18f7ba08730e",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -3620,7 +3685,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "6d3d3510-14bb-4816-8724-8b3a1b1f3247",
+                    "traceid": "a30acab3-b53d-4c66-8f4f-6f928247c654",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -3706,7 +3771,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "6a07db52-345a-475c-aeb2-38deeb414c51",
+                    "traceid": "194583f3-3ab7-4c60-9e90-a7e4e89f0d44",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -3738,7 +3803,7 @@
                             "maxWithdrawAmount": "0"
                           }
                         },
-                        "updatedAt": "2026-03-23T14:00:50.488288281+08:00",
+                        "updatedAt": "2026-03-23T14:48:13.244883675+08:00",
                         "version": 1,
                         "iconUrl": "https://static.cobo.com/img/asset/icon_usdt.png"
                       }
@@ -3820,7 +3885,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "b6302b44-dc18-48bc-9016-b20fc44bccde",
+                    "traceid": "49158d45-85e7-4b23-a141-17d1014cbe4d",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -3921,7 +3986,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "881b5938-35f7-41a0-a516-81ff5ceb3c04",
+                    "traceid": "f9cf4f37-c9a9-4c06-893a-501d87c6344f",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -4045,7 +4110,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "f87138bc-0dc6-46a3-9f25-5217ddd2f3b3",
+                    "traceid": "47bedea3-c601-41cf-bfa6-97a38dd3f6ef",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
