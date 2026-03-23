@@ -1,1 +1,1 @@
-{"parameters":[{"description":"timestamp:","in":"query","name":"Timestamp","schema":{"type":"int64"}},{"description":"signature:","in":"query","name":"Signature","schema":{"type":"string"}}]}
+{"parameters":[{"description":"timestamp:","in":"query","name":"Timestamp","schema":{"type":"int64"}},{"description":"signature:","in":"query","name":"Signature","schema":{"type":"string"}},{"description":"assetID:资产ID, 可选","in":"query","name":"AssetID","schema":{"type":"string"}}]}
