@@ -5,7 +5,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "build": "node scripts/fetch-gateway-spec.cjs && node scripts/sync-doc-base-urls.cjs && docusaurus clean-api-docs bitzoom && docusaurus gen-api-docs bitzoom && docusaurus build",
+    "build": "node scripts/fetch-gateway-spec.cjs && node scripts/build-gateway-spec.cjs && docusaurus clean-api-docs bitzoom && docusaurus gen-api-docs bitzoom && docusaurus build",
     "build:local": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",

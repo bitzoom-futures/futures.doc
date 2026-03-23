@@ -8,7 +8,7 @@ RUN yarn install --frozen-lockfile
 
 # 复制全部源码并构建（仅运行 docusaurus build，API docs 已预生成并提交，跳过需要内网的 fetch-gateway-spec 步骤）
 COPY . .
-RUN yarn build:local
+RUN yarn build
 
 # Stage 2: nginx 服务静态文件 + API 反代
 FROM nginx:alpine

@@ -78,7 +78,10 @@ if (
     replaceUrlOrigin(filtered.components.securitySchemes.Bearer.description, gatewayServerUrl)
 }
 
-fs.writeFileSync(TARGET_SPEC, `${JSON.stringify(filtered, null, 2)}\n`, 'utf8')
+const PUBLIC_ORIGIN = 'https://test.riverwa.com'
+const output = JSON.stringify(filtered, null, 2)
+  .replace(/http:\/\/[^/\s"]+/g, PUBLIC_ORIGIN)
+fs.writeFileSync(TARGET_SPEC, `${output}\n`, 'utf8')
 
 console.log(
   `Wrote ${TARGET_SPEC} with ${Object.keys(filteredPaths).length} path(s) and ${gatewayOperationCount} gateway-tagged operation(s) from ${SOURCE_SPEC}`

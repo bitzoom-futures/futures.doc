@@ -1,8 +1,8 @@
 const fs = require('fs')
 const path = require('path')
 
-const GATEWAY_URL = 'http://exchange:8081/api/servermanage/openapi'
-const TARGET_SPEC = path.join(process.cwd(), 'examples', 'bitzoom.gateway.json')
+const GATEWAY_URL = 'http://119.8.50.236/api/openapi'
+const TARGET_SPEC = path.join(process.cwd(), 'examples', 'bitzoom.json')
 
 async function main() {
   console.log(`Fetching OpenAPI spec from ${GATEWAY_URL} ...`)
