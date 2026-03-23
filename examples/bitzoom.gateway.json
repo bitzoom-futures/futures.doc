@@ -3,7 +3,7 @@
     "securitySchemes": {
       "Bearer": {
         "bearerFormat": "JWT",
-        "description": "Get TestToken from https://test.riverwa.com/api/servermanage/testtoken?userid=12345",
+        "description": "Get TestToken from top right corner navbar",
         "scheme": "bearer",
         "type": "http"
       }
@@ -18,18 +18,18 @@
   "paths": {
     "/api/gateway/ping": {
       "get": {
-        "operationId": "api_gateway_ping",
+        "operationId": "/api/gateway/ping",
         "responses": {
           "200": {
             "content": {
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "5dbbd591-2e6d-4c13-8d53-bede3ecbc3ab",
+                    "traceid": "8fa4e02d-454f-449c-87c8-8fe1f2bc9e8a",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -66,12 +66,6 @@
             "description": "Successful operation"
           }
         },
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "Ping",
         "tags": [
           "gateway"
         ]
@@ -79,18 +73,18 @@
     },
     "/api/gateway/time": {
       "get": {
-        "operationId": "api_gateway_time",
+        "operationId": "/api/gateway/time",
         "responses": {
           "200": {
             "content": {
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "46bbf386-3ebc-4a4b-88a6-821badb1573e",
+                    "traceid": "6d72c577-17c6-4dac-b376-9dc55407fe6a",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -127,12 +121,6 @@
             "description": "Successful operation"
           }
         },
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "Time",
         "tags": [
           "gateway"
         ]
@@ -140,7 +128,7 @@
     },
     "/api/v1/adlquantile": {
       "get": {
-        "operationId": "api_v1_adlquantile",
+        "operationId": "/api/v1/adlquantile",
         "parameters": [
           {
             "description": "timestamp:",
@@ -173,11 +161,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "d6dca294-6049-452b-b123-29240328ddb0",
+                    "traceid": "9b34c39d-d44f-4657-aa38-daea50dd16f1",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -219,12 +207,6 @@
             "Bearer": []
           }
         ],
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "AdlQuantile",
         "tags": [
           "gateway"
         ]
@@ -232,7 +214,7 @@
     },
     "/api/v1/balance": {
       "get": {
-        "operationId": "api_v1_balance",
+        "operationId": "/api/v1/balance",
         "parameters": [
           {
             "description": "timestamp:",
@@ -249,6 +231,14 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "description": "assetID:资产ID, 可选",
+            "in": "query",
+            "name": "AssetID",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -257,11 +247,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "8e21be71-7bac-4f33-a267-433acb7862a4",
+                    "traceid": "48775f03-d37e-4fba-abca-c003a7c23437",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -303,12 +293,6 @@
             "Bearer": []
           }
         ],
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "Balance",
         "tags": [
           "gateway"
         ]
@@ -316,7 +300,7 @@
     },
     "/api/v1/commissionrate": {
       "get": {
-        "operationId": "api_v1_commissionrate",
+        "operationId": "/api/v1/commissionrate",
         "parameters": [
           {
             "description": "timestamp:",
@@ -349,11 +333,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "9d759334-bc2e-4224-a7ad-6674337aa4b8",
+                    "traceid": "51be05d3-a24b-44d1-aa3c-b0935efffd84",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -395,12 +379,71 @@
             "Bearer": []
           }
         ],
-        "servers": [
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/convertprice": {
+      "get": {
+        "operationId": "/api/v1/convertprice",
+        "parameters": [
           {
-            "url": "https://test.riverwa.com/"
+            "description": "symbol:",
+            "in": "query",
+            "name": "Symbol",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
-        "summary": "CommissionRate",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "70e97702-2841-4b26-a730-a282d901cf94",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": "6.885503",
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
         "tags": [
           "gateway"
         ]
@@ -408,7 +451,7 @@
     },
     "/api/v1/deleteorder": {
       "delete": {
-        "operationId": "api_v1_deleteorder",
+        "operationId": "/api/v1/deleteorder",
         "requestBody": {
           "content": {
             "application/json": {
@@ -436,7 +479,7 @@
               }
             }
           },
-          "description": "Private:<br>symbol:<br>orderId,string:<br>origClientOrderId:",
+          "description": "Private:</br>symbol:</br>orderId,string:</br>origClientOrderId:",
           "required": true
         },
         "responses": {
@@ -445,11 +488,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "5d1d34e4-048f-452c-8ae9-2c97997fed10",
+                    "traceid": "142780cb-f036-4d3b-a022-9cb88d5f97b1",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -491,12 +534,6 @@
             "Bearer": []
           }
         ],
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "DeleteOrder",
         "tags": [
           "gateway"
         ]
@@ -504,7 +541,7 @@
     },
     "/api/v1/depth": {
       "get": {
-        "operationId": "api_v1_depth",
+        "operationId": "/api/v1/depth",
         "parameters": [
           {
             "description": "symbol:",
@@ -529,11 +566,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "df143a53-2c4a-4379-b03d-61f6bcb3edd5",
+                    "traceid": "53e72228-8486-4f67-93a9-65bbc0ae42ce",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -570,12 +607,6 @@
             "description": "Successful operation"
           }
         },
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "Depth",
         "tags": [
           "gateway"
         ]
@@ -583,18 +614,18 @@
     },
     "/api/v1/exchangeinfo": {
       "get": {
-        "operationId": "api_v1_exchangeinfo",
+        "operationId": "/api/v1/exchangeinfo",
         "responses": {
           "200": {
             "content": {
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "b6eff005-9f10-4687-babf-c228fac72d73",
+                    "traceid": "ef0e1975-700e-4187-af8b-138f0569bee6",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -631,12 +662,74 @@
             "description": "Successful operation"
           }
         },
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/fiatlist": {
+      "get": {
+        "operationId": "/api/v1/fiatlist",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "14e90371-6443-4719-b2bd-6c9d79b63421",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": [
+                      {
+                        "id": 2,
+                        "name": "United States Dollar",
+                        "sign": "$",
+                        "symbol": "USD"
+                      },
+                      {
+                        "id": 3,
+                        "name": "Euro",
+                        "sign": "€",
+                        "symbol": "EUR"
+                      }
+                    ],
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
           }
-        ],
-        "summary": "ExchangeInfo",
+        },
         "tags": [
           "gateway"
         ]
@@ -644,7 +737,7 @@
     },
     "/api/v1/fundingfeehistory": {
       "get": {
-        "operationId": "api_v1_fundingfeehistory",
+        "operationId": "/api/v1/fundingfeehistory",
         "parameters": [
           {
             "description": "symbol:",
@@ -661,11 +754,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "ae47f5cd-ca43-4032-a5c2-a148c52355e3",
+                    "traceid": "0f9f74c0-187f-467e-bb46-11bbb1521526",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -702,12 +795,213 @@
             "description": "Successful operation"
           }
         },
-        "servers": [
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/getaccounttype": {
+      "get": {
+        "operationId": "/api/v1/getaccounttype",
+        "parameters": [
           {
-            "url": "https://test.riverwa.com/"
+            "description": "symbol:",
+            "in": "query",
+            "name": "Symbol",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
-        "summary": "FundingFeeHistory",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "19855937-e423-4cba-838d-07c76ee042f7",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/historybill": {
+      "get": {
+        "operationId": "/api/v1/historybill",
+        "parameters": [
+          {
+            "description": "timestamp:",
+            "in": "query",
+            "name": "Timestamp",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "signature:",
+            "in": "query",
+            "name": "Signature",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "page:页码,当为0时为1,返回数据中的total是总行数,每页默认行数为100",
+            "in": "query",
+            "name": "Page",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "limit:每页行数,默认100,最大1000",
+            "in": "query",
+            "name": "Limit",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "starttime:开始时间，可以为空",
+            "in": "query",
+            "name": "StartTime",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "endtime:结束时间，可以为空",
+            "in": "query",
+            "name": "EndTime",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "symbol:交易对,为空时查询所有",
+            "in": "query",
+            "name": "Symbol",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "assetID:资产ID",
+            "in": "query",
+            "name": "AssetID",
+            "schema": {
+              "type": "uint"
+            }
+          },
+          {
+            "description": "accountTypeID:账户类型ID,通过getaccounttype接口获取",
+            "in": "query",
+            "name": "AccountTypeID",
+            "schema": {
+              "type": "uint"
+            }
+          },
+          {
+            "description": "code:账单类型,通过getbilltype接口获取",
+            "in": "query",
+            "name": "Code",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "4c50fef7-be5d-4089-afbe-922101080c30",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
         "tags": [
           "gateway"
         ]
@@ -715,7 +1009,7 @@
     },
     "/api/v1/historyorder": {
       "get": {
-        "operationId": "api_v1_historyorder",
+        "operationId": "/api/v1/historyorder",
         "parameters": [
           {
             "description": "timestamp:",
@@ -804,11 +1098,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "0d6987be-1b39-4365-8295-877c5b8e0ebf",
+                    "traceid": "980c23cf-7f39-45aa-b788-d3a82ba7ba27",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -850,12 +1144,6 @@
             "Bearer": []
           }
         ],
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "HistoryOrder",
         "tags": [
           "gateway"
         ]
@@ -863,7 +1151,7 @@
     },
     "/api/v1/historyposition": {
       "get": {
-        "operationId": "api_v1_historyposition",
+        "operationId": "/api/v1/historyposition",
         "parameters": [
           {
             "description": "timestamp:",
@@ -944,11 +1232,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "c49136af-6a6f-42b3-851a-a663faaeb8b6",
+                    "traceid": "86edcb7b-7eeb-44c8-ae7a-dafbaa65462e",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -990,12 +1278,6 @@
             "Bearer": []
           }
         ],
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "HistoryPosition",
         "tags": [
           "gateway"
         ]
@@ -1003,7 +1285,7 @@
     },
     "/api/v1/historypositionmargin": {
       "get": {
-        "operationId": "api_v1_historypositionmargin",
+        "operationId": "/api/v1/historypositionmargin",
         "parameters": [
           {
             "description": "timestamp:",
@@ -1076,11 +1358,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "dcb8b5c6-5306-43b6-86d7-a3e7dc1da21b",
+                    "traceid": "621fdce4-e95a-4639-a57f-d73aea4524b7",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -1122,12 +1404,6 @@
             "Bearer": []
           }
         ],
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "HistoryPositionMargin",
         "tags": [
           "gateway"
         ]
@@ -1135,7 +1411,7 @@
     },
     "/api/v1/historytrade": {
       "get": {
-        "operationId": "api_v1_historytrade",
+        "operationId": "/api/v1/historytrade",
         "parameters": [
           {
             "description": "timestamp:",
@@ -1208,11 +1484,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "13f6637c-01bb-4318-bc1a-86d0fb57643d",
+                    "traceid": "0d0f42ea-1cea-453a-95fc-7ed4772927d5",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -1254,12 +1530,82 @@
             "Bearer": []
           }
         ],
-        "servers": [
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/indexinfo": {
+      "get": {
+        "operationId": "/api/v1/indexinfo",
+        "parameters": [
           {
-            "url": "https://test.riverwa.com/"
+            "description": "symbol:",
+            "in": "query",
+            "name": "Symbol",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
-        "summary": "HistoryTrade",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "06e5a26e-e2d4-4b6f-9970-c647765ca009",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": [
+                      {
+                        "symbol": "",
+                        "priceSource": "Binance",
+                        "weight": 20
+                      },
+                      {
+                        "symbol": "",
+                        "priceSource": "OKX",
+                        "weight": 30
+                      }
+                    ],
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
         "tags": [
           "gateway"
         ]
@@ -1267,7 +1613,7 @@
     },
     "/api/v1/klines": {
       "get": {
-        "operationId": "api_v1_klines",
+        "operationId": "/api/v1/klines",
         "parameters": [
           {
             "description": "symbol:",
@@ -1316,11 +1662,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "63eecc4d-b1f0-436d-be63-d3f96060d0bd",
+                    "traceid": "a6bf50d8-08bb-4b2c-b23c-19a2aa0a630b",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -1357,12 +1703,6 @@
             "description": "Successful operation"
           }
         },
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "Klines",
         "tags": [
           "gateway"
         ]
@@ -1370,7 +1710,7 @@
     },
     "/api/v1/leverage": {
       "get": {
-        "operationId": "api_v1_leverage",
+        "operationId": "/api/v1/leverage",
         "parameters": [
           {
             "description": "timestamp:",
@@ -1411,11 +1751,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "3e4f3499-dede-42ed-9a03-0f6a8663ae78",
+                    "traceid": "c171ce13-f1fd-4b70-9cf1-b463523af206",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -1457,12 +1797,6 @@
             "Bearer": []
           }
         ],
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "Leverage",
         "tags": [
           "gateway"
         ]
@@ -1470,7 +1804,7 @@
     },
     "/api/v1/margintype": {
       "get": {
-        "operationId": "api_v1_margintype",
+        "operationId": "/api/v1/margintype",
         "parameters": [
           {
             "description": "timestamp:",
@@ -1511,11 +1845,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "56a609db-30f9-4c26-93ae-1e5b58ff066f",
+                    "traceid": "c1ba4167-1878-483a-8b4b-eb5a78428136",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -1557,12 +1891,6 @@
             "Bearer": []
           }
         ],
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "MarginType",
         "tags": [
           "gateway"
         ]
@@ -1570,7 +1898,7 @@
     },
     "/api/v1/myfavorite": {
       "get": {
-        "operationId": "api_v1_myfavorite",
+        "operationId": "/api/v1/myfavorite",
         "parameters": [
           {
             "description": "timestamp:",
@@ -1611,11 +1939,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "5f7315a4-5cbb-45b7-a2a3-254e0314b497",
+                    "traceid": "8b82cb35-edd0-4680-b678-efb59ef4c450",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -1657,12 +1985,6 @@
             "Bearer": []
           }
         ],
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "MyFavorite",
         "tags": [
           "gateway"
         ]
@@ -1670,7 +1992,7 @@
     },
     "/api/v1/openinterest": {
       "get": {
-        "operationId": "api_v1_openinterest",
+        "operationId": "/api/v1/openinterest",
         "parameters": [
           {
             "description": "symbol:",
@@ -1687,11 +2009,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "dc804003-5b8c-433d-9ec2-56e910c98dcd",
+                    "traceid": "80ab63d1-c4e9-4c1b-b8aa-5df05e6b8642",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -1728,12 +2050,6 @@
             "description": "Successful operation"
           }
         },
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "OpenInterest",
         "tags": [
           "gateway"
         ]
@@ -1741,7 +2057,7 @@
     },
     "/api/v1/openorders": {
       "get": {
-        "operationId": "api_v1_openorders",
+        "operationId": "/api/v1/openorders",
         "parameters": [
           {
             "description": "timestamp:",
@@ -1774,11 +2090,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "2583c4a0-e048-4514-b92a-98b17af8fa31",
+                    "traceid": "9c540efd-fa26-4e06-a2da-fba7932ef1d0",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -1820,12 +2136,6 @@
             "Bearer": []
           }
         ],
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "OpenOrders",
         "tags": [
           "gateway"
         ]
@@ -1833,7 +2143,7 @@
     },
     "/api/v1/order": {
       "post": {
-        "operationId": "api_v1_order",
+        "operationId": "/api/v1/order",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1885,7 +2195,7 @@
               }
             }
           },
-          "description": "Private:<br>FuturesOrder:",
+          "description": "Private:</br>FuturesOrder:",
           "required": true
         },
         "responses": {
@@ -1894,11 +2204,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "1a082f84-a34d-40f5-be08-da7a65c341f8",
+                    "traceid": "8bd34753-c3ab-4329-b1e1-fc7b6ff7d164",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -1940,12 +2250,6 @@
             "Bearer": []
           }
         ],
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "Order",
         "tags": [
           "gateway"
         ]
@@ -1953,7 +2257,7 @@
     },
     "/api/v1/overview": {
       "get": {
-        "operationId": "api_v1_overview",
+        "operationId": "/api/v1/overview",
         "parameters": [
           {
             "description": "timestamp:",
@@ -1978,11 +2282,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "1e984136-0e7b-4770-b0ca-9566ebaaabc2",
+                    "traceid": "a2ba7838-bc0a-43a5-b169-b808e6272eae",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": {
                       "estimatedTotalValue": "125680.50",
                       "profitLossToday": "3250.80",
@@ -2070,12 +2374,6 @@
             "Bearer": []
           }
         ],
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "Overview",
         "tags": [
           "gateway"
         ]
@@ -2083,7 +2381,7 @@
     },
     "/api/v1/positionmargin": {
       "get": {
-        "operationId": "api_v1_positionmargin",
+        "operationId": "/api/v1/positionmargin",
         "parameters": [
           {
             "description": "timestamp:",
@@ -2140,11 +2438,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "566d6d23-fbcc-4570-943c-896452562e87",
+                    "traceid": "a11ee934-cf44-460c-a4e5-1e8cc8462768",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -2186,12 +2484,6 @@
             "Bearer": []
           }
         ],
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "PositionMargin",
         "tags": [
           "gateway"
         ]
@@ -2199,7 +2491,7 @@
     },
     "/api/v1/positionrisk": {
       "get": {
-        "operationId": "api_v1_positionrisk",
+        "operationId": "/api/v1/positionrisk",
         "parameters": [
           {
             "description": "timestamp:",
@@ -2232,11 +2524,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "db3f3c53-c982-4a08-89dc-01d743d1d8a6",
+                    "traceid": "182ae80a-d388-4129-9380-098ecdafbe69",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -2278,12 +2570,6 @@
             "Bearer": []
           }
         ],
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "PositionRisk",
         "tags": [
           "gateway"
         ]
@@ -2291,7 +2577,7 @@
     },
     "/api/v1/premiumindex": {
       "get": {
-        "operationId": "api_v1_premiumindex",
+        "operationId": "/api/v1/premiumindex",
         "parameters": [
           {
             "description": "symbol:",
@@ -2308,11 +2594,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "298b1b42-2e53-49e5-a3fd-a1cf8558882b",
+                    "traceid": "72065f2a-9ee5-47c9-b8c0-7312c71dffe2",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -2349,12 +2635,6 @@
             "description": "Successful operation"
           }
         },
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "PremiumIndex",
         "tags": [
           "gateway"
         ]
@@ -2362,18 +2642,18 @@
     },
     "/api/v1/symbolcategories": {
       "get": {
-        "operationId": "api_v1_symbolcategories",
+        "operationId": "/api/v1/symbolcategories",
         "responses": {
           "200": {
             "content": {
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "97d84dd5-c926-4b99-8bc7-e0d06a5d96cf",
+                    "traceid": "3bd84bd7-aca0-4509-a561-7fde88198f62",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -2410,12 +2690,6 @@
             "description": "Successful operation"
           }
         },
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "SymbolCategories",
         "tags": [
           "gateway"
         ]
@@ -2423,7 +2697,7 @@
     },
     "/api/v1/symbolinfo": {
       "get": {
-        "operationId": "api_v1_symbolinfo",
+        "operationId": "/api/v1/symbolinfo",
         "parameters": [
           {
             "description": "symbol:",
@@ -2440,33 +2714,33 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "0a14a07c-84b0-474d-b6e5-7157b4eaeebd",
+                    "traceid": "12ea091f-c6b6-42e7-8259-d71245ea6b27",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": {
-                      "symbol": "",
-                      "icon": "",
-                      "code": "",
-                      "name": "",
-                      "marketValue": "",
-                      "fullyDilutedMarketValue": "",
-                      "dominanceIndex": "",
-                      "volume": "",
-                      "circulatingSupply": "",
-                      "totalSupply": "",
-                      "maxSupply": "",
-                      "openInterestConcentration": "",
-                      "issueDate": "",
-                      "issuePrice": "",
-                      "allTimeHigh": "",
-                      "allTimeLow": "",
-                      "website": "",
-                      "whitePaper": "",
-                      "socialMedia": "",
-                      "explorer": "",
-                      "description": ""
+                      "symbol": "BTCUSDT",
+                      "icon": "https://example.com/icon.png",
+                      "code": "BTC",
+                      "name": "Bitcoin",
+                      "marketValue": "1,000,000,000",
+                      "fullyDilutedMarketValue": "1,200,000,000",
+                      "dominanceIndex": "40%",
+                      "volume": "100,000",
+                      "circulatingSupply": "18,000,000",
+                      "totalSupply": "21,000,000",
+                      "maxSupply": "21,000,000",
+                      "openInterestConcentration": "10%",
+                      "issueDate": "2009-01-03",
+                      "issuePrice": "$0.001",
+                      "allTimeHigh": "$64,863.10",
+                      "allTimeLow": "$0.001",
+                      "website": "https://bitcoin.org",
+                      "whitePaper": "https://bitcoin.org/bitcoin.pdf",
+                      "socialMedia": "https://twitter.com/bitcoin",
+                      "explorer": "https://blockchain.info",
+                      "description": "Bitcoin is a decentralized digital currency that can be transferred on the peer-to-peer bitcoin network."
                     },
                     "host": "testing env",
                     "showType": 0
@@ -2503,12 +2777,6 @@
             "description": "Successful operation"
           }
         },
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "SymbolInfo",
         "tags": [
           "gateway"
         ]
@@ -2516,7 +2784,7 @@
     },
     "/api/v1/ticker": {
       "get": {
-        "operationId": "api_v1_ticker",
+        "operationId": "/api/v1/ticker",
         "parameters": [
           {
             "description": "symbol:",
@@ -2533,11 +2801,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "cfbaf12f-7c40-495f-a0d9-10045e61764e",
+                    "traceid": "447f783f-c34a-42d7-aa86-408ec7b96c7e",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -2574,12 +2842,6 @@
             "description": "Successful operation"
           }
         },
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "Ticker",
         "tags": [
           "gateway"
         ]
@@ -2587,7 +2849,7 @@
     },
     "/api/v1/ticker/bookticker": {
       "get": {
-        "operationId": "api_v1_ticker_bookticker",
+        "operationId": "/api/v1/ticker/bookticker",
         "parameters": [
           {
             "description": "symbol:",
@@ -2604,11 +2866,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "c94f39ae-61b5-4f1f-9cea-e71004bfc748",
+                    "traceid": "353e5e86-14e4-4a3e-aad8-8a6031e6c514",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -2645,12 +2907,6 @@
             "description": "Successful operation"
           }
         },
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "BookTicker",
         "tags": [
           "gateway"
         ]
@@ -2658,7 +2914,7 @@
     },
     "/api/v1/ticker/hr24": {
       "get": {
-        "operationId": "api_v1_ticker_hr24",
+        "operationId": "/api/v1/ticker/hr24",
         "parameters": [
           {
             "description": "symbol:",
@@ -2675,11 +2931,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "3702ae41-7848-45c4-a4e0-5b06003cc1b4",
+                    "traceid": "e2b08b4c-0f8d-4777-b27e-8a1739c3f125",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -2716,12 +2972,6 @@
             "description": "Successful operation"
           }
         },
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "Hr24",
         "tags": [
           "gateway"
         ]
@@ -2729,7 +2979,7 @@
     },
     "/api/v1/ticker/price": {
       "get": {
-        "operationId": "api_v1_ticker_price",
+        "operationId": "/api/v1/ticker/price",
         "parameters": [
           {
             "description": "symbol:",
@@ -2746,11 +2996,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "45196ba7-679d-424f-a31d-4c30cd5e4aa3",
+                    "traceid": "d88b419e-7068-4bda-9725-56ac4c89730d",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -2787,12 +3037,6 @@
             "description": "Successful operation"
           }
         },
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "Price",
         "tags": [
           "gateway"
         ]
@@ -2800,7 +3044,7 @@
     },
     "/api/v1/tradeinfo": {
       "get": {
-        "operationId": "api_v1_tradeinfo",
+        "operationId": "/api/v1/tradeinfo",
         "parameters": [
           {
             "description": "symbol:",
@@ -2833,11 +3077,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "f816e756-8f0e-4b2b-b413-e4b1f89c2007",
+                    "traceid": "6a1d8c56-8d4f-4866-959d-37177fbf6316",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": {
                       "symbol": "",
                       "volumeInterval": "",
@@ -2879,12 +3123,6 @@
             "description": "Successful operation"
           }
         },
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "TradeInfo",
         "tags": [
           "gateway"
         ]
@@ -2892,7 +3130,7 @@
     },
     "/api/v1/trades": {
       "get": {
-        "operationId": "api_v1_trades",
+        "operationId": "/api/v1/trades",
         "parameters": [
           {
             "description": "symbol:",
@@ -2917,11 +3155,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "e7613e39-0195-4828-9e45-3331dee12ef9",
+                    "traceid": "38d43b65-8e01-49b1-ac0b-ecc26b82ac82",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -2958,12 +3196,6 @@
             "description": "Successful operation"
           }
         },
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "Trades",
         "tags": [
           "gateway"
         ]
@@ -2971,7 +3203,7 @@
     },
     "/api/v1/userinfohook": {
       "post": {
-        "operationId": "api_v1_userinfohook",
+        "operationId": "/api/v1/userinfohook",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3020,7 +3252,7 @@
               }
             }
           },
-          "description": "V1:<br>owner:<br>name:<br>createdTime:<br>organization:<br>clientIp:<br>user:<br>method:<br>requestUri:<br>action:<br>isTriggered:<br>extendedUser:",
+          "description": "V1:</br>owner:</br>name:</br>createdTime:</br>organization:</br>clientIp:</br>user:</br>method:</br>requestUri:</br>action:</br>isTriggered:</br>extendedUser:",
           "required": true
         },
         "responses": {
@@ -3029,11 +3261,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "9c87df54-8b1b-4804-b2c9-ee0002c11050",
+                    "traceid": "1220e33c-1c08-446e-baff-db3d6dd58a6b",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -3070,12 +3302,6 @@
             "description": "Successful operation"
           }
         },
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "UserInfoHook",
         "tags": [
           "gateway"
         ]
@@ -3083,7 +3309,7 @@
     },
     "/api/v1/volumeintervaltype": {
       "get": {
-        "operationId": "api_v1_volumeintervaltype",
+        "operationId": "/api/v1/volumeintervaltype",
         "parameters": [
           {
             "description": "symbol:",
@@ -3100,11 +3326,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "ea23022d-8053-4d30-8de8-0824e463def2",
+                    "traceid": "6b79d4de-8bcf-4a16-9c0d-040635539cac",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": null,
                     "host": "testing env",
                     "showType": 0
@@ -3141,12 +3367,6 @@
             "description": "Successful operation"
           }
         },
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "VolumeIntervalType",
         "tags": [
           "gateway"
         ]
@@ -3154,7 +3374,7 @@
     },
     "/api/v1/wallet/depositrecord": {
       "get": {
-        "operationId": "api_v1_wallet_depositrecord",
+        "operationId": "/api/v1/wallet/depositrecord",
         "parameters": [
           {
             "description": "timestamp:",
@@ -3203,11 +3423,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "5c7b1673-07cd-4691-8174-a96cfef1b354",
+                    "traceid": "0419679e-a826-48c5-9a64-811a65ef4242",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": {
                       "rows": [
                         {
@@ -3267,12 +3487,6 @@
             "Bearer": []
           }
         ],
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "DepositRecord",
         "tags": [
           "gateway"
         ]
@@ -3280,7 +3494,7 @@
     },
     "/api/v1/wallet/getaddresswhite": {
       "get": {
-        "operationId": "api_v1_wallet_getaddresswhite",
+        "operationId": "/api/v1/wallet/getaddresswhite",
         "parameters": [
           {
             "description": "timestamp:",
@@ -3313,11 +3527,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "1d6b9509-22f1-4893-9925-ec606c9ff54d",
+                    "traceid": "43481460-9d60-44a2-8a61-5ebc963a3cc3",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": [
                       {
                         "address": "",
@@ -3366,12 +3580,6 @@
             "Bearer": []
           }
         ],
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "GetAddressWhite",
         "tags": [
           "gateway"
         ]
@@ -3379,7 +3587,7 @@
     },
     "/api/v1/wallet/getchain": {
       "get": {
-        "operationId": "api_v1_wallet_getchain",
+        "operationId": "/api/v1/wallet/getchain",
         "parameters": [
           {
             "description": "timestamp:",
@@ -3412,11 +3620,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "b026fdd8-559d-451a-a7a0-5ff86563d598",
+                    "traceid": "6d3d3510-14bb-4816-8724-8b3a1b1f3247",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": [
                       {
                         "tokenId": "",
@@ -3484,12 +3692,6 @@
             "Bearer": []
           }
         ],
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "GetChain",
         "tags": [
           "gateway"
         ]
@@ -3497,18 +3699,18 @@
     },
     "/api/v1/wallet/gettoken": {
       "get": {
-        "operationId": "api_v1_wallet_gettoken",
+        "operationId": "/api/v1/wallet/gettoken",
         "responses": {
           "200": {
             "content": {
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "5ddcba22-c6af-4367-8f60-13dc3f531502",
+                    "traceid": "6a07db52-345a-475c-aeb2-38deeb414c51",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": [
                       {
                         "symbol": "USDT",
@@ -3536,7 +3738,7 @@
                             "maxWithdrawAmount": "0"
                           }
                         },
-                        "updatedAt": "2026-03-19T13:45:38.106001+08:00",
+                        "updatedAt": "2026-03-23T14:00:50.488288281+08:00",
                         "version": 1,
                         "iconUrl": "https://static.cobo.com/img/asset/icon_usdt.png"
                       }
@@ -3576,12 +3778,6 @@
             "description": "Successful operation"
           }
         },
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "GetToken",
         "tags": [
           "gateway"
         ]
@@ -3589,7 +3785,7 @@
     },
     "/api/v1/wallet/setaddresswhite": {
       "post": {
-        "operationId": "api_v1_wallet_setaddresswhite",
+        "operationId": "/api/v1/wallet/setaddresswhite",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3615,7 +3811,7 @@
               }
             }
           },
-          "description": "-:<br>address:<br>chain_identifier:<br>memo:<br>description:<br>is_delete:",
+          "description": "-:</br>address:</br>chain_identifier:</br>memo:</br>description:</br>is_delete:",
           "required": true
         },
         "responses": {
@@ -3624,11 +3820,11 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "41774539-3cf1-48c5-8aaf-fa8047dc1fcf",
+                    "traceid": "b6302b44-dc18-48bc-9016-b20fc44bccde",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": [
                       {
                         "address": "",
@@ -3677,12 +3873,6 @@
             "Bearer": []
           }
         ],
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "SetAddressWhite",
         "tags": [
           "gateway"
         ]
@@ -3690,7 +3880,7 @@
     },
     "/api/v1/wallet/withdraw": {
       "post": {
-        "operationId": "api_v1_wallet_withdraw",
+        "operationId": "/api/v1/wallet/withdraw",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3722,7 +3912,7 @@
               }
             }
           },
-          "description": "-:<br>symbol:<br>chainId:<br>tokenId:<br>address:<br>memo:<br>amount:<br>description:",
+          "description": "-:</br>symbol:</br>chainId:</br>tokenId:</br>address:</br>memo:</br>amount:</br>description:",
           "required": true
         },
         "responses": {
@@ -3731,21 +3921,20 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "c0a335cc-7588-422d-bdcf-3f72b32ebcd7",
+                    "traceid": "881b5938-35f7-41a0-a516-81ff5ceb3c04",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": {
-                      "asset_id": 0,
-                      "fund_tx_id": 0,
-                      "account_type_id": 0,
-                      "account_tx_id": 0,
-                      "bill_tx_id": 0,
-                      "retry_count": 0,
-                      "fund_message": "",
-                      "fund_status": "",
-                      "is_processed": false,
+                      "fundTxId": 0,
+                      "accountTypeId": 0,
+                      "accountTxId": 0,
+                      "billTxId": 0,
+                      "retryCount": 0,
+                      "fundMessage": "",
+                      "fundStatus": "",
+                      "isProcessed": false,
                       "symbol": "",
                       "assetId": 0,
                       "requestId": "",
@@ -3757,7 +3946,8 @@
                       "description": "",
                       "status": "",
                       "txnId": "",
-                      "networkFee": ""
+                      "networkFee": "",
+                      "date": 0
                     },
                     "host": "testing env",
                     "showType": 0
@@ -3799,12 +3989,6 @@
             "Bearer": []
           }
         ],
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "Withdraw",
         "tags": [
           "gateway"
         ]
@@ -3812,7 +3996,7 @@
     },
     "/api/v1/wallet/withdrawrecord": {
       "get": {
-        "operationId": "api_v1_wallet_withdrawrecord",
+        "operationId": "/api/v1/wallet/withdrawrecord",
         "parameters": [
           {
             "description": "timestamp:",
@@ -3861,23 +4045,22 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "0a6e64b6-26f3-486c-a43b-c231cb7c6192",
+                    "traceid": "f87138bc-0dc6-46a3-9f25-5217ddd2f3b3",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
-                    "duration": 9223372036854775807,
+                    "duration": 9223372036854776000,
                     "data": {
                       "rows": [
                         {
-                          "asset_id": 0,
-                          "fund_tx_id": 0,
-                          "account_type_id": 0,
-                          "account_tx_id": 0,
-                          "bill_tx_id": 0,
-                          "retry_count": 0,
-                          "fund_message": "",
-                          "fund_status": "",
-                          "is_processed": false,
+                          "fundTxId": 0,
+                          "accountTypeId": 0,
+                          "accountTxId": 0,
+                          "billTxId": 0,
+                          "retryCount": 0,
+                          "fundMessage": "",
+                          "fundStatus": "",
+                          "isProcessed": false,
                           "symbol": "",
                           "assetId": 0,
                           "requestId": "",
@@ -3889,7 +4072,8 @@
                           "description": "",
                           "status": "",
                           "txnId": "",
-                          "networkFee": ""
+                          "networkFee": "",
+                          "date": 0
                         }
                       ],
                       "total": 0,
@@ -3936,12 +4120,6 @@
             "Bearer": []
           }
         ],
-        "servers": [
-          {
-            "url": "https://test.riverwa.com/"
-          }
-        ],
-        "summary": "WithdrawRecord",
         "tags": [
           "gateway"
         ]
@@ -3950,12 +4128,12 @@
   },
   "servers": [
     {
-      "url": "https://test.riverwa.com/"
+      "url": "https://test.riverwa.com"
     }
   ],
   "tags": [
     {
-      "description": "https://test.riverwa.com/",
+      "description": "https://test.riverwa.com",
       "name": "gateway"
     }
   ]
