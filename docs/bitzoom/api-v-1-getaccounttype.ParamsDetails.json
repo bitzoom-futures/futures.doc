@@ -1,1 +1,0 @@
-{"parameters":[{"description":"symbol:","in":"query","name":"Symbol","schema":{"type":"string"}}]}

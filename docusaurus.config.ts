@@ -328,6 +328,14 @@ const config: Config = {
                 path: require.resolve('path-browserify'),
               },
             },
+            module: {
+              rules: [
+                {
+                  test: /\.apk$/,
+                  type: 'asset/resource',
+                },
+              ],
+            },
           }
         },
       }

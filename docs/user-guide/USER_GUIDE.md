@@ -11,6 +11,15 @@ Your complete guide to trading futures on Bitzoom.
 
 ---
 
+### Install the App
+
+Choose your platform to get started:
+
+<details>
+<summary><strong>iOS (iPhone)</strong></summary>
+
+Install Bitzoom via TestFlight: **https://testflight.apple.com/join/snPUdJcS**
+
 <div className="user-guide-layout">
 <table>
 <tr>
@@ -19,9 +28,7 @@ Your complete guide to trading futures on Bitzoom.
 </td>
 <td width="50%" valign="top">
 
-### Install the App
-
-To get started, install Bitzoom via TestFlight: **https://testflight.apple.com/join/snPUdJcS**
+**Step 1 -- Download TestFlight**
 
 1. Open the link above on your iPhone and tap **View in App Store** to download **TestFlight** if you don't have it
 2. Scroll down to **Step 2** and tap **View in TestFlight** to open the Bitzoom beta app
@@ -31,14 +38,12 @@ To get started, install Bitzoom via TestFlight: **https://testflight.apple.com/j
 </table>
 </div>
 
----
-
 <div className="user-guide-layout">
 <table>
 <tr>
 <td width="50%" valign="top">
 
-### View in TestFlight
+**Step 2 -- View in TestFlight**
 
 After tapping **View in TestFlight**, the TestFlight app opens with the Bitzoom (Preview) page.
 
@@ -53,8 +58,6 @@ After tapping **View in TestFlight**, the TestFlight app opens with the Bitzoom 
 </table>
 </div>
 
----
-
 <div className="user-guide-layout">
 <table>
 <tr>
@@ -63,7 +66,7 @@ After tapping **View in TestFlight**, the TestFlight app opens with the Bitzoom 
 </td>
 <td width="50%" valign="top">
 
-### Install & Launch
+**Step 3 -- Install & Launch**
 
 On the Bitzoom (Preview) page in TestFlight:
 
@@ -75,6 +78,23 @@ On the Bitzoom (Preview) page in TestFlight:
 </tr>
 </table>
 </div>
+
+</details>
+
+<details>
+<summary><strong>Android</strong></summary>
+
+Download and install the Bitzoom APK directly:
+[**Download Bitzoom APK**](pathname:///docs/bitzoom.apk)
+
+
+1. Tap the download button above to save the APK file
+2. Open the downloaded file from your notification bar or **Downloads** folder
+3. If prompted, enable **Install from unknown sources** in your device settings
+4. Tap **Install** to complete the installation
+5. Tap **Open** to launch Bitzoom
+
+</details>
 
 ---
 
