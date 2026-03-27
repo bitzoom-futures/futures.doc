@@ -20,7 +20,7 @@ export default function SendPanel({
 }: Props) {
   const [toAddress, setToAddress] = useState('')
   const [amount, setAmount] = useState('')
-  const [token, setToken] = useState<'TRX' | 'USDT'>('TRX')
+  const [token, setToken] = useState<'TRX' | 'USDT'>('USDT')
 
   const handleSend = () => {
     const num = parseFloat(amount)
@@ -72,16 +72,16 @@ export default function SendPanel({
               <label className={styles.fieldLabel}>Token</label>
               <div className={styles.row}>
                 <button
-                  className={token === 'TRX' ? styles.buttonPrimary : styles.button}
-                  onClick={() => setToken('TRX')}
-                >
-                  TRX
-                </button>
-                <button
                   className={token === 'USDT' ? styles.buttonPrimary : styles.button}
                   onClick={() => setToken('USDT')}
                 >
                   USDT
+                </button>
+                <button
+                  className={token === 'TRX' ? styles.buttonPrimary : styles.button}
+                  onClick={() => setToken('TRX')}
+                >
+                  TRX
                 </button>
               </div>
             </div>
