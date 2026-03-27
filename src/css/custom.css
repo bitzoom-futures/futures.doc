@@ -116,7 +116,33 @@
 
 /* Taller response / code snippet blocks */
 .openapi-explorer__code-block-lines {
-  min-height: 400px;
+  min-height: 350px;
+}
+
+/* Compact request form */
+.openapi-explorer__details-outer-container {
+  padding: 0.5rem 0.75rem !important;
+}
+
+.openapi-explorer__details-summary {
+  padding: 0.15rem 0 !important;
+}
+
+.openapi-explorer__form-item {
+  padding: 0.25rem 0 !important;
+}
+
+.openapi-explorer__form-item-input {
+  margin-top: 0rem !important;
+}
+
+.openapi-explorer__request-btn {
+  margin-top: 0rem !important;
+}
+
+.openapi-explorer__server-container {
+  margin-bottom: 0.5rem !important;
+  overflow: hidden !important;
 }
 
 /* Remove max-height on right panel so all content is visible */
