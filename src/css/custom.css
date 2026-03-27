@@ -101,6 +101,29 @@
   overflow-wrap: break-word;
 }
 
+/* Swap OpenAPI panel widths: left col-5, right col-7 */
+.openapi-left-panel__container.col--7 {
+  --ifm-col-width: calc(5 / 12 * 100%);
+  flex: 0 0 var(--ifm-col-width);
+  max-width: var(--ifm-col-width);
+}
+
+.openapi-right-panel__container.col--5 {
+  --ifm-col-width: calc(7 / 12 * 100%);
+  flex: 0 0 var(--ifm-col-width);
+  max-width: var(--ifm-col-width);
+}
+
+/* Taller response / code snippet blocks */
+.openapi-explorer__code-block-lines {
+  min-height: 400px;
+}
+
+/* Remove max-height on right panel so all content is visible */
+.openapi-right-panel__container {
+  max-height: none !important;
+}
+
 /* Show lock icon in heading for authenticated endpoints */
 article:has(.openapi-security__details) .openapi__heading::after {
   content: "";

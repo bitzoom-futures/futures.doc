@@ -36,6 +36,8 @@ function ApiExplorer({
   return (
     <>
       <SecuritySchemes infoPath={infoPath} />
+      <Request item={item} />
+      <Response item={item} />
       {item.method !== "event" && (
         <CodeSnippets
           postman={postman}
@@ -43,8 +45,6 @@ function ApiExplorer({
           maskCredentials={mask_credentials}
         />
       )}
-      <Request item={item} />
-      <Response item={item} />
     </>
   );
 }
