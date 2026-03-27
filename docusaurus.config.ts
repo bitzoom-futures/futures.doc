@@ -233,6 +233,11 @@ const config: Config = {
         logoClass: 'go'
       },
       {
+        highlight: 'javascript',
+        language: 'nodejs',
+        logoClass: 'nodejs'
+      },
+      {
         highlight: 'python',
         language: 'python',
         logoClass: 'python'
@@ -241,11 +246,6 @@ const config: Config = {
         highlight: 'csharp',
         language: 'csharp',
         logoClass: 'csharp'
-      },
-      {
-        highlight: 'javascript',
-        language: 'nodejs',
-        logoClass: 'nodejs'
       },
       {
         highlight: 'ruby',
