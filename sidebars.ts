@@ -87,7 +87,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'WebSocket Testing',
-      collapsed: false,
+      collapsed: true,
       items: [
         'websocket-playground',
         'websocket-test/ticker',
