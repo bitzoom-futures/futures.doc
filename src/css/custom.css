@@ -4,6 +4,14 @@
  * work well for content-centric websites.
  */
 
+/* Wider container on large screens */
+
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1440px;
+  }
+}
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #7948ff;
