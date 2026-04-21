@@ -38,7 +38,7 @@ curl -X GET "http://119.8.50.236:8088/api/v1/openpositions"   -H "Authorization:
 ```
 
 ```bash
-curl -X GET "http://119.8.50.236:8088/api/v1/positionrisk?symbol=ETH/USDT"   -H "Authorization: Bearer YOUR_TOKEN"
+curl -X GET "http://119.8.50.236:8088/api/v1/positionrisk?symbol=ETHUSDT"   -H "Authorization: Bearer YOUR_TOKEN"
 ```
 
 ## 杠杆与保证金
@@ -46,17 +46,17 @@ curl -X GET "http://119.8.50.236:8088/api/v1/positionrisk?symbol=ETH/USDT"   -H 
 设置杠杆：
 
 ```bash
-curl -X POST "http://119.8.50.236:8088/api/v1/leverage"   -H "Authorization: Bearer YOUR_TOKEN"   -H "Content-Type: application/json"   -d '{"symbol":"ETH/USDT","leverage":20}'
+curl -X POST "http://119.8.50.236:8088/api/v1/leverage"   -H "Authorization: Bearer YOUR_TOKEN"   -H "Content-Type: application/json"   -d '{"symbol":"ETHUSDT","leverage":20}'
 ```
 
 切换保证金模式：
 
 ```bash
-curl -X POST "http://119.8.50.236:8088/api/v1/margintype"   -H "Authorization: Bearer YOUR_TOKEN"   -H "Content-Type: application/json"   -d '{"symbol":"ETH/USDT","marginType":"ISOLATED"}'
+curl -X POST "http://119.8.50.236:8088/api/v1/margintype"   -H "Authorization: Bearer YOUR_TOKEN"   -H "Content-Type: application/json"   -d '{"symbol":"ETHUSDT","marginType":"ISOLATED"}'
 ```
 
 ## 平仓
 
 ```bash
-curl -X POST "http://119.8.50.236:8088/api/v1/order"   -H "Authorization: Bearer YOUR_TOKEN"   -H "Content-Type: application/json"   -d '{"symbol":"ETH/USDT","side":"SELL","type":"MARKET","quantity":0.1,"reduceOnly":true}'
+curl -X POST "http://119.8.50.236:8088/api/v1/order"   -H "Authorization: Bearer YOUR_TOKEN"   -H "Content-Type: application/json"   -d '{"symbol":"ETHUSDT","side":"SELL","type":"MARKET","quantity":0.1,"reduceOnly":true}'
 ```

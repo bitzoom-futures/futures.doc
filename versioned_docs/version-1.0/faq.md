@@ -85,7 +85,7 @@ Yes, but we recommend creating separate API keys for each application for better
 curl -X POST "http://119.8.50.236:8088/api/v1/leverage" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
-  -d '{"symbol": "ETH/USDT", "leverage": 10}'
+  -d '{"symbol": "ETHUSDT", "leverage": 10}'
 ```
 
 Maximum leverage varies by symbol. Check `/api/v1/exchangeinfo` for limits.
@@ -142,7 +142,7 @@ const ws = new WebSocket('ws://119.8.50.236:8088/ws');
 ws.onopen = () => {
   ws.send(JSON.stringify({
     method: 'SUBSCRIBE',
-    params: ['ETH/USDT@ticker'],
+    params: ['ETHUSDT@ticker'],
     id: 1
   }));
 };

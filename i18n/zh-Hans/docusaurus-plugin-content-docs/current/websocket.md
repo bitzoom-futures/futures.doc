@@ -115,7 +115,7 @@ ws.onerror = (error) => console.error('ws error', error);
 {
   "channel": "/api/v1/ticker",
   "event": "sub",
-  "data": { "symbol": "ETH/USDT" }
+  "data": { "symbol": "ETHUSDT" }
 }
 ```
 
@@ -137,7 +137,7 @@ ws.onerror = (error) => console.error('ws error', error);
 {
   "channel": "/api/v1/ticker",
   "event": "abc123",
-  "data": { "symbol": "ETH/USDT", "price": "50000.00" }
+  "data": { "symbol": "ETHUSDT", "price": "50000.00" }
 }
 ```
 
@@ -147,7 +147,7 @@ ws.onerror = (error) => console.error('ws error', error);
 {
   "channel": "/api/v1/ticker",
   "event": "unsub",
-  "data": { "symbol": "ETH/USDT" }
+  "data": { "symbol": "ETHUSDT" }
 }
 ```
 

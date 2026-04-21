@@ -55,7 +55,7 @@ curl -X GET "http://119.8.50.236:8088/api/v1/openpositions" \
   "code": 0,
   "data": [
     {
-      "symbol": "ETH/USDT",
+      "symbol": "ETHUSDT",
       "positionSide": "LONG",
       "positionAmt": "0.100",
       "entryPrice": "50000.00",
@@ -72,7 +72,7 @@ curl -X GET "http://119.8.50.236:8088/api/v1/openpositions" \
 ### 获取仓位风险
 
 ```bash
-curl -X GET "http://119.8.50.236:8088/api/v1/positionrisk?symbol=ETH/USDT" \
+curl -X GET "http://119.8.50.236:8088/api/v1/positionrisk?symbol=ETHUSDT" \
   -H "Authorization: Bearer YOUR_TOKEN"
 ```
 
@@ -80,7 +80,7 @@ curl -X GET "http://119.8.50.236:8088/api/v1/positionrisk?symbol=ETH/USDT" \
 
 | 字段 | 说明 |
 |-------|-------------|
-| `symbol` | 交易对（例如 ETH/USDT） |
+| `symbol` | 交易对（例如 ETHUSDT） |
 | `positionSide` | LONG、SHORT 或 BOTH（单向模式） |
 | `positionAmt` | 仓位数量（负数表示空仓） |
 | `entryPrice` | 平均开仓价 |
@@ -99,7 +99,7 @@ curl -X POST "http://119.8.50.236:8088/api/v1/leverage" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "symbol": "ETH/USDT",
+    "symbol": "ETHUSDT",
     "leverage": 20
   }'
 ```
@@ -125,7 +125,7 @@ curl -X POST "http://119.8.50.236:8088/api/v1/margintype" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "symbol": "ETH/USDT",
+    "symbol": "ETHUSDT",
     "marginType": "ISOLATED"
   }'
 ```
@@ -147,7 +147,7 @@ curl -X POST "http://119.8.50.236:8088/api/v1/positionMargin" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "symbol": "ETH/USDT",
+    "symbol": "ETHUSDT",
     "amount": 100,
     "type": 1
   }'
@@ -157,7 +157,7 @@ curl -X POST "http://119.8.50.236:8088/api/v1/positionMargin" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "symbol": "ETH/USDT",
+    "symbol": "ETHUSDT",
     "amount": 50,
     "type": 2
   }'
@@ -173,7 +173,7 @@ curl -X POST "http://119.8.50.236:8088/api/v1/order" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "symbol": "ETH/USDT",
+    "symbol": "ETHUSDT",
     "side": "SELL",
     "type": "MARKET",
     "quantity": 0.100,
@@ -188,7 +188,7 @@ curl -X POST "http://119.8.50.236:8088/api/v1/order" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "symbol": "ETH/USDT",
+    "symbol": "ETHUSDT",
     "side": "SELL",
     "type": "LIMIT",
     "quantity": 0.100,
@@ -204,7 +204,7 @@ curl -X POST "http://119.8.50.236:8088/api/v1/order" \
 curl -X DELETE "http://119.8.50.236:8088/api/v1/allOpenOrders" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
-  -d '{"symbol": "ETH/USDT"}'
+  -d '{"symbol": "ETHUSDT"}'
 ```
 
 ## 设置止损止盈
@@ -218,7 +218,7 @@ curl -X POST "http://119.8.50.236:8088/api/v1/order" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "symbol": "ETH/USDT",
+    "symbol": "ETHUSDT",
     "side": "SELL",
     "type": "STOP_MARKET",
     "stopPrice": 48000.00,
@@ -235,7 +235,7 @@ curl -X POST "http://119.8.50.236:8088/api/v1/order" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "symbol": "ETH/USDT",
+    "symbol": "ETHUSDT",
     "side": "SELL",
     "type": "TAKE_PROFIT_MARKET",
     "stopPrice": 55000.00,
@@ -257,7 +257,7 @@ headers = {
 
 # 开多仓
 entry_order = {
-    "symbol": "ETH/USDT",
+    "symbol": "ETHUSDT",
     "side": "BUY",
     "type": "MARKET",
     "quantity": 0.1
@@ -266,7 +266,7 @@ requests.post(f"{BASE_URL}/api/v1/order", headers=headers, json=entry_order)
 
 # 设置止损（假设开仓约 50000，止损设在 -2%）
 stop_loss = {
-    "symbol": "ETH/USDT",
+    "symbol": "ETHUSDT",
     "side": "SELL",
     "type": "STOP_MARKET",
     "stopPrice": 49000.00,
@@ -277,7 +277,7 @@ requests.post(f"{BASE_URL}/api/v1/order", headers=headers, json=stop_loss)
 
 # 设置止盈（+4%）
 take_profit = {
-    "symbol": "ETH/USDT",
+    "symbol": "ETHUSDT",
     "side": "SELL",
     "type": "TAKE_PROFIT_MARKET",
     "stopPrice": 52000.00,
@@ -354,14 +354,14 @@ print(f"Estimated liquidation: ${liq:.2f}")  # ~$45200
 ### 查询历史仓位
 
 ```bash
-curl -X GET "http://119.8.50.236:8088/api/v1/historyposition?symbol=ETH/USDT&limit=50" \
+curl -X GET "http://119.8.50.236:8088/api/v1/historyposition?symbol=ETHUSDT&limit=50" \
   -H "Authorization: Bearer YOUR_TOKEN"
 ```
 
 ### 查询成交历史
 
 ```bash
-curl -X GET "http://119.8.50.236:8088/api/v1/userTrades?symbol=ETH/USDT&limit=100" \
+curl -X GET "http://119.8.50.236:8088/api/v1/userTrades?symbol=ETHUSDT&limit=100" \
   -H "Authorization: Bearer YOUR_TOKEN"
 ```
 

@@ -27,7 +27,7 @@ ws.onclose = () => console.log('Disconnected');
 ```javascript
 ws.send(JSON.stringify({
   method: 'SUBSCRIBE',
-  params: ['ETH/USDT@ticker', 'ethusdt@ticker'],
+  params: ['ETHUSDT@ticker', 'ethusdt@ticker'],
   id: 1
 }));
 ```
@@ -37,7 +37,7 @@ ws.send(JSON.stringify({
 ```javascript
 ws.send(JSON.stringify({
   method: 'UNSUBSCRIBE',
-  params: ['ETH/USDT@ticker'],
+  params: ['ETHUSDT@ticker'],
   id: 2
 }));
 ```

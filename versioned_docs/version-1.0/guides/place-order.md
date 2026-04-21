@@ -23,7 +23,7 @@ Response:
   "data": {
     "symbols": [
       {
-        "symbol": "ETH/USDT",
+        "symbol": "ETHUSDT",
         "baseAsset": "BTC",
         "quoteAsset": "USDT",
         "pricePrecision": 2,
@@ -48,7 +48,7 @@ curl -X GET "http://119.8.50.236:8088/api/v1/balance" \
 Check the current market price:
 
 ```bash
-curl -X GET "http://119.8.50.236:8088/api/v1/ticker/price?symbol=ETH/USDT"
+curl -X GET "http://119.8.50.236:8088/api/v1/ticker/price?symbol=ETHUSDT"
 ```
 
 ## Step 4: Set Leverage (Optional)
@@ -60,7 +60,7 @@ curl -X POST "http://119.8.50.236:8088/api/v1/leverage" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "symbol": "ETH/USDT",
+    "symbol": "ETHUSDT",
     "leverage": 10
   }'
 ```
@@ -76,7 +76,7 @@ curl -X POST "http://119.8.50.236:8088/api/v1/order" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "symbol": "ETH/USDT",
+    "symbol": "ETHUSDT",
     "side": "BUY",
     "type": "MARKET",
     "quantity": 0.001
@@ -92,7 +92,7 @@ curl -X POST "http://119.8.50.236:8088/api/v1/order" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "symbol": "ETH/USDT",
+    "symbol": "ETHUSDT",
     "side": "BUY",
     "type": "LIMIT",
     "quantity": 0.001,
@@ -105,7 +105,7 @@ curl -X POST "http://119.8.50.236:8088/api/v1/order" \
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `symbol` | string | Yes | Trading pair (e.g., "ETH/USDT") |
+| `symbol` | string | Yes | Trading pair (e.g., "ETHUSDT") |
 | `side` | string | Yes | "BUY" or "SELL" |
 | `type` | string | Yes | "MARKET", "LIMIT", "STOP", "TAKE_PROFIT" |
 | `quantity` | decimal | Yes | Order amount in base asset |
@@ -120,7 +120,7 @@ curl -X POST "http://119.8.50.236:8088/api/v1/order" \
   "code": 0,
   "data": {
     "orderId": 123456789,
-    "symbol": "ETH/USDT",
+    "symbol": "ETHUSDT",
     "side": "BUY",
     "type": "LIMIT",
     "price": "50000.00",
@@ -136,14 +136,14 @@ curl -X POST "http://119.8.50.236:8088/api/v1/order" \
 ### Check Order Status
 
 ```bash
-curl -X GET "http://119.8.50.236:8088/api/v1/order?symbol=ETH/USDT&orderId=123456789" \
+curl -X GET "http://119.8.50.236:8088/api/v1/order?symbol=ETHUSDT&orderId=123456789" \
   -H "Authorization: Bearer YOUR_TOKEN"
 ```
 
 ### List Open Orders
 
 ```bash
-curl -X GET "http://119.8.50.236:8088/api/v1/openorders?symbol=ETH/USDT" \
+curl -X GET "http://119.8.50.236:8088/api/v1/openorders?symbol=ETHUSDT" \
   -H "Authorization: Bearer YOUR_TOKEN"
 ```
 
@@ -156,7 +156,7 @@ curl -X DELETE "http://119.8.50.236:8088/api/v1/order" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "symbol": "ETH/USDT",
+    "symbol": "ETHUSDT",
     "orderId": 123456789
   }'
 ```
@@ -179,12 +179,12 @@ balance = requests.get(f"{BASE_URL}/api/v1/balance", headers=headers)
 print("Balance:", balance.json())
 
 # 2. Get current price
-price = requests.get(f"{BASE_URL}/api/v1/ticker/price?symbol=ETH/USDT")
+price = requests.get(f"{BASE_URL}/api/v1/ticker/price?symbol=ETHUSDT")
 print("Current price:", price.json())
 
 # 3. Place a limit order
 order_data = {
-    "symbol": "ETH/USDT",
+    "symbol": "ETHUSDT",
     "side": "BUY",
     "type": "LIMIT",
     "quantity": 0.001,
@@ -202,7 +202,7 @@ print("Order placed:", order.json())
 # 4. Check order status
 order_id = order.json()["data"]["orderId"]
 status = requests.get(
-    f"{BASE_URL}/api/v1/order?symbol=ETH/USDT&orderId={order_id}",
+    f"{BASE_URL}/api/v1/order?symbol=ETHUSDT&orderId={order_id}",
     headers=headers
 )
 print("Order status:", status.json())
