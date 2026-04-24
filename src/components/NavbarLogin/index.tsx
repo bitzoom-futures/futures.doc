@@ -122,7 +122,7 @@ export default function NavbarLogin() {
         style={{ cursor: loading ? 'wait' : 'pointer' }}
         title="Login to get Bearer token for API/WS requests"
       >
-        {loading ? 'Loading...' : 'Get Token'}
+        {loading ? 'Loading...' : 'Login'}
       </a>
     )
   }
