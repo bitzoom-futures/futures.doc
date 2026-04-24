@@ -38,9 +38,12 @@ export default function ParameterForm({ params, values, onChange }: ParameterFor
                 <input
                   className={styles.input}
                   type={param.type === 'number' ? 'number' : 'text'}
-                  value={values[param.name] ?? ''}
+                  value={values[param.name] ?? String(param.defaultValue ?? '')}
                   onChange={(e) => onChange(param.name, e.target.value)}
                   placeholder={param.placeholder}
+                  min={param.type === 'number' ? param.min : undefined}
+                  max={param.type === 'number' ? param.max : undefined}
+                  step={param.type === 'number' ? param.step ?? 1 : undefined}
                 />
               )}
             </div>

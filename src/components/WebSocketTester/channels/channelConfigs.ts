@@ -4,6 +4,10 @@ const limitOptions = [5, 10, 20, 50, 100, 500, 1000].map((value) => ({
   label: String(value),
   value
 }))
+const klinesLimitOptions = [100, 500].map((value) => ({
+  label: String(value),
+  value
+}))
 
 export const channels: ChannelConfig[] = [
   {
@@ -88,7 +92,14 @@ export const channels: ChannelConfig[] = [
           '1M'
         ].map((v) => ({ label: v, value: v }))
       },
-      { name: 'limit', label: 'Limit', type: 'number', required: false, placeholder: '100' }
+      {
+        name: 'limit',
+        label: 'Limit',
+        type: 'select',
+        required: false,
+        defaultValue: 100,
+        options: klinesLimitOptions
+      }
     ]
   },
   {

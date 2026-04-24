@@ -29,7 +29,26 @@ function buildData(
       return
     }
     if (!value) return
-    data[param.name] = parseParameterValue(param, value)
+    const parsedValue = parseParameterValue(param, value)
+
+    if (param.type === 'number') {
+      const numericValue = Number(parsedValue)
+
+      if (Number.isNaN(numericValue)) {
+        errors.push(`${param.label} must be a number`)
+        return
+      }
+      if (param.min !== undefined && numericValue < param.min) {
+        errors.push(`${param.label} must be at least ${param.min}`)
+        return
+      }
+      if (param.max !== undefined && numericValue > param.max) {
+        errors.push(`${param.label} must be at most ${param.max}`)
+        return
+      }
+    }
+
+    data[param.name] = parsedValue
   })
 
   return { data, errors }

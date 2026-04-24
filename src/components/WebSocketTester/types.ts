@@ -16,6 +16,9 @@ export interface ParameterDefinition {
   options?: ParameterOption[]
   placeholder?: string
   defaultValue?: ParameterValue
+  min?: number
+  max?: number
+  step?: number
 }
 
 export interface ChannelConfig {
