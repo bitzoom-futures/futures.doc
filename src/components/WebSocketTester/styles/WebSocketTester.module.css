@@ -240,6 +240,7 @@
 
 .logDetail {
   margin-top: 0.9rem;
+  height: 320px;
   border: 1px solid var(--ifm-color-emphasis-200);
   border-radius: 8px;
   background: var(--ifm-background-color);
