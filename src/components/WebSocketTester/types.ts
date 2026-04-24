@@ -1,15 +1,21 @@
 export type ConnectionStatus = 'disconnected' | 'connecting' | 'connected' | 'error'
 
 export type ParameterType = 'string' | 'number' | 'select'
+export type ParameterValue = string | number
+
+export interface ParameterOption {
+  label: string
+  value: ParameterValue
+}
 
 export interface ParameterDefinition {
   name: string
   label: string
   type: ParameterType
   required: boolean
-  options?: Array<{ label: string; value: string }>
+  options?: ParameterOption[]
   placeholder?: string
-  defaultValue?: string
+  defaultValue?: ParameterValue
 }
 
 export interface ChannelConfig {

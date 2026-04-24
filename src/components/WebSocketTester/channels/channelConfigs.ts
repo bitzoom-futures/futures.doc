@@ -1,5 +1,10 @@
 import type { ChannelConfig } from '../types'
 
+const limitOptions = [5, 10, 20, 50, 100, 500, 1000].map((value) => ({
+  label: String(value),
+  value
+}))
+
 export const channels: ChannelConfig[] = [
   {
     id: 'ticker',
@@ -46,12 +51,8 @@ export const channels: ChannelConfig[] = [
         label: 'Limit',
         type: 'select',
         required: true,
-        defaultValue: '20',
-        options: [
-          { label: '5', value: '5' },
-          { label: '10', value: '10' },
-          { label: '20', value: '20' }
-        ]
+        defaultValue: 500,
+        options: limitOptions
       }
     ]
   },
@@ -98,7 +99,14 @@ export const channels: ChannelConfig[] = [
     description: 'Recent trades.',
     params: [
       { name: 'symbol', label: 'Symbol', type: 'string', required: true, placeholder: 'ETHUSDT' },
-      { name: 'limit', label: 'Limit', type: 'number', required: false, placeholder: '100' }
+      {
+        name: 'limit',
+        label: 'Limit',
+        type: 'select',
+        required: false,
+        defaultValue: 50,
+        options: limitOptions
+      }
     ]
   },
   {

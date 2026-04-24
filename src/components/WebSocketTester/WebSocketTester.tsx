@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
-import type { ChannelConfig, WsResponse } from './types'
+import type { ChannelConfig, ParameterDefinition, ParameterValue, WsResponse } from './types'
 import ConnectionPanel from './components/ConnectionPanel'
 import AuthPanel from './components/AuthPanel'
 import ParameterForm from './components/ParameterForm'
@@ -23,16 +23,31 @@ function buildData(
   const data: Record<string, unknown> = {}
 
   channel.params.forEach((param) => {
-    const value = (values[param.name] ?? param.defaultValue ?? '').trim()
+    const value = String(values[param.name] ?? param.defaultValue ?? '').trim()
     if (param.required && !value) {
       errors.push(`${param.label} is required`)
       return
     }
     if (!value) return
-    data[param.name] = param.type === 'number' ? Number(value) : value
+    data[param.name] = parseParameterValue(param, value)
   })
 
   return { data, errors }
+}
+
+function parseParameterValue(param: ParameterDefinition, value: string): ParameterValue {
+  if (param.type === 'number') {
+    return Number(value)
+  }
+
+  if (param.type === 'select') {
+    const matchedOption = param.options?.find((option) => String(option.value) === value)
+    if (matchedOption) {
+      return matchedOption.value
+    }
+  }
+
+  return value
 }
 
 export default function WebSocketTester({
