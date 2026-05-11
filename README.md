@@ -69,5 +69,3 @@ Generate OpenAPI docs for a version:
 ```bash
 yarn docusaurus gen-api-docs:version bitzoom:<version>
 ```
-
-add a new api
