@@ -31,6 +31,8 @@ Plugin: [docusaurus-plugin-openapi-docs](https://github.com/PaloAltoNetworks/doc
 
 - [问题清单](https://docs.google.com/spreadsheets/d/14Zfkg6LEgxql3GzP5hFZm36l8ygvAbvcGMZHi06GBJQ/edit?gid=1295395322#gid=1295395322)
 - [文案修改](https://docs.google.com/presentation/d/1axD7mEjPTiWMpQi-12Y4yLr_GbU4W7862Ms8bHtWY68/edit?slide=id.g3d41b438274_0_5#slide=id.g3d41b438274_0_5)
+- [deep更新web](https://docs.google.com/presentation/d/1pLpUJ7AX6QzfiGpkkJKAQBFEtzxFrFeS6Ft-QRELvWc/edit?usp=sharing) 
+- [deep更新mobile](https://docs.google.com/presentation/d/11_k8Y3FIN5C1TSUrOKC1R2-Srim-rfPloXqjd7JG5hA/edit?usp=sharing) 
 ## Local Development
 
 Use Node.js 22 (recommended) or Node.js 18+.
