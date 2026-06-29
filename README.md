@@ -33,6 +33,7 @@ Plugin: [docusaurus-plugin-openapi-docs](https://github.com/PaloAltoNetworks/doc
 - [文案修改](https://docs.google.com/presentation/d/1axD7mEjPTiWMpQi-12Y4yLr_GbU4W7862Ms8bHtWY68/edit?slide=id.g3d41b438274_0_5#slide=id.g3d41b438274_0_5)
 - [deep更新web](https://docs.google.com/presentation/d/1pLpUJ7AX6QzfiGpkkJKAQBFEtzxFrFeS6Ft-QRELvWc/edit?usp=sharing) 
 - [deep更新mobile](https://docs.google.com/presentation/d/11_k8Y3FIN5C1TSUrOKC1R2-Srim-rfPloXqjd7JG5hA/edit?usp=sharing) 
+- [订单类型](https://docs.google.com/presentation/d/1eOX2xWC4_byt0NWfQbm0GGd2g0p5B_8t6E6qpgEpQlg/edit?usp=sharing) 
 ## Local Development
 
 Use Node.js 22 (recommended) or Node.js 18+.
