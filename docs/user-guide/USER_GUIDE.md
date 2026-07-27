@@ -85,9 +85,7 @@ On the Bitzoom (Preview) page in TestFlight:
 <summary><strong>Android</strong></summary>
 
 Download and install the Bitzoom APK directly:
-[**Download Bitzoom APK**](pathname:///docs/bitzoom.apk)
-
-Or download from EAS Build: [**EAS Build Link**](https://expo.dev/accounts/jinchaoq/projects/abt-trading-app/builds/a5e9439a-9f5b-4042-83a2-aa1d8761cad4)
+[**Download Bitzoom APK**](https://github.com/bitzoom-futures/futures.doc/releases/download/bitzoom-android-v1.2.0-13/bitzoom.apk)
 
 1. Tap the download button above to save the APK file
 2. Open the downloaded file from your notification bar or **Downloads** folder
