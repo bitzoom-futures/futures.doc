@@ -4,7 +4,7 @@ const sidebar: SidebarsConfig = {
   apisidebar: [
     {
       type: "doc",
-      id: "bitzoom/open-api",
+      id: "bitzoom/bitzoom-hmac-api",
     },
     {
       type: "category",

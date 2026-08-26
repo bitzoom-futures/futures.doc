@@ -1,113 +1,32 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react'
+import Link from '@docusaurus/Link'
+import useBaseUrl from '@docusaurus/useBaseUrl'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
-import Sdk from 'casdoor-js-sdk'
-import { useUser } from '../../context/UserContext'
-import styles from './styles.module.css'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 
-interface CasdoorConfig {
-  Endpoint: string
-  ClientID: string
-  Organization: string
-  Application: string
-  BackgroundCallbackURL: string
-}
+import { DEFAULT_MANAGEMENT_GATEWAY_URL } from '../../config/managementGateway'
+import { useUser } from '../../context/UserContext'
+import { useCasdoorLogin } from '../../hooks/useCasdoorLogin'
+import styles from './styles.module.css'
 
 export default function NavbarLogin() {
   const { siteConfig } = useDocusaurusContext()
-  const gatewayServerUrl = (siteConfig.customFields?.gatewayServerUrl as string) || ''
+  const managementGatewayUrl =
+    (siteConfig.customFields?.managementGatewayUrl as string) || DEFAULT_MANAGEMENT_GATEWAY_URL
+  const redirectPath = useBaseUrl('/callback')
   const { user, logout } = useUser()
+  const { login, loading, error } = useCasdoorLogin({ managementGatewayUrl, redirectPath })
   const [dropdownOpen, setDropdownOpen] = useState(false)
-  const [copied, setCopied] = useState(false)
-  const [loading, setLoading] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
-  const pollRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
-  // Close dropdown on outside click
   useEffect(() => {
-    const handler = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setDropdownOpen(false)
       }
     }
-    document.addEventListener('mousedown', handler)
-    return () => document.removeEventListener('mousedown', handler)
+    document.addEventListener('mousedown', handleOutsideClick)
+    return () => document.removeEventListener('mousedown', handleOutsideClick)
   }, [])
-
-  // Cleanup poll on unmount
-  useEffect(() => {
-    return () => {
-      if (pollRef.current) clearInterval(pollRef.current)
-    }
-  }, [])
-
-  const handleGetToken = useCallback(async () => {
-    try {
-      setLoading(true)
-
-      const apiBase = gatewayServerUrl || window.location.origin
-      const res = await fetch(`${apiBase}/api/casdoor`)
-      const json = await res.json()
-      const config: CasdoorConfig = json.data || json
-
-      if (!config.Endpoint || !config.ClientID) {
-        console.error('Invalid Casdoor config:', config)
-        return
-      }
-
-      const sdk = new Sdk({
-        serverUrl: config.Endpoint,
-        clientId: config.ClientID,
-        organizationName: config.Organization,
-        appName: config.Application,
-        redirectPath: '/docs/callback',
-      })
-      const authUrl = sdk.getSigninUrl()
-
-      const w = 500
-      const h = 600
-      const left = window.screenX + (window.outerWidth - w) / 2
-      const top = window.screenY + (window.outerHeight - h) / 2
-      const popup = window.open(
-        authUrl,
-        'casdoor-login',
-        `width=${w},height=${h},left=${left},top=${top},popup=yes`
-      )
-
-      if (popup) {
-        pollRef.current = setInterval(() => {
-          try {
-            if (popup.closed) {
-              if (pollRef.current) clearInterval(pollRef.current)
-              pollRef.current = null
-              setLoading(false)
-            }
-          } catch { /* cross-origin, ignore */ }
-        }, 500)
-      }
-    } catch (err) {
-      console.error('Failed to start login:', err)
-      setLoading(false)
-    }
-  }, [])
-
-  const handleCopyToken = useCallback(async () => {
-    if (!user?.token) return
-    const rawToken = user.token.replace(/^Bearer\s+/i, '')
-    try {
-      await navigator.clipboard.writeText(rawToken)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
-    } catch {
-      const ta = document.createElement('textarea')
-      ta.value = rawToken
-      document.body.appendChild(ta)
-      ta.select()
-      document.execCommand('copy')
-      document.body.removeChild(ta)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
-    }
-  }, [user])
 
   const handleLogout = useCallback(() => {
     logout()
@@ -116,53 +35,66 @@ export default function NavbarLogin() {
 
   if (!user) {
     return (
-      <a
-        className="navbar__item navbar__link"
-        onClick={handleGetToken}
-        style={{ cursor: loading ? 'wait' : 'pointer' }}
-        title="Login to get Bearer token for API/WS requests"
+      <button
+        type="button"
+        className={`navbar__item navbar__link ${styles.loginButton}`}
+        onClick={login}
+        disabled={loading}
+        title={error || 'Log in to manage API keys'}
       >
-        {loading ? 'Loading...' : 'Login'}
-      </a>
+        {loading ? 'Opening login…' : 'Login'}
+      </button>
     )
   }
 
   return (
     <div className={styles.userContainer} ref={dropdownRef}>
       <button
+        type="button"
         className={styles.userBtn}
-        onClick={() => setDropdownOpen(!dropdownOpen)}
-        title={user.email}
+        onClick={() => setDropdownOpen((open) => !open)}
+        aria-label="Open account menu"
+        aria-haspopup="menu"
+        aria-expanded={dropdownOpen}
       >
         {user.avatar ? (
-          <img src={user.avatar} alt="" className={styles.avatar} referrerPolicy="no-referrer" />
+          <img
+            src={user.avatar}
+            alt=""
+            className={styles.avatar}
+            referrerPolicy="no-referrer"
+          />
         ) : (
-          <span className={styles.avatarPlaceholder}>
+          <span className={styles.avatarPlaceholder} aria-hidden="true">
             {user.email?.charAt(0)?.toUpperCase() || '?'}
           </span>
         )}
       </button>
 
-      {dropdownOpen && (
-        <div className={styles.dropdown}>
-          <div className={styles.tokenRow}>
-            <span className={styles.tokenLabel}>Bearer Token</span>
-            <code className={styles.tokenValue}>
-              {user.token?.slice(0, 20)}...
-            </code>
+      {dropdownOpen ? (
+        <div className={styles.dropdown} role="menu">
+          <div className={styles.accountRow}>
+            <span className={styles.accountLabel}>Signed in as</span>
+            <span className={styles.accountEmail}>{user.email}</span>
           </div>
-          <button className={styles.dropdownItem} onClick={handleCopyToken}>
-            {copied ? (
-              <><span className={styles.checkMark}>&#10003;</span> Copied!</>
-            ) : (
-              'Copy Token'
-            )}
-          </button>
-          <button className={`${styles.dropdownItem} ${styles.logoutItem}`} onClick={handleLogout}>
+          <Link
+            className={styles.dropdownItem}
+            to="/api-management"
+            role="menuitem"
+            onClick={() => setDropdownOpen(false)}
+          >
+            API Management
+          </Link>
+          <button
+            type="button"
+            className={`${styles.dropdownItem} ${styles.logoutItem}`}
+            onClick={handleLogout}
+            role="menuitem"
+          >
             Logout
           </button>
         </div>
-      )}
+      ) : null}
     </div>
   )
 }

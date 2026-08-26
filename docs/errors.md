@@ -31,7 +31,7 @@ All API responses follow a standard format. When an error occurs, the response i
 |------|---------|-------------|----------|
 | `-1000` | Unknown error | An unexpected error occurred | Retry the request. If persistent, contact support |
 | `-1001` | Disconnected | Internal error; connection dropped | Retry the request |
-| `-1002` | Unauthorized | Invalid or expired token | Refresh your JWT token |
+| `-1002` | Unauthorized | Missing or invalid HMAC credential | Check the key, timestamp, nonce, and signature |
 | `-1003` | Rate limit exceeded | Too many requests | Implement rate limiting and exponential backoff |
 | `-1004` | Endpoint not found | Invalid API endpoint | Check the endpoint URL |
 | `-1005` | Invalid content type | Wrong Content-Type header | Use `application/json` |
@@ -81,14 +81,14 @@ All API responses follow a standard format. When an error occurs, the response i
 
 1. **Verify timestamp**: Must be within 5000ms of server time
    ```bash
-   curl http://119.8.50.236:8088/api/gateway/time
+   curl https://api1.riverwa.com/api/gateway/time
    ```
 
 2. **Check signature algorithm**: Use HMAC-SHA256
 
-3. **Verify parameter order**: Parameters must be sorted alphabetically
+3. **Verify query order**: Sort by key and then value while preserving duplicates
 
-4. **Check encoding**: URL-encode all parameter values
+4. **Check exact bytes**: Form-encode the query and hash the body bytes actually sent
 
 ---
 
@@ -180,30 +180,9 @@ In addition to API error codes, standard HTTP status codes indicate request outc
 
 ### Error Handling
 
-```python
-import requests
-
-def api_request(endpoint, params=None):
-    response = requests.get(f"http://119.8.50.236:8088{endpoint}", params=params)
-    data = response.json()
-
-    if data.get("code") != 0:
-        error_code = data.get("code")
-        error_msg = data.get("msg")
-
-        if error_code == -1003:
-            # Rate limited - implement backoff
-            time.sleep(60)
-            return api_request(endpoint, params)
-        elif error_code == -1002:
-            # Token expired - refresh and retry
-            refresh_token()
-            return api_request(endpoint, params)
-        else:
-            raise Exception(f"API Error {error_code}: {error_msg}")
-
-    return data["data"]
-```
+For private operations, use the [HMAC signing helper](./guides/api-key-authentication.md)
+and check both the HTTP status and the response envelope. Do not retry authentication
+failures blindly: fix the credential or signing input and generate a new nonce.
 
 ### Retry Strategy
 

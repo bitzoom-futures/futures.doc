@@ -1,233 +1,67 @@
 # Place Your First Order
 
-This guide walks you through placing your first futures order on Bitzoom.
+This flow uses public market data and an HMAC key with `READ,TRADE` permissions. The private browser controls are disabled, so run signed requests from your own trusted client.
 
 ## Prerequisites
 
-- Bitzoom account with funds
-- Valid JWT token (see [Authentication](../authentication.md))
-- Understanding of futures trading basics
+- A funded Bitzoom account
+- An API key with `READ` and `TRADE`
+- An IP allowlist that includes the client’s egress IP
+- A safely stored one-time secret
+- The signing helper from [API Key Authentication](./api-key-authentication.md)
 
-## Step 1: Check Available Markets
+## 1. Inspect the market
 
-First, get the list of available trading pairs:
-
-```bash
-curl -X GET "http://119.8.50.236:8088/api/v1/exchangeinfo"
-```
-
-Response:
-```json
-{
-  "code": 0,
-  "data": {
-    "symbols": [
-      {
-        "symbol": "ETHUSDT",
-        "baseAsset": "BTC",
-        "quoteAsset": "USDT",
-        "pricePrecision": 2,
-        "quantityPrecision": 3
-      }
-    ]
-  }
-}
-```
-
-## Step 2: Check Your Balance
-
-Verify you have sufficient margin:
+The market catalog and price endpoints are public:
 
 ```bash
-curl -X GET "http://119.8.50.236:8088/api/v1/balance" \
-  -H "Authorization: Bearer YOUR_TOKEN"
+curl --fail-with-body "https://api1.riverwa.com/api/v1/exchangeinfo"
+curl --fail-with-body "https://api1.riverwa.com/api/v1/ticker/price?symbol=BTCUSDT"
 ```
 
-## Step 3: Get Current Price
+Use the returned symbol filters, price precision, and quantity precision when constructing the order.
 
-Check the current market price:
+## 2. Check available balance
 
-```bash
-curl -X GET "http://119.8.50.236:8088/api/v1/ticker/price?symbol=ETHUSDT"
-```
+Send a signed `GET /api/v1/balance`. Because it has no body, line 7 of the signing payload is the SHA-256 hash of an empty byte string. This operation requires `READ`.
 
-## Step 4: Set Leverage (Optional)
+## 3. Set leverage when needed
 
-Adjust your leverage before placing orders:
-
-```bash
-curl -X POST "http://119.8.50.236:8088/api/v1/leverage" \
-  -H "Authorization: Bearer YOUR_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "symbol": "ETHUSDT",
-    "leverage": 10
-  }'
-```
-
-## Step 5: Place an Order
-
-### Market Order
-
-Execute immediately at the best available price:
-
-```bash
-curl -X POST "http://119.8.50.236:8088/api/v1/order" \
-  -H "Authorization: Bearer YOUR_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "symbol": "ETHUSDT",
-    "side": "BUY",
-    "type": "MARKET",
-    "quantity": 0.001
-  }'
-```
-
-### Limit Order
-
-Execute at a specific price or better:
-
-```bash
-curl -X POST "http://119.8.50.236:8088/api/v1/order" \
-  -H "Authorization: Bearer YOUR_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "symbol": "ETHUSDT",
-    "side": "BUY",
-    "type": "LIMIT",
-    "quantity": 0.001,
-    "price": 50000.00,
-    "timeInForce": "GTC"
-  }'
-```
-
-## Order Parameters
-
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `symbol` | string | Yes | Trading pair (e.g., "ETHUSDT") |
-| `side` | string | Yes | "BUY" or "SELL" |
-| `type` | string | Yes | "MARKET", "LIMIT", "STOP", "TAKE_PROFIT" |
-| `quantity` | decimal | Yes | Order amount in base asset |
-| `price` | decimal | Limit only | Order price |
-| `timeInForce` | string | Limit only | "GTC", "IOC", "FOK" |
-| `stopPrice` | decimal | Stop only | Trigger price |
-
-## Order Response
+Send a signed `POST /api/v1/leverage` with the exact JSON bytes you intend to transmit. This operation requires `TRADE`.
 
 ```json
-{
-  "code": 0,
-  "data": {
-    "orderId": 123456789,
-    "symbol": "ETHUSDT",
-    "side": "BUY",
-    "type": "LIMIT",
-    "price": "50000.00",
-    "quantity": "0.001",
-    "status": "NEW",
-    "createTime": 1234567890000
-  }
-}
+{"symbol":"BTCUSDT","leverage":10}
 ```
 
-## Step 6: Monitor Your Order
+Do not reformat that JSON between calculating the body hash and sending it.
 
-### Check Order Status
+## 4. Place a limit order
 
-```bash
-curl -X GET "http://119.8.50.236:8088/api/v1/order?symbol=ETHUSDT&orderId=123456789" \
-  -H "Authorization: Bearer YOUR_TOKEN"
+Send a signed `POST /api/v1/order` with `Content-Type: application/json` and a fresh timestamp and nonce.
+
+```json
+{"symbol":"BTCUSDT","side":"BUY","type":"LIMIT","quantity":"0.001","price":"70000","clientOrderId":"bot-1234567890123"}
 ```
 
-### List Open Orders
+The complete Python and Node.js examples in the [signing guide](./api-key-authentication.md) sign and send this payload. Use decimal strings where the API schema permits them to avoid accidental floating-point serialization changes.
 
-```bash
-curl -X GET "http://119.8.50.236:8088/api/v1/openorders?symbol=ETHUSDT" \
-  -H "Authorization: Bearer YOUR_TOKEN"
-```
+## 5. Monitor or cancel
 
-## Step 7: Cancel an Order
+| Action | Request | Permission |
+| --- | --- | --- |
+| List open orders | Signed `GET /api/v1/openorders` | `READ` |
+| Query an order | Signed request shown in the API Reference | `READ` |
+| Cancel an order | Signed `DELETE /api/v1/order` | `TRADE` |
 
-If needed, cancel your pending order:
+Canonicalize every query independently. Repeated query keys must be preserved and sorted by key and then value.
 
-```bash
-curl -X DELETE "http://119.8.50.236:8088/api/v1/order" \
-  -H "Authorization: Bearer YOUR_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "symbol": "ETHUSDT",
-    "orderId": 123456789
-  }'
-```
+## Production checklist
 
-## Complete Python Example
+- Start with the smallest allowed order size.
+- Verify symbol filters and balances before submitting.
+- Use a unique `clientOrderId` to make reconciliation safer.
+- Treat HTTP errors, `success: false`, and nonzero `code` as failures.
+- Never retry an uncertain order with the same nonce or blindly create a second order.
+- Reconcile against open orders and order history after a timeout.
 
-```python
-import requests
-
-BASE_URL = "http://119.8.50.236:8088"
-TOKEN = "your_jwt_token"
-
-headers = {
-    "Authorization": f"Bearer {TOKEN}",
-    "Content-Type": "application/json"
-}
-
-# 1. Check balance
-balance = requests.get(f"{BASE_URL}/api/v1/balance", headers=headers)
-print("Balance:", balance.json())
-
-# 2. Get current price
-price = requests.get(f"{BASE_URL}/api/v1/ticker/price?symbol=ETHUSDT")
-print("Current price:", price.json())
-
-# 3. Place a limit order
-order_data = {
-    "symbol": "ETHUSDT",
-    "side": "BUY",
-    "type": "LIMIT",
-    "quantity": 0.001,
-    "price": 50000.00,
-    "timeInForce": "GTC"
-}
-
-order = requests.post(
-    f"{BASE_URL}/api/v1/order",
-    headers=headers,
-    json=order_data
-)
-print("Order placed:", order.json())
-
-# 4. Check order status
-order_id = order.json()["data"]["orderId"]
-status = requests.get(
-    f"{BASE_URL}/api/v1/order?symbol=ETHUSDT&orderId={order_id}",
-    headers=headers
-)
-print("Order status:", status.json())
-```
-
-## Order Types Explained
-
-| Type | Description | Use Case |
-|------|-------------|----------|
-| **MARKET** | Execute immediately at best price | Quick entry/exit |
-| **LIMIT** | Execute at specified price or better | Price-sensitive orders |
-| **STOP** | Trigger market order at stop price | Stop-loss |
-| **TAKE_PROFIT** | Trigger limit order at target | Profit taking |
-
-## Common Errors
-
-| Error | Cause | Solution |
-|-------|-------|----------|
-| `-2010 Insufficient balance` | Not enough margin | Deposit more funds |
-| `-2011 Order not found` | Invalid order ID | Check order ID |
-| `-2015 Invalid side` | Wrong side value | Use "BUY" or "SELL" |
-| `-2018 Invalid quantity` | Quantity too small/large | Check min/max limits |
-
-## Next Steps
-
-- [API Reference](/category/bitzoom-api) - Explore all endpoints
-- [Getting Started](../getting-started.md) - Back to overview
-- [Authentication](../authentication.md) - Review authentication setup
+See [Position Management](./positions.md) for signed position and margin operations.

@@ -35,6 +35,7 @@ const sidebars: SidebarsConfig = {
       label: 'Guides',
       collapsed: false,
       items: [
+        'guides/api-key-authentication',
         'guides/place-order',
         'guides/positions'
       ]

@@ -5,8 +5,11 @@ import type * as Preset from '@docusaurus/preset-classic'
 import type { Config } from '@docusaurus/types'
 import type * as Plugin from '@docusaurus/types/src/plugin'
 import type * as OpenApiPlugin from 'docusaurus-plugin-openapi-docs'
-import fs from 'fs'
-import path from 'path'
+
+import {
+  DEFAULT_MANAGEMENT_GATEWAY_URL,
+  MANAGEMENT_GATEWAY_DEV_PROXY_PATH
+} from './src/config/managementGateway'
 
 const localSearchPlugin: Plugin.PluginConfig | null = (() => {
   try {
@@ -26,16 +29,42 @@ const localSearchPlugin: Plugin.PluginConfig | null = (() => {
   }
 })()
 
-const gatewayServerUrl: string = (() => {
-  try {
-    const gatewaySpecPath = path.join(process.cwd(), 'examples', 'bitzoom.gateway.json')
-    const spec = JSON.parse(fs.readFileSync(gatewaySpecPath, 'utf8'))
-    const url = spec && spec.servers && spec.servers[0] && spec.servers[0].url
-    return typeof url === 'string' ? url.replace(/\/+$/, '') : 'http://119.8.50.236:8088'
-  } catch {
-    return 'http://119.8.50.236:8088'
+const managementGatewayTarget = (
+  process.env.BITZOOM_MANAGEMENT_GATEWAY_URL || DEFAULT_MANAGEMENT_GATEWAY_URL
+).replace(/\/+$/, '')
+const managementGatewayUrl =
+  process.env.NODE_ENV === 'development'
+    ? MANAGEMENT_GATEWAY_DEV_PROXY_PATH
+    : managementGatewayTarget
+const hmacApiUrl = (process.env.BITZOOM_HMAC_API_URL || 'https://api1.riverwa.com').replace(
+  /\/+$/,
+  ''
+)
+
+function managementGatewayDevProxyPlugin() {
+  return {
+    name: 'management-gateway-dev-proxy',
+    configureWebpack() {
+      return {
+        devServer: {
+          proxy: [
+            {
+              context: [MANAGEMENT_GATEWAY_DEV_PROXY_PATH],
+              target: managementGatewayTarget,
+              changeOrigin: true,
+              secure: true,
+              pathRewrite: (path: string) =>
+                path.replace(new RegExp(`^${MANAGEMENT_GATEWAY_DEV_PROXY_PATH}`), ''),
+              onProxyReq(proxyRequest: import('node:http').ClientRequest) {
+                proxyRequest.removeHeader('origin')
+              }
+            }
+          ]
+        }
+      }
+    }
   }
-})()
+}
 
 const config: Config = {
   title: 'Bitzoom API Docs',
@@ -54,7 +83,8 @@ const config: Config = {
     locales: ['en', 'zh-Hans']
   },
   customFields: {
-    gatewayServerUrl
+    managementGatewayUrl,
+    hmacApiUrl
   },
 
   // GitHub pages deployment config.
@@ -318,6 +348,7 @@ const config: Config = {
 
   plugins: [
     'docusaurus-plugin-image-zoom',
+    ...(process.env.NODE_ENV === 'development' ? [managementGatewayDevProxyPlugin] : []),
     function polyfillPlugin() {
       return {
         name: 'node-polyfill-plugin',
@@ -365,7 +396,7 @@ const config: Config = {
             baseUrl: '/',
             versions: {
               '1.0': {
-                specPath: 'examples/bitzoom.gateway.json',
+                specPath: 'examples/bitzoom.gateway.v1.json',
                 outputDir: 'versioned_docs/version-1.0/bitzoom',
                 label: '1.0',
                 baseUrl: '/1.0'

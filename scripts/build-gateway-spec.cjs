@@ -1,8 +1,10 @@
 const fs = require('fs')
+const { transformGatewaySpec } = require('./hmac-openapi.cjs')
 
 const SOURCE_SPEC = 'examples/bitzoom.json'
 const TARGET_SPEC = 'examples/bitzoom.gateway.json'
 const GATEWAY_TAG = 'gateway'
+const HMAC_API_URL = process.env.BITZOOM_HMAC_API_URL || 'https://api1.riverwa.com'
 
 const source = JSON.parse(fs.readFileSync(SOURCE_SPEC, 'utf8'))
 
@@ -78,16 +80,12 @@ if (
     replaceUrlOrigin(filtered.components.securitySchemes.Bearer.description, gatewayServerUrl)
 }
 
-const PUBLIC_ORIGIN = 'https://test.riverwa.com'
-const output = JSON.stringify(filtered, null, 2)
-  .replace(/http:\/\/[^/\s"]+/g, PUBLIC_ORIGIN)
+const hmacSpec = transformGatewaySpec(filtered, { hmacApiUrl: HMAC_API_URL })
+const output = JSON.stringify(hmacSpec, null, 2)
+  .replace(/http:\/\/[^/\s"]+/g, HMAC_API_URL)
 fs.writeFileSync(TARGET_SPEC, `${output}\n`, 'utf8')
 
 console.log(
   `Wrote ${TARGET_SPEC} with ${Object.keys(filteredPaths).length} path(s) and ${gatewayOperationCount} gateway-tagged operation(s) from ${SOURCE_SPEC}`
 )
-if (gatewayServerUrl) {
-  console.log(`Using gateway server: ${gatewayServerUrl}`)
-} else {
-  console.log('No gateway server URL found from gateway tag description.')
-}
+console.log(`Using HMAC API server: ${HMAC_API_URL}`)

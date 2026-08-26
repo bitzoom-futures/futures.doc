@@ -128,6 +128,45 @@
   padding: 0.6rem 0.75rem;
 }
 
+.privateGuard {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.3rem;
+  border: 1px solid color-mix(in srgb, var(--ifm-color-primary) 38%, transparent);
+  border-left: 4px solid var(--ifm-color-primary);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--ifm-color-primary) 8%, var(--ifm-background-surface-color));
+}
+
+.privateGuardMark {
+  color: var(--ifm-color-primary);
+  font-size: 0.8rem;
+}
+
+.privateGuardEyebrow {
+  margin: 0 0 0.25rem;
+  color: var(--ifm-color-primary);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.privateGuard h3 {
+  margin: 0 0 0.5rem;
+}
+
+.privateGuard p:not(.privateGuardEyebrow) {
+  margin: 0.25rem 0 0.65rem;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.9rem;
+}
+
+.privateGuard a {
+  font-weight: 700;
+}
+
 .log {
   height: 280px;
   overflow: auto;

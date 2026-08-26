@@ -38,6 +38,17 @@ Use Node.js 22 (recommended) or Node.js 18+.
 yarn start
 ```
 
+In development, API-key management requests use the local `/__management` route. The
+Docusaurus dev server forwards that route to `BITZOOM_MANAGEMENT_GATEWAY_URL`, which
+defaults to `https://test1.riverwa.com`. Override the upstream when needed:
+
+```bash
+BITZOOM_MANAGEMENT_GATEWAY_URL=https://management.example.com yarn start
+```
+
+The development proxy applies only to management requests; HMAC API requests continue
+to use `BITZOOM_HMAC_API_URL` directly.
+
 Run a specific locale in development:
 
 ```bash

@@ -1,151 +1,57 @@
 # Authentication
 
-The Bitzoom Futures API uses JWT (JSON Web Token) Bearer authentication for private endpoints.
+Current Bitzoom private REST and WebSocket APIs use API keys with HMAC-SHA256 signatures. Public market-data operations require no authentication.
 
-## Authentication Types
+| Context | Authentication |
+| --- | --- |
+| Public REST | None |
+| Private REST | `X-BZ-APIKEY` plus timestamp, nonce, and HMAC signature headers |
+| Public WebSocket | None |
+| Private WebSocket | HMAC-signed `logon`, then subscribe |
+| API-key management | Logged-in Bearer session handled by the documentation site |
 
-| Type | Description | Required For |
-|------|-------------|--------------|
-| **None** | No authentication needed | Public market data |
-| **Bearer Token** | JWT in Authorization header | Account, trading, wallet |
+Bearer sessions are only for creating, listing, enabling, disabling, and revoking API keys through [API Management](/api-management). They are not private trading credentials and should not be sent to the HMAC API service.
 
-## Getting Your Token
+## Start here
 
-### For Testing
+1. Open [API Management](/api-management).
+2. Create a key with the smallest required permission set and an IP allowlist.
+3. Save the one-time secret immediately.
+4. Follow the [API Key Authentication guide](./guides/api-key-authentication.md) to canonicalize, sign, and send requests.
 
-Get a test token for development:
+Private REST requests use these headers:
 
-```bash
-curl -X GET "http://119.8.50.236:8088/api/servermanage/testtoken?userid=YOUR_USER_ID"
+```text
+X-BZ-APIKEY
+X-BZ-TIMESTAMP
+X-BZ-NONCE
+X-BZ-SIGNATURE
+X-BZ-RECVWINDOW    # optional
 ```
 
-### For Production
+The signature covers the exact method, path, canonical query, and body bytes. The API Explorer documents those inputs but intentionally does not execute private operations in the browser.
 
-1. Log in to your Bitzoom account
-2. Navigate to **API Management**
-3. Generate your API credentials
-4. Use the credentials to obtain a JWT token
+## Security rules
 
-## Using the Token
+- Store secrets in a server-side secret manager or protected process environment.
+- Never expose a secret in frontend code, source control, logs, or observability payloads.
+- Generate a fresh nonce for every REST request and every WebSocket `logon`.
+- Keep the system clock synchronized and use the smallest practical receive window.
+- Give each application its own key and rotate it independently.
+- Disable a key for a reversible pause; revoke it immediately if exposure is possible.
 
-Include the JWT token in the `Authorization` header:
+## Legacy version 1.0
 
-```bash
-curl -X GET "http://119.8.50.236:8088/api/v1/balance" \
-  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-```
-
-## Code Examples
-
-### Python
-
-```python
-import requests
-
-BASE_URL = "http://119.8.50.236:8088"
-TOKEN = "your_jwt_token"
-
-headers = {
-    "Authorization": f"Bearer {TOKEN}",
-    "Content-Type": "application/json"
-}
-
-# Get account balance
-response = requests.get(f"{BASE_URL}/api/v1/balance", headers=headers)
-print(response.json())
-```
-
-### JavaScript (Node.js)
-
-```javascript
-const axios = require('axios');
-
-const BASE_URL = 'http://119.8.50.236:8088';
-const TOKEN = 'your_jwt_token';
-
-const client = axios.create({
-  baseURL: BASE_URL,
-  headers: {
-    'Authorization': `Bearer ${TOKEN}`,
-    'Content-Type': 'application/json'
-  }
-});
-
-// Get account balance
-async function getBalance() {
-  const response = await client.get('/api/v1/balance');
-  console.log(response.data);
-}
-
-getBalance();
-```
-
-### Go
-
-```go
-package main
-
-import (
-    "fmt"
-    "io"
-    "net/http"
-)
-
-func main() {
-    client := &http.Client{}
-    req, _ := http.NewRequest("GET", "http://119.8.50.236:8088/api/v1/balance", nil)
-    req.Header.Set("Authorization", "Bearer your_jwt_token")
-
-    resp, err := client.Do(req)
-    if err != nil {
-        panic(err)
-    }
-    defer resp.Body.Close()
-
-    body, _ := io.ReadAll(resp.Body)
-    fmt.Println(string(body))
-}
-```
-
-## Token Expiration
-
-JWT tokens have a limited lifetime. When your token expires:
-
-1. You'll receive a `-1002 Unauthorized` error
-2. Request a new token using your credentials
-3. Update your application with the new token
-
-:::tip Best Practice
-Implement automatic token refresh in your application to handle expiration gracefully.
-:::
-
-## Security Best Practices
-
-1. **Never expose tokens in client-side code** - Use a backend proxy
-2. **Use environment variables** - Don't hardcode tokens
-3. **Rotate tokens regularly** - Refresh tokens periodically
-4. **Use IP whitelisting** - Restrict API access by IP when possible
-5. **Monitor API usage** - Watch for unusual activity
-
-```bash
-# Store token in environment variable
-export BITZOOM_API_TOKEN="your_jwt_token"
-
-# Use in your scripts
-curl -X GET "http://119.8.50.236:8088/api/v1/balance" \
-  -H "Authorization: Bearer $BITZOOM_API_TOKEN"
-```
+Version 1.0 retains its original Bearer authentication contract. Select **1.0** in the version menu when maintaining a legacy integration. Do not mix version 1.0 Bearer examples with the current HMAC service.
 
 ## Troubleshooting
 
-| Error | Cause | Solution |
-|-------|-------|----------|
-| `-1002 Unauthorized` | Invalid or expired token | Get a new token |
-| `-1022 Invalid signature` | Malformed token | Check token format |
-| `401 Unauthorized` | Missing Authorization header | Add Bearer token header |
+| Failure | First check |
+| --- | --- |
+| `401` / invalid signature | Exact seven-line payload, body bytes, path, access key, and secret |
+| Timestamp outside window | System clock and `X-BZ-RECVWINDOW` |
+| Replayed request rejected | A fresh nonce is required |
+| `403` / permission denied | Key status, permission, and IP allowlist |
+| WebSocket private channel silent | HMAC `logon` succeeded on the current connection |
 
-## Next Steps
-
-- [Getting Started](./getting-started.md) - Back to overview
-- [Place Your First Order](./guides/place-order.md) - Start trading
-- [API Reference](/category/bitzoom-api) - Explore all endpoints
+See [API Key Authentication](./guides/api-key-authentication.md) for complete Python and Node.js examples and the exact signing contract.

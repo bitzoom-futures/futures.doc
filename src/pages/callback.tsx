@@ -1,14 +1,66 @@
 import React, { useEffect, useState } from 'react'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 
+import { DEFAULT_MANAGEMENT_GATEWAY_URL } from '../config/managementGateway'
+
+interface CasdoorConfig {
+  BackgroundCallbackURL?: string
+}
+
+interface GatewayEnvelope {
+  data?: unknown
+  success?: boolean
+}
+
+interface TokenExchangeResponse {
+  data?: { access_token?: string }
+  success?: boolean
+}
+
+function buildCallbackRequestUrl(
+  managementGatewayUrl: string,
+  backgroundCallbackUrl: string,
+  code: string,
+  state: string
+) {
+  if (!backgroundCallbackUrl.startsWith('/') || backgroundCallbackUrl.startsWith('//')) {
+    throw new Error('Casdoor callback URL must be a relative gateway path')
+  }
+
+  const advertisedUrl = new URL(backgroundCallbackUrl, 'https://management.invalid')
+  advertisedUrl.searchParams.set('code', code)
+  advertisedUrl.searchParams.set('state', state)
+
+  return `${managementGatewayUrl.replace(/\/+$/, '')}${advertisedUrl.pathname}${advertisedUrl.search}`
+}
+
+function decodeUser(jwt: string) {
+  const rawToken = jwt.replace(/^Bearer\s+/i, '')
+  const parts = rawToken.split('.')
+  if (parts.length !== 3 || parts.some((part) => !part)) {
+    throw new Error('Gateway returned an invalid JWT')
+  }
+
+  const base64Payload = parts[1].replace(/-/g, '+').replace(/_/g, '/')
+  const paddedPayload = base64Payload.padEnd(Math.ceil(base64Payload.length / 4) * 4, '=')
+  const payload = JSON.parse(atob(paddedPayload))
+
+  return {
+    email: payload?.email || payload?.name || payload?.uname || payload?.provider_subject || 'User',
+    token: `Bearer ${rawToken}`,
+    avatar: payload?.avatar || '',
+  }
+}
+
 /**
  * OAuth callback page — opened in a popup by NavbarLogin.
- * Extracts `code` from URL, exchanges it for a JWT via gateway's /api/callback,
- * saves to localStorage, and closes the popup.
+ * Extracts `code` from URL, discovers the gateway's Casdoor callback endpoint,
+ * exchanges the code for a JWT, saves the session, and closes the popup.
  */
 export default function Callback() {
   const { siteConfig } = useDocusaurusContext()
-  const gatewayServerUrl = (siteConfig.customFields?.gatewayServerUrl as string) || ''
+  const managementGatewayUrl =
+    (siteConfig.customFields?.managementGatewayUrl as string) || DEFAULT_MANAGEMENT_GATEWAY_URL
   const [status, setStatus] = useState('Processing login...')
 
   useEffect(() => {
@@ -23,44 +75,34 @@ export default function Callback() {
       }
 
       try {
-        // Exchange code for JWT token via gateway
-        const apiBase = gatewayServerUrl || window.location.origin
-        const res = await fetch(`${apiBase}/api/callback?code=${code}&state=${state}`)
-        const text = await res.text()
+        const configResponse = await fetch(`${managementGatewayUrl}/api/casdoor`)
+        if (!configResponse.ok) throw new Error('Casdoor configuration request failed')
 
-        // Response may be JSON wrapper with `data` field containing the JWT
-        let jwt = text
-        try {
-          const json = JSON.parse(text)
-          if (json.data) jwt = json.data
-        } catch { /* raw token string, use as-is */ }
+        const configPayload = (await configResponse.json()) as GatewayEnvelope
+        if (configPayload.success === false) throw new Error('Casdoor configuration request failed')
+        const config = (configPayload.data || configPayload) as CasdoorConfig
+        if (!config.BackgroundCallbackURL) throw new Error('Casdoor callback URL is missing')
 
-        if (!jwt || jwt.length < 10) {
-          setStatus('Failed to get token.')
-          return
-        }
-
-        // Decode JWT to get user info
-        const bearerToken = jwt.startsWith('Bearer ') ? jwt : `Bearer ${jwt}`
-        const parts = bearerToken.replace(/^Bearer\s+/i, '').split('.')
-        let email = 'User'
-        let avatar = ''
-        if (parts.length === 3) {
-          try {
-            const payload = JSON.parse(atob(parts[1].replace(/-/g, '+').replace(/_/g, '/')))
-            email = payload?.email || payload?.name || 'User'
-            avatar = payload?.avatar || ''
-          } catch { /* ignore */ }
-        }
+        const callbackRequestUrl = buildCallbackRequestUrl(
+          managementGatewayUrl,
+          config.BackgroundCallbackURL,
+          code,
+          state || ''
+        )
+        const response = await fetch(callbackRequestUrl)
+        if (!response.ok) throw new Error('Token exchange request failed')
+        const { data, success } = (await response.json()) as TokenExchangeResponse
+        if (success === false || !data?.access_token) throw new Error('Token exchange request failed')
+        const user = decodeUser(data.access_token)
 
         // Save to localStorage
-        localStorage.setItem('user', JSON.stringify({ email, token: bearerToken, avatar }))
+        localStorage.setItem('user', JSON.stringify(user))
 
         setStatus('Login successful! This window will close...')
 
         // Notify parent and close popup
         if (window.opener) {
-          window.opener.postMessage({ type: 'casdoor-callback-done' }, '*')
+          window.opener.postMessage({ type: 'casdoor-callback-done' }, window.location.origin)
           setTimeout(() => window.close(), 1000)
         } else {
           setTimeout(() => { window.location.href = '/docs/' }, 1500)
@@ -71,7 +113,7 @@ export default function Callback() {
       }
     }
     run()
-  }, [gatewayServerUrl])
+  }, [managementGatewayUrl])
 
   return (
     <div

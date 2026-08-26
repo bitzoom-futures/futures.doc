@@ -1,117 +1,56 @@
 # Getting Started
 
-Welcome to the Bitzoom Futures API. This guide will help you make your first API call.
+Build a Bitzoom integration in two layers: call public market data directly, then add an HMAC API key when the application needs private account or trading access.
 
-## Overview
+## Services
 
-The Bitzoom Futures API provides programmatic access to:
-- **Market Data** - Real-time prices, order books, and klines
-- **Trading** - Place, modify, and cancel orders
-- **Account** - Check balances, positions, and trade history
-- **Wallet** - Deposits and withdrawals
+| Service | Default URL | Use |
+| --- | --- | --- |
+| HMAC REST | `https://api1.riverwa.com` | Public data and signed private operations |
+| HMAC WebSocket | `wss://api1.riverwa.com/ws` | Public streams and signed private streams |
+| API Management | [Open page](/api-management) | Create and control API keys |
 
-## Base URL
+## 1. Call a public endpoint
 
+Public operations are unsigned and remain executable in the API Explorer.
+
+```bash
+curl --fail-with-body "https://api1.riverwa.com/api/gateway/ping"
 ```
-http://119.8.50.236:8088
+
+Fetch the market catalog in the same way:
+
+```bash
+curl --fail-with-body "https://api1.riverwa.com/api/v1/exchangeinfo"
 ```
 
-## Quick Start
+## 2. Create a private credential
 
-### Step 1: Get Your API Credentials
+Open [API Management](/api-management), log in, and create a key. `READ` is selected by default. Add `TRADE` only when the application places or changes orders, and add `WALLET` only for wallet operations.
 
-1. Log in to your Bitzoom account
-2. Navigate to **API Management**
-3. Create a new API key
-4. Save your API Key and Secret securely
+Save the secret when it appears. It is shown once and is never returned by the key list.
 
 :::warning
-Never share your API secret. Store it securely and never commit it to version control.
+An empty IP allowlist means Any IP. Restrict production keys to the application’s exact egress IPs or CIDR ranges whenever possible.
 :::
 
-### Step 2: Make Your First Request
+## 3. Sign the first private request
 
-Test your connection with a public endpoint that doesn't require authentication:
+Private requests are HMAC-SHA256 signed. The signature binds the timestamp, nonce, receive window, HTTP method, path, canonical query, and exact body bytes.
 
-```bash
-curl -X GET "http://119.8.50.236:8088/api/gateway/ping"
-```
+Use the complete [Python or Node.js sign-and-send example](./guides/api-key-authentication.md). Set the access key and secret as process environment variables, then run the example against `https://api1.riverwa.com`.
 
-Expected response:
-```json
-{
-  "code": 0,
-  "msg": "success"
-}
-```
+The browser API Explorer does not accept secrets or send private operations. That guard is intentional; sign from your own backend or trusted command-line process.
 
-### Step 3: Get Market Data
+## 4. Handle responses correctly
 
-Fetch available trading pairs:
+Check both the HTTP status and the response envelope. A response is a failure when `success` is `false` or `code` is nonzero, even if the HTTP status is successful.
 
-```bash
-curl -X GET "http://119.8.50.236:8088/api/v1/exchangeinfo"
-```
+## Next steps
 
-### Step 4: Authenticate and Get Your Balance
-
-Once you have your API credentials, you can access private endpoints:
-
-```bash
-curl -X GET "http://119.8.50.236:8088/api/v1/balance" \
-  -H "Authorization: Bearer YOUR_JWT_TOKEN"
-```
-
-See [Authentication](./authentication.md) for details on obtaining your JWT token.
-
-## What's Next?
-
-- [Authentication](./authentication.md) - Learn how to authenticate API requests
-- [WebSocket Streams](./websocket.md) - Real-time market data
-- [Place Your First Order](./guides/place-order.md) - Trading tutorial
-- [Position Management](./guides/positions.md) - Manage your positions
-- [API Reference](/category/bitzoom-api) - Explore all available endpoints
-- [Error Codes](./errors.md) - Complete error reference
-- [FAQ](./faq.md) - Frequently asked questions
-
-## Rate Limits
-
-| Endpoint Type | Rate Limit |
-|--------------|------------|
-| Public endpoints | 10 requests/second |
-| Private endpoints | 5 requests/second |
-| Order placement | 10 orders/second |
-
-:::tip
-Use WebSocket streams for real-time data to reduce API calls.
-:::
-
-## Error Handling
-
-All API responses follow this format:
-
-```json
-{
-  "code": 0,
-  "msg": "success",
-  "data": { }
-}
-```
-
-| Code | Description |
-|------|-------------|
-| 0 | Success |
-| -1 | Unknown error |
-| -1001 | Disconnected |
-| -1002 | Unauthorized |
-| -1003 | Rate limit exceeded |
-| -1021 | Timestamp outside of recv window |
-| -1022 | Invalid signature |
-
-## Support
-
-If you encounter any issues:
-- Check the [FAQ](./faq.md) for common questions
-- Review [Error Codes](./errors.md) for troubleshooting
-- Join our [Discord](https://discord.gg/bitzoom)
-- Email: api-support@bitzoom.com
+- [API Key Authentication](./guides/api-key-authentication.md) — exact signing rules and complete examples
+- [Place Your First Order](./guides/place-order.md) — private trading flow
+- [Position Management](./guides/positions.md) — signed account and risk operations
+- [WebSocket Streams](./websocket.md) — public subscriptions and private `logon`
+- [API Reference](/category/bitzoom-api) — current operations and schemas
+- [Error Codes](./errors.md) — response errors

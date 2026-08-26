@@ -2,6 +2,11 @@
 FROM node:20-alpine AS builder
 WORKDIR /app
 
+ARG BITZOOM_MANAGEMENT_GATEWAY_URL=https://test1.riverwa.com
+ARG BITZOOM_HMAC_API_URL=https://api1.riverwa.com
+ENV BITZOOM_MANAGEMENT_GATEWAY_URL=${BITZOOM_MANAGEMENT_GATEWAY_URL}
+ENV BITZOOM_HMAC_API_URL=${BITZOOM_HMAC_API_URL}
+
 # 先复制 package.json 及 lock 文件，充分利用 Docker 缓存层
 COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile

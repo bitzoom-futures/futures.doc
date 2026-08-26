@@ -1,380 +1,57 @@
 # Position Management
 
-This guide covers how to monitor and manage your futures positions on Bitzoom.
+Position and margin operations are private. Sign them with an HMAC API key; a Bearer session is not accepted by the current trading service.
 
-## Understanding Positions
+## Permissions
 
-A position represents your exposure to a futures contract. Positions can be:
+| Operation | Permission |
+| --- | --- |
+| Read position risk, balance, or history | `READ` |
+| Change leverage, margin type, or position mode | `TRADE` |
+| Add or remove isolated margin | `TRADE` |
+| Place a reduce-only closing order | `TRADE` |
 
-| Direction | Description | Profit When |
-|-----------|-------------|-------------|
-| **Long** | You bought the contract | Price increases |
-| **Short** | You sold the contract | Price decreases |
+Create and scope the key in [API Management](/api-management), then use the [signing guide](./api-key-authentication.md) for every private request.
 
-## Position Modes
+## Read position risk
 
-Bitzoom supports two position modes:
+Send a signed `GET /api/v1/positionrisk`. If a symbol is supplied in the query, include its canonical form on line 6 of the signing payload.
 
-### One-Way Mode (Default)
+Position-risk data typically includes the symbol, side, amount, entry price, mark price, unrealized PnL, liquidation price, leverage, and margin type. Treat the API response as authoritative; do not use a locally estimated liquidation price for execution decisions.
 
-- Single position per symbol
-- Net position (long minus short)
-- Simpler to manage
+## Change leverage or margin mode
 
-### Hedge Mode
+For a leverage change, sign the exact bytes sent to `POST /api/v1/leverage`:
 
-- Separate long and short positions
-- Can hold both directions simultaneously
-- More flexible for hedging strategies
-
-### Change Position Mode
-
-```bash
-curl -X POST "http://119.8.50.236:8088/api/v1/positionSide/dual" \
-  -H "Authorization: Bearer YOUR_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{"dualSidePosition": true}'
-```
-
-:::warning
-You must close all positions before changing position mode.
-:::
-
-## Checking Positions
-
-### Get All Open Positions
-
-```bash
-curl -X GET "http://119.8.50.236:8088/api/v1/openpositions" \
-  -H "Authorization: Bearer YOUR_TOKEN"
-```
-
-Response:
 ```json
-{
-  "code": 0,
-  "data": [
-    {
-      "symbol": "ETHUSDT",
-      "positionSide": "LONG",
-      "positionAmt": "0.100",
-      "entryPrice": "50000.00",
-      "markPrice": "51000.00",
-      "unrealizedProfit": "100.00",
-      "liquidationPrice": "45000.00",
-      "leverage": 10,
-      "marginType": "cross"
-    }
-  ]
-}
+{"symbol":"BTCUSDT","leverage":10}
 ```
 
-### Get Position Risk
+For a margin-mode change, sign the request documented for `POST /api/v1/margintype` in the [API Reference](/category/bitzoom-api).
 
-```bash
-curl -X GET "http://119.8.50.236:8088/api/v1/positionrisk?symbol=ETHUSDT" \
-  -H "Authorization: Bearer YOUR_TOKEN"
-```
+These changes can be rejected when the account or current position state does not permit them. Check the HTTP status and response envelope before assuming a setting changed.
 
-## Position Fields Explained
+## Close exposure
 
-| Field | Description |
-|-------|-------------|
-| `symbol` | Trading pair (e.g., ETHUSDT) |
-| `positionSide` | LONG, SHORT, or BOTH (one-way mode) |
-| `positionAmt` | Position quantity (negative = short) |
-| `entryPrice` | Average entry price |
-| `markPrice` | Current mark price for PnL calculation |
-| `unrealizedProfit` | Unrealized PnL in quote currency |
-| `liquidationPrice` | Price at which position will be liquidated |
-| `leverage` | Current leverage multiplier |
-| `marginType` | CROSS or ISOLATED |
+Close exposure with a `TRADE` key by submitting an order in the opposite direction using the API’s reduce-only or close-position fields. Sign the body exactly as transmitted.
 
-## Managing Leverage
+Before and after the request:
 
-### Set Leverage
+1. Read the current position and open orders.
+2. Size the close request from current authoritative values.
+3. Submit with a unique nonce and client order identifier.
+4. Reconcile the resulting position and order state.
 
-```bash
-curl -X POST "http://119.8.50.236:8088/api/v1/leverage" \
-  -H "Authorization: Bearer YOUR_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "symbol": "ETHUSDT",
-    "leverage": 20
-  }'
-```
+## WebSocket monitoring
 
-### Leverage Limits
+For lower-latency balance, open-order, and position-risk updates, connect to the HMAC WebSocket service and complete `logon` before subscribing. Every reconnect requires a new signed `logon` followed by restoration of private subscriptions.
 
-Maximum leverage varies by position size:
+See [WebSocket Streams](../websocket.md) for the channel envelope and [API Key Authentication](./api-key-authentication.md) for the WebSocket signature.
 
-| Position Value (USDT) | Max Leverage |
-|-----------------------|--------------|
-| 0 - 50,000 | 125x |
-| 50,000 - 250,000 | 100x |
-| 250,000 - 1,000,000 | 50x |
-| 1,000,000 - 5,000,000 | 20x |
-| 5,000,000+ | 10x |
+## Risk controls
 
-## Margin Types
-
-### Change Margin Type
-
-```bash
-curl -X POST "http://119.8.50.236:8088/api/v1/margintype" \
-  -H "Authorization: Bearer YOUR_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "symbol": "ETHUSDT",
-    "marginType": "ISOLATED"
-  }'
-```
-
-### Cross vs Isolated Margin
-
-| Feature | Cross Margin | Isolated Margin |
-|---------|--------------|-----------------|
-| Margin pool | Shared across positions | Per position |
-| Liquidation risk | All positions affected | Only that position |
-| Capital efficiency | Higher | Lower |
-| Risk management | More complex | Simpler |
-
-### Add/Remove Isolated Margin
-
-```bash
-# Add margin to position
-curl -X POST "http://119.8.50.236:8088/api/v1/positionMargin" \
-  -H "Authorization: Bearer YOUR_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "symbol": "ETHUSDT",
-    "amount": 100,
-    "type": 1
-  }'
-
-# Remove margin from position
-curl -X POST "http://119.8.50.236:8088/api/v1/positionMargin" \
-  -H "Authorization: Bearer YOUR_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "symbol": "ETHUSDT",
-    "amount": 50,
-    "type": 2
-  }'
-```
-
-## Closing Positions
-
-### Close with Market Order
-
-```bash
-# Close a long position
-curl -X POST "http://119.8.50.236:8088/api/v1/order" \
-  -H "Authorization: Bearer YOUR_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "symbol": "ETHUSDT",
-    "side": "SELL",
-    "type": "MARKET",
-    "quantity": 0.100,
-    "reduceOnly": true
-  }'
-```
-
-### Close with Limit Order
-
-```bash
-curl -X POST "http://119.8.50.236:8088/api/v1/order" \
-  -H "Authorization: Bearer YOUR_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "symbol": "ETHUSDT",
-    "side": "SELL",
-    "type": "LIMIT",
-    "quantity": 0.100,
-    "price": 52000.00,
-    "timeInForce": "GTC",
-    "reduceOnly": true
-  }'
-```
-
-### Close All Positions for Symbol
-
-```bash
-curl -X DELETE "http://119.8.50.236:8088/api/v1/allOpenOrders" \
-  -H "Authorization: Bearer YOUR_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{"symbol": "ETHUSDT"}'
-```
-
-## Setting Stop-Loss and Take-Profit
-
-### Stop-Loss Order
-
-Protect against losses by setting a stop-loss:
-
-```bash
-curl -X POST "http://119.8.50.236:8088/api/v1/order" \
-  -H "Authorization: Bearer YOUR_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "symbol": "ETHUSDT",
-    "side": "SELL",
-    "type": "STOP_MARKET",
-    "stopPrice": 48000.00,
-    "closePosition": true
-  }'
-```
-
-### Take-Profit Order
-
-Lock in profits at a target price:
-
-```bash
-curl -X POST "http://119.8.50.236:8088/api/v1/order" \
-  -H "Authorization: Bearer YOUR_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "symbol": "ETHUSDT",
-    "side": "SELL",
-    "type": "TAKE_PROFIT_MARKET",
-    "stopPrice": 55000.00,
-    "closePosition": true
-  }'
-```
-
-### Combined Stop-Loss and Take-Profit
-
-```python
-import requests
-
-BASE_URL = "http://119.8.50.236:8088"
-TOKEN = "your_jwt_token"
-headers = {
-    "Authorization": f"Bearer {TOKEN}",
-    "Content-Type": "application/json"
-}
-
-# Open long position
-entry_order = {
-    "symbol": "ETHUSDT",
-    "side": "BUY",
-    "type": "MARKET",
-    "quantity": 0.1
-}
-requests.post(f"{BASE_URL}/api/v1/order", headers=headers, json=entry_order)
-
-# Set stop-loss (2% below entry)
-stop_loss = {
-    "symbol": "ETHUSDT",
-    "side": "SELL",
-    "type": "STOP_MARKET",
-    "stopPrice": 49000.00,  # Assuming entry ~50000
-    "quantity": 0.1,
-    "reduceOnly": True
-}
-requests.post(f"{BASE_URL}/api/v1/order", headers=headers, json=stop_loss)
-
-# Set take-profit (4% above entry)
-take_profit = {
-    "symbol": "ETHUSDT",
-    "side": "SELL",
-    "type": "TAKE_PROFIT_MARKET",
-    "stopPrice": 52000.00,
-    "quantity": 0.1,
-    "reduceOnly": True
-}
-requests.post(f"{BASE_URL}/api/v1/order", headers=headers, json=take_profit)
-```
-
-## Monitoring Position PnL
-
-### Calculate Unrealized PnL
-
-```python
-def calculate_pnl(entry_price, mark_price, quantity, side):
-    if side == "LONG":
-        pnl = (mark_price - entry_price) * quantity
-    else:  # SHORT
-        pnl = (entry_price - mark_price) * quantity
-    return pnl
-
-# Example
-entry_price = 50000
-mark_price = 51000
-quantity = 0.1
-side = "LONG"
-
-pnl = calculate_pnl(entry_price, mark_price, quantity, side)
-print(f"Unrealized PnL: ${pnl}")  # $100
-```
-
-### Calculate ROE (Return on Equity)
-
-```python
-def calculate_roe(pnl, margin, leverage):
-    return (pnl / margin) * 100
-
-# Example
-margin = 500  # Initial margin
-leverage = 10
-roe = calculate_roe(100, margin, leverage)
-print(f"ROE: {roe}%")  # 20%
-```
-
-## Liquidation
-
-### Understanding Liquidation Price
-
-Liquidation occurs when your margin ratio falls below the maintenance margin requirement.
-
-```python
-def estimate_liquidation_price(entry_price, leverage, side, maint_margin_rate=0.004):
-    if side == "LONG":
-        liq_price = entry_price * (1 - (1/leverage) + maint_margin_rate)
-    else:  # SHORT
-        liq_price = entry_price * (1 + (1/leverage) - maint_margin_rate)
-    return liq_price
-
-# Example: Long at $50000 with 10x leverage
-liq = estimate_liquidation_price(50000, 10, "LONG")
-print(f"Estimated liquidation: ${liq:.2f}")  # ~$45200
-```
-
-### Avoiding Liquidation
-
-1. **Use lower leverage** - Higher leverage = closer liquidation price
-2. **Set stop-losses** - Exit before liquidation
-3. **Monitor positions** - Check margin ratio regularly
-4. **Add margin** - Increase margin in isolated positions
-5. **Partial close** - Reduce position size in volatile markets
-
-## Position History
-
-### Get Closed Positions
-
-```bash
-curl -X GET "http://119.8.50.236:8088/api/v1/historyposition?symbol=ETHUSDT&limit=50" \
-  -H "Authorization: Bearer YOUR_TOKEN"
-```
-
-### Get Trade History
-
-```bash
-curl -X GET "http://119.8.50.236:8088/api/v1/userTrades?symbol=ETHUSDT&limit=100" \
-  -H "Authorization: Bearer YOUR_TOKEN"
-```
-
-## Best Practices
-
-1. **Always use reduceOnly for closing** - Prevents accidentally opening opposite position
-2. **Set stop-loss immediately** - Protect capital from unexpected moves
-3. **Monitor funding rates** - Holding costs for perpetual futures
-4. **Size positions appropriately** - Never risk more than you can afford to lose
-5. **Use isolated margin for high-risk trades** - Limits potential losses
-
-## Next Steps
-
-- [Place Your First Order](./place-order.md) - Trading basics
-- [API Reference](/category/bitzoom-api) - Full endpoint documentation
-- [Error Codes](../errors.md) - Troubleshoot issues
+- Use the lowest practical leverage.
+- Keep a server-side record of intended orders and reconcile after timeouts.
+- Separate read-only monitoring from trading with different keys.
+- Restrict trading keys by IP and rotate them on a schedule.
+- Disable a key during investigation; revoke it if exposure is possible.

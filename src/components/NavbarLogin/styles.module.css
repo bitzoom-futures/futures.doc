@@ -1,18 +1,13 @@
-.getTokenBtn {
+.loginButton {
   font: inherit;
-  font-size: 0.85rem;
-  padding: 0.35rem 0.75rem;
   border: none;
   background: none;
-  color: var(--ifm-font-color-base);
-  font-weight: 700;
   cursor: pointer;
-  white-space: nowrap;
-  transition: color 0.15s;
 }
 
-.getTokenBtn:hover {
-  color: var(--ifm-color-primary);
+.loginButton:disabled {
+  cursor: wait;
+  opacity: 0.65;
 }
 
 .userContainer {
@@ -77,12 +72,12 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.tokenRow {
+.accountRow {
   padding: 0.5rem 0.75rem;
   border-bottom: 1px solid var(--ifm-color-emphasis-200);
 }
 
-.tokenLabel {
+.accountLabel {
   display: block;
   font-size: 0.7rem;
   color: var(--ifm-color-emphasis-600);
@@ -91,10 +86,13 @@
   letter-spacing: 0.5px;
 }
 
-.tokenValue {
-  font-size: 0.75rem;
-  word-break: break-all;
-  color: var(--ifm-color-emphasis-700);
+.accountEmail {
+  display: block;
+  overflow: hidden;
+  color: var(--ifm-font-color-base);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-overflow: ellipsis;
 }
 
 .dropdownItem {
@@ -108,6 +106,7 @@
   text-align: left;
   cursor: pointer;
   color: var(--ifm-font-color-base);
+  text-decoration: none;
 }
 
 .dropdownItem:hover {
@@ -116,9 +115,4 @@
 
 .logoutItem {
   color: var(--ifm-color-danger);
-}
-
-.checkMark {
-  color: var(--ifm-color-success);
-  font-weight: bold;
 }

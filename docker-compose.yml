@@ -8,6 +8,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        BITZOOM_MANAGEMENT_GATEWAY_URL: ${BITZOOM_MANAGEMENT_GATEWAY_URL:-https://test1.riverwa.com}
+        BITZOOM_HMAC_API_URL: ${BITZOOM_HMAC_API_URL:-https://api1.riverwa.com}
     hostname: web-doc
     restart: unless-stopped
     environment:
