@@ -1,7 +1,7 @@
 ---
-id: open-api
-title: "Open API"
-description: "Project API Document includ private and public"
+id: bitzoom-hmac-api
+title: "Bitzoom HMAC API"
+description: "Current public and private REST operations. Private operations require HMAC-SHA256 headers; see the [API Key Authentication guide](/guides/api-key-authentication)."
 sidebar_label: Introduction
 sidebar_position: 0
 hide_title: true
@@ -23,13 +23,13 @@ import Export from "@theme/ApiExplorer/Export";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"Open API"}
+  children={"Bitzoom HMAC API"}
 >
 </Heading>
 
 
 
-Project API Document includ private and public
+Current public and private REST operations. Private operations require HMAC-SHA256 headers; see the [API Key Authentication guide](/guides/api-key-authentication).
 
 <div
   style={{"marginBottom":"2rem"}}
@@ -44,12 +44,12 @@ Project API Document includ private and public
     className={"openapi-tabs__security-schemes"}
   >
     <TabItem
-      label={"HTTP: Bearer Auth"}
-      value={"Bearer"}
+      label={"API Key: HmacApiKey"}
+      value={"HmacApiKey"}
     >
       
       
-      Get TestToken from http://119.8.50.236:8088/api/servermanage/testtoken?userid=12345
+      Access key for HMAC-authenticated requests. Timestamp, nonce, signature, and optional receive-window headers are documented per private operation.
       
       <div>
         <table>
@@ -58,19 +58,13 @@ Project API Document includ private and public
               <th>
                 Security Scheme Type:
               </th><td>
-                http
+                apiKey
               </td>
             </tr><tr>
               <th>
-                HTTP Authorization Scheme:
+                Header parameter name:
               </th><td>
-                bearer
-              </td>
-            </tr><tr>
-              <th>
-                Bearer format:
-              </th><td>
-                JWT
+                X-BZ-APIKEY
               </td>
             </tr>
           </tbody>

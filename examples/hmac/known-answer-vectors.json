@@ -1,0 +1,50 @@
+[
+  {
+    "name": "query-ordering",
+    "secret": "demo_secret_7f3b9c2d",
+    "timestamp": "1712345678901",
+    "nonce": "nonce-query-001",
+    "recvWindow": "5000",
+    "method": "GET",
+    "path": "/api/v1/orders",
+    "rawQuery": "symbol=BTCUSDT&status=OPEN&symbol=ETHUSDT&note=a+b",
+    "body": "",
+    "expectedSignature": "d22824629e10376a6f57a6bf070c31a775cd8b2f79c074aff47c64f99fbb3bfe"
+  },
+  {
+    "name": "exact-body-bytes",
+    "secret": "demo_secret_7f3b9c2d",
+    "timestamp": "1712345678902",
+    "nonce": "nonce-body-002",
+    "recvWindow": "5000",
+    "method": "POST",
+    "path": "/api/v1/order",
+    "rawQuery": "",
+    "body": "{\"symbol\":\"BTCUSDT\",\"side\":\"BUY\",\"quantity\":\"0.001\"}",
+    "expectedSignature": "8ee420956fa04a933228405e2309d758deac840e27775b79327781622cd8b4ac"
+  },
+  {
+    "name": "empty-receive-window",
+    "secret": "demo_secret_7f3b9c2d",
+    "timestamp": "1712345678903",
+    "nonce": "nonce-window-003",
+    "recvWindow": "",
+    "method": "GET",
+    "path": "/api/v1/balance",
+    "rawQuery": "asset=USDT",
+    "body": "",
+    "expectedSignature": "5ea342a4c52796528777d9bc1e81425e4ec89e913df342dcca2faad52a8c19ba"
+  },
+  {
+    "name": "websocket-logon",
+    "secret": "demo_secret_7f3b9c2d",
+    "timestamp": "1712345678904",
+    "nonce": "nonce-ws-004",
+    "recvWindow": "5000",
+    "method": "WS",
+    "path": "/ws",
+    "rawQuery": "",
+    "body": "",
+    "expectedSignature": "bf722fcb6a09c94e9edd249d09f22be0ca5870f5de13b9eee2ac59de2fb8a8f4"
+  }
+]

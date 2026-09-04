@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { ConnectionStatus, WsRequest, WsResponse } from '../types'
 
 interface UseWebSocketArgs {
@@ -16,7 +16,7 @@ function isIpHost(hostname: string): boolean {
 export function buildWebSocketUrl(serverUrl: string): string {
   const trimmed = serverUrl.trim()
   if (!trimmed) {
-    return 'ws://119.8.50.236:8088/ws'
+    return 'wss://api1.riverwa.com/ws'
   }
 
   try {
@@ -27,7 +27,7 @@ export function buildWebSocketUrl(serverUrl: string): string {
     const port = parsed.port ? `:${parsed.port}` : ''
     return `${scheme}//${parsed.hostname}${port}/ws`
   } catch {
-    return 'ws://119.8.50.236:8088/ws'
+    return 'wss://api1.riverwa.com/ws'
   }
 }
 
@@ -43,6 +43,13 @@ export function useWebSocket({ serverUrl, onMessage, onSystemMessage }: UseWebSo
   const [status, setStatus] = useState<ConnectionStatus>('disconnected')
 
   const wsUrl = useMemo(() => buildWebSocketUrl(serverUrl), [serverUrl])
+
+  useEffect(() => {
+    return () => {
+      wsRef.current?.close()
+      wsRef.current = null
+    }
+  }, [])
 
   const connect = useCallback(() => {
     if (wsRef.current && (wsRef.current.readyState === WebSocket.OPEN || wsRef.current.readyState === WebSocket.CONNECTING)) {

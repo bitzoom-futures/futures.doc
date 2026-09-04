@@ -1,0 +1,1 @@
+{"parameters":[{"description":"symbol:","in":"query","name":"Symbol","schema":{"type":"string"}},{"description":"limit:深度限制,默认 50","in":"query","name":"Limit","schema":{"type":"int"}}]}

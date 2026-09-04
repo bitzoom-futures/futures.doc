@@ -1,0 +1,71 @@
+---
+id: api-v-1-tradeinfo
+title: "/api/v1/tradeinfo"
+description: "/api/v1/tradeinfo"
+sidebar_label: "/api/v1/tradeinfo"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVV1vG0UU/Sur+7yx1x9x7JUQKl9VkBBVE+AhycN499qedndmmZl1a1krtRVSWjU0Dy2kihBQURC8hCKhUiUB/ky8SZ7yF9DdtV3bcSLgBSRL3p3Ze+ace8/c2wcZoWKGS7HsgwtFFvFit1Q0ivnIRUuCDRFTLESDSoO71gcftad4RCHggu6FTRm4YAOn109jVD2wQbAQwYWVbBds0F4HQwZuH0wvoh1tFBdtSBJ7FrErgzjEZWFQdVngHu0/T58+Pt3cPj745mTvWbrz8nTnV/rtPjk73Dr64+Hgh3uWtQ6L4TrY1jqUOutwdrh1emf35M/Nj6ewVnsRpo++H2x/d/Lot8H2l+mTn9Otu8e7n02CDu7vnDz7kRAOnp7sPT96tT8Ev0Di9BH/TCoXPveYkYqYDZWmW5vpt5vHvxwMvn54dri1DoEU7ZWOVOY6lSkXKSMU2ZGoTSZ38Pvjo1f7xz/tpzsvc3GD+y/SB3fSrx7kgOkXL9LP9y7QsDzJ41IJGzYo1JEUGjXtlx2H/jwpDApDjyyKAgLjUhRvaJLZn8DD2yyMAsygFfOQk+nqNb9ebbachUap0VyoVpcWF+qlqrdQblQdVm8teTWsgA2olFRvSx/BLTvO8P0D1Jq1iSPxjj0PtQbXqBht8OPc2eA2yuVKZansVGr1xerSUs2heJ+ZjFNu4Rxh2nz52mSywRVxENgzRclXExs6kj4Bg9pw0bZQdIlVR97KEus6iQ2RohtneJ6/IYdkkmwfWlKFzGQGMbUq2KMycGGwjQqSqWT0L9oe5+ZcHUdM52y8ZjsPd5zh8WZTygCZoM1xRedYf7QimzfQM5DQ0vRlWMmhW3FgjXtSHsna1HmgzQzeYj3YmI2c17RCNB1J5mqjyXqY6VzwpUbVHfW2WFHNO8ZEbrFYKjUK9cKiUyhXam7dqdeB7K/RixU3vRXydF7Et5ApVPTUzJ7eG5Xv/U9WYZbsVTTWKmqzKm+isFpKhtZF52Vsc3ohE6yNRTKWocA3Y42K+2+UypXq4ujGZuXIuYzzTdhZFjO17mwHuqYk1cO6cm3Zekd6cYjCWFx4QexbkeJdZtBiwreiuBlwj2C5oesLH0YoKIruDCqdo5UKTsEhJ0RSm5BlXh62mHmZn6Iy9ozB26YYBYxnnsoq0h/Wbw1YxOnEEmRuGyJtjOy8Bv1+k2n8SAVJQst5n8umFtesGaAPbosFGs8dPu5gExNtLqGb2JscbF0WxFn3ybr73z7kfzzkLlF9btb9S/X/xdy7RNbs+HutaoNeFCdZ4K5tUN9E5tNdX+sPg694HkZmIurcACSUcTu6+u4qJMlfHq2njQ==
+sidebar_class_name: "get api-method"
+info_path: version-1.0/bitzoom/open-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"/api/v1/tradeinfo"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/tradeinfo"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+/api/v1/tradeinfo
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"symbol:","in":"query","name":"Symbol","schema":{"type":"string"}},{"description":"volumeInterval:交易量统计时间间隔，例如  \"5m\", \"1h\"，通过VolumeIntervalType接口获取支持的时间间隔列表，默认为 \"5m\"","in":"query","name":"VolumeInterval","schema":{"type":"string"}},{"description":"indicatorType:交易指标类型，\"longShortRatio\", \"openInterest\"，当为空时获取到所有指标数据","in":"query","name":"IndicatorType","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"86d84bf0-919b-4475-814c-2940a8f7c6e3","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":{"symbol":"","volumeInterval":"","openInterest":null,"longShortRatio":null},"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      

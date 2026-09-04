@@ -5,9 +5,9 @@ description: "/api/v1/symbolcategories"
 sidebar_label: "/api/v1/symbolcategories"
 hide_title: true
 hide_table_of_contents: true
-api: eJx9VNtum0AQ/RU0z9gG7PiCVFXpLUqlqpHiqg+WH4ZlwJvA7nZ3cWIh/r0aSGhzfWL2MmfOzDlLC9qQRS+1uswhhRkaOTvGM3eqM10J9FRqK8lBCJac0cqRg7SFJIr4I7TypDyHaEwlRY80u3Fa8Z4TB6qRI7rH2lTEobcoSHKxzTxKElqLSVEk8WSxWsWTTRwVkyLZYEZZtlwuFhACWavtZ50TpEkUPax/kHNYEqQAIbhGCHIOUm8bCiFvho4g3STJfL5KovlyfbZYrZYR5+foEVLVVFUIB+08pODJeanKgNSR4Q76bnsyBGnUhWAsj8jLofEhue3+r9JCoW2NDCSVXzJn36fzkkqy0D3pon3reGxqvOG8larkCwPTVw7+sX0NdxzNeJhpXREqPhyleAHbjS3o7IaEh463cnLCSjN0DdcDdNFUwWiiIRNLB+kOSvR0hyfYP898x2U1+YNmc5TkIQSD/vB+giN7JMv1WmhsBSkcvDfpbBbHm+l6ehZNk/kyXUfrNXR7vi4aK/3pmq05SPqJ0JLlKOujb49ifv+9hefUL8gHW3J+q29JBYXVdfBWvZ70QK9GhSXN2GaeEz82jqzMP8TJfHHGTfRsWJyByzh9xu5nKlWhe/89YXNlNasTnF9dBl+0aGpSPpBKVE0eGCuP6ClAlQemySopGFZ6foXw05DiLAiBpzegxdNoGrEvjHa+xt7ZCnte7wjwhNFoJE/3fmYqlL3RemHaBzV3gEZy4Zg7fw64f7T6Dto2Q0e/bNV1vP2nIXuCdLcP4YhWYsad7Pb8NghzVnDXwi2dIIVzIciwf45YNUznxd+JvTB67eLrFrruLwAosFo=
+api: eJx9VN9v2zgM/lcEPu0AO3GcLk19T1lRXItiQLH2gLsFeZBtxtZqS5pEJ/MM/+8H2q3bZrs+6QfFj/zIj+rAWHSSlNE3OSQwl1bND4u5b+vUVJkkLIxT6CEAh94a7dFD0kEcRbxkRhNq4q20tlLZgDT/5o3mO5+VWEve4Q9Z2wp5S05mqDjYfrHM8ni/ChfraB2exXEertNVGi4uFnF6lkZ4vl5CAOiccZcmR0jiKHo6f0bvZYGQAATgmyxD7yEh12AAeTMyguQijpfL8zhartYfz87PVxH755IkJLqpqgBK4wkSIPSkdCFQHxiuNMeH1iIkUR+AdVwiUiPx0bnrX0fpYG9cLRlIaVqdQQA0uPMRC3TQv2HR/Z95IjW98OSULvjBmOlvDC/Z/g53Ks1kTI2pUGo2Tq34BbafKJj0G2YEPV/l6DOn7Mga7kfofVOJSUSjpyw8JFsoJOFRtrA79XxHZTVSaVgcBRIEYCWV7zt4dAd0HK+DxlWQQElkfTJnn8XMqQO6o5xlpoZ+x8+zxilq71maY0uva5ltrLrF9lUh5HgRgOKES5Q5OghAy5qt/4Sfvoabu5vbq3/hlNxmqIp4xFbsjRPXnzeXoWyoRE08H5gLh98b9ORn4kHV6EnWNhDa6AwD4VWhJTUOAyF1LsyAKivhMEN1wPCodG6OYkzIC+lQ5CZratSMbNEJ69RBEr70ZDY0Rem9GQT8JtnLxjnUJGyTViobQj77f7m6f3gB8TNxdwrsBybK4Ujy/noTf1w9p/an8IiCShTbzd2NuMVWbF6qoIwWRaNy3H2YD6vndoWP2L6ulTL6jxlPkyL+O+CTop/G1EM4sbm7gQC49yOVxSyaRaxqazzVcpjLp3a9I5835Zi6T/iD5raSahiTQVbdkxa3LA0OvGDxnQLungd1C12XSo9/u6rv+fp7g66FZLsL4CCdkikz2u54skdxsYAfWYODgiyr/yCrZhTjyd/KSp4m5a+rB+j7/wDsX/k+
 sidebar_class_name: "get api-method"
-info_path: bitzoom/open-api
+info_path: bitzoom/bitzoom-hmac-api
 custom_edit_url: null
 ---
 
@@ -18,6 +18,7 @@ import StatusCodes from "@theme/StatusCodes";
 import OperationTabs from "@theme/OperationTabs";
 import TabItem from "@theme/TabItem";
 import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
 
 <Heading
   as={"h1"}
@@ -45,16 +46,13 @@ import Heading from "@theme/Heading";
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
-  body={undefined}
+  {...require("./api-v-1-symbolcategories.RequestSchema.json")}
 >
   
 </RequestSchema>
 
 <StatusCodes
-  id={undefined}
-  label={undefined}
-  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"93022e8c-ff21-4771-910f-f29abebb6644","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":null,"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+  {...require("./api-v-1-symbolcategories.StatusCodes.json")}
 >
   
 </StatusCodes>

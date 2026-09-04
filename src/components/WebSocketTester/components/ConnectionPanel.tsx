@@ -31,7 +31,7 @@ export default function ConnectionPanel({
         className={styles.input}
         value={serverUrl}
         onChange={(e) => onServerUrlChange(e.target.value)}
-        placeholder="119.8.50.236:8088"
+        placeholder="https://api1.riverwa.com"
       />
       <p className={styles.helperText}>Resolved WebSocket URL: <code>{resolvedUrl}</code></p>
       <div className={styles.row}>

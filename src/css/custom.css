@@ -4,6 +4,14 @@
  * work well for content-centric websites.
  */
 
+/* Wider container on large screens */
+
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1440px;
+  }
+}
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #7948ff;
@@ -76,6 +84,80 @@
   background-color: var(--openapi-code-orange);
 }
 
+/* User guide: click-to-zoom hint */
+.markdown img {
+  cursor: zoom-in;
+}
+
+/* User guide: borderless layout tables */
+.user-guide-layout table,
+.user-guide-layout td,
+.user-guide-layout tr,
+.user-guide-layout th {
+  border: none !important;
+  background: transparent !important;
+}
+
+.user-guide-layout table {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.user-guide-layout td {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Swap OpenAPI panel widths: left col-5, right col-7 */
+.openapi-left-panel__container.col--7 {
+  --ifm-col-width: calc(5 / 12 * 100%);
+  flex: 0 0 var(--ifm-col-width);
+  max-width: var(--ifm-col-width);
+}
+
+.openapi-right-panel__container.col--5 {
+  --ifm-col-width: calc(7 / 12 * 100%);
+  flex: 0 0 var(--ifm-col-width);
+  max-width: var(--ifm-col-width);
+}
+
+/* Taller response / code snippet blocks */
+.openapi-explorer__code-block-lines {
+  min-height: 350px;
+}
+
+/* Compact request form */
+.openapi-explorer__details-outer-container {
+  padding: 0.5rem 0.75rem !important;
+}
+
+.openapi-explorer__details-summary {
+  padding: 0.15rem 0 !important;
+}
+
+.openapi-explorer__form-item {
+  padding: 0.25rem 0 !important;
+}
+
+.openapi-explorer__form-item-input {
+  margin-top: 0rem !important;
+}
+
+.openapi-explorer__request-btn {
+  margin-top: 0rem !important;
+}
+
+.openapi-explorer__server-container {
+  margin-bottom: 0.5rem !important;
+  overflow: hidden !important;
+}
+
+/* Remove max-height on right panel so all content is visible */
+.openapi-right-panel__container {
+  max-height: none !important;
+}
+
 /* Show lock icon in heading for authenticated endpoints */
 article:has(.openapi-security__details) .openapi__heading::after {
   content: "";
@@ -91,4 +173,29 @@ article:has(.openapi-security__details) .openapi__heading::after {
   mask-size: contain;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
+}
+/* Private HMAC operations are intentionally non-executable in the browser. */
+.bitzoom-hmac-guard {
+  margin: 0.75rem 0 1rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid color-mix(in srgb, var(--ifm-color-primary) 38%, transparent);
+  border-left: 4px solid var(--ifm-color-primary);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--ifm-color-primary) 8%, var(--ifm-background-surface-color));
+}
+
+.bitzoom-hmac-guard strong {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.bitzoom-hmac-guard p {
+  margin: 0 0 0.5rem;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.88rem;
+}
+
+.bitzoom-hmac-guard a {
+  font-size: 0.86rem;
+  font-weight: 700;
 }

@@ -1,17 +1,17 @@
 {
   "components": {
     "securitySchemes": {
-      "Bearer": {
-        "bearerFormat": "JWT",
-        "description": "Get TestToken from http://119.8.50.236:8088/api/servermanage/testtoken?userid=12345",
-        "scheme": "bearer",
-        "type": "http"
+      "HmacApiKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-BZ-APIKEY",
+        "description": "Access key for HMAC-authenticated requests. Timestamp, nonce, signature, and optional receive-window headers are documented per private operation."
       }
     }
   },
   "info": {
-    "description": "Project API Document includ private and public",
-    "title": "Open API",
+    "description": "Current public and private REST operations. Private operations require HMAC-SHA256 headers; see the [API Key Authentication guide](/guides/api-key-authentication).",
+    "title": "Bitzoom HMAC API",
     "version": "1.0.0"
   },
   "openapi": "3.0.1",
@@ -25,7 +25,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "e075f752-5eaa-480d-81fc-4e3bc9d4abfc",
+                    "traceid": "e256ea61-af0f-4102-82df-97737c329be6",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -80,7 +80,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "2fa6b2ee-cf6f-4554-8da0-1f66b37ea2ac",
+                    "traceid": "a943e4a5-f36c-46a7-a7b8-906c709b0a45",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -131,27 +131,48 @@
         "operationId": "/api/v1/adlquantile",
         "parameters": [
           {
-            "description": "timestamp:",
-            "in": "query",
-            "name": "Timestamp",
-            "schema": {
-              "type": "int64"
-            }
-          },
-          {
-            "description": "signature:",
-            "in": "query",
-            "name": "Signature",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "description": "symbol:交易对,当为空时查询用户所有交易对",
             "in": "query",
             "name": "Symbol",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-TIMESTAMP",
+            "in": "header",
+            "required": true,
+            "description": "Unix timestamp in milliseconds used in the HMAC payload.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-NONCE",
+            "in": "header",
+            "required": true,
+            "description": "A unique random value for this request. Never reuse a nonce.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-SIGNATURE",
+            "in": "header",
+            "required": true,
+            "description": "Lowercase hexadecimal HMAC-SHA256 signature.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-RECVWINDOW",
+            "in": "header",
+            "required": false,
+            "description": "Optional receive window in milliseconds. Maximum: 60000.",
+            "schema": {
+              "type": "string",
+              "default": "5000"
             }
           }
         ],
@@ -161,7 +182,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "6c8e4888-a6e7-449c-a4f3-43212eab6290",
+                    "traceid": "af7a174a-9500-4ae4-a374-e117c4e61159",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -204,12 +225,13 @@
         },
         "security": [
           {
-            "Bearer": []
+            "HmacApiKey": []
           }
         ],
         "tags": [
           "gateway"
-        ]
+        ],
+        "x-bitzoom-hmac": true
       }
     },
     "/api/v1/balance": {
@@ -217,19 +239,48 @@
         "operationId": "/api/v1/balance",
         "parameters": [
           {
-            "description": "timestamp:",
+            "description": "assetID:资产ID, 可选",
             "in": "query",
-            "name": "Timestamp",
+            "name": "AssetID",
             "schema": {
-              "type": "int64"
+              "type": "string"
             }
           },
           {
-            "description": "signature:",
-            "in": "query",
-            "name": "Signature",
+            "name": "X-BZ-TIMESTAMP",
+            "in": "header",
+            "required": true,
+            "description": "Unix timestamp in milliseconds used in the HMAC payload.",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-NONCE",
+            "in": "header",
+            "required": true,
+            "description": "A unique random value for this request. Never reuse a nonce.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-SIGNATURE",
+            "in": "header",
+            "required": true,
+            "description": "Lowercase hexadecimal HMAC-SHA256 signature.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-RECVWINDOW",
+            "in": "header",
+            "required": false,
+            "description": "Optional receive window in milliseconds. Maximum: 60000.",
+            "schema": {
+              "type": "string",
+              "default": "5000"
             }
           }
         ],
@@ -239,7 +290,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "7d88aa20-1f7f-4aec-80f1-7c68ba781100",
+                    "traceid": "b18a40df-8e7e-4362-ab05-06f3c91a50d9",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -282,12 +333,13 @@
         },
         "security": [
           {
-            "Bearer": []
+            "HmacApiKey": []
           }
         ],
         "tags": [
           "gateway"
-        ]
+        ],
+        "x-bitzoom-hmac": true
       }
     },
     "/api/v1/commissionrate": {
@@ -295,23 +347,115 @@
         "operationId": "/api/v1/commissionrate",
         "parameters": [
           {
-            "description": "timestamp:",
+            "description": "symbol:交易对,不能为空",
             "in": "query",
-            "name": "Timestamp",
-            "schema": {
-              "type": "int64"
-            }
-          },
-          {
-            "description": "signature:",
-            "in": "query",
-            "name": "Signature",
+            "name": "Symbol",
             "schema": {
               "type": "string"
             }
           },
           {
-            "description": "symbol:交易对,不能为空",
+            "name": "X-BZ-TIMESTAMP",
+            "in": "header",
+            "required": true,
+            "description": "Unix timestamp in milliseconds used in the HMAC payload.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-NONCE",
+            "in": "header",
+            "required": true,
+            "description": "A unique random value for this request. Never reuse a nonce.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-SIGNATURE",
+            "in": "header",
+            "required": true,
+            "description": "Lowercase hexadecimal HMAC-SHA256 signature.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-RECVWINDOW",
+            "in": "header",
+            "required": false,
+            "description": "Optional receive window in milliseconds. Maximum: 60000.",
+            "schema": {
+              "type": "string",
+              "default": "5000"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "78c5deb2-c50f-4229-9613-ef2144614803",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "security": [
+          {
+            "HmacApiKey": []
+          }
+        ],
+        "tags": [
+          "gateway"
+        ],
+        "x-bitzoom-hmac": true
+      }
+    },
+    "/api/v1/convertprice": {
+      "get": {
+        "operationId": "/api/v1/convertprice",
+        "parameters": [
+          {
+            "description": "symbol:",
             "in": "query",
             "name": "Symbol",
             "schema": {
@@ -325,12 +469,12 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "85fe7195-2713-4e8d-9663-f8792927c1d5",
+                    "traceid": "8c3ff286-0665-49da-a232-74521d560274",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
                     "duration": 9223372036854776000,
-                    "data": null,
+                    "data": "6.885503",
                     "host": "testing env",
                     "showType": 0
                   },
@@ -366,11 +510,6 @@
             "description": "Successful operation"
           }
         },
-        "security": [
-          {
-            "Bearer": []
-          }
-        ],
         "tags": [
           "gateway"
         ]
@@ -415,7 +554,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "e578cd23-bf86-44a3-a7f0-e0be29865c08",
+                    "traceid": "63c83454-c038-4e6b-b139-b78cc84a69ea",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -458,12 +597,52 @@
         },
         "security": [
           {
-            "Bearer": []
+            "HmacApiKey": []
           }
         ],
         "tags": [
           "gateway"
-        ]
+        ],
+        "parameters": [
+          {
+            "name": "X-BZ-TIMESTAMP",
+            "in": "header",
+            "required": true,
+            "description": "Unix timestamp in milliseconds used in the HMAC payload.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-NONCE",
+            "in": "header",
+            "required": true,
+            "description": "A unique random value for this request. Never reuse a nonce.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-SIGNATURE",
+            "in": "header",
+            "required": true,
+            "description": "Lowercase hexadecimal HMAC-SHA256 signature.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-RECVWINDOW",
+            "in": "header",
+            "required": false,
+            "description": "Optional receive window in milliseconds. Maximum: 60000.",
+            "schema": {
+              "type": "string",
+              "default": "5000"
+            }
+          }
+        ],
+        "x-bitzoom-hmac": true
       }
     },
     "/api/v1/depth": {
@@ -493,7 +672,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "afdb13d0-7152-4749-8daa-73f932ad42ae",
+                    "traceid": "cfa44915-1922-4023-88a2-3fb8b76d8365",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -548,12 +727,80 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "95a047fa-f52f-42f6-b456-49a25929e339",
+                    "traceid": "651a3282-f892-4e30-9279-6dc8adb362a4",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
                     "duration": 9223372036854776000,
                     "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/fiatlist": {
+      "get": {
+        "operationId": "/api/v1/fiatlist",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "34ef1679-722d-41b2-8db2-0825386b9aea",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": [
+                      {
+                        "id": 2,
+                        "name": "United States Dollar",
+                        "sign": "$",
+                        "symbol": "USD"
+                      },
+                      {
+                        "id": 3,
+                        "name": "Euro",
+                        "sign": "€",
+                        "symbol": "EUR"
+                      }
+                    ],
                     "host": "testing env",
                     "showType": 0
                   },
@@ -613,7 +860,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "f9bf7c03-52da-432a-bb42-3680d3b70ebf",
+                    "traceid": "4f17ac35-40b3-43c6-b56e-a6a2eaf54358",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -659,26 +906,284 @@
         ]
       }
     },
-    "/api/v1/historyorder": {
+    "/api/v1/getaccounttype": {
       "get": {
-        "operationId": "/api/v1/historyorder",
+        "operationId": "/api/v1/getaccounttype",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "0debf311-7a05-48d7-ad13-97c8eab83ef7",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/getbilltype": {
+      "get": {
+        "operationId": "/api/v1/getbilltype",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "c08effc2-6894-4575-825c-e3f3cd701332",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "gateway"
+        ]
+      }
+    },
+    "/api/v1/historybill": {
+      "get": {
+        "operationId": "/api/v1/historybill",
         "parameters": [
           {
-            "description": "timestamp:",
+            "description": "page:页码,当为0时为1,返回数据中的total是总行数,每页默认行数为100",
             "in": "query",
-            "name": "Timestamp",
+            "name": "Page",
             "schema": {
               "type": "int64"
             }
           },
           {
-            "description": "signature:",
+            "description": "limit:每页行数,默认100,最大1000",
             "in": "query",
-            "name": "Signature",
+            "name": "Limit",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "starttime:开始时间，可以为空",
+            "in": "query",
+            "name": "StartTime",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "endtime:结束时间，可以为空",
+            "in": "query",
+            "name": "EndTime",
+            "schema": {
+              "type": "int64"
+            }
+          },
+          {
+            "description": "symbol:交易对,为空时查询所有",
+            "in": "query",
+            "name": "Symbol",
             "schema": {
               "type": "string"
             }
           },
+          {
+            "description": "assetID:资产ID",
+            "in": "query",
+            "name": "AssetID",
+            "schema": {
+              "type": "uint"
+            }
+          },
+          {
+            "description": "accountTypeID:账户类型ID,通过getaccounttype接口获取",
+            "in": "query",
+            "name": "AccountTypeID",
+            "schema": {
+              "type": "uint"
+            }
+          },
+          {
+            "description": "code:账单类型,通过getbilltype接口获取",
+            "in": "query",
+            "name": "Code",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-TIMESTAMP",
+            "in": "header",
+            "required": true,
+            "description": "Unix timestamp in milliseconds used in the HMAC payload.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-NONCE",
+            "in": "header",
+            "required": true,
+            "description": "A unique random value for this request. Never reuse a nonce.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-SIGNATURE",
+            "in": "header",
+            "required": true,
+            "description": "Lowercase hexadecimal HMAC-SHA256 signature.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-RECVWINDOW",
+            "in": "header",
+            "required": false,
+            "description": "Optional receive window in milliseconds. Maximum: 60000.",
+            "schema": {
+              "type": "string",
+              "default": "5000"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "465bac65-503f-4b55-a75f-5c40d16767ca",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": null,
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "security": [
+          {
+            "HmacApiKey": []
+          }
+        ],
+        "tags": [
+          "gateway"
+        ],
+        "x-bitzoom-hmac": true
+      }
+    },
+    "/api/v1/historyorder": {
+      "get": {
+        "operationId": "/api/v1/historyorder",
+        "parameters": [
           {
             "description": "page:页码,当为0时为1,返回数据中的total是总行数,每页默认行数为100",
             "in": "query",
@@ -742,6 +1247,43 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "X-BZ-TIMESTAMP",
+            "in": "header",
+            "required": true,
+            "description": "Unix timestamp in milliseconds used in the HMAC payload.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-NONCE",
+            "in": "header",
+            "required": true,
+            "description": "A unique random value for this request. Never reuse a nonce.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-SIGNATURE",
+            "in": "header",
+            "required": true,
+            "description": "Lowercase hexadecimal HMAC-SHA256 signature.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-RECVWINDOW",
+            "in": "header",
+            "required": false,
+            "description": "Optional receive window in milliseconds. Maximum: 60000.",
+            "schema": {
+              "type": "string",
+              "default": "5000"
+            }
           }
         ],
         "responses": {
@@ -750,7 +1292,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "94ca4f43-7821-41f5-8ee0-d2a8d5dd2adb",
+                    "traceid": "f4d30d97-3ef6-4efa-9e97-a01bdde3dca8",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -793,34 +1335,19 @@
         },
         "security": [
           {
-            "Bearer": []
+            "HmacApiKey": []
           }
         ],
         "tags": [
           "gateway"
-        ]
+        ],
+        "x-bitzoom-hmac": true
       }
     },
     "/api/v1/historyposition": {
       "get": {
         "operationId": "/api/v1/historyposition",
         "parameters": [
-          {
-            "description": "timestamp:",
-            "in": "query",
-            "name": "Timestamp",
-            "schema": {
-              "type": "int64"
-            }
-          },
-          {
-            "description": "signature:",
-            "in": "query",
-            "name": "Signature",
-            "schema": {
-              "type": "string"
-            }
-          },
           {
             "description": "page:页码,当为0时为1,返回数据中的total是总行数,每页默认行数为100",
             "in": "query",
@@ -876,6 +1403,43 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "X-BZ-TIMESTAMP",
+            "in": "header",
+            "required": true,
+            "description": "Unix timestamp in milliseconds used in the HMAC payload.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-NONCE",
+            "in": "header",
+            "required": true,
+            "description": "A unique random value for this request. Never reuse a nonce.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-SIGNATURE",
+            "in": "header",
+            "required": true,
+            "description": "Lowercase hexadecimal HMAC-SHA256 signature.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-RECVWINDOW",
+            "in": "header",
+            "required": false,
+            "description": "Optional receive window in milliseconds. Maximum: 60000.",
+            "schema": {
+              "type": "string",
+              "default": "5000"
+            }
           }
         ],
         "responses": {
@@ -884,7 +1448,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "65769d88-18c6-467f-8317-907af8655c7a",
+                    "traceid": "b99089d9-08d8-48f4-90ad-ef1a80b705ca",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -927,34 +1491,19 @@
         },
         "security": [
           {
-            "Bearer": []
+            "HmacApiKey": []
           }
         ],
         "tags": [
           "gateway"
-        ]
+        ],
+        "x-bitzoom-hmac": true
       }
     },
     "/api/v1/historypositionmargin": {
       "get": {
         "operationId": "/api/v1/historypositionmargin",
         "parameters": [
-          {
-            "description": "timestamp:",
-            "in": "query",
-            "name": "Timestamp",
-            "schema": {
-              "type": "int64"
-            }
-          },
-          {
-            "description": "signature:",
-            "in": "query",
-            "name": "Signature",
-            "schema": {
-              "type": "string"
-            }
-          },
           {
             "description": "page:页码,当为0时为1,返回数据中的total是总行数,每页默认行数为100",
             "in": "query",
@@ -1002,6 +1551,43 @@
             "schema": {
               "type": "int"
             }
+          },
+          {
+            "name": "X-BZ-TIMESTAMP",
+            "in": "header",
+            "required": true,
+            "description": "Unix timestamp in milliseconds used in the HMAC payload.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-NONCE",
+            "in": "header",
+            "required": true,
+            "description": "A unique random value for this request. Never reuse a nonce.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-SIGNATURE",
+            "in": "header",
+            "required": true,
+            "description": "Lowercase hexadecimal HMAC-SHA256 signature.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-RECVWINDOW",
+            "in": "header",
+            "required": false,
+            "description": "Optional receive window in milliseconds. Maximum: 60000.",
+            "schema": {
+              "type": "string",
+              "default": "5000"
+            }
           }
         ],
         "responses": {
@@ -1010,7 +1596,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "43f1b376-1482-40b0-b3d9-2a99b99d43db",
+                    "traceid": "900e5cae-0992-4dae-8e5e-322577025acb",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -1053,34 +1639,19 @@
         },
         "security": [
           {
-            "Bearer": []
+            "HmacApiKey": []
           }
         ],
         "tags": [
           "gateway"
-        ]
+        ],
+        "x-bitzoom-hmac": true
       }
     },
     "/api/v1/historytrade": {
       "get": {
         "operationId": "/api/v1/historytrade",
         "parameters": [
-          {
-            "description": "timestamp:",
-            "in": "query",
-            "name": "Timestamp",
-            "schema": {
-              "type": "int64"
-            }
-          },
-          {
-            "description": "signature:",
-            "in": "query",
-            "name": "Signature",
-            "schema": {
-              "type": "string"
-            }
-          },
           {
             "description": "page:页码,当为0时为1,返回数据中的total是总行数,每页默认行数为100",
             "in": "query",
@@ -1128,6 +1699,43 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "X-BZ-TIMESTAMP",
+            "in": "header",
+            "required": true,
+            "description": "Unix timestamp in milliseconds used in the HMAC payload.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-NONCE",
+            "in": "header",
+            "required": true,
+            "description": "A unique random value for this request. Never reuse a nonce.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-SIGNATURE",
+            "in": "header",
+            "required": true,
+            "description": "Lowercase hexadecimal HMAC-SHA256 signature.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-RECVWINDOW",
+            "in": "header",
+            "required": false,
+            "description": "Optional receive window in milliseconds. Maximum: 60000.",
+            "schema": {
+              "type": "string",
+              "default": "5000"
+            }
           }
         ],
         "responses": {
@@ -1136,7 +1744,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "a1ad7ff2-86b1-40ea-9aa3-fa507b4ffdac",
+                    "traceid": "90e33bcc-66fe-403d-be0d-de73c135991d",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -1179,9 +1787,86 @@
         },
         "security": [
           {
-            "Bearer": []
+            "HmacApiKey": []
           }
         ],
+        "tags": [
+          "gateway"
+        ],
+        "x-bitzoom-hmac": true
+      }
+    },
+    "/api/v1/indexinfo": {
+      "get": {
+        "operationId": "/api/v1/indexinfo",
+        "parameters": [
+          {
+            "description": "symbol:",
+            "in": "query",
+            "name": "Symbol",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "traceid": "e52d7f48-b28e-42cc-9502-ef31a9bdd6c4",
+                    "errorCode": 200,
+                    "errorMessage": "",
+                    "success": true,
+                    "duration": 9223372036854776000,
+                    "data": [
+                      {
+                        "symbol": "",
+                        "priceSource": "Binance",
+                        "weight": 20
+                      },
+                      {
+                        "symbol": "",
+                        "priceSource": "OKX",
+                        "weight": 30
+                      }
+                    ],
+                    "host": "testing env",
+                    "showType": 0
+                  },
+                  "properties": {
+                    "data": {},
+                    "duration": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "errorCode": {
+                      "type": "integer"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "host": {
+                      "type": "string"
+                    },
+                    "showType": {
+                      "type": "integer"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "traceid": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
         "tags": [
           "gateway"
         ]
@@ -1238,7 +1923,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "549093a1-adaf-4498-8578-69f027db7dd0",
+                    "traceid": "fd3dfa9c-55ce-4471-9116-5f662d513022",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -1289,22 +1974,6 @@
         "operationId": "/api/v1/leverage",
         "parameters": [
           {
-            "description": "timestamp:",
-            "in": "query",
-            "name": "Timestamp",
-            "schema": {
-              "type": "int64"
-            }
-          },
-          {
-            "description": "signature:",
-            "in": "query",
-            "name": "Signature",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "description": "symbol:当设置时必须输入，当查询时如为空查询所有市场",
             "in": "query",
             "name": "Symbol",
@@ -1319,6 +1988,43 @@
             "schema": {
               "type": "uint"
             }
+          },
+          {
+            "name": "X-BZ-TIMESTAMP",
+            "in": "header",
+            "required": true,
+            "description": "Unix timestamp in milliseconds used in the HMAC payload.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-NONCE",
+            "in": "header",
+            "required": true,
+            "description": "A unique random value for this request. Never reuse a nonce.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-SIGNATURE",
+            "in": "header",
+            "required": true,
+            "description": "Lowercase hexadecimal HMAC-SHA256 signature.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-RECVWINDOW",
+            "in": "header",
+            "required": false,
+            "description": "Optional receive window in milliseconds. Maximum: 60000.",
+            "schema": {
+              "type": "string",
+              "default": "5000"
+            }
           }
         ],
         "responses": {
@@ -1327,7 +2033,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "5a442022-3c37-4234-9f5d-a6a6224a9843",
+                    "traceid": "4e06e191-8a1a-4ca2-8b43-e66b1ce2b988",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -1370,34 +2076,19 @@
         },
         "security": [
           {
-            "Bearer": []
+            "HmacApiKey": []
           }
         ],
         "tags": [
           "gateway"
-        ]
+        ],
+        "x-bitzoom-hmac": true
       }
     },
     "/api/v1/margintype": {
       "get": {
         "operationId": "/api/v1/margintype",
         "parameters": [
-          {
-            "description": "timestamp:",
-            "in": "query",
-            "name": "Timestamp",
-            "schema": {
-              "type": "int64"
-            }
-          },
-          {
-            "description": "signature:",
-            "in": "query",
-            "name": "Signature",
-            "schema": {
-              "type": "string"
-            }
-          },
           {
             "description": "symbol:交易对,不能为空",
             "in": "query",
@@ -1413,6 +2104,43 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "X-BZ-TIMESTAMP",
+            "in": "header",
+            "required": true,
+            "description": "Unix timestamp in milliseconds used in the HMAC payload.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-NONCE",
+            "in": "header",
+            "required": true,
+            "description": "A unique random value for this request. Never reuse a nonce.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-SIGNATURE",
+            "in": "header",
+            "required": true,
+            "description": "Lowercase hexadecimal HMAC-SHA256 signature.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-RECVWINDOW",
+            "in": "header",
+            "required": false,
+            "description": "Optional receive window in milliseconds. Maximum: 60000.",
+            "schema": {
+              "type": "string",
+              "default": "5000"
+            }
           }
         ],
         "responses": {
@@ -1421,7 +2149,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "78122039-d556-4a70-abdc-9ccc6018227e",
+                    "traceid": "b06d6843-5773-40c2-a927-3fb3515d1b14",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -1464,34 +2192,19 @@
         },
         "security": [
           {
-            "Bearer": []
+            "HmacApiKey": []
           }
         ],
         "tags": [
           "gateway"
-        ]
+        ],
+        "x-bitzoom-hmac": true
       }
     },
     "/api/v1/myfavorite": {
       "get": {
         "operationId": "/api/v1/myfavorite",
         "parameters": [
-          {
-            "description": "timestamp:",
-            "in": "query",
-            "name": "Timestamp",
-            "schema": {
-              "type": "int64"
-            }
-          },
-          {
-            "description": "signature:",
-            "in": "query",
-            "name": "Signature",
-            "schema": {
-              "type": "string"
-            }
-          },
           {
             "description": "symbol:设置为我的最爱交易对，当为时空时，表示获取我的最爱交易对列表",
             "in": "query",
@@ -1507,6 +2220,43 @@
             "schema": {
               "type": "bool"
             }
+          },
+          {
+            "name": "X-BZ-TIMESTAMP",
+            "in": "header",
+            "required": true,
+            "description": "Unix timestamp in milliseconds used in the HMAC payload.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-NONCE",
+            "in": "header",
+            "required": true,
+            "description": "A unique random value for this request. Never reuse a nonce.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-SIGNATURE",
+            "in": "header",
+            "required": true,
+            "description": "Lowercase hexadecimal HMAC-SHA256 signature.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-RECVWINDOW",
+            "in": "header",
+            "required": false,
+            "description": "Optional receive window in milliseconds. Maximum: 60000.",
+            "schema": {
+              "type": "string",
+              "default": "5000"
+            }
           }
         ],
         "responses": {
@@ -1515,7 +2265,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "f5a9de7e-81f1-42e6-ac2b-cfe827e2bb45",
+                    "traceid": "1634681c-c632-4907-ba5a-4913a6979d00",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -1558,12 +2308,13 @@
         },
         "security": [
           {
-            "Bearer": []
+            "HmacApiKey": []
           }
         ],
         "tags": [
           "gateway"
-        ]
+        ],
+        "x-bitzoom-hmac": true
       }
     },
     "/api/v1/openinterest": {
@@ -1585,7 +2336,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "9095323d-c22a-4311-8f18-2ec59bfaf620",
+                    "traceid": "129d703c-dc55-449c-a69c-caca5ce1372c",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -1636,27 +2387,48 @@
         "operationId": "/api/v1/openorders",
         "parameters": [
           {
-            "description": "timestamp:",
-            "in": "query",
-            "name": "Timestamp",
-            "schema": {
-              "type": "int64"
-            }
-          },
-          {
-            "description": "signature:",
-            "in": "query",
-            "name": "Signature",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "description": "symbol:",
             "in": "query",
             "name": "Symbol",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-TIMESTAMP",
+            "in": "header",
+            "required": true,
+            "description": "Unix timestamp in milliseconds used in the HMAC payload.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-NONCE",
+            "in": "header",
+            "required": true,
+            "description": "A unique random value for this request. Never reuse a nonce.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-SIGNATURE",
+            "in": "header",
+            "required": true,
+            "description": "Lowercase hexadecimal HMAC-SHA256 signature.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-RECVWINDOW",
+            "in": "header",
+            "required": false,
+            "description": "Optional receive window in milliseconds. Maximum: 60000.",
+            "schema": {
+              "type": "string",
+              "default": "5000"
             }
           }
         ],
@@ -1666,7 +2438,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "c99c08ff-21da-43c6-b123-5fe6ffc4fbd2",
+                    "traceid": "c4b128de-e3f9-4c8e-ac85-e765d22b181d",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -1709,12 +2481,13 @@
         },
         "security": [
           {
-            "Bearer": []
+            "HmacApiKey": []
           }
         ],
         "tags": [
           "gateway"
-        ]
+        ],
+        "x-bitzoom-hmac": true
       }
     },
     "/api/v1/order": {
@@ -1780,7 +2553,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "6fccfc8e-5d2e-4d32-8ce6-edc29c5b08c4",
+                    "traceid": "3a5b95a8-7ae8-4998-a690-4bd19e62f22a",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -1823,12 +2596,52 @@
         },
         "security": [
           {
-            "Bearer": []
+            "HmacApiKey": []
           }
         ],
         "tags": [
           "gateway"
-        ]
+        ],
+        "parameters": [
+          {
+            "name": "X-BZ-TIMESTAMP",
+            "in": "header",
+            "required": true,
+            "description": "Unix timestamp in milliseconds used in the HMAC payload.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-NONCE",
+            "in": "header",
+            "required": true,
+            "description": "A unique random value for this request. Never reuse a nonce.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-SIGNATURE",
+            "in": "header",
+            "required": true,
+            "description": "Lowercase hexadecimal HMAC-SHA256 signature.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-RECVWINDOW",
+            "in": "header",
+            "required": false,
+            "description": "Optional receive window in milliseconds. Maximum: 60000.",
+            "schema": {
+              "type": "string",
+              "default": "5000"
+            }
+          }
+        ],
+        "x-bitzoom-hmac": true
       }
     },
     "/api/v1/overview": {
@@ -1836,19 +2649,40 @@
         "operationId": "/api/v1/overview",
         "parameters": [
           {
-            "description": "timestamp:",
-            "in": "query",
-            "name": "Timestamp",
+            "name": "X-BZ-TIMESTAMP",
+            "in": "header",
+            "required": true,
+            "description": "Unix timestamp in milliseconds used in the HMAC payload.",
             "schema": {
-              "type": "int64"
+              "type": "string"
             }
           },
           {
-            "description": "signature:",
-            "in": "query",
-            "name": "Signature",
+            "name": "X-BZ-NONCE",
+            "in": "header",
+            "required": true,
+            "description": "A unique random value for this request. Never reuse a nonce.",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-SIGNATURE",
+            "in": "header",
+            "required": true,
+            "description": "Lowercase hexadecimal HMAC-SHA256 signature.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-RECVWINDOW",
+            "in": "header",
+            "required": false,
+            "description": "Optional receive window in milliseconds. Maximum: 60000.",
+            "schema": {
+              "type": "string",
+              "default": "5000"
             }
           }
         ],
@@ -1858,16 +2692,16 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "190492ee-05b6-45d1-8aa2-a0b5e2c5c5f7",
+                    "traceid": "fb25c37c-c2c2-4fd2-8f61-ffa13eadbceb",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
                     "duration": 9223372036854776000,
                     "data": {
-                      "estimated_total_value": "125680.50",
-                      "profit_loss_today": "3250.80",
-                      "profit_loss_percentage": "2.65",
-                      "account_details": [
+                      "estimatedTotalValue": "125680.50",
+                      "profitLossToday": "3250.80",
+                      "profitLossPercentage": "2.65",
+                      "accountDetails": [
                         {
                           "accountTypeName": "合约账户",
                           "accountTypeId": 1,
@@ -1887,7 +2721,7 @@
                           "availableBalance": "8070.10"
                         }
                       ],
-                      "asset_details": [
+                      "assetDetails": [
                         {
                           "assetName": "USDT",
                           "assetAmount": "95430.50",
@@ -1947,34 +2781,19 @@
         },
         "security": [
           {
-            "Bearer": []
+            "HmacApiKey": []
           }
         ],
         "tags": [
           "gateway"
-        ]
+        ],
+        "x-bitzoom-hmac": true
       }
     },
     "/api/v1/positionmargin": {
       "get": {
         "operationId": "/api/v1/positionmargin",
         "parameters": [
-          {
-            "description": "timestamp:",
-            "in": "query",
-            "name": "Timestamp",
-            "schema": {
-              "type": "int64"
-            }
-          },
-          {
-            "description": "signature:",
-            "in": "query",
-            "name": "Signature",
-            "schema": {
-              "type": "string"
-            }
-          },
           {
             "description": "symbol:交易对,不能为空",
             "in": "query",
@@ -2006,6 +2825,43 @@
             "schema": {
               "type": "int"
             }
+          },
+          {
+            "name": "X-BZ-TIMESTAMP",
+            "in": "header",
+            "required": true,
+            "description": "Unix timestamp in milliseconds used in the HMAC payload.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-NONCE",
+            "in": "header",
+            "required": true,
+            "description": "A unique random value for this request. Never reuse a nonce.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-SIGNATURE",
+            "in": "header",
+            "required": true,
+            "description": "Lowercase hexadecimal HMAC-SHA256 signature.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-RECVWINDOW",
+            "in": "header",
+            "required": false,
+            "description": "Optional receive window in milliseconds. Maximum: 60000.",
+            "schema": {
+              "type": "string",
+              "default": "5000"
+            }
           }
         ],
         "responses": {
@@ -2014,7 +2870,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "07f61b5f-f44f-4e12-8e0d-dc36d72f5ba2",
+                    "traceid": "14f70262-4888-4422-af0e-a5f4f35ab954",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -2057,12 +2913,13 @@
         },
         "security": [
           {
-            "Bearer": []
+            "HmacApiKey": []
           }
         ],
         "tags": [
           "gateway"
-        ]
+        ],
+        "x-bitzoom-hmac": true
       }
     },
     "/api/v1/positionrisk": {
@@ -2070,27 +2927,48 @@
         "operationId": "/api/v1/positionrisk",
         "parameters": [
           {
-            "description": "timestamp:",
-            "in": "query",
-            "name": "Timestamp",
-            "schema": {
-              "type": "int64"
-            }
-          },
-          {
-            "description": "signature:",
-            "in": "query",
-            "name": "Signature",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "description": "symbol:",
             "in": "query",
             "name": "Symbol",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-TIMESTAMP",
+            "in": "header",
+            "required": true,
+            "description": "Unix timestamp in milliseconds used in the HMAC payload.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-NONCE",
+            "in": "header",
+            "required": true,
+            "description": "A unique random value for this request. Never reuse a nonce.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-SIGNATURE",
+            "in": "header",
+            "required": true,
+            "description": "Lowercase hexadecimal HMAC-SHA256 signature.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-RECVWINDOW",
+            "in": "header",
+            "required": false,
+            "description": "Optional receive window in milliseconds. Maximum: 60000.",
+            "schema": {
+              "type": "string",
+              "default": "5000"
             }
           }
         ],
@@ -2100,7 +2978,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "fb7223f9-506c-45a8-ae35-c91b89089fe8",
+                    "traceid": "b79d762b-4bc5-4195-a0ee-b092b51d0410",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -2143,12 +3021,13 @@
         },
         "security": [
           {
-            "Bearer": []
+            "HmacApiKey": []
           }
         ],
         "tags": [
           "gateway"
-        ]
+        ],
+        "x-bitzoom-hmac": true
       }
     },
     "/api/v1/premiumindex": {
@@ -2170,7 +3049,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "ef081afb-86ad-4dc6-b978-755599a054f5",
+                    "traceid": "a8842835-0a1e-41bd-ad8d-4074d63687e3",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -2225,7 +3104,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "93022e8c-ff21-4771-910f-f29abebb6644",
+                    "traceid": "f13cd2f6-1808-422d-8b6b-1912b4b0e783",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -2290,33 +3169,33 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "2f0485dd-a4b1-47a9-8070-980b0804daab",
+                    "traceid": "6342cfce-e43e-4a51-9c09-ecf555a80f2f",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
                     "duration": 9223372036854776000,
                     "data": {
-                      "symbol": "",
-                      "icon": "",
-                      "code": "",
-                      "name": "",
-                      "marketValue": "",
-                      "fullyDilutedMarketValue": "",
-                      "dominanceIndex": "",
-                      "volume": "",
-                      "circulatingSupply": "",
-                      "totalSupply": "",
-                      "maxSupply": "",
-                      "openInterestConcentration": "",
-                      "issueDate": "",
-                      "issuePrice": "",
-                      "allTimeHigh": "",
-                      "allTimeLow": "",
-                      "website": "",
-                      "whitePaper": "",
-                      "socialMedia": "",
-                      "explorer": "",
-                      "description": ""
+                      "symbol": "BTCUSDT",
+                      "icon": "https://example.com/icon.png",
+                      "code": "BTC",
+                      "name": "Bitcoin",
+                      "marketValue": "1,000,000,000",
+                      "fullyDilutedMarketValue": "1,200,000,000",
+                      "dominanceIndex": "40%",
+                      "volume": "100,000",
+                      "circulatingSupply": "18,000,000",
+                      "totalSupply": "21,000,000",
+                      "maxSupply": "21,000,000",
+                      "openInterestConcentration": "10%",
+                      "issueDate": "2009-01-03",
+                      "issuePrice": "$0.001",
+                      "allTimeHigh": "$64,863.10",
+                      "allTimeLow": "$0.001",
+                      "website": "https://bitcoin.org",
+                      "whitePaper": "https://bitcoin.org/bitcoin.pdf",
+                      "socialMedia": "https://twitter.com/bitcoin",
+                      "explorer": "https://blockchain.info",
+                      "description": "Bitcoin is a decentralized digital currency that can be transferred on the peer-to-peer bitcoin network."
                     },
                     "host": "testing env",
                     "showType": 0
@@ -2377,7 +3256,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "49c52237-779c-45ce-91c6-53f66d2f0eca",
+                    "traceid": "ec38b992-9b8a-4b9d-984b-54f7be92c522",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -2442,7 +3321,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "66812a48-8afe-4104-a52e-a0ed4a6e105c",
+                    "traceid": "305fbfbf-f8ff-4fb6-b8fe-ebd5a857ac2c",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -2507,7 +3386,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "a8822374-bc3d-4aa5-8a44-297d42127197",
+                    "traceid": "2f4d24d7-142d-4d3d-9bdc-2aeaa6692e25",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -2572,7 +3451,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "044740d2-f3e0-4454-8ef3-542c689e3c9e",
+                    "traceid": "6cf5a2e2-05f5-4687-b5eb-5caef5ec2e81",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -2653,7 +3532,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "86d84bf0-919b-4475-814c-2940a8f7c6e3",
+                    "traceid": "d5662ad4-a362-465a-b756-b6faf49b0b29",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -2731,7 +3610,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "66589984-1c5b-48f8-9040-8a54cb7876ee",
+                    "traceid": "d2f9cd08-fa45-4479-b4ac-da4dd5361c72",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -2837,7 +3716,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "0270e0bd-e85e-45b2-9682-743ec8a423bc",
+                    "traceid": "d30777cd-a568-44df-8fd9-d3f35a3cc537",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -2902,7 +3781,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "7c8ce450-5fbe-4f52-9466-10b6c28f4a2a",
+                    "traceid": "09052523-f34e-4188-9339-99425200f2ee",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -2953,22 +3832,6 @@
         "operationId": "/api/v1/wallet/depositrecord",
         "parameters": [
           {
-            "description": "timestamp:",
-            "in": "query",
-            "name": "Timestamp",
-            "schema": {
-              "type": "int64"
-            }
-          },
-          {
-            "description": "signature:",
-            "in": "query",
-            "name": "Signature",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "description": "token_id:",
             "in": "query",
             "name": "TokenId",
@@ -2991,6 +3854,43 @@
             "schema": {
               "type": "int"
             }
+          },
+          {
+            "name": "X-BZ-TIMESTAMP",
+            "in": "header",
+            "required": true,
+            "description": "Unix timestamp in milliseconds used in the HMAC payload.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-NONCE",
+            "in": "header",
+            "required": true,
+            "description": "A unique random value for this request. Never reuse a nonce.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-SIGNATURE",
+            "in": "header",
+            "required": true,
+            "description": "Lowercase hexadecimal HMAC-SHA256 signature.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-RECVWINDOW",
+            "in": "header",
+            "required": false,
+            "description": "Optional receive window in milliseconds. Maximum: 60000.",
+            "schema": {
+              "type": "string",
+              "default": "5000"
+            }
           }
         ],
         "responses": {
@@ -2999,7 +3899,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "7511474c-093c-45d5-9416-fe10a1c5a93c",
+                    "traceid": "df0319b7-5c2a-4a11-96cb-27deb0c5eddc",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -3008,14 +3908,14 @@
                       "rows": [
                         {
                           "symbol": "",
-                          "chain_id": "",
-                          "token_id": "",
-                          "deposit_amount": "",
-                          "deposit_address": "",
+                          "chainId": "",
+                          "tokenId": "",
+                          "depositAmount": "",
+                          "depositAddress": "",
                           "memo": "",
                           "date": 0,
                           "status": "",
-                          "txn_id": "",
+                          "txnId": "",
                           "confirmations": 0
                         }
                       ],
@@ -3060,12 +3960,13 @@
         },
         "security": [
           {
-            "Bearer": []
+            "HmacApiKey": []
           }
         ],
         "tags": [
           "gateway"
-        ]
+        ],
+        "x-bitzoom-hmac": true
       }
     },
     "/api/v1/wallet/getaddresswhite": {
@@ -3073,27 +3974,48 @@
         "operationId": "/api/v1/wallet/getaddresswhite",
         "parameters": [
           {
-            "description": "timestamp:",
-            "in": "query",
-            "name": "Timestamp",
-            "schema": {
-              "type": "int64"
-            }
-          },
-          {
-            "description": "signature:",
-            "in": "query",
-            "name": "Signature",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "description": "chain_identifier:",
             "in": "query",
             "name": "ChainIdentifier",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-TIMESTAMP",
+            "in": "header",
+            "required": true,
+            "description": "Unix timestamp in milliseconds used in the HMAC payload.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-NONCE",
+            "in": "header",
+            "required": true,
+            "description": "A unique random value for this request. Never reuse a nonce.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-SIGNATURE",
+            "in": "header",
+            "required": true,
+            "description": "Lowercase hexadecimal HMAC-SHA256 signature.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-RECVWINDOW",
+            "in": "header",
+            "required": false,
+            "description": "Optional receive window in milliseconds. Maximum: 60000.",
+            "schema": {
+              "type": "string",
+              "default": "5000"
             }
           }
         ],
@@ -3103,7 +4025,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "5b61cbdd-03ea-48fe-b7e2-20058690366e",
+                    "traceid": "3bc50fbd-febe-4cc4-b96e-2c8a050d0fd4",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -3153,12 +4075,13 @@
         },
         "security": [
           {
-            "Bearer": []
+            "HmacApiKey": []
           }
         ],
         "tags": [
           "gateway"
-        ]
+        ],
+        "x-bitzoom-hmac": true
       }
     },
     "/api/v1/wallet/getchain": {
@@ -3166,27 +4089,48 @@
         "operationId": "/api/v1/wallet/getchain",
         "parameters": [
           {
-            "description": "timestamp:",
-            "in": "query",
-            "name": "Timestamp",
-            "schema": {
-              "type": "int64"
-            }
-          },
-          {
-            "description": "signature:",
-            "in": "query",
-            "name": "Signature",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "description": "symbol:",
             "in": "query",
             "name": "Symbol",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-TIMESTAMP",
+            "in": "header",
+            "required": true,
+            "description": "Unix timestamp in milliseconds used in the HMAC payload.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-NONCE",
+            "in": "header",
+            "required": true,
+            "description": "A unique random value for this request. Never reuse a nonce.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-SIGNATURE",
+            "in": "header",
+            "required": true,
+            "description": "Lowercase hexadecimal HMAC-SHA256 signature.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-RECVWINDOW",
+            "in": "header",
+            "required": false,
+            "description": "Optional receive window in milliseconds. Maximum: 60000.",
+            "schema": {
+              "type": "string",
+              "default": "5000"
             }
           }
         ],
@@ -3196,35 +4140,36 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "600961ec-f870-4af0-b293-199afb08becd",
+                    "traceid": "c8ba3bad-196c-404c-bcae-19fa64f2922a",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
                     "duration": 9223372036854776000,
                     "data": [
                       {
-                        "token_id": "",
-                        "chain_id": "",
-                        "chain_identifier": "",
-                        "trade_confirming_threshold": 0,
-                        "withdraw_confirming_threshold": 0,
-                        "icon": "",
-                        "min_deposit": "",
-                        "estimated_arrival_time": 0,
-                        "deposit_address": "",
-                        "transaction_query_url": "",
-                        "network_fee": "",
-                        "minimum_withdraw_amount": "",
-                        "withdraw_limit": "",
-                        "require_memo": false,
+                        "tokenId": "",
+                        "chainId": "",
+                        "chainIdentifier": "",
+                        "tradeConfirmingThreshold": 0,
+                        "withdrawConfirmingThreshold": 0,
+                        "iconUrl": "",
+                        "minDeposit": "",
+                        "estimatedArrivalTime": 0,
+                        "depositAddress": "",
+                        "transactionQueryUrl": "",
+                        "networkFee": "",
+                        "minimumWithdrawAmount": "",
+                        "withdrawLimit": "",
+                        "requireMemo": false,
                         "busy": false,
-                        "contract_address_url": "",
-                        "contract_address": "",
+                        "contractAddressUrl": "",
+                        "contractAddress": "",
                         "depositEnable": false,
                         "depositDesc": "",
                         "withdrawEnable": false,
                         "withdrawDesc": "",
-                        "specialTips": ""
+                        "specialTips": "",
+                        "assetId": 0
                       }
                     ],
                     "host": "testing env",
@@ -3264,12 +4209,13 @@
         },
         "security": [
           {
-            "Bearer": []
+            "HmacApiKey": []
           }
         ],
         "tags": [
           "gateway"
-        ]
+        ],
+        "x-bitzoom-hmac": true
       }
     },
     "/api/v1/wallet/gettoken": {
@@ -3281,7 +4227,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "35fa2788-d9e9-4d09-bddd-88d7dcd2b2e2",
+                    "traceid": "e3be1476-fe3a-4222-817a-9d6d0a8e4f51",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -3291,31 +4237,31 @@
                         "symbol": "USDT",
                         "chains": {
                           "ETH": {
-                            "token_id": "",
-                            "chain_id": "ETH_USDT",
-                            "chain_identifier": "ETH",
-                            "can_deposit": true,
-                            "can_withdraw": true,
-                            "custodial_minimum_deposit_threshold": "",
+                            "tokenId": "",
+                            "chainId": "ETH_USDT",
+                            "chainIdentifier": "ETH",
+                            "canDeposit": true,
+                            "canWithdraw": true,
+                            "custodialMinimumDepositThreshold": "",
                             "decimal": 18,
-                            "token_icon_url": "https://static.cobo.com/img/asset/icon_usdt.png",
-                            "confirming_threshold": 12,
-                            "explorer_address_url": "https://etherscan.io/address/{address}",
-                            "explorer_tx_url": "https://etherscan.io/tx/{tx}",
-                            "chain_icon_url": "https://static.cobo.com/img/chain/icon_eth.png",
-                            "require_memo": false,
-                            "is_enabled": true,
-                            "deposit_desc": "Please ensure to deposit only USDT to this address. Depositing any other tokens may result in permanent loss.",
-                            "withdraw_desc": "Withdrawals may take up to 30 minutes to process. Please ensure the address is correct before confirming.",
-                            "special_tips": "For large transactions, consider using a wallet that supports higher security measures.",
-                            "network_fee": "",
-                            "min_withdraw_amount": "0",
-                            "max_withdraw_amount": "0"
+                            "tokenIconUrl": "https://static.cobo.com/img/asset/icon_usdt.png",
+                            "confirmingThreshold": 12,
+                            "explorerAddressUrl": "https://etherscan.io/address/{address}",
+                            "explorerTxUrl": "https://etherscan.io/tx/{tx}",
+                            "chainIconUrl": "https://static.cobo.com/img/chain/icon_eth.png",
+                            "requireMemo": false,
+                            "isEnabled": true,
+                            "depositDesc": "Please ensure to deposit only USDT to this address. Depositing any other tokens may result in permanent loss.",
+                            "withdrawDesc": "Withdrawals may take up to 30 minutes to process. Please ensure the address is correct before confirming.",
+                            "specialTips": "For large transactions, consider using a wallet that supports higher security measures.",
+                            "networkFee": "",
+                            "minWithdrawAmount": "0",
+                            "maxWithdrawAmount": "0"
                           }
                         },
-                        "updated_at": "2026-02-23T16:16:19.711680876+08:00",
+                        "updatedAt": "2026-03-24T12:19:54.161662182+08:00",
                         "version": 1,
-                        "icon_url": "https://static.cobo.com/img/asset/icon_usdt.png"
+                        "iconUrl": "https://static.cobo.com/img/asset/icon_usdt.png"
                       }
                     ],
                     "host": "testing env",
@@ -3395,7 +4341,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "63f964b5-c392-41bd-8040-5dfa9af4dc6d",
+                    "traceid": "e2722cd2-30d7-4bc2-931b-ebaa7fd3a733",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -3445,12 +4391,52 @@
         },
         "security": [
           {
-            "Bearer": []
+            "HmacApiKey": []
           }
         ],
         "tags": [
           "gateway"
-        ]
+        ],
+        "parameters": [
+          {
+            "name": "X-BZ-TIMESTAMP",
+            "in": "header",
+            "required": true,
+            "description": "Unix timestamp in milliseconds used in the HMAC payload.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-NONCE",
+            "in": "header",
+            "required": true,
+            "description": "A unique random value for this request. Never reuse a nonce.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-SIGNATURE",
+            "in": "header",
+            "required": true,
+            "description": "Lowercase hexadecimal HMAC-SHA256 signature.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-RECVWINDOW",
+            "in": "header",
+            "required": false,
+            "description": "Optional receive window in milliseconds. Maximum: 60000.",
+            "schema": {
+              "type": "string",
+              "default": "5000"
+            }
+          }
+        ],
+        "x-bitzoom-hmac": true
       }
     },
     "/api/v1/wallet/withdraw": {
@@ -3496,32 +4482,33 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "cb666917-6aae-4b51-9bc9-44ce55be2835",
+                    "traceid": "e6575e8d-7f7b-4645-8cae-dba9729f4008",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
                     "duration": 9223372036854776000,
                     "data": {
-                      "fund_tx_id": 0,
-                      "account_type_id": 0,
-                      "account_tx_id": 0,
-                      "bill_tx_id": 0,
-                      "retry_count": 0,
-                      "fund_message": "",
-                      "fund_status": "",
-                      "is_processed": false,
+                      "fundTxId": 0,
+                      "accountTypeId": 0,
+                      "accountTxId": 0,
+                      "billTxId": 0,
+                      "retryCount": 0,
+                      "fundMessage": "",
+                      "fundStatus": "",
+                      "isProcessed": false,
                       "symbol": "",
-                      "asset_id": 0,
-                      "request_id": "",
-                      "chain_id": "",
-                      "token_id": "",
+                      "assetId": 0,
+                      "requestId": "",
+                      "chainId": "",
+                      "tokenId": "",
                       "address": "",
                       "memo": "",
                       "amount": "",
                       "description": "",
                       "status": "",
-                      "txn_id": "",
-                      "network_fee": ""
+                      "txnId": "",
+                      "networkFee": "",
+                      "date": 0
                     },
                     "host": "testing env",
                     "showType": 0
@@ -3560,34 +4547,58 @@
         },
         "security": [
           {
-            "Bearer": []
+            "HmacApiKey": []
           }
         ],
         "tags": [
           "gateway"
-        ]
+        ],
+        "parameters": [
+          {
+            "name": "X-BZ-TIMESTAMP",
+            "in": "header",
+            "required": true,
+            "description": "Unix timestamp in milliseconds used in the HMAC payload.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-NONCE",
+            "in": "header",
+            "required": true,
+            "description": "A unique random value for this request. Never reuse a nonce.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-SIGNATURE",
+            "in": "header",
+            "required": true,
+            "description": "Lowercase hexadecimal HMAC-SHA256 signature.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-RECVWINDOW",
+            "in": "header",
+            "required": false,
+            "description": "Optional receive window in milliseconds. Maximum: 60000.",
+            "schema": {
+              "type": "string",
+              "default": "5000"
+            }
+          }
+        ],
+        "x-bitzoom-hmac": true
       }
     },
     "/api/v1/wallet/withdrawrecord": {
       "get": {
         "operationId": "/api/v1/wallet/withdrawrecord",
         "parameters": [
-          {
-            "description": "timestamp:",
-            "in": "query",
-            "name": "Timestamp",
-            "schema": {
-              "type": "int64"
-            }
-          },
-          {
-            "description": "signature:",
-            "in": "query",
-            "name": "Signature",
-            "schema": {
-              "type": "string"
-            }
-          },
           {
             "description": "token_id:",
             "in": "query",
@@ -3611,6 +4622,43 @@
             "schema": {
               "type": "int"
             }
+          },
+          {
+            "name": "X-BZ-TIMESTAMP",
+            "in": "header",
+            "required": true,
+            "description": "Unix timestamp in milliseconds used in the HMAC payload.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-NONCE",
+            "in": "header",
+            "required": true,
+            "description": "A unique random value for this request. Never reuse a nonce.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-SIGNATURE",
+            "in": "header",
+            "required": true,
+            "description": "Lowercase hexadecimal HMAC-SHA256 signature.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-BZ-RECVWINDOW",
+            "in": "header",
+            "required": false,
+            "description": "Optional receive window in milliseconds. Maximum: 60000.",
+            "schema": {
+              "type": "string",
+              "default": "5000"
+            }
           }
         ],
         "responses": {
@@ -3619,7 +4667,7 @@
               "application/json": {
                 "schema": {
                   "example": {
-                    "traceid": "86399722-d694-41c6-a510-aebe5158da86",
+                    "traceid": "9d3726c3-49ae-4362-bd57-ccfd10c2e3c0",
                     "errorCode": 200,
                     "errorMessage": "",
                     "success": true,
@@ -3627,26 +4675,27 @@
                     "data": {
                       "rows": [
                         {
-                          "fund_tx_id": 0,
-                          "account_type_id": 0,
-                          "account_tx_id": 0,
-                          "bill_tx_id": 0,
-                          "retry_count": 0,
-                          "fund_message": "",
-                          "fund_status": "",
-                          "is_processed": false,
+                          "fundTxId": 0,
+                          "accountTypeId": 0,
+                          "accountTxId": 0,
+                          "billTxId": 0,
+                          "retryCount": 0,
+                          "fundMessage": "",
+                          "fundStatus": "",
+                          "isProcessed": false,
                           "symbol": "",
-                          "asset_id": 0,
-                          "request_id": "",
-                          "chain_id": "",
-                          "token_id": "",
+                          "assetId": 0,
+                          "requestId": "",
+                          "chainId": "",
+                          "tokenId": "",
                           "address": "",
                           "memo": "",
                           "amount": "",
                           "description": "",
                           "status": "",
-                          "txn_id": "",
-                          "network_fee": ""
+                          "txnId": "",
+                          "networkFee": "",
+                          "date": 0
                         }
                       ],
                       "total": 0,
@@ -3690,23 +4739,24 @@
         },
         "security": [
           {
-            "Bearer": []
+            "HmacApiKey": []
           }
         ],
         "tags": [
           "gateway"
-        ]
+        ],
+        "x-bitzoom-hmac": true
       }
     }
   },
   "servers": [
     {
-      "url": "http://119.8.50.236:8088"
+      "url": "https://api1.riverwa.com"
     }
   ],
   "tags": [
     {
-      "description": "http://119.8.50.236:8088",
+      "description": "https://api1.riverwa.com",
       "name": "gateway"
     }
   ]

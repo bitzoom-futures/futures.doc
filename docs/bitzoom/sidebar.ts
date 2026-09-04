@@ -4,7 +4,7 @@ const sidebar: SidebarsConfig = {
   apisidebar: [
     {
       type: "doc",
-      id: "bitzoom/open-api",
+      id: "bitzoom/bitzoom-hmac-api",
     },
     {
       type: "category",
@@ -46,6 +46,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "bitzoom/api-v-1-convertprice",
+          label: "/api/v1/convertprice",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
           id: "bitzoom/api-v-1-deleteorder",
           label: "/api/v1/deleteorder",
           className: "api-method delete",
@@ -64,8 +70,32 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "bitzoom/api-v-1-fiatlist",
+          label: "/api/v1/fiatlist",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
           id: "bitzoom/api-v-1-fundingfeehistory",
           label: "/api/v1/fundingfeehistory",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "bitzoom/api-v-1-getaccounttype",
+          label: "/api/v1/getaccounttype",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "bitzoom/api-v-1-getbilltype",
+          label: "/api/v1/getbilltype",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "bitzoom/api-v-1-historybill",
+          label: "/api/v1/historybill",
           className: "api-method get",
         },
         {
@@ -90,6 +120,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "bitzoom/api-v-1-historytrade",
           label: "/api/v1/historytrade",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "bitzoom/api-v-1-indexinfo",
+          label: "/api/v1/indexinfo",
           className: "api-method get",
         },
         {

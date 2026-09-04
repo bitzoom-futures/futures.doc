@@ -35,6 +35,7 @@ const sidebars: SidebarsConfig = {
       label: 'Guides',
       collapsed: false,
       items: [
+        'guides/api-key-authentication',
         'guides/place-order',
         'guides/positions'
       ]
@@ -47,6 +48,26 @@ const sidebars: SidebarsConfig = {
         'errors',
         'faq',
         'changelog'
+      ]
+    }
+  ],
+  // User Guide sidebar
+  userGuideSidebar: [
+    {
+      type: 'category',
+      label: 'User Guide',
+      collapsed: false,
+      link: {
+        type: 'generated-index',
+        title: 'Bitzoom User Guide',
+        description: 'Step-by-step guides for using the Bitzoom trading platform — web, mobile, and wallet setup.',
+        slug: '/category/user-guide'
+      },
+      items: [
+        'user-guide/WEB_USER_GUIDE',
+        'user-guide/USER_GUIDE',
+        'user-guide/WALLET_SETUP_GUIDE',
+        'user-guide/wallet-playground'
       ]
     }
   ],
@@ -67,7 +88,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'WebSocket Testing',
-      collapsed: false,
+      collapsed: true,
       items: [
         'websocket-playground',
         'websocket-test/ticker',

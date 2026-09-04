@@ -23,9 +23,13 @@ export default function ParameterForm({ params, values, onChange }: ParameterFor
                 {param.required ? ' *' : ''}
               </label>
               {param.type === 'select' ? (
-                <select className={styles.input} value={values[param.name] ?? param.defaultValue ?? ''} onChange={(e) => onChange(param.name, e.target.value)}>
+                <select
+                  className={styles.input}
+                  value={values[param.name] ?? String(param.defaultValue ?? '')}
+                  onChange={(e) => onChange(param.name, e.target.value)}
+                >
                   {(param.options ?? []).map((option) => (
-                    <option key={option.value} value={option.value}>
+                    <option key={String(option.value)} value={String(option.value)}>
                       {option.label}
                     </option>
                   ))}
@@ -34,9 +38,12 @@ export default function ParameterForm({ params, values, onChange }: ParameterFor
                 <input
                   className={styles.input}
                   type={param.type === 'number' ? 'number' : 'text'}
-                  value={values[param.name] ?? ''}
+                  value={values[param.name] ?? String(param.defaultValue ?? '')}
                   onChange={(e) => onChange(param.name, e.target.value)}
                   placeholder={param.placeholder}
+                  min={param.type === 'number' ? param.min : undefined}
+                  max={param.type === 'number' ? param.max : undefined}
+                  step={param.type === 'number' ? param.step ?? 1 : undefined}
                 />
               )}
             </div>

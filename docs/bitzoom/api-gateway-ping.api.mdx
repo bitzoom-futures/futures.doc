@@ -5,9 +5,9 @@ description: "/api/gateway/ping"
 sidebar_label: "/api/gateway/ping"
 hide_title: true
 hide_table_of_contents: true
-api: eJx1VNtum0AQ/RU0z9hgfA1SVaW3KJWqRoqrPlh+GJYBbwK7293FiYX492ogoU3iPDF7mTNn5pylBW3IopdaXeeQQoRGRiV6esBTZKQqIQRLzmjlyEHaQhLH/BFaeVKeQzSmkqKHiO6cVrznxIFq5IgesTYVcegtCpJcheL1slgvk8mSECeLTZxPNrNCTBY0z8RFvsCsEBACWavtZ50TpEkcP61/kHNYEqQAIbhGCHIOUm8bCiFvhlYgvUiS+XydxPPVZrlYr1cx5+foEVLVVFUIB+08pODJeanKgNSR4Q76YXsyBGnchWAsz8bLofEhue3+r9JCoW2NDCSVXy0gBN+n85JKstC96KJ973hsarzhvOXpd89Mzxz8Y3sOdxzNeJhpXREqPhyleAPbjS3o7I6Eh463cnLCSjN0DbcDdNFUweieIRNLB+kOngwE+9eZ5+xVkz9odkVJHkIw6A/v3HRkj2S5QguNrSCFg/cmjaLZ7GK6mS7jaTJfpZt4s4Fuz9dFY6U/3bIZBxE/EVqyHGV99O1Zvu+/t/Ca7BX5YEvOb/U9qaCwug7eq9ezHejVqLCkiI3lOfFj48jK/MMsmS+W3ETPhuUYuIzzZux+ilIVunfcCzY3VrMeweXNdfBFi6Ym5QOpRNXkgbHyiJ4CVHlgmqyS/Hq89Pzu4KchxVkQAk9vQJtN42nMTjDa+Rp7LyvseZ2b/Asqo2c8PfrIVCh7T/WKtE/67QCNhHB0Qgg90v7Zzjto2wwd/bJV1/H2n4bsCdLdPoQjWokZc9/t2f+EOWu2a+GeTpDCpRBk2CpHrBrm8eYPxOqPtrr6uoWu+ws2u6N5
+api: eJx1VNtu2zAM/RWBTxsgJ67TJq33lBXFWhQDirUDtgV5YGzG1mpLmiQnywz/+0C7dS/rnnSheMhDHqoFY8lhUEZf5ZDCFK2aFhhoj4epVboACY68NdqTh7SFJI55yYwOpANv0dpKZT3E9Kc3mu98VlKNvKPfWNuKeBscZqQ4CiUnc8L5UYTbeBsdH8VJdJrk2+hssZgtsllytqE5SCDnjDs3OUGaxPHD+TN5jwVBCiDBN1lG3kMaXEMS8magAulZksxmiySezU9PjheLecz+OQaEVDdVJaE0PkAKgXxQuhCkdwxXmv3dwRKkcSfBOq5NUAPxwbntnkdpYWtcjQykdJgfg4TQu/ORCnLQvWDR/s88khpf+OC4+t1jpm8YnrJ9C3cszWjcGFMRajaOrfgHthspmM1PygJ0fJWTz5yyA2u4HaC3TSVG9QyeWHhIV/AgIFi/9nxLXjWF0rAqCgogwWIo//PSk9uR4wgtNK6CFMoQrE+n/Pho4tSO3B4nmamhW/PzrHEqHG5ZjEMTL2vMllZd0+EZdRwuJChOsSTMyYEEjTVbv0Uff0TLm6vri+/wms6yr4O4p4PYGicuPy/PI2xCSTrwRFAuHP1qyAc/EXeqJh+wtlJoozOSwqtCY2gcSYE6F6ZHxUo4ykjtKNornZu9GBLyAh2J3GRNTZqRLTlhndphoKcuTPo2KL01vWRfJHveOEc6CNtsKpX1IR/9v1zc3j2B+Im4eQ3seybK0UDy9nKZnMwfU/sgPJEIJYnV8uZKXNNBLJ+qoIwWRaNyWr+b9qvndkX3dHheK2X0+wnPjwr8W8BHFf4YU/fhxPLmCiRw7wcqR5N4ErOOrfGhxn4SH9r1lm5e1GFse6DfYWorVP1E9HpqH9S3Yk2AHHUsoUdaPw7jCtp2g56+uqrr+PpXQ+4A6WotYYdO4YY5rNY8vYOcWLL3rLpeM5aFvsOqGeT36v9k7Y5D8eniDrruLyhy66s=
 sidebar_class_name: "get api-method"
-info_path: bitzoom/open-api
+info_path: bitzoom/bitzoom-hmac-api
 custom_edit_url: null
 ---
 
@@ -18,6 +18,7 @@ import StatusCodes from "@theme/StatusCodes";
 import OperationTabs from "@theme/OperationTabs";
 import TabItem from "@theme/TabItem";
 import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
 
 <Heading
   as={"h1"}
@@ -45,16 +46,13 @@ import Heading from "@theme/Heading";
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
-  body={undefined}
+  {...require("./api-gateway-ping.RequestSchema.json")}
 >
   
 </RequestSchema>
 
 <StatusCodes
-  id={undefined}
-  label={undefined}
-  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"e075f752-5eaa-480d-81fc-4e3bc9d4abfc","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":null,"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+  {...require("./api-gateway-ping.StatusCodes.json")}
 >
   
 </StatusCodes>

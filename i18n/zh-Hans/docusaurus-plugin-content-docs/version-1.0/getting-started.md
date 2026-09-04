@@ -65,6 +65,6 @@ JWT 获取方式见 [鉴权](./authentication.md)。
 - [WebSocket 实时流](./websocket.md)
 - [下第一笔订单](./guides/place-order.md)
 - [仓位管理](./guides/positions.md)
-- [API 参考](/docs/category/bitzoom-api)
+- [API 参考](/1.0/category/bitzoom-api)
 - [错误码](./errors.md)
 - [常见问题](./faq.md)

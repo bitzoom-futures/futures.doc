@@ -5,9 +5,9 @@ description: "/api/v1/openinterest"
 sidebar_label: "/api/v1/openinterest"
 hide_title: true
 hide_table_of_contents: true
-api: eJx1VNtum0AQ/RU0z9jmYjs2UlWltyiVqlaKqz5YeRjDgDeB3e3u4sRC/Hs1YFM7jp9YGObMmTlnpwGlyaATSt5nkMAEtZjswonSJIV0ZMg68EGjwYocGQvJuoGMbGqE5ixIwO6rjSoT8EHw69+azB58kFgRJPDQRcEHm26pQkgacHvNEeuMkAW07aMPhqxW0pLleBQE/EiVdCQdH1HrUqQdzcmT5arNCR69YqVL6qANpiS4k2WwnMVRnI3SKMLRNA7D0SIPF6OI0tlyk2M+jwLwgYxR5rPKCJIoCA7vP8haLJgj867TlKyFxJmafMjqflyQLKMojm+iIJ4vZtObm3nA+Rk6hETWZenDVlkHCTiyTsjCI7ljuK16WXUDCFoftOH5O9E33ic37WmVBnJlKmQgId18Cv5xfqxPQQbasy6aa+GhqQsBjkzfCfxn+x7uMJohuFGqJJQcHKS4FHxoQW2eKHXQ8qdzUz300HldeoND+0ws2IRQoKMX3MPj28wrFq7IbRUbo6De0W57/WdLZnc0e21KSGDrnE4mkzBcjhfjWTCO4nmyCBYLYPdaSmsj3P6BLdlL+YnQkOHTpjt9O4r4/c8K3lK+I+etyLqVeibp5UZV3rV6HeGeXoUSC5qwvRwnfqwtGZF9CKN4OjteuE6UnsswdcbuZilkrjrfnbH5ZRSr4t3+uve+qLSuSDpPyLSsM08bsUNHHsrM0/WmFCnDCse3D35qkpwFPvD0erRwHIwD9oNW1lXYOfqwGq4M/4zNYB5Hr26iSxSduTpRmoOKa0AtuGgIPpyBPR6tvYam2aCl36ZsW/7cb6lumQmLm5IySHIsLV3UH9bQyaJ7l9Mz7U/33Q7Lulsh7JAdGsFVIFk/8n0jzNgd6+aQdZumpN1J1sXGY5TBw3dfV9C2/wB7wusD
+api: eJx1VNtu2zgQ/RVinrqAZMt2bDfaJzcINkFQIKhToF3DD2NqbLGRSJak7HoF/ftipPiWyxMlDufM5ZyZGowlh0EZfZ9BCn20qr8d9I0lrXQgRz5ABBYdlhTIeUgXNWTkpVOWvSAFvy9XpkghAsW/vytye4hAY0mQwry1QgRe5lQipDWEvWWLD07pDTTNMgJH3hrtybN9mCR8SKMD6cCfaG2hZJtm/5fnqPUZHv3B0hbUQjuUpLiSwfA6myYjGWdyPI6vrq5ljJNrGUuUOJY0GE2HEiIg54y7MRlBOkySl/+v5D1uOEfOu5KSvIc0uIoiyKquXZBeD4ej0XSYjCafx1fT6SRh/wwDQqqrooggNz5ACoF8UHojSG8ZLje7p7YBSROBddz/oLrCO+e6OY9Sw9q4EhlI6TC5gujQP+ZnQw6aiyrqj8zHot4QcMj0HcMp2/dwj605GlfGFISajUcq3hJ+LMGsfpEM0PDVpajmHfS6KsRRoZ0nbliEsMFAO9zD8rXnBxIuKeSGhbGhTtEh//ixJ7c9iL1yBaSQh2B92uf3g55TW3I77ElTAqvXk6ycCvs5S7Kj8q5EObPqgfZnDcDu4mVQcsKM3GlSfsRf/o1nj/cPtz/hdVGzthvimfZibZy4+zq7ibEKOenAc0GZcPS7Ih98TzypknzA0kZCGy0pEl5tNIbKUSRQZ8K0qFgIR5LUluKd0pnZiS4hL9CRyIysStKMbMkJ69QWA5246LVkKL02rXAvkr2pnCMdhK1WhZJtyIP/t9v50wnE98Tja2DfVqIcdUXO72bD8eSQ2t/CE4mQk1jMHu/FA+3F7NQFZbTYVCqj5ad+e3qmK36m/XmvlNF/9XiKVOCdAV9U+M+Ysg0nZo/3EAFz35Uy6CW9hNVsjQ8ltvP4QtcH0rloxZH5QH9C3xao2tFoJVW/aHDBsuCgA4jgAmx5GMwF1PUKPX13RdPwdbdj21WsPK4KyiBdY+HpTfzjEj1b0+/m9MxKPW3rLRZVuwBZ31t0iqNAuljytuiEy+E7L1anDWdeb/Y1oxwn8J/bJ2ia/wG1LDTv
 sidebar_class_name: "get api-method"
-info_path: bitzoom/open-api
+info_path: bitzoom/bitzoom-hmac-api
 custom_edit_url: null
 ---
 
@@ -18,6 +18,7 @@ import StatusCodes from "@theme/StatusCodes";
 import OperationTabs from "@theme/OperationTabs";
 import TabItem from "@theme/TabItem";
 import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
 
 <Heading
   as={"h1"}
@@ -42,27 +43,24 @@ import Heading from "@theme/Heading";
   id={"request"}
   as={"h2"}
   className={"openapi-tabs__heading"}
-  children={"Request"}
 >
+  <Translate id="theme.openapi.request.title">Request</Translate>
 </Heading>
 
 <ParamsDetails
-  parameters={[{"description":"symbol:","in":"query","name":"Symbol","schema":{"type":"string"}}]}
+  {...require("./api-v-1-openinterest.ParamsDetails.json")}
 >
   
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
-  body={undefined}
+  {...require("./api-v-1-openinterest.RequestSchema.json")}
 >
   
 </RequestSchema>
 
 <StatusCodes
-  id={undefined}
-  label={undefined}
-  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"9095323d-c22a-4311-8f18-2ec59bfaf620","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":null,"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+  {...require("./api-v-1-openinterest.StatusCodes.json")}
 >
   
 </StatusCodes>

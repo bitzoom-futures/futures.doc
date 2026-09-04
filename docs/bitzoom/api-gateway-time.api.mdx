@@ -5,9 +5,9 @@ description: "/api/gateway/time"
 sidebar_label: "/api/gateway/time"
 hide_title: true
 hide_table_of_contents: true
-api: eJx1lNtum0AQhl8FzTU2GB/iIFVVeopSqWqluOqF5YsBxngT2N3uDk4sxLtXAyltEueKYXdn9p/5P2jBWHLIyuibAlKI0KqoRKYHPEWsaoIQHHlrtCcPaQtJHMsjN5pJs4RobaXyvkR0542WNZ8fqEaJ6BFrW5GE7DAnJbcke1xlCdEk36/2k8VyuZisC4wns/1qlc0vCBPMIQRyzriPpiBIkzh+ev9G3mNJkAKE4Js8J+8hZddQCEUztALpZZLM5xdJPF+tl4uLi1Us+QUyQqqbqgrhYDxDCkyelS4D0kcpdzAPm5MlSOMuBOtkNqyGxofktvv/lhb2xtUohZTm1QJC4D5dXqkkB92zLtq3tsemxhOendKlHBiUntn4p/Zc3XE042ZmTEWoZXO04lXZbmzBZHeUM3SyVJDPnbJD13A7lN43VTDSM2Ri6SHdwhNAsHuZeQ6vmvhghIqSGEKwyIc3TnpyR3JyQwuNqyCFA7NNo2g2u5yup8t4msxX6Tper6HbyfG8cYpPtwLjYOIHQkdOoqyPvvy17+uvDbwUe00cbMjzxtyTDvbO1MFb9/VqB3k1aiwpErBYEt83npwq3s2S+WIpTfRqxI5Byzhvqd1PUem96Yl7puaHM+JHcPXjJvhk8qYmzYHSedUUgXXqiEwB6iKwTVYp+XpYsXx38N2SliwIQaY3VJtN42ksJFjjucaeZY29rnOTfyZlZIbpkSNboeqZ6h1pn/zbAloF4UiCyKlJgBhw3kLbZujpp6u6TpZ/N+ROkG53IRzRKcxE+3Yn/BMW4tm2hXs6QQpXeU5WUDli1YiOV38gcX/E6vrzBrruDzfQo3k=
+api: eJx1VE1v20gM/SsDnrqAZKu2YzfakxsEmyAoEDQp0NbwgZZoaRppZjpD2fUK+u8LSqnyselJoyH5yEc+TgvWkUfW1lznkMIUnZ4WyHTE05R1TRCBp+CsCRQgbWGWJPLJrGEyLEd0rtJZDzH9EayRu5CVVKOc6BfWriI5sseMtGTB88WcFngW7+fLLF4scRXjavchPk+W2So53yW4OIMIyHvrL2xOkM6S5PH/E4WABUEKEEFosoxCgJR9QxHkzUAF0vPZbD5fzZL58sPZYrVaJhKfIyOkpqmqCEobGFJgCqxNocgcBK60x/uTI0iTLgLnpTesB+JDcNs9z9LC3voaBUgbXi4gAu7D5ZcK8tC9YNH+yTySGj0Ce20KcRgqfcPwVO1buGNrRuPO2orQiHEcxf9gu5GC3f2gjKGTq5xC5rUbWMPdAL1vKjWqZ4jEIkC6gUcBwfZ15FvyqolLK6ooiCECh1z+wTOQP5CXDC00voIUSmYX0qk4v594fSB/xElma+i24p41XvPpTsQ4DPGqxmzt9A2dnlHH4SICLSWWhDl5iMBgLdav8cfv8fr2+ubyG7yms+77oB7opPbWq6tP64sYGy7JsGwE5crTz4YCh4m61zUFxtpFyliTUaSCLgxy4ylSaHJle1SslKeM9IHioza5PaqhoKDQk8pt1tRkBNmRV87rAzI9TWHSj0Gbve0l+6LYi8Z7Mqxcs6t01qf8Hf/58u7+CSRM1O1r4NAz0Z4GkndX69nZ8ndpf6tApLgktVnfXqsbOqn1Uxe0NapodE7bd9P+G2Rc8QOdnvdKW/PXRPZHs7wW8FHzv9bWfTq1vr2GCGT2A5X3k2SSiI6dDVxjv4mP43pLNy/6MI6d6RdPXYW634heT+2j+jaiCYhGHUtZNYmch2XcQNvuMNAXX3WdXP9syJ8g3WwjOKDXuBMOm61s7yAnkeyDqK7XjBOhH7BqBvm9ej9Fu+NS/HN5D133HyyR664=
 sidebar_class_name: "get api-method"
-info_path: bitzoom/open-api
+info_path: bitzoom/bitzoom-hmac-api
 custom_edit_url: null
 ---
 
@@ -18,6 +18,7 @@ import StatusCodes from "@theme/StatusCodes";
 import OperationTabs from "@theme/OperationTabs";
 import TabItem from "@theme/TabItem";
 import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
 
 <Heading
   as={"h1"}
@@ -45,16 +46,13 @@ import Heading from "@theme/Heading";
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
-  body={undefined}
+  {...require("./api-gateway-time.RequestSchema.json")}
 >
   
 </RequestSchema>
 
 <StatusCodes
-  id={undefined}
-  label={undefined}
-  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"2fa6b2ee-cf6f-4554-8da0-1f66b37ea2ac","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":null,"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+  {...require("./api-gateway-time.StatusCodes.json")}
 >
   
 </StatusCodes>
