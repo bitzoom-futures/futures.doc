@@ -35,6 +35,7 @@ Plugin: [docusaurus-plugin-openapi-docs](https://github.com/PaloAltoNetworks/doc
 - [deep更新mobile](https://docs.google.com/presentation/d/11_k8Y3FIN5C1TSUrOKC1R2-Srim-rfPloXqjd7JG5hA/edit?usp=sharing) 
 - [订单类型](https://docs.google.com/presentation/d/1eOX2xWC4_byt0NWfQbm0GGd2g0p5B_8t6E6qpgEpQlg/edit?usp=sharing) 
 - [Bitzoom人工复核用例](https://jg6vxrn238l.sg.larksuite.com/wiki/N2QvwOd4NiBstNk3LXPliJ06guc)
+- [人工复核问题列表](https://jg6vxrn238l.sg.larksuite.com/wiki/NRfTwaW9BiQZ76kEUQdlsqmbgLf?from=from_copylink&sheet=rWZJJ2)
 
   
 ## Local Development
