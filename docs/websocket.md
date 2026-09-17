@@ -1,115 +1,30 @@
 # WebSocket Streams
 
-Bitzoom WebSocket uses a channel-based JSON protocol for real-time public and private updates.
+Bitzoom WebSocket uses a channel-based JSON protocol for public market data and private account updates.
 
-## Connection
+## Connect
 
-### Base URLs
+```text
+wss://api1.riverwa.com/ws
+```
 
-| Environment | Server Base URL |
-|-------------|-----------------|
-| Gateway Spec Server | `119.8.50.236:8088` |
-
-### URL Scheme Rule
-
-- Use `ws://` when server host is an IP.
-- Use `wss://` when server host is a domain.
-
-Examples:
-
-- `119.8.50.236:8088` -> `ws://119.8.50.236:8088/ws`
-- `api.example.com` -> `wss://api.example.com/ws`
-
-### JavaScript Connection Example
+Public channels are anonymous. Private channels require an HMAC-signed `logon` on the current connection.
 
 ```javascript
-const ws = new WebSocket('ws://119.8.50.236:8088/ws');
+const ws = new WebSocket('wss://api1.riverwa.com/ws')
 
-ws.onopen = () => console.log('connected');
 ws.onmessage = (event) => {
-  // A frame may contain multiple JSON objects separated by newlines.
-  const lines = String(event.data).split('\n').filter(Boolean);
-  lines.forEach((line) => {
-    try {
-      console.log(JSON.parse(line));
-    } catch {
-      console.warn('invalid json line', line);
-    }
-  });
-};
-ws.onclose = () => console.log('disconnected');
-ws.onerror = (error) => console.error('ws error', error);
-```
-
-## Protocol
-
-### Request (client -> server)
-
-```json
-{
-  "channel": "channelName",
-  "event": "sub",
-  "data": {}
+  for (const line of String(event.data).split('\n').filter(Boolean)) {
+    const message = JSON.parse(line)
+    // Route control events separately from subscription data events.
+    console.log(message.channel, message.event)
+  }
 }
 ```
 
-`event` must be `sub` or `unsub` for request messages.
+## Envelope
 
-### Response/Event (server -> client)
-
-```json
-{
-  "channel": "channelName",
-  "event": "sub",
-  "data": {}
-}
-```
-
-`event` can be one of:
-
-- `sub` (subscription confirmation)
-- `unsub` (unsubscription confirmation)
-- `success` (generic success, including auth success)
-- `error` (request failure)
-- `<subId>` (stream data events for an active subscription)
-
-## Authentication (`logon`)
-
-Private channels require successful `logon` before subscribing.
-
-### Request
-
-```json
-{
-  "channel": "logon",
-  "event": "sub",
-  "data": { "token": "jwt_token" }
-}
-```
-
-### Success Response
-
-```json
-{
-  "channel": "logon",
-  "event": "success",
-  "data": {}
-}
-```
-
-### Error Response
-
-```json
-{
-  "channel": "logon",
-  "event": "error",
-  "data": {}
-}
-```
-
-## Subscribe / Unsubscribe
-
-### Subscribe Request
+Client requests use:
 
 ```json
 {
@@ -119,54 +34,14 @@ Private channels require successful `logon` before subscribing.
 }
 ```
 
-### Subscribe Confirmation
+`event` is `sub` or `unsub` for client requests. Server control responses use `sub`, `unsub`, `success`, or `error`. After subscription, the server returns a `subId`; data events use that identifier as their `event` value.
 
-```json
-{
-  "channel": "/api/v1/ticker",
-  "event": "sub",
-  "data": { "abc123": {} }
-}
-```
+## Public subscriptions
 
-The keys in `data` are `subId` values.
-
-### Data Push After Subscription
-
-```json
-{
-  "channel": "/api/v1/ticker",
-  "event": "abc123",
-  "data": { "symbol": "BTCUSDT", "price": "50000.00" }
-}
-```
-
-### Unsubscribe Request
-
-```json
-{
-  "channel": "/api/v1/ticker",
-  "event": "unsub",
-  "data": { "symbol": "BTCUSDT" }
-}
-```
-
-### Unsubscribe Response
-
-```json
-{
-  "channel": "/api/v1/ticker",
-  "event": "unsub",
-  "data": "abc123"
-}
-```
-
-## Available Channels
-
-### Public Channels
+Public channels can be subscribed immediately. They remain interactive in the [WebSocket Playground](/websocket-playground).
 
 | Channel | Parameters |
-|---------|------------|
+| --- | --- |
 | `/api/v1/ticker` | `{ symbol }` |
 | `/api/v1/ticker/price` | `{ symbol }` |
 | `/api/v1/premiumindex` | `{ symbol }` |
@@ -176,43 +51,58 @@ The keys in `data` are `subId` values.
 | `/api/v1/trades` | `{ symbol, limit }` |
 | `/api/v1/exchangeinfo` | `{}` |
 
-### Private Channels (logon required)
+## Private `logon`
 
-| Channel | Parameters |
-|---------|------------|
-| `/api/v1/adlquantile` | `{ symbol? }` |
-| `/api/v1/margintype` | `{ symbol }` |
-| `/api/v1/leverage` | `{ symbol? }` |
-| `/api/v1/balance` | `{}` |
-| `/api/v1/openorders` | `{ symbol? }` |
-| `/api/v1/positionrisk` | `{ symbol? }` |
+Use the API secret to sign a fixed virtual request with method `WS`, path `/ws`, an empty query, and an empty body. Then send:
 
-## Parsing and Routing Rules
+```json
+{
+  "event": "sub",
+  "channel": "logon",
+  "data": {
+    "apiKey": "your_access_key_here",
+    "timestamp": 1712345678904,
+    "nonce": "a_new_unique_nonce",
+    "recvWindow": "5000",
+    "signature": "lowercase_hmac_sha256_here"
+  }
+}
+```
 
-1. Split each incoming WebSocket frame by newline (`\n`).
-2. Parse each non-empty line as JSON independently.
-3. Route control events (`sub`, `unsub`, `success`, `error`) as protocol responses.
-4. Treat all other `event` values as `subId` stream updates.
+See [API Key Authentication](./guides/api-key-authentication.md) for the exact seven-line payload and signing code. The playground replaces private authentication and subscription controls with that guide because an API secret should never enter the browser.
 
-## Error Handling
+A successful login response has:
 
-- Transport errors come from WebSocket events (`onerror`, `onclose`).
-- Protocol errors are payloads with `event: "error"`.
-- Always surface both kinds of errors to logs/UI for debugging.
+```json
+{ "channel": "logon", "event": "success", "data": {} }
+```
 
-## Reconnection Guidance
+Wait for success before subscribing to private channels such as balance, open orders, or position risk. The key must be enabled, its IP allowlist must match, and it must have the permission required by the channel.
 
-If the connection drops:
+## Subscribe and unsubscribe
 
-1. Reconnect after a short delay (recommended baseline: 2 seconds).
-2. Send `logon` again for private channel access.
-3. Resubscribe channels using their original `channel` + `data`.
+A subscribe confirmation returns a subscription identifier:
 
-## End-to-End Flow
+```json
+{
+  "channel": "/api/v1/ticker",
+  "event": "sub",
+  "data": { "abc123": {} }
+}
+```
 
-1. Connect to `/ws`.
-2. If needed, send `logon` with JWT token.
-3. Send `sub` for desired channel and parameters.
-4. Store returned `subId` from subscribe confirmation.
-5. Consume updates where `event` equals that `subId`.
-6. Send `unsub` to stop updates.
+Subsequent data may use `abc123` as the `event`. To stop it, send the same channel and parameters with `event: "unsub"`.
+
+## Reconnect safely
+
+1. Reconnect with exponential backoff.
+2. Restore public subscriptions.
+3. For private access, generate a new timestamp, nonce, and signature.
+4. Send `logon` and wait for success.
+5. Restore private subscriptions.
+
+Authentication is bound to one connection. Never replay an old `logon` after reconnecting.
+
+## Error handling
+
+Handle transport close/error events and protocol messages with `event: "error"`. If public subscriptions work but private data is absent, confirm that `logon` succeeded on the current connection and that the key has the correct permission and IP scope.

@@ -1,0 +1,7 @@
+export const NILE_URL = 'https://nile.trongrid.io'
+export const TRONWEB_CDN = 'https://cdn.jsdelivr.net/npm/tronweb@5.3.2/dist/TronWeb.js'
+export const USDT_CONTRACT = 'TXYZopYRdj2D9XRtbG411XZZ3kM5VkAeBf'
+export const FUNDED_ADDR = 'TGeXEkAFMxr4mZfhwkZmk5J5some4PZYWK'
+export const FUNDED_PRIV = 'E66C9369383C22A78AA2D5DE89C164DF5A2513E280EC949C23D59BF690D9BEFC'
+export const TRONSCAN_TX_URL = 'https://nile.tronscan.org/#/transaction/'
+export const LOCALSTORAGE_KEY = 'walletPlayground_userWallet'

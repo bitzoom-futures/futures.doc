@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>TRON Sender</title>
+  <script src="https://cdn.jsdelivr.net/npm/tronweb@5.3.2/dist/TronWeb.js"></script>
+</head>
+
+<body>
+  <button id="generate">Generate New Address</button>
+  <div id="wallet"></div>
+  <div id="send"></div>
+
+  <script>
+    const tronWeb = new TronWeb({ fullHost: 'https://nile.trongrid.io' });
+    let currentAddress = '';
+
+    // Funded wallet
+    const FUNDED_ADDR = 'TGeXEkAFMxr4mZfhwkZmk5J5some4PZYWK';
+    const FUNDED_PRIV = 'E66C9369383C22A78AA2D5DE89C164DF5A2513E280EC949C23D59BF690D9BEFC';
+    const USDT_CONTRACT = 'TXYZopYRdj2D9XRtbG411XZZ3kM5VkAeBf';
+
+    document.getElementById('generate').onclick = async () => {
+      const acc = await tronWeb.createAccount();
+      currentAddress = acc.address.base58;
+      document.getElementById('wallet').innerHTML = `
+        <h3>New Address:</h3>
+        <p>Address: <code>${currentAddress}</code></p>
+        <p>PrivKey: <code>${acc.privateKey}</code></p>
+      `;
+      document.getElementById('send').innerHTML = `
+        <button onclick="sendTRX(100)">Send 100 TRX</button>
+        <button onclick="sendUSDT(100)">Send 100 USDT</button>
+      `;
+    };
+
+    async function sendTRX(amountTRX) {
+      try {
+        const senderTronWeb = new TronWeb({ fullHost: 'https://nile.trongrid.io', privateKey: FUNDED_PRIV });
+        const amountSun = Math.floor(amountTRX * 1e6);
+        const tx = await senderTronWeb.transactionBuilder.sendTrx(currentAddress, amountSun, FUNDED_ADDR);
+        const signedTx = await senderTronWeb.trx.sign(tx);
+        const receipt = await senderTronWeb.trx.sendRawTransaction(signedTx);
+        document.getElementById('send').innerHTML += `<p>✅ TRX Tx: <a href="https://nile.tronscan.org/#/transaction/${receipt.txid}" target="_blank">${receipt.txid}</a></p>`;
+      } catch (e) {
+        document.getElementById('send').innerHTML += `<p>TRX Error: ${e.message}</p>`;
+      }
+    }
+
+    async function sendUSDT(amountUSDT) {
+      try {
+        const senderTronWeb = new TronWeb({ fullHost: 'https://nile.trongrid.io', privateKey: FUNDED_PRIV });
+        const amount = Math.floor(amountUSDT * 1e6);
+        const contract = await senderTronWeb.contract().at(USDT_CONTRACT);
+        const tx = await contract.transfer(currentAddress, amount).send({ feeLimit: 40e6 });
+        document.getElementById('send').innerHTML += `<p>✅ USDT Tx: <a href="https://nile.tronscan.org/#/transaction/${tx}" target="_blank">${tx}</a></p>`;
+      } catch (e) {
+        document.getElementById('send').innerHTML += `<p>USDT Error: ${e.message}</p>`;
+      }
+    }
+  </script>
+</body>
+
+</html>

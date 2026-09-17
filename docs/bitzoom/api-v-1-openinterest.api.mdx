@@ -5,7 +5,7 @@ description: "/api/v1/openinterest"
 sidebar_label: "/api/v1/openinterest"
 hide_title: true
 hide_table_of_contents: true
-api: eJx1VNtum0AQ/RU0z9jmYjs2UlWltyiVqlaKqz5YeRjDgDeB3e3u4sRC/Hs1YFM7jp9YGObMmTlnpwGlyaATSt5nkMAEtZjswonSJIV0ZMg68EGjwYocGQvJuoGMbGqE5ixIwO6rjSoT8EHw69+azB58kFgRJPDQRcEHm26pQkgacHvNEeuMkAW07aMPhqxW0pLleBQE/EiVdCQdH1HrUqQdzcmT5arNCR69YqVL6qANpiS4k2WwnMVRnI3SKMLRNA7D0SIPF6OI0tlyk2M+jwLwgYxR5rPKCJIoCA7vP8haLJgj867TlKyFxJmafMjqflyQLKMojm+iIJ4vZtObm3nA+Rk6hETWZenDVlkHCTiyTsjCI7ljuK16WXUDCFoftOH5O9E33ic37WmVBnJlKmQgId18Cv5xfqxPQQbasy6aa+GhqQsBjkzfCfxn+x7uMJohuFGqJJQcHKS4FHxoQW2eKHXQ8qdzUz300HldeoND+0ws2IRQoKMX3MPj28wrFq7IbRUbo6De0W57/WdLZnc0e21KSGDrnE4mkzBcjhfjWTCO4nmyCBYLYPdaSmsj3P6BLdlL+YnQkOHTpjt9O4r4/c8K3lK+I+etyLqVeibp5UZV3rV6HeGeXoUSC5qwvRwnfqwtGZF9CKN4OjteuE6UnsswdcbuZilkrjrfnbH5ZRSr4t3+uve+qLSuSDpPyLSsM08bsUNHHsrM0/WmFCnDCse3D35qkpwFPvD0erRwHIwD9oNW1lXYOfqwGq4M/4zNYB5Hr26iSxSduTpRmoOKa0AtuGgIPpyBPR6tvYam2aCl36ZsW/7cb6lumQmLm5IySHIsLV3UH9bQyaJ7l9Mz7U/33Q7Lulsh7JAdGsFVIFk/8n0jzNgd6+aQdZumpN1J1sXGY5TBw3dfV9C2/wB7wusD
+api: eJx1VF1v2zAM/CsGn93GSdNkMTAM+8YGDBvQDHsI+kDLtKPWljSJThcY/u8D7cRL1ubJsmkej7wTW7COPLK25ksOKUzQ6cluOrGOjDZMngJDDA491sTkA6SbFnIKymsnWZBC2NeZrVKIQcvr74b8HmIwWBOkcNdHIYagtlQjpC3w3kkksNemhK67j8FTcNYEChKfJYk8lDVMhuWIzlVa9TQnD0Gqtid49AdrV1EP7VGRlk5QLRbFKptdvVoVt1dzWs6vVsvF6ooWeZHMbqdFVhDEQN5b/97mBOksSQ7v3ygELIWj8G6UohAgZd9QDHkzjAvS1Wx2c7OcJTeLV7fz5XKRSH6OjJCapqpi2NrAkAJTYG3KiMxO4Lb2ad0PIOlicF7mz3pofEhuu9MqLRTW1yhA2vBiDvFxfqJPSR66sy7aS+GxqWcCHJm+EPjH9iXccTRjMLO2IjQSHKV4LvjYgs0eSDF08uncVHcDdNFU0ejQIRNLMSGUyPSEe7j/P/OChWvirRVjlDQ4mreXfw7kd0ezN76CFLbMLqSTiYg5vfZ6R/4Jr5WtQewbSDVe8/5OPDlo+Y7Qk5dT1p8+HVX8+msN/3P+TBytKfDaPpKJCm/riNGXxJEw0YrS6NBvdJFI38pAvEaDJfW/sCC+aQJ5nb+ezm7mt8er2Ms1kBz1EPB+ytoUtnfkGc0f3ope0dsfX6IPVjU1GY60UVWTR87rHTJFaPLINVmllcBqlnsJ3x0ZyYIYZK4D2vQ6uU7EKc4GrrH3+mFpXJDljM1oK6Y/PHEV6t52vVztQd8NoNNSdAoxnIHdH02/gbbNMNBPX3WdfB72V7/mdMCsohzSAqtAz+qPC+pkBb7I6ZH2p5twh1XTLxexzg69liqQbu7lJhLmYptNe8h6qxQ5Psl6tgsFZXT3549r6Lq/xTH73w==
 sidebar_class_name: "get api-method"
 info_path: bitzoom/open-api
 custom_edit_url: null
@@ -18,6 +18,7 @@ import StatusCodes from "@theme/StatusCodes";
 import OperationTabs from "@theme/OperationTabs";
 import TabItem from "@theme/TabItem";
 import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
 
 <Heading
   as={"h1"}
@@ -42,27 +43,24 @@ import Heading from "@theme/Heading";
   id={"request"}
   as={"h2"}
   className={"openapi-tabs__heading"}
-  children={"Request"}
 >
+  <Translate id="theme.openapi.request.title">Request</Translate>
 </Heading>
 
 <ParamsDetails
-  parameters={[{"description":"symbol:","in":"query","name":"Symbol","schema":{"type":"string"}}]}
+  {...require("./api-v-1-openinterest.ParamsDetails.json")}
 >
   
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
-  body={undefined}
+  {...require("./api-v-1-openinterest.RequestSchema.json")}
 >
   
 </RequestSchema>
 
 <StatusCodes
-  id={undefined}
-  label={undefined}
-  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"9095323d-c22a-4311-8f18-2ec59bfaf620","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":null,"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+  {...require("./api-v-1-openinterest.StatusCodes.json")}
 >
   
 </StatusCodes>

@@ -1,0 +1,1 @@
+{"parameters":[{"description":"Symbol:","in":"query","name":"Symbol","schema":{"type":"string"}},{"description":"IndicatorType:","in":"query","name":"IndicatorType","schema":{"type":"string"}},{"description":"VolumeInterval:","in":"query","name":"VolumeInterval","schema":{"type":"string"}}]}

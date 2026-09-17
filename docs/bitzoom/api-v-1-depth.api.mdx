@@ -5,7 +5,7 @@ description: "/api/v1/depth"
 sidebar_label: "/api/v1/depth"
 hide_title: true
 hide_table_of_contents: true
-api: eJytVMGO2zYQ/RVhzlqbku21l0FQpE0TpGiRAOuiB8MHWhrbTCSSJSknhiAgx+SUHNt70WOKXlKgye9s0f2LYqi14vV6gx5y0kijeXycefNq0Aat8FKrRzlw6Asj+5ukn6Pxa4jBCCtK9Ggd8FkNObrMSkO/Awe3LRe64BCDpNefK7RbiEGJEoHDechCDC5bYymA1+C3hjLOW6lW0DTxIWIhS+n5P3/9efH375e/vr149T6+/PDLv+9+i0aM3Yku3vxx+fL1xcuPfDaKo4TFUcriaMQoDkEbsfktlL4n+GOMpPLQNPMYLDqjlUNHyZQxemRaeVSeQmFMIbPQrv5TR5TrPTB8IUpTYMC1IkNJHRXLfJEMcnYyTkbpyXA8PDuZ5EKcjAfLs0Eq8mEqEGJAa7X9RucIPGXs6v0HdE6siCCRrrIMnQPubYUx5FU7NuBnaToYjFM2OJ2MhuPxKaP6XHgBXFVFEcNaOw8cPDov1SpCtSG4tX4+DbdnTQzGkg68bC/eFtfN/ik1LLUthW+7dTqEeK95uEILzbVb1Lelu0vd0MOO6ZHEJ7bHcLvWdMmF1gUKRcluFEf0t/uiF08xIwnQla8p8ryFXlZF1G1KWylWtBOwEh6fiy3MDysPV6lEv9akiBX6sFl+feQvh3az27bKFsBh7b3h/X6SnPUmvRHrpYNTPmGTCZBeHWaVlX57TiJsh/c1CouWokWIHuzG9t1PUzgk+RB9NEXnp/oZqmhpdRnddl5g2tIrhRIr7JOgPBV+VTm0Mr+bpIPhaLdfYQwtl67PhB26J9VSB6VdY/PEappDdO/Jo+i+zqoSlY+kyooqj4yVG+ExEiqPTLUoZEaw0tO+wWODiqogBupei5b0WI+RAox2vhRBw1dGcNj1azQ6nXh84fumEDLoKEyjvprbDISRdFoSqgllvpPvDOp6IRz+aIumoc+tCwX/lE4sCsyBL0Xh8MbBndXseetRMs9wu2+xG1FUwSaCpf7vQ76g3X6G5c51P5Gc04uVxBL4bE6LjyIn0c7qq6J7WYZmv+qG9RJKt1MPv51C0/wHb+JMTg==
+api: eJyNVE2P2zYQ/SvCnLVrWfauvQKKIm3SIEWLBlgHORg+jKmxzEQiWXLkjSHovwdD2Y7XdoqeRHE4bz7em+nAOvLI2poPJRQwQqdHu/GoJMdbSMGhx4aYfIBi2UFJQXnt5DkUEPbN2tYFpKDl99+W/B5SMNgQFPAcrZBCUFtqEIoOeO/EEthrU0Hfp5eItW40/wzwLzHewtOGqSIPfb9KwVNw1gQK8iDPMvkoa5gMyxGdq7WKBY++BAnanQHSN2xcTRHboyItPZnOpvnDJFN3sxxnd9OHubp7ynF8lz89Es7nJc43T5ACeW/977YkKPIsO/z/TSFgJUlK4q1SFAIU7FtKoWyHxkPxlOeTySzPJo/zh+ls9piJf4mMUJi2rlPY2sBQAFNgbaqEzE7gtvZlETuQ9Sk4L0yyHgofnLv+PEoHG+sb5KFjj1NIrxr4qorr/l4WdcXoMdMbhh/Z3sI9teZkXFtbExoxnqi4oaDjjV1/IcXQy9VrTT0P0Ju2Tk5aHzyxElVDhUwvuIfVpeflMDTEWyuKqIjjbPD2xqtAfnecl9bXUMCW2YViNBL6xvde78i/4L2yDYhgA6nWa94/iwoH9n4j9OTltI6nP468/fl5AZdZvidOFhR4Yb+SSTbeNgmjr4gTyUQrKpJDhclPE4k1DIk3aLCi+IQF8dc2kNflL+N8Mn04Tl8kaEjyxICAx75qs7FRg6/S/OitMJS8+fgheWtV25DhRBtVt2XivN4hU4KmTFy7rrUSWM0yifCPIyNekIL0dUAb32f3mWjD2cANRnUf1sQlH6/SOCmI6RuPXI06Kizy1B0YXQI6LdHG0VtQVkdhL6Hr1hjok6/7Xq6HHRV3ow64rqmEYoN1oKvApyV0tjdvJvOV9ufrc4d1GxdIXJf/O8hplf5HjONG/RFiJT9eSwwolisZaMJStLjsDk5vlCJ37nW1UgXlNCvv3y2g778DHKgoEQ==
 sidebar_class_name: "get api-method"
 info_path: bitzoom/open-api
 custom_edit_url: null
@@ -18,6 +18,7 @@ import StatusCodes from "@theme/StatusCodes";
 import OperationTabs from "@theme/OperationTabs";
 import TabItem from "@theme/TabItem";
 import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
 
 <Heading
   as={"h1"}
@@ -42,27 +43,24 @@ import Heading from "@theme/Heading";
   id={"request"}
   as={"h2"}
   className={"openapi-tabs__heading"}
-  children={"Request"}
 >
+  <Translate id="theme.openapi.request.title">Request</Translate>
 </Heading>
 
 <ParamsDetails
-  parameters={[{"description":"symbol:","in":"query","name":"Symbol","schema":{"type":"string"}},{"description":"limit:深度限制,默认 500; 可选值:[5, 10, 20, 50, 100, 500, 1000]","in":"query","name":"Limit","schema":{"type":"int"}}]}
+  {...require("./api-v-1-depth.ParamsDetails.json")}
 >
   
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
-  body={undefined}
+  {...require("./api-v-1-depth.RequestSchema.json")}
 >
   
 </RequestSchema>
 
 <StatusCodes
-  id={undefined}
-  label={undefined}
-  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"afdb13d0-7152-4749-8daa-73f932ad42ae","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":null,"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+  {...require("./api-v-1-depth.StatusCodes.json")}
 >
   
 </StatusCodes>

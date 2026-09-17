@@ -41,7 +41,7 @@ ws.onclose = () => {
 ```javascript
 ws.send(JSON.stringify({
   method: 'SUBSCRIBE',
-  params: ['btcusdt@ticker', 'ethusdt@ticker'],
+  params: ['ETHUSDT@ticker', 'ethusdt@ticker'],
   id: 1
 }));
 ```
@@ -51,7 +51,7 @@ ws.send(JSON.stringify({
 ```javascript
 ws.send(JSON.stringify({
   method: 'UNSUBSCRIBE',
-  params: ['btcusdt@ticker'],
+  params: ['ETHUSDT@ticker'],
   id: 2
 }));
 ```
@@ -76,7 +76,7 @@ ws.send(JSON.stringify({
 ```javascript
 ws.send(JSON.stringify({
   method: 'SUBSCRIBE',
-  params: ['btcusdt@ticker'],
+  params: ['ETHUSDT@ticker'],
   id: 1
 }));
 ```
@@ -86,7 +86,7 @@ ws.send(JSON.stringify({
 {
   "e": "24hrTicker",
   "E": 1672515782136,
-  "s": "BTCUSDT",
+  "s": "ETHUSDT",
   "p": "500.00",
   "P": "1.02",
   "w": "49500.00",
@@ -132,7 +132,7 @@ Simplified ticker with key fields only.
 {
   "e": "24hrMiniTicker",
   "E": 1672515782136,
-  "s": "BTCUSDT",
+  "s": "ETHUSDT",
   "c": "50000.00",
   "o": "49500.00",
   "h": "51000.00",
@@ -161,7 +161,7 @@ Receives ticker updates for all symbols.
 // Top 10 levels, 100ms updates
 ws.send(JSON.stringify({
   method: 'SUBSCRIBE',
-  params: ['btcusdt@depth10@100ms'],
+  params: ['ETHUSDT@depth10@100ms'],
   id: 1
 }));
 ```
@@ -171,7 +171,7 @@ ws.send(JSON.stringify({
 {
   "e": "depthUpdate",
   "E": 1672515782136,
-  "s": "BTCUSDT",
+  "s": "ETHUSDT",
   "U": 157,
   "u": 160,
   "b": [
@@ -217,7 +217,7 @@ ws.send(JSON.stringify({
 ```javascript
 ws.send(JSON.stringify({
   method: 'SUBSCRIBE',
-  params: ['btcusdt@kline_1h'],
+  params: ['ETHUSDT@kline_1h'],
   id: 1
 }));
 ```
@@ -227,11 +227,11 @@ ws.send(JSON.stringify({
 {
   "e": "kline",
   "E": 1672515782136,
-  "s": "BTCUSDT",
+  "s": "ETHUSDT",
   "k": {
     "t": 1672512000000,
     "T": 1672515599999,
-    "s": "BTCUSDT",
+    "s": "ETHUSDT",
     "i": "1h",
     "o": "49500.00",
     "c": "50000.00",
@@ -267,7 +267,7 @@ Real-time trade execution data.
 {
   "e": "trade",
   "E": 1672515782136,
-  "s": "BTCUSDT",
+  "s": "ETHUSDT",
   "t": 12345,
   "p": "50000.00",
   "q": "0.100",
@@ -298,7 +298,7 @@ Aggregates trades that fill at the same time, price, and side.
 {
   "e": "markPriceUpdate",
   "E": 1672515782136,
-  "s": "BTCUSDT",
+  "s": "ETHUSDT",
   "p": "50000.00",
   "i": "50010.00",
   "r": "0.00010000",
@@ -370,7 +370,7 @@ Triggered when account balance changes.
     ],
     "P": [
       {
-        "s": "BTCUSDT",
+        "s": "ETHUSDT",
         "pa": "0.100",
         "ep": "50000.00",
         "up": "50.00"
@@ -401,7 +401,7 @@ Triggered when an order is created, filled, or cancelled.
   "E": 1672515782136,
   "T": 1672515782100,
   "o": {
-    "s": "BTCUSDT",
+    "s": "ETHUSDT",
     "c": "myOrder123",
     "S": "BUY",
     "o": "LIMIT",
@@ -556,7 +556,7 @@ class BitzoomWebSocket:
 
     def on_open(self, ws):
         print("Connected")
-        self.subscribe(['btcusdt@ticker', 'btcusdt@trade', 'btcusdt@kline_1m'])
+        self.subscribe(['ETHUSDT@ticker', 'ETHUSDT@trade', 'ETHUSDT@kline_1m'])
 
     def subscribe(self, streams):
         self.subscriptions.extend(streams)
@@ -585,4 +585,4 @@ if __name__ == "__main__":
 
 - [Getting Started](./getting-started.md) - API overview
 - [Authentication](./authentication.md) - Set up API access
-- [API Reference](/docs/category/bitzoom-api) - REST API documentation
+- [API Reference](/1.0/category/bitzoom-api) - REST API documentation

@@ -1,0 +1,3962 @@
+{
+    "components": {
+        "securitySchemes": {
+            "Bearer": {
+                "bearerFormat": "JWT",
+                "description": "Get TestToken from https://test.riverwa.com/api/servermanage/testtoken?userid=12345",
+                "scheme": "bearer",
+                "type": "http"
+            }
+        }
+    },
+    "info": {
+        "description": "Project API Document includ private and public",
+        "title": "Open API",
+        "version": "1.0.0"
+    },
+    "openapi": "3.0.1",
+    "paths": {
+        "/api/gateway/ping": {
+            "get": {
+                "operationId": "api_gateway_ping",
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "5dbbd591-2e6d-4c13-8d53-bede3ecbc3ab",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": null,
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "Ping",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/gateway/time": {
+            "get": {
+                "operationId": "api_gateway_time",
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "46bbf386-3ebc-4a4b-88a6-821badb1573e",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": null,
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "Time",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/adlquantile": {
+            "get": {
+                "operationId": "api_v1_adlquantile",
+                "parameters": [
+                    {
+                        "description": "timestamp:",
+                        "in": "query",
+                        "name": "Timestamp",
+                        "schema": {
+                            "type": "int64"
+                        }
+                    },
+                    {
+                        "description": "signature:",
+                        "in": "query",
+                        "name": "Signature",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "symbol:交易对,当为空时查询用户所有交易对",
+                        "in": "query",
+                        "name": "Symbol",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "d6dca294-6049-452b-b123-29240328ddb0",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": null,
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "AdlQuantile",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/balance": {
+            "get": {
+                "operationId": "api_v1_balance",
+                "parameters": [
+                    {
+                        "description": "timestamp:",
+                        "in": "query",
+                        "name": "Timestamp",
+                        "schema": {
+                            "type": "int64"
+                        }
+                    },
+                    {
+                        "description": "signature:",
+                        "in": "query",
+                        "name": "Signature",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "8e21be71-7bac-4f33-a267-433acb7862a4",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": null,
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "Balance",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/commissionrate": {
+            "get": {
+                "operationId": "api_v1_commissionrate",
+                "parameters": [
+                    {
+                        "description": "timestamp:",
+                        "in": "query",
+                        "name": "Timestamp",
+                        "schema": {
+                            "type": "int64"
+                        }
+                    },
+                    {
+                        "description": "signature:",
+                        "in": "query",
+                        "name": "Signature",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "symbol:交易对,不能为空",
+                        "in": "query",
+                        "name": "Symbol",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "9d759334-bc2e-4224-a7ad-6674337aa4b8",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": null,
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "CommissionRate",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/deleteorder": {
+            "delete": {
+                "operationId": "api_v1_deleteorder",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "orderId": {
+                                        "minimum": 0,
+                                        "type": "integer"
+                                    },
+                                    "origClientOrderId": {
+                                        "type": "string"
+                                    },
+                                    "signature": {
+                                        "type": "string"
+                                    },
+                                    "symbol": {
+                                        "type": "string"
+                                    },
+                                    "timestamp": {
+                                        "format": "int64",
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    },
+                    "description": "Private:<br>symbol:<br>orderId,string:<br>origClientOrderId:",
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "5d1d34e4-048f-452c-8ae9-2c97997fed10",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": null,
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "DeleteOrder",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/depth": {
+            "get": {
+                "operationId": "api_v1_depth",
+                "parameters": [
+                    {
+                        "description": "symbol:",
+                        "in": "query",
+                        "name": "Symbol",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "limit:深度限制,默认 500; 可选值:[5, 10, 20, 50, 100, 500, 1000]",
+                        "in": "query",
+                        "name": "Limit",
+                        "schema": {
+                            "type": "int"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "df143a53-2c4a-4379-b03d-61f6bcb3edd5",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": null,
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "Depth",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/exchangeinfo": {
+            "get": {
+                "operationId": "api_v1_exchangeinfo",
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "b6eff005-9f10-4687-babf-c228fac72d73",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": null,
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "ExchangeInfo",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/fundingfeehistory": {
+            "get": {
+                "operationId": "api_v1_fundingfeehistory",
+                "parameters": [
+                    {
+                        "description": "symbol:",
+                        "in": "query",
+                        "name": "Symbol",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "ae47f5cd-ca43-4032-a5c2-a148c52355e3",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": null,
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "FundingFeeHistory",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/historyorder": {
+            "get": {
+                "operationId": "api_v1_historyorder",
+                "parameters": [
+                    {
+                        "description": "timestamp:",
+                        "in": "query",
+                        "name": "Timestamp",
+                        "schema": {
+                            "type": "int64"
+                        }
+                    },
+                    {
+                        "description": "signature:",
+                        "in": "query",
+                        "name": "Signature",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "page:页码,当为0时为1,返回数据中的total是总行数,每页默认行数为100",
+                        "in": "query",
+                        "name": "Page",
+                        "schema": {
+                            "type": "int64"
+                        }
+                    },
+                    {
+                        "description": "limit:每页行数,默认100,最大1000",
+                        "in": "query",
+                        "name": "Limit",
+                        "schema": {
+                            "type": "int64"
+                        }
+                    },
+                    {
+                        "description": "starttime:开始时间，可以为空",
+                        "in": "query",
+                        "name": "StartTime",
+                        "schema": {
+                            "type": "int64"
+                        }
+                    },
+                    {
+                        "description": "endtime:结束时间，可以为空",
+                        "in": "query",
+                        "name": "EndTime",
+                        "schema": {
+                            "type": "int64"
+                        }
+                    },
+                    {
+                        "description": "symbol:交易对,为空时查询所有",
+                        "in": "query",
+                        "name": "Symbol",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "ordertype:订单类型:空(所有订单),limit(限价单),market(市价单),stop(止盈止损单),stopLimit(止盈止损限价单)",
+                        "in": "query",
+                        "name": "OrderType",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "positionside:持仓方向:空(所有),long(多头),short(空头)",
+                        "in": "query",
+                        "name": "PositionSide",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "status:订单状态:空(所有订单),new(新订单),partiallyFilled(部分成交),filled(完全成交),canceled(已取消),pendingCancel(待取消),rejected(拒绝),expired(过期)",
+                        "in": "query",
+                        "name": "Status",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "0d6987be-1b39-4365-8295-877c5b8e0ebf",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": null,
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "HistoryOrder",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/historyposition": {
+            "get": {
+                "operationId": "api_v1_historyposition",
+                "parameters": [
+                    {
+                        "description": "timestamp:",
+                        "in": "query",
+                        "name": "Timestamp",
+                        "schema": {
+                            "type": "int64"
+                        }
+                    },
+                    {
+                        "description": "signature:",
+                        "in": "query",
+                        "name": "Signature",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "page:页码,当为0时为1,返回数据中的total是总行数,每页默认行数为100",
+                        "in": "query",
+                        "name": "Page",
+                        "schema": {
+                            "type": "int64"
+                        }
+                    },
+                    {
+                        "description": "limit:每页行数,默认100,最大1000",
+                        "in": "query",
+                        "name": "Limit",
+                        "schema": {
+                            "type": "int64"
+                        }
+                    },
+                    {
+                        "description": "starttime:开始时间，可以为空",
+                        "in": "query",
+                        "name": "StartTime",
+                        "schema": {
+                            "type": "int64"
+                        }
+                    },
+                    {
+                        "description": "endtime:结束时间，可以为空",
+                        "in": "query",
+                        "name": "EndTime",
+                        "schema": {
+                            "type": "int64"
+                        }
+                    },
+                    {
+                        "description": "symbol:交易对,为空时查询所有",
+                        "in": "query",
+                        "name": "Symbol",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "positionside:持仓方向:空(所有),long(多头),short(空头)",
+                        "in": "query",
+                        "name": "PositionSide",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "closestatus:平仓状态:空(所有):none=未平仓, partial=部分平仓, full=全部平仓",
+                        "in": "query",
+                        "name": "CloseStatus",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "c49136af-6a6f-42b3-851a-a663faaeb8b6",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": null,
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "HistoryPosition",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/historypositionmargin": {
+            "get": {
+                "operationId": "api_v1_historypositionmargin",
+                "parameters": [
+                    {
+                        "description": "timestamp:",
+                        "in": "query",
+                        "name": "Timestamp",
+                        "schema": {
+                            "type": "int64"
+                        }
+                    },
+                    {
+                        "description": "signature:",
+                        "in": "query",
+                        "name": "Signature",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "page:页码,当为0时为1,返回数据中的total是总行数,每页默认行数为100",
+                        "in": "query",
+                        "name": "Page",
+                        "schema": {
+                            "type": "int64"
+                        }
+                    },
+                    {
+                        "description": "limit:每页行数,默认100,最大1000",
+                        "in": "query",
+                        "name": "Limit",
+                        "schema": {
+                            "type": "int64"
+                        }
+                    },
+                    {
+                        "description": "starttime:开始时间，可以为空",
+                        "in": "query",
+                        "name": "StartTime",
+                        "schema": {
+                            "type": "int64"
+                        }
+                    },
+                    {
+                        "description": "endtime:结束时间，可以为空",
+                        "in": "query",
+                        "name": "EndTime",
+                        "schema": {
+                            "type": "int64"
+                        }
+                    },
+                    {
+                        "description": "symbol:交易对,为空时查询所有",
+                        "in": "query",
+                        "name": "Symbol",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "type:操作类型,1:增加保证金,2:减少保证金",
+                        "in": "query",
+                        "name": "Type",
+                        "schema": {
+                            "type": "int"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "dcb8b5c6-5306-43b6-86d7-a3e7dc1da21b",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": null,
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "HistoryPositionMargin",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/historytrade": {
+            "get": {
+                "operationId": "api_v1_historytrade",
+                "parameters": [
+                    {
+                        "description": "timestamp:",
+                        "in": "query",
+                        "name": "Timestamp",
+                        "schema": {
+                            "type": "int64"
+                        }
+                    },
+                    {
+                        "description": "signature:",
+                        "in": "query",
+                        "name": "Signature",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "page:页码,当为0时为1,返回数据中的total是总行数,每页默认行数为100",
+                        "in": "query",
+                        "name": "Page",
+                        "schema": {
+                            "type": "int64"
+                        }
+                    },
+                    {
+                        "description": "limit:每页行数,默认100,最大1000",
+                        "in": "query",
+                        "name": "Limit",
+                        "schema": {
+                            "type": "int64"
+                        }
+                    },
+                    {
+                        "description": "starttime:开始时间，可以为空",
+                        "in": "query",
+                        "name": "StartTime",
+                        "schema": {
+                            "type": "int64"
+                        }
+                    },
+                    {
+                        "description": "endtime:结束时间，可以为空",
+                        "in": "query",
+                        "name": "EndTime",
+                        "schema": {
+                            "type": "int64"
+                        }
+                    },
+                    {
+                        "description": "symbol:交易对,为空时查询所有",
+                        "in": "query",
+                        "name": "Symbol",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "side:交易方向: 空(所有), buy(买入), sell(卖出)",
+                        "in": "query",
+                        "name": "Side",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "13f6637c-01bb-4318-bc1a-86d0fb57643d",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": null,
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "HistoryTrade",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/klines": {
+            "get": {
+                "operationId": "api_v1_klines",
+                "parameters": [
+                    {
+                        "description": "symbol:",
+                        "in": "query",
+                        "name": "Symbol",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "interval:",
+                        "in": "query",
+                        "name": "Interval",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "limit:深度限制,默认 100; 最大:500",
+                        "in": "query",
+                        "name": "Limit",
+                        "schema": {
+                            "type": "int"
+                        }
+                    },
+                    {
+                        "description": "startTime:开始时间,int64时间戳格式",
+                        "in": "query",
+                        "name": "StartTime",
+                        "schema": {
+                            "type": "int64"
+                        }
+                    },
+                    {
+                        "description": "endTime:结束时间,int64时间戳格式",
+                        "in": "query",
+                        "name": "EndTime",
+                        "schema": {
+                            "type": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "63eecc4d-b1f0-436d-be63-d3f96060d0bd",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": null,
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "Klines",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/leverage": {
+            "get": {
+                "operationId": "api_v1_leverage",
+                "parameters": [
+                    {
+                        "description": "timestamp:",
+                        "in": "query",
+                        "name": "Timestamp",
+                        "schema": {
+                            "type": "int64"
+                        }
+                    },
+                    {
+                        "description": "signature:",
+                        "in": "query",
+                        "name": "Signature",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "symbol:当设置时必须输入，当查询时如为空查询所有市场",
+                        "in": "query",
+                        "name": "Symbol",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "leverage:目标杠杆倍数1-125的整数,当为0时表示查询交易对杠杆",
+                        "in": "query",
+                        "name": "Leverage",
+                        "schema": {
+                            "type": "uint"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "3e4f3499-dede-42ed-9a03-0f6a8663ae78",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": null,
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "Leverage",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/margintype": {
+            "get": {
+                "operationId": "api_v1_margintype",
+                "parameters": [
+                    {
+                        "description": "timestamp:",
+                        "in": "query",
+                        "name": "Timestamp",
+                        "schema": {
+                            "type": "int64"
+                        }
+                    },
+                    {
+                        "description": "signature:",
+                        "in": "query",
+                        "name": "Signature",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "symbol:交易对,不能为空",
+                        "in": "query",
+                        "name": "Symbol",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "marginType:保证金模式 ISOLATED(逐仓), CROSSED(全仓),空时为查询当前模式",
+                        "in": "query",
+                        "name": "MarginType",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "56a609db-30f9-4c26-93ae-1e5b58ff066f",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": null,
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "MarginType",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/myfavorite": {
+            "get": {
+                "operationId": "api_v1_myfavorite",
+                "parameters": [
+                    {
+                        "description": "timestamp:",
+                        "in": "query",
+                        "name": "Timestamp",
+                        "schema": {
+                            "type": "int64"
+                        }
+                    },
+                    {
+                        "description": "signature:",
+                        "in": "query",
+                        "name": "Signature",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "symbol:设置为我的最爱交易对，当为时空时，表示获取我的最爱交易对列表",
+                        "in": "query",
+                        "name": "Symbol",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "cancel:是否取消指定的最爱交易对",
+                        "in": "query",
+                        "name": "Cancel",
+                        "schema": {
+                            "type": "bool"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "5f7315a4-5cbb-45b7-a2a3-254e0314b497",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": null,
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "MyFavorite",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/openinterest": {
+            "get": {
+                "operationId": "api_v1_openinterest",
+                "parameters": [
+                    {
+                        "description": "symbol:",
+                        "in": "query",
+                        "name": "Symbol",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "dc804003-5b8c-433d-9ec2-56e910c98dcd",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": null,
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "OpenInterest",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/openorders": {
+            "get": {
+                "operationId": "api_v1_openorders",
+                "parameters": [
+                    {
+                        "description": "timestamp:",
+                        "in": "query",
+                        "name": "Timestamp",
+                        "schema": {
+                            "type": "int64"
+                        }
+                    },
+                    {
+                        "description": "signature:",
+                        "in": "query",
+                        "name": "Signature",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "symbol:",
+                        "in": "query",
+                        "name": "Symbol",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "2583c4a0-e048-4514-b92a-98b17af8fa31",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": null,
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "OpenOrders",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/order": {
+            "post": {
+                "operationId": "api_v1_order",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "customer_order_id": {
+                                        "type": "string"
+                                    },
+                                    "isMargin": {
+                                        "type": "boolean"
+                                    },
+                                    "isSize": {
+                                        "type": "boolean"
+                                    },
+                                    "orderId": {
+                                        "minimum": 0,
+                                        "type": "integer"
+                                    },
+                                    "positionSide": {
+                                        "type": "integer"
+                                    },
+                                    "price": {
+                                        "type": "string"
+                                    },
+                                    "quantity": {
+                                        "type": "string"
+                                    },
+                                    "side": {
+                                        "type": "integer"
+                                    },
+                                    "signature": {
+                                        "type": "string"
+                                    },
+                                    "symbol": {
+                                        "type": "string"
+                                    },
+                                    "time_in_force": {
+                                        "type": "string"
+                                    },
+                                    "timestamp": {
+                                        "format": "int64",
+                                        "type": "integer"
+                                    },
+                                    "type": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    },
+                    "description": "Private:<br>FuturesOrder:",
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "1a082f84-a34d-40f5-be08-da7a65c341f8",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": null,
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "Order",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/overview": {
+            "get": {
+                "operationId": "api_v1_overview",
+                "parameters": [
+                    {
+                        "description": "timestamp:",
+                        "in": "query",
+                        "name": "Timestamp",
+                        "schema": {
+                            "type": "int64"
+                        }
+                    },
+                    {
+                        "description": "signature:",
+                        "in": "query",
+                        "name": "Signature",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "1e984136-0e7b-4770-b0ca-9566ebaaabc2",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": {
+                                            "estimatedTotalValue": "125680.50",
+                                            "profitLossToday": "3250.80",
+                                            "profitLossPercentage": "2.65",
+                                            "accountDetails": [
+                                                {
+                                                    "accountTypeName": "合约账户",
+                                                    "accountTypeId": 1,
+                                                    "accountBalance": "85430.25",
+                                                    "availableBalance": "72350.40"
+                                                },
+                                                {
+                                                    "accountTypeName": "现货账户",
+                                                    "accountTypeId": 2,
+                                                    "accountBalance": "32180.15",
+                                                    "availableBalance": "32180.15"
+                                                },
+                                                {
+                                                    "accountTypeName": "资金账户",
+                                                    "accountTypeId": 3,
+                                                    "accountBalance": "8070.10",
+                                                    "availableBalance": "8070.10"
+                                                }
+                                            ],
+                                            "assetDetails": [
+                                                {
+                                                    "assetName": "USDT",
+                                                    "assetAmount": "95430.50",
+                                                    "assetPercentage": "75.92"
+                                                },
+                                                {
+                                                    "assetName": "BTC",
+                                                    "assetAmount": "0.32500000",
+                                                    "assetPercentage": "16.38"
+                                                },
+                                                {
+                                                    "assetName": "ETH",
+                                                    "assetAmount": "2.85000000",
+                                                    "assetPercentage": "5.24"
+                                                },
+                                                {
+                                                    "assetName": "BNB",
+                                                    "assetAmount": "8.50000000",
+                                                    "assetPercentage": "2.46"
+                                                }
+                                            ]
+                                        },
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "Overview",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/positionmargin": {
+            "get": {
+                "operationId": "api_v1_positionmargin",
+                "parameters": [
+                    {
+                        "description": "timestamp:",
+                        "in": "query",
+                        "name": "Timestamp",
+                        "schema": {
+                            "type": "int64"
+                        }
+                    },
+                    {
+                        "description": "signature:",
+                        "in": "query",
+                        "name": "Signature",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "symbol:交易对,不能为空",
+                        "in": "query",
+                        "name": "Symbol",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "positionSide:持仓方向,不能为空,枚举值: LONG(多头), SHORT(空头)",
+                        "in": "query",
+                        "name": "PositionSide",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "amount:保证金,不能为空",
+                        "in": "query",
+                        "name": "Amount",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "type:操作类型,1:增加保证金,2:减少保证金",
+                        "in": "query",
+                        "name": "Type",
+                        "schema": {
+                            "type": "int"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "566d6d23-fbcc-4570-943c-896452562e87",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": null,
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "PositionMargin",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/positionrisk": {
+            "get": {
+                "operationId": "api_v1_positionrisk",
+                "parameters": [
+                    {
+                        "description": "timestamp:",
+                        "in": "query",
+                        "name": "Timestamp",
+                        "schema": {
+                            "type": "int64"
+                        }
+                    },
+                    {
+                        "description": "signature:",
+                        "in": "query",
+                        "name": "Signature",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "symbol:",
+                        "in": "query",
+                        "name": "Symbol",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "db3f3c53-c982-4a08-89dc-01d743d1d8a6",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": null,
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "PositionRisk",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/premiumindex": {
+            "get": {
+                "operationId": "api_v1_premiumindex",
+                "parameters": [
+                    {
+                        "description": "symbol:",
+                        "in": "query",
+                        "name": "Symbol",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "298b1b42-2e53-49e5-a3fd-a1cf8558882b",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": null,
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "PremiumIndex",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/symbolcategories": {
+            "get": {
+                "operationId": "api_v1_symbolcategories",
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "97d84dd5-c926-4b99-8bc7-e0d06a5d96cf",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": null,
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "SymbolCategories",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/symbolinfo": {
+            "get": {
+                "operationId": "api_v1_symbolinfo",
+                "parameters": [
+                    {
+                        "description": "symbol:",
+                        "in": "query",
+                        "name": "Symbol",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "0a14a07c-84b0-474d-b6e5-7157b4eaeebd",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": {
+                                            "symbol": "",
+                                            "icon": "",
+                                            "code": "",
+                                            "name": "",
+                                            "marketValue": "",
+                                            "fullyDilutedMarketValue": "",
+                                            "dominanceIndex": "",
+                                            "volume": "",
+                                            "circulatingSupply": "",
+                                            "totalSupply": "",
+                                            "maxSupply": "",
+                                            "openInterestConcentration": "",
+                                            "issueDate": "",
+                                            "issuePrice": "",
+                                            "allTimeHigh": "",
+                                            "allTimeLow": "",
+                                            "website": "",
+                                            "whitePaper": "",
+                                            "socialMedia": "",
+                                            "explorer": "",
+                                            "description": ""
+                                        },
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "SymbolInfo",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/ticker": {
+            "get": {
+                "operationId": "api_v1_ticker",
+                "parameters": [
+                    {
+                        "description": "symbol:",
+                        "in": "query",
+                        "name": "Symbol",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "cfbaf12f-7c40-495f-a0d9-10045e61764e",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": null,
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "Ticker",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/ticker/bookticker": {
+            "get": {
+                "operationId": "api_v1_ticker_bookticker",
+                "parameters": [
+                    {
+                        "description": "symbol:",
+                        "in": "query",
+                        "name": "Symbol",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "c94f39ae-61b5-4f1f-9cea-e71004bfc748",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": null,
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "BookTicker",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/ticker/hr24": {
+            "get": {
+                "operationId": "api_v1_ticker_hr24",
+                "parameters": [
+                    {
+                        "description": "symbol:",
+                        "in": "query",
+                        "name": "Symbol",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "3702ae41-7848-45c4-a4e0-5b06003cc1b4",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": null,
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "Hr24",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/ticker/price": {
+            "get": {
+                "operationId": "api_v1_ticker_price",
+                "parameters": [
+                    {
+                        "description": "symbol:",
+                        "in": "query",
+                        "name": "Symbol",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "45196ba7-679d-424f-a31d-4c30cd5e4aa3",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": null,
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "Price",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/tradeinfo": {
+            "get": {
+                "operationId": "api_v1_tradeinfo",
+                "parameters": [
+                    {
+                        "description": "symbol:",
+                        "in": "query",
+                        "name": "Symbol",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "volumeInterval:交易量统计时间间隔，例如  \"5m\", \"1h\"，通过VolumeIntervalType接口获取支持的时间间隔列表，默认为 \"5m\"",
+                        "in": "query",
+                        "name": "VolumeInterval",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "indicatorType:交易指标类型，\"longShortRatio\", \"openInterest\"，当为空时获取到所有指标数据",
+                        "in": "query",
+                        "name": "IndicatorType",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "f816e756-8f0e-4b2b-b413-e4b1f89c2007",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": {
+                                            "symbol": "",
+                                            "volumeInterval": "",
+                                            "openInterest": null,
+                                            "longShortRatio": null
+                                        },
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "TradeInfo",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/trades": {
+            "get": {
+                "operationId": "api_v1_trades",
+                "parameters": [
+                    {
+                        "description": "symbol:",
+                        "in": "query",
+                        "name": "Symbol",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "limit:深度限制,默认 50",
+                        "in": "query",
+                        "name": "Limit",
+                        "schema": {
+                            "type": "int"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "e7613e39-0195-4828-9e45-3331dee12ef9",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": null,
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "Trades",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/userinfohook": {
+            "post": {
+                "operationId": "api_v1_userinfohook",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "action": {
+                                        "type": "string"
+                                    },
+                                    "clientIp": {
+                                        "type": "string"
+                                    },
+                                    "createdTime": {
+                                        "type": "string"
+                                    },
+                                    "extendedUser": {
+                                        "properties": {
+                                            "id": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    },
+                                    "isTriggered": {
+                                        "type": "boolean"
+                                    },
+                                    "method": {
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "organization": {
+                                        "type": "string"
+                                    },
+                                    "owner": {
+                                        "type": "string"
+                                    },
+                                    "requestUri": {
+                                        "type": "string"
+                                    },
+                                    "user": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    },
+                    "description": "V1:<br>owner:<br>name:<br>createdTime:<br>organization:<br>clientIp:<br>user:<br>method:<br>requestUri:<br>action:<br>isTriggered:<br>extendedUser:",
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "9c87df54-8b1b-4804-b2c9-ee0002c11050",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": null,
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "UserInfoHook",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/volumeintervaltype": {
+            "get": {
+                "operationId": "api_v1_volumeintervaltype",
+                "parameters": [
+                    {
+                        "description": "symbol:",
+                        "in": "query",
+                        "name": "Symbol",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "ea23022d-8053-4d30-8de8-0824e463def2",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": null,
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "VolumeIntervalType",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/wallet/depositrecord": {
+            "get": {
+                "operationId": "api_v1_wallet_depositrecord",
+                "parameters": [
+                    {
+                        "description": "timestamp:",
+                        "in": "query",
+                        "name": "Timestamp",
+                        "schema": {
+                            "type": "int64"
+                        }
+                    },
+                    {
+                        "description": "signature:",
+                        "in": "query",
+                        "name": "Signature",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "token_id:",
+                        "in": "query",
+                        "name": "TokenId",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "page:",
+                        "in": "query",
+                        "name": "Page",
+                        "schema": {
+                            "type": "int"
+                        }
+                    },
+                    {
+                        "description": "size:",
+                        "in": "query",
+                        "name": "Size",
+                        "schema": {
+                            "type": "int"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "5c7b1673-07cd-4691-8174-a96cfef1b354",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": {
+                                            "rows": [
+                                                {
+                                                    "symbol": "",
+                                                    "chainId": "",
+                                                    "tokenId": "",
+                                                    "depositAmount": "",
+                                                    "depositAddress": "",
+                                                    "memo": "",
+                                                    "date": 0,
+                                                    "status": "",
+                                                    "txnId": "",
+                                                    "confirmations": 0
+                                                }
+                                            ],
+                                            "total": 0,
+                                            "page": 0,
+                                            "size": 0
+                                        },
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "DepositRecord",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/wallet/getaddresswhite": {
+            "get": {
+                "operationId": "api_v1_wallet_getaddresswhite",
+                "parameters": [
+                    {
+                        "description": "timestamp:",
+                        "in": "query",
+                        "name": "Timestamp",
+                        "schema": {
+                            "type": "int64"
+                        }
+                    },
+                    {
+                        "description": "signature:",
+                        "in": "query",
+                        "name": "Signature",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "chain_identifier:",
+                        "in": "query",
+                        "name": "ChainIdentifier",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "1d6b9509-22f1-4893-9925-ec606c9ff54d",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": [
+                                            {
+                                                "address": "",
+                                                "chain_identifier": "",
+                                                "memo": "",
+                                                "description": ""
+                                            }
+                                        ],
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "GetAddressWhite",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/wallet/getchain": {
+            "get": {
+                "operationId": "api_v1_wallet_getchain",
+                "parameters": [
+                    {
+                        "description": "timestamp:",
+                        "in": "query",
+                        "name": "Timestamp",
+                        "schema": {
+                            "type": "int64"
+                        }
+                    },
+                    {
+                        "description": "signature:",
+                        "in": "query",
+                        "name": "Signature",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "symbol:",
+                        "in": "query",
+                        "name": "Symbol",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "b026fdd8-559d-451a-a7a0-5ff86563d598",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": [
+                                            {
+                                                "tokenId": "",
+                                                "chainId": "",
+                                                "chainIdentifier": "",
+                                                "tradeConfirmingThreshold": 0,
+                                                "withdrawConfirmingThreshold": 0,
+                                                "iconUrl": "",
+                                                "minDeposit": "",
+                                                "estimatedArrivalTime": 0,
+                                                "depositAddress": "",
+                                                "transactionQueryUrl": "",
+                                                "networkFee": "",
+                                                "minimumWithdrawAmount": "",
+                                                "withdrawLimit": "",
+                                                "requireMemo": false,
+                                                "busy": false,
+                                                "contractAddressUrl": "",
+                                                "contractAddress": "",
+                                                "depositEnable": false,
+                                                "depositDesc": "",
+                                                "withdrawEnable": false,
+                                                "withdrawDesc": "",
+                                                "specialTips": "",
+                                                "assetId": 0
+                                            }
+                                        ],
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "GetChain",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/wallet/gettoken": {
+            "get": {
+                "operationId": "api_v1_wallet_gettoken",
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "5ddcba22-c6af-4367-8f60-13dc3f531502",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": [
+                                            {
+                                                "symbol": "USDT",
+                                                "chains": {
+                                                    "ETH": {
+                                                        "tokenId": "",
+                                                        "chainId": "ETH_USDT",
+                                                        "chainIdentifier": "ETH",
+                                                        "canDeposit": true,
+                                                        "canWithdraw": true,
+                                                        "custodialMinimumDepositThreshold": "",
+                                                        "decimal": 18,
+                                                        "tokenIconUrl": "https://static.cobo.com/img/asset/icon_usdt.png",
+                                                        "confirmingThreshold": 12,
+                                                        "explorerAddressUrl": "https://etherscan.io/address/{address}",
+                                                        "explorerTxUrl": "https://etherscan.io/tx/{tx}",
+                                                        "chainIconUrl": "https://static.cobo.com/img/chain/icon_eth.png",
+                                                        "requireMemo": false,
+                                                        "isEnabled": true,
+                                                        "depositDesc": "Please ensure to deposit only USDT to this address. Depositing any other tokens may result in permanent loss.",
+                                                        "withdrawDesc": "Withdrawals may take up to 30 minutes to process. Please ensure the address is correct before confirming.",
+                                                        "specialTips": "For large transactions, consider using a wallet that supports higher security measures.",
+                                                        "networkFee": "",
+                                                        "minWithdrawAmount": "0",
+                                                        "maxWithdrawAmount": "0"
+                                                    }
+                                                },
+                                                "updatedAt": "2026-03-19T13:45:38.106001+08:00",
+                                                "version": 1,
+                                                "iconUrl": "https://static.cobo.com/img/asset/icon_usdt.png"
+                                            }
+                                        ],
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "GetToken",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/wallet/setaddresswhite": {
+            "post": {
+                "operationId": "api_v1_wallet_setaddresswhite",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "address": {
+                                        "type": "string"
+                                    },
+                                    "chain_identifier": {
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    },
+                                    "is_delete": {
+                                        "type": "boolean"
+                                    },
+                                    "memo": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    },
+                    "description": "-:<br>address:<br>chain_identifier:<br>memo:<br>description:<br>is_delete:",
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "41774539-3cf1-48c5-8aaf-fa8047dc1fcf",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": [
+                                            {
+                                                "address": "",
+                                                "chain_identifier": "",
+                                                "memo": "",
+                                                "description": ""
+                                            }
+                                        ],
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "SetAddressWhite",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/wallet/withdraw": {
+            "post": {
+                "operationId": "api_v1_wallet_withdraw",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "address": {
+                                        "type": "string"
+                                    },
+                                    "amount": {
+                                        "type": "string"
+                                    },
+                                    "chainId": {
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    },
+                                    "memo": {
+                                        "type": "string"
+                                    },
+                                    "symbol": {
+                                        "type": "string"
+                                    },
+                                    "tokenId": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    },
+                    "description": "-:<br>symbol:<br>chainId:<br>tokenId:<br>address:<br>memo:<br>amount:<br>description:",
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "c0a335cc-7588-422d-bdcf-3f72b32ebcd7",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": {
+                                            "asset_id": 0,
+                                            "fund_tx_id": 0,
+                                            "account_type_id": 0,
+                                            "account_tx_id": 0,
+                                            "bill_tx_id": 0,
+                                            "retry_count": 0,
+                                            "fund_message": "",
+                                            "fund_status": "",
+                                            "is_processed": false,
+                                            "symbol": "",
+                                            "assetId": 0,
+                                            "requestId": "",
+                                            "chainId": "",
+                                            "tokenId": "",
+                                            "address": "",
+                                            "memo": "",
+                                            "amount": "",
+                                            "description": "",
+                                            "status": "",
+                                            "txnId": "",
+                                            "networkFee": ""
+                                        },
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "Withdraw",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        },
+        "/api/v1/wallet/withdrawrecord": {
+            "get": {
+                "operationId": "api_v1_wallet_withdrawrecord",
+                "parameters": [
+                    {
+                        "description": "timestamp:",
+                        "in": "query",
+                        "name": "Timestamp",
+                        "schema": {
+                            "type": "int64"
+                        }
+                    },
+                    {
+                        "description": "signature:",
+                        "in": "query",
+                        "name": "Signature",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "token_id:",
+                        "in": "query",
+                        "name": "TokenId",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "page:",
+                        "in": "query",
+                        "name": "Page",
+                        "schema": {
+                            "type": "int"
+                        }
+                    },
+                    {
+                        "description": "size:",
+                        "in": "query",
+                        "name": "Size",
+                        "schema": {
+                            "type": "int"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "traceid": "0a6e64b6-26f3-486c-a43b-c231cb7c6192",
+                                        "errorCode": 200,
+                                        "errorMessage": "",
+                                        "success": true,
+                                        "duration": 9223372036854775807,
+                                        "data": {
+                                            "rows": [
+                                                {
+                                                    "asset_id": 0,
+                                                    "fund_tx_id": 0,
+                                                    "account_type_id": 0,
+                                                    "account_tx_id": 0,
+                                                    "bill_tx_id": 0,
+                                                    "retry_count": 0,
+                                                    "fund_message": "",
+                                                    "fund_status": "",
+                                                    "is_processed": false,
+                                                    "symbol": "",
+                                                    "assetId": 0,
+                                                    "requestId": "",
+                                                    "chainId": "",
+                                                    "tokenId": "",
+                                                    "address": "",
+                                                    "memo": "",
+                                                    "amount": "",
+                                                    "description": "",
+                                                    "status": "",
+                                                    "txnId": "",
+                                                    "networkFee": ""
+                                                }
+                                            ],
+                                            "total": 0,
+                                            "page": 0,
+                                            "size": 0
+                                        },
+                                        "host": "testing env",
+                                        "showType": 0
+                                    },
+                                    "properties": {
+                                        "data": {},
+                                        "duration": {
+                                            "format": "int64",
+                                            "type": "integer"
+                                        },
+                                        "errorCode": {
+                                            "type": "integer"
+                                        },
+                                        "errorMessage": {
+                                            "type": "string"
+                                        },
+                                        "host": {
+                                            "type": "string"
+                                        },
+                                        "showType": {
+                                            "type": "integer"
+                                        },
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "traceid": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "servers": [
+                    {
+                        "url": "https://test.riverwa.com/"
+                    }
+                ],
+                "summary": "WithdrawRecord",
+                "tags": [
+                    "gateway"
+                ]
+            }
+        }
+    },
+    "servers": [
+        {
+            "url": "https://test.riverwa.com/"
+        }
+    ],
+    "tags": [
+        {
+            "description": "https://test.riverwa.com/",
+            "name": "gateway"
+        }
+    ]
+}

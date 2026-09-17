@@ -5,7 +5,7 @@ description: "/api/v1/exchangeinfo"
 sidebar_label: "/api/v1/exchangeinfo"
 hide_title: true
 hide_table_of_contents: true
-api: eJx1VNtu2zAM/RWDz07sOHcDw9Ddig4YVqAZ9hDkgZFpR60taZKcNjD87wXt1ustT6YuPDyHPHID2pBFL7W6yiCFCI2MjpOIHsQBVUFS5RpCsOSMVo4cpA0kccwfoZUn5TlEY0opOpTo1mnFe04cqEKO6AErUxKH3qIgyYXWc4xnyxxH+TzJR7MkX4z2s/liNFtjMl8na5pO1xACWavtV50RpEkcP61/kXNYEKQAIbhaCHIOUm9rCiGrezWQrpNkOl0m8XSxms+Wy0XM+Rl6hFTVZRnCQTsPKXhyXqoiIHVkuIO+35wMQRq3IRjL7fGyF94nN+3LKg3k2lbIQFL5xQxC8F06L6kgC+0rFc2540HUcMN5K1XBF3qmHxz8Z/sR7tCa4XCvdUmo+HAYxTvYdpCg97ckPLS8lZETVppeNdz00HldBoOB+kwsHKRbKNDTPZ5g9zbzjMMq8gfNxijIQwgG/eH8ZUf2SJbrNFDbElI4eG/SKJpM1uPVeB6Pk+kiXcWrFbQ7vi5qK/3phi3Zj/ILoSXL0b6LfjwP8effDbylfEk+2JDzG31HKsitroJz9TrCPb0KFRYUsb08J36uHVmZfZok09mcRXRseCg9l6HrjN31slPLvnvF5tpqnkpwcX0VfNOirkj5QCpR1llgrDyipwBVFph6X0rBsNLz64PfhhRnQQjcvR5tMo7HMfvBaOcr7BytsON1pvmv2Azm8fTgI1Oi7MzVDaV5muIW0EguOuEH/RJs92ztLTTNHh39sWXb8va/muwJ0u0uhCNaiXtWsN3xWyDMeHLbBu7oBClcCEGGPXPEsmYq7/5G7IHBX5ffN9C2jxDYpwo=
+api: eJx1VMtu2zAQ/BVhz7Ity8pLQFGkryAFihaIix4MH9bUWmYikSy5cmII+vdipUTNyyevSO5wZmfoFqwjj6ytuS4ghxk6PdvPZ/SgdmhK0mZrIQZPwVkTKEDeQpok8qOsYTIsJTpXadWjzG6DNbIW1I5qlIoesHYVSckeFWm5aL6hRZIm84lKMZtkF/NsgkWSTc6Tk2xbpBfnaXYOMZD31n+2BUGeJsnj9w8KAUuCHCCG0ChFIUDOvqEYimZQA/lFmi4WZ2myOD0/yc7OThPpL5ARctNUVQw7GxhyYAqsTRmR2Qvczt4vD44gT7oYnJfxsB6ED81t9/yWFrbW1yhA2vBpBjFw3y6fVJKH7oWK9tj2KGo8EdhrU8qBgek7G//Zvoc7jmbc3FhbERrZHK14A9uNEuzmlhRDJ0sFBeW1G1TDzQC9bapoDNDQiWWAfAUlMt3jAdavO48krCbeWQlGSQwxOOTd8cOB/J683NNC4yvIYcfsQj6biZnzqdd78vc4VbaGbi3nVeM1H24kk4OXnwg9eak2ffXtycXvf5bwmvMVcbSkwEt7RybaeltHjL4kjoSJVpRHj3qjo0R6KQPxGg2W1B9hQfzYBPK6+DBPF9mJyOtpil0DydEPAe+n3M9BEvmC5i9vxa/o8td19MWqpibDkTaqaorIeb1HpghNEblmU2klsJrlXcJPR0a6IAaZ64A2nybTRJLibOAa+6wb7HkdseUFmzFWTA88cxXqPna9Xe2jvytAp+XSuTz152Drp9CvoG03GOi3r7pOlv825A+Qr9Yx7NFr3IiC1VpeCWEhlq5auKMD5HCpFDlJ0x6rRqi8+Z+ScIzJu/q6hK77B4+5ttk=
 sidebar_class_name: "get api-method"
 info_path: bitzoom/open-api
 custom_edit_url: null
@@ -18,6 +18,7 @@ import StatusCodes from "@theme/StatusCodes";
 import OperationTabs from "@theme/OperationTabs";
 import TabItem from "@theme/TabItem";
 import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
 
 <Heading
   as={"h1"}
@@ -45,16 +46,13 @@ import Heading from "@theme/Heading";
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
-  body={undefined}
+  {...require("./api-v-1-exchangeinfo.RequestSchema.json")}
 >
   
 </RequestSchema>
 
 <StatusCodes
-  id={undefined}
-  label={undefined}
-  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"95a047fa-f52f-42f6-b456-49a25929e339","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":null,"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+  {...require("./api-v-1-exchangeinfo.StatusCodes.json")}
 >
   
 </StatusCodes>

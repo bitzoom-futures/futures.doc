@@ -1,0 +1,1 @@
+{"parameters":[{"description":"symbol:","in":"query","name":"Symbol","schema":{"type":"string"}},{"description":"limit:","in":"query","name":"Limit","schema":{"type":"integer"}}]}

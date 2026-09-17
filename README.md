@@ -46,6 +46,19 @@ Use Node.js 22 (recommended) or Node.js 18+.
 yarn start
 ```
 
+In development, API-key management requests use the local `/__management` route. The
+Docusaurus dev server forwards that route to `BITZOOM_MANAGEMENT_GATEWAY_URL`, which
+defaults to `https://test1.riverwa.com`. Override the upstream when needed:
+
+```bash
+BITZOOM_MANAGEMENT_GATEWAY_URL=https://management.example.com yarn start
+```
+
+API Explorer requests ("Send API Request") use the local `/__api` route in development,
+which forwards to `BITZOOM_API_URL` (default `https://test1.riverwa.com`) to avoid CORS.
+The deployed docs are served from the same origin as the API, so production requests go
+to `https://test1.riverwa.com` directly with a Bearer token.
+
 Run a specific locale in development:
 
 ```bash

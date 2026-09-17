@@ -55,7 +55,7 @@ Response:
   "code": 0,
   "data": [
     {
-      "symbol": "BTCUSDT",
+      "symbol": "ETHUSDT",
       "positionSide": "LONG",
       "positionAmt": "0.100",
       "entryPrice": "50000.00",
@@ -72,7 +72,7 @@ Response:
 ### Get Position Risk
 
 ```bash
-curl -X GET "http://119.8.50.236:8088/api/v1/positionrisk?symbol=BTCUSDT" \
+curl -X GET "http://119.8.50.236:8088/api/v1/positionrisk?symbol=ETHUSDT" \
   -H "Authorization: Bearer YOUR_TOKEN"
 ```
 
@@ -80,7 +80,7 @@ curl -X GET "http://119.8.50.236:8088/api/v1/positionrisk?symbol=BTCUSDT" \
 
 | Field | Description |
 |-------|-------------|
-| `symbol` | Trading pair (e.g., BTCUSDT) |
+| `symbol` | Trading pair (e.g., ETHUSDT) |
 | `positionSide` | LONG, SHORT, or BOTH (one-way mode) |
 | `positionAmt` | Position quantity (negative = short) |
 | `entryPrice` | Average entry price |
@@ -99,7 +99,7 @@ curl -X POST "http://119.8.50.236:8088/api/v1/leverage" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "symbol": "BTCUSDT",
+    "symbol": "ETHUSDT",
     "leverage": 20
   }'
 ```
@@ -125,7 +125,7 @@ curl -X POST "http://119.8.50.236:8088/api/v1/margintype" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "symbol": "BTCUSDT",
+    "symbol": "ETHUSDT",
     "marginType": "ISOLATED"
   }'
 ```
@@ -147,7 +147,7 @@ curl -X POST "http://119.8.50.236:8088/api/v1/positionMargin" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "symbol": "BTCUSDT",
+    "symbol": "ETHUSDT",
     "amount": 100,
     "type": 1
   }'
@@ -157,7 +157,7 @@ curl -X POST "http://119.8.50.236:8088/api/v1/positionMargin" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "symbol": "BTCUSDT",
+    "symbol": "ETHUSDT",
     "amount": 50,
     "type": 2
   }'
@@ -173,7 +173,7 @@ curl -X POST "http://119.8.50.236:8088/api/v1/order" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "symbol": "BTCUSDT",
+    "symbol": "ETHUSDT",
     "side": "SELL",
     "type": "MARKET",
     "quantity": 0.100,
@@ -188,7 +188,7 @@ curl -X POST "http://119.8.50.236:8088/api/v1/order" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "symbol": "BTCUSDT",
+    "symbol": "ETHUSDT",
     "side": "SELL",
     "type": "LIMIT",
     "quantity": 0.100,
@@ -204,7 +204,7 @@ curl -X POST "http://119.8.50.236:8088/api/v1/order" \
 curl -X DELETE "http://119.8.50.236:8088/api/v1/allOpenOrders" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
-  -d '{"symbol": "BTCUSDT"}'
+  -d '{"symbol": "ETHUSDT"}'
 ```
 
 ## Setting Stop-Loss and Take-Profit
@@ -218,7 +218,7 @@ curl -X POST "http://119.8.50.236:8088/api/v1/order" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "symbol": "BTCUSDT",
+    "symbol": "ETHUSDT",
     "side": "SELL",
     "type": "STOP_MARKET",
     "stopPrice": 48000.00,
@@ -235,7 +235,7 @@ curl -X POST "http://119.8.50.236:8088/api/v1/order" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "symbol": "BTCUSDT",
+    "symbol": "ETHUSDT",
     "side": "SELL",
     "type": "TAKE_PROFIT_MARKET",
     "stopPrice": 55000.00,
@@ -257,7 +257,7 @@ headers = {
 
 # Open long position
 entry_order = {
-    "symbol": "BTCUSDT",
+    "symbol": "ETHUSDT",
     "side": "BUY",
     "type": "MARKET",
     "quantity": 0.1
@@ -266,7 +266,7 @@ requests.post(f"{BASE_URL}/api/v1/order", headers=headers, json=entry_order)
 
 # Set stop-loss (2% below entry)
 stop_loss = {
-    "symbol": "BTCUSDT",
+    "symbol": "ETHUSDT",
     "side": "SELL",
     "type": "STOP_MARKET",
     "stopPrice": 49000.00,  # Assuming entry ~50000
@@ -277,7 +277,7 @@ requests.post(f"{BASE_URL}/api/v1/order", headers=headers, json=stop_loss)
 
 # Set take-profit (4% above entry)
 take_profit = {
-    "symbol": "BTCUSDT",
+    "symbol": "ETHUSDT",
     "side": "SELL",
     "type": "TAKE_PROFIT_MARKET",
     "stopPrice": 52000.00,
@@ -354,14 +354,14 @@ print(f"Estimated liquidation: ${liq:.2f}")  # ~$45200
 ### Get Closed Positions
 
 ```bash
-curl -X GET "http://119.8.50.236:8088/api/v1/historyposition?symbol=BTCUSDT&limit=50" \
+curl -X GET "http://119.8.50.236:8088/api/v1/historyposition?symbol=ETHUSDT&limit=50" \
   -H "Authorization: Bearer YOUR_TOKEN"
 ```
 
 ### Get Trade History
 
 ```bash
-curl -X GET "http://119.8.50.236:8088/api/v1/userTrades?symbol=BTCUSDT&limit=100" \
+curl -X GET "http://119.8.50.236:8088/api/v1/userTrades?symbol=ETHUSDT&limit=100" \
   -H "Authorization: Bearer YOUR_TOKEN"
 ```
 
@@ -376,5 +376,5 @@ curl -X GET "http://119.8.50.236:8088/api/v1/userTrades?symbol=BTCUSDT&limit=100
 ## Next Steps
 
 - [Place Your First Order](./place-order.md) - Trading basics
-- [API Reference](/docs/category/bitzoom-api) - Full endpoint documentation
+- [API Reference](/1.0/category/bitzoom-api) - Full endpoint documentation
 - [Error Codes](../errors.md) - Troubleshoot issues

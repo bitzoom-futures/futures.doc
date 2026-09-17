@@ -1,5 +1,14 @@
 import type { ChannelConfig } from '../types'
 
+const limitOptions = [5, 10, 20, 50, 100, 500, 1000].map((value) => ({
+  label: String(value),
+  value
+}))
+const klinesLimitOptions = [100, 500].map((value) => ({
+  label: String(value),
+  value
+}))
+
 export const channels: ChannelConfig[] = [
   {
     id: 'ticker',
@@ -7,7 +16,7 @@ export const channels: ChannelConfig[] = [
     path: '/api/v1/ticker',
     requiresAuth: false,
     description: 'Real-time ticker data for a symbol.',
-    params: [{ name: 'symbol', label: 'Symbol', type: 'string', required: true, placeholder: 'BTCUSDT' }]
+    params: [{ name: 'symbol', label: 'Symbol', type: 'string', required: true, placeholder: 'ETHUSDT' }]
   },
   {
     id: 'ticker-price',
@@ -15,7 +24,7 @@ export const channels: ChannelConfig[] = [
     path: '/api/v1/ticker/price',
     requiresAuth: false,
     description: 'Last traded price updates.',
-    params: [{ name: 'symbol', label: 'Symbol', type: 'string', required: true, placeholder: 'BTCUSDT' }]
+    params: [{ name: 'symbol', label: 'Symbol', type: 'string', required: true, placeholder: 'ETHUSDT' }]
   },
   {
     id: 'premiumindex',
@@ -23,7 +32,7 @@ export const channels: ChannelConfig[] = [
     path: '/api/v1/premiumindex',
     requiresAuth: false,
     description: 'Premium index data for a symbol.',
-    params: [{ name: 'symbol', label: 'Symbol', type: 'string', required: true, placeholder: 'BTCUSDT' }]
+    params: [{ name: 'symbol', label: 'Symbol', type: 'string', required: true, placeholder: 'ETHUSDT' }]
   },
   {
     id: 'ticker-hr24',
@@ -31,7 +40,7 @@ export const channels: ChannelConfig[] = [
     path: '/api/v1/ticker/hr24',
     requiresAuth: false,
     description: '24-hour ticker statistics.',
-    params: [{ name: 'symbol', label: 'Symbol', type: 'string', required: false, placeholder: 'BTCUSDT' }]
+    params: [{ name: 'symbol', label: 'Symbol', type: 'string', required: false, placeholder: 'ETHUSDT' }]
   },
   {
     id: 'depth',
@@ -40,18 +49,14 @@ export const channels: ChannelConfig[] = [
     requiresAuth: false,
     description: 'Order book depth snapshots.',
     params: [
-      { name: 'symbol', label: 'Symbol', type: 'string', required: true, placeholder: 'BTCUSDT' },
+      { name: 'symbol', label: 'Symbol', type: 'string', required: true, placeholder: 'ETHUSDT' },
       {
         name: 'limit',
         label: 'Limit',
         type: 'select',
         required: true,
-        defaultValue: '20',
-        options: [
-          { label: '5', value: '5' },
-          { label: '10', value: '10' },
-          { label: '20', value: '20' }
-        ]
+        defaultValue: 500,
+        options: limitOptions
       }
     ]
   },
@@ -62,7 +67,7 @@ export const channels: ChannelConfig[] = [
     requiresAuth: false,
     description: 'Kline/candlestick data.',
     params: [
-      { name: 'symbol', label: 'Symbol', type: 'string', required: true, placeholder: 'BTCUSDT' },
+      { name: 'symbol', label: 'Symbol', type: 'string', required: true, placeholder: 'ETHUSDT' },
       {
         name: 'interval',
         label: 'Interval',
@@ -87,7 +92,14 @@ export const channels: ChannelConfig[] = [
           '1M'
         ].map((v) => ({ label: v, value: v }))
       },
-      { name: 'limit', label: 'Limit', type: 'number', required: false, placeholder: '100' }
+      {
+        name: 'limit',
+        label: 'Limit',
+        type: 'select',
+        required: false,
+        defaultValue: 100,
+        options: klinesLimitOptions
+      }
     ]
   },
   {
@@ -97,25 +109,32 @@ export const channels: ChannelConfig[] = [
     requiresAuth: false,
     description: 'Recent trades.',
     params: [
-      { name: 'symbol', label: 'Symbol', type: 'string', required: true, placeholder: 'BTCUSDT' },
-      { name: 'limit', label: 'Limit', type: 'number', required: false, placeholder: '100' }
+      { name: 'symbol', label: 'Symbol', type: 'string', required: true, placeholder: 'ETHUSDT' },
+      {
+        name: 'limit',
+        label: 'Limit',
+        type: 'select',
+        required: false,
+        defaultValue: 50,
+        options: limitOptions
+      }
     ]
   },
   {
     id: 'leverage',
     label: '/api/v1/leverage',
     path: '/api/v1/leverage',
-    requiresAuth: false,
+    requiresAuth: true,
     description: 'Leverage information.',
-    params: [{ name: 'symbol', label: 'Symbol', type: 'string', required: false, placeholder: 'BTCUSDT' }]
+    params: [{ name: 'symbol', label: 'Symbol', type: 'string', required: false, placeholder: 'ETHUSDT' }]
   },
   {
     id: 'margintype',
     label: '/api/v1/margintype',
     path: '/api/v1/margintype',
-    requiresAuth: false,
+    requiresAuth: true,
     description: 'Margin type data.',
-    params: [{ name: 'symbol', label: 'Symbol', type: 'string', required: true, placeholder: 'BTCUSDT' }]
+    params: [{ name: 'symbol', label: 'Symbol', type: 'string', required: true, placeholder: 'ETHUSDT' }]
   },
   {
     id: 'exchangeinfo',
@@ -129,9 +148,9 @@ export const channels: ChannelConfig[] = [
     id: 'adlquantile',
     label: '/api/v1/adlquantile',
     path: '/api/v1/adlquantile',
-    requiresAuth: false,
+    requiresAuth: true,
     description: 'ADL quantile data.',
-    params: [{ name: 'symbol', label: 'Symbol', type: 'string', required: false, placeholder: 'BTCUSDT' }]
+    params: [{ name: 'symbol', label: 'Symbol', type: 'string', required: false, placeholder: 'ETHUSDT' }]
   },
   {
     id: 'balance',
@@ -147,7 +166,7 @@ export const channels: ChannelConfig[] = [
     path: '/api/v1/openorders',
     requiresAuth: true,
     description: 'Open orders for all symbols or one symbol.',
-    params: [{ name: 'symbol', label: 'Symbol', type: 'string', required: false, placeholder: 'BTCUSDT' }]
+    params: [{ name: 'symbol', label: 'Symbol', type: 'string', required: false, placeholder: 'ETHUSDT' }]
   },
   {
     id: 'positionrisk',
@@ -155,7 +174,7 @@ export const channels: ChannelConfig[] = [
     path: '/api/v1/positionrisk',
     requiresAuth: true,
     description: 'Position risk information.',
-    params: [{ name: 'symbol', label: 'Symbol', type: 'string', required: false, placeholder: 'BTCUSDT' }]
+    params: [{ name: 'symbol', label: 'Symbol', type: 'string', required: false, placeholder: 'ETHUSDT' }]
   }
 ]
 

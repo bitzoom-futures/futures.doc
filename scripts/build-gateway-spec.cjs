@@ -3,12 +3,9 @@ const fs = require('fs')
 const SOURCE_SPEC = 'examples/bitzoom.json'
 const TARGET_SPEC = 'examples/bitzoom.gateway.json'
 const GATEWAY_TAG = 'gateway'
+const API_URL = (process.env.BITZOOM_API_URL || 'https://test1.riverwa.com').replace(/\/+$/, '')
 
 const source = JSON.parse(fs.readFileSync(SOURCE_SPEC, 'utf8'))
-
-function trimTrailingSlash(value) {
-  return typeof value === 'string' ? value.replace(/\/+$/, '') : value
-}
 
 function replaceUrlOrigin(text, nextOrigin) {
   if (typeof text !== 'string' || !nextOrigin) return text
@@ -21,12 +18,6 @@ function replaceUrlOrigin(text, nextOrigin) {
     }
   })
 }
-
-const gatewayTag = Array.isArray(source.tags)
-  ? source.tags.find((tag) => tag && tag.name === GATEWAY_TAG)
-  : null
-
-const gatewayServerUrl = trimTrailingSlash(gatewayTag && gatewayTag.description)
 
 const filteredPaths = {}
 let gatewayOperationCount = 0
@@ -43,7 +34,9 @@ Object.entries(source.paths || {}).forEach(([path, pathItem]) => {
     }
 
     gatewayOperationCount += 1
-    nextPathItem[method] = Object.assign({}, operation, {
+    // Operations inherit the top-level server so every request targets API_URL.
+    const { servers: _servers, ...rest } = operation
+    nextPathItem[method] = Object.assign({}, rest, {
       tags: [GATEWAY_TAG]
     })
   })
@@ -58,33 +51,26 @@ const filtered = Object.assign({}, source, {
   tags: Array.isArray(source.tags)
     ? source.tags
         .filter((tag) => tag && tag.name === GATEWAY_TAG)
-        .map((tag) =>
-          Object.assign({}, tag, {
-            description: gatewayServerUrl || tag.description
-          })
-        )
+        .map((tag) => Object.assign({}, tag, { description: API_URL }))
     : source.tags,
-  servers: gatewayServerUrl ? [{ url: gatewayServerUrl }] : []
+  servers: [{ url: API_URL }]
 })
 
 if (
-  gatewayServerUrl &&
   filtered.components &&
   filtered.components.securitySchemes &&
   filtered.components.securitySchemes.Bearer &&
   typeof filtered.components.securitySchemes.Bearer.description === 'string'
 ) {
   filtered.components.securitySchemes.Bearer.description =
-    replaceUrlOrigin(filtered.components.securitySchemes.Bearer.description, gatewayServerUrl)
+    replaceUrlOrigin(filtered.components.securitySchemes.Bearer.description, API_URL)
 }
 
-fs.writeFileSync(TARGET_SPEC, `${JSON.stringify(filtered, null, 2)}\n`, 'utf8')
+const output = JSON.stringify(filtered, null, 2)
+  .replace(/http:\/\/[^/\s"]+/g, API_URL)
+fs.writeFileSync(TARGET_SPEC, `${output}\n`, 'utf8')
 
 console.log(
   `Wrote ${TARGET_SPEC} with ${Object.keys(filteredPaths).length} path(s) and ${gatewayOperationCount} gateway-tagged operation(s) from ${SOURCE_SPEC}`
 )
-if (gatewayServerUrl) {
-  console.log(`Using gateway server: ${gatewayServerUrl}`)
-} else {
-  console.log('No gateway server URL found from gateway tag description.')
-}
+console.log(`Using API server: ${API_URL}`)

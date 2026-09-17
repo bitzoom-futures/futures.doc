@@ -1,11 +1,12 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import Link from '@docusaurus/Link'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
-import type { ChannelConfig, WsResponse } from './types'
+import type { ChannelConfig, ParameterDefinition, ParameterValue, WsResponse } from './types'
 import ConnectionPanel from './components/ConnectionPanel'
-import AuthPanel from './components/AuthPanel'
 import ParameterForm from './components/ParameterForm'
 import MessageLog from './components/MessageLog'
 import styles from './styles/WebSocketTester.module.css'
+import { canUseInteractiveWebSocket } from './browserGuards'
 import { normalizeSubscriptionKey, useWebSocket } from './hooks/useWebSocket'
 import { useMessageLog } from './hooks/useMessageLog'
 
@@ -23,31 +24,63 @@ function buildData(
   const data: Record<string, unknown> = {}
 
   channel.params.forEach((param) => {
-    const value = (values[param.name] ?? param.defaultValue ?? '').trim()
+    const value = String(values[param.name] ?? param.defaultValue ?? '').trim()
     if (param.required && !value) {
       errors.push(`${param.label} is required`)
       return
     }
     if (!value) return
-    data[param.name] = param.type === 'number' ? Number(value) : value
+    const parsedValue = parseParameterValue(param, value)
+
+    if (param.type === 'number') {
+      const numericValue = Number(parsedValue)
+
+      if (Number.isNaN(numericValue)) {
+        errors.push(`${param.label} must be a number`)
+        return
+      }
+      if (param.min !== undefined && numericValue < param.min) {
+        errors.push(`${param.label} must be at least ${param.min}`)
+        return
+      }
+      if (param.max !== undefined && numericValue > param.max) {
+        errors.push(`${param.label} must be at most ${param.max}`)
+        return
+      }
+    }
+
+    data[param.name] = parsedValue
   })
 
   return { data, errors }
 }
 
-export default function WebSocketTester({
+function parseParameterValue(param: ParameterDefinition, value: string): ParameterValue {
+  if (param.type === 'number') {
+    return Number(value)
+  }
+
+  if (param.type === 'select') {
+    const matchedOption = param.options?.find((option) => String(option.value) === value)
+    if (matchedOption) {
+      return matchedOption.value
+    }
+  }
+
+  return value
+}
+
+function InteractiveWebSocketTester({
   channel,
   defaultServerUrl,
   maxMessages = 200
 }: WebSocketTesterProps) {
   const { siteConfig } = useDocusaurusContext()
   const generatedServerUrl =
-    (siteConfig.customFields && (siteConfig.customFields as Record<string, unknown>).gatewayServerUrl) || ''
+    (siteConfig.customFields && (siteConfig.customFields as Record<string, unknown>).hmacApiUrl) || ''
   const initialServerUrl =
-    defaultServerUrl || (typeof generatedServerUrl === 'string' ? generatedServerUrl : '119.8.50.236:8088')
+    defaultServerUrl || (typeof generatedServerUrl === 'string' ? generatedServerUrl : 'https://api1.riverwa.com')
   const [serverUrl, setServerUrl] = useState(initialServerUrl)
-  const [token, setToken] = useState('')
-  const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [paramValues, setParamValues] = useState<Record<string, string>>({})
   const [lastError, setLastError] = useState<string>('')
   const [pendingSubKey, setPendingSubKey] = useState<string | null>(null)
@@ -58,17 +91,6 @@ export default function WebSocketTester({
   const handleIncomingMessage = useCallback(
     (message: WsResponse) => {
       addMessage({ direction: 'in', kind: message.event, payload: message })
-
-      if (message.channel === 'logon') {
-        if (message.event === 'success') {
-          setIsAuthenticated(true)
-          setLastError('')
-        } else if (message.event === 'error') {
-          setIsAuthenticated(false)
-          setLastError('Authentication failed')
-        }
-        return
-      }
 
       if (message.event === 'error') {
         setLastError(`Server error on ${message.channel}`)
@@ -119,7 +141,6 @@ export default function WebSocketTester({
 
   useEffect(() => {
     if (status !== 'connected') {
-      setIsAuthenticated(false)
       setSubIdByKey({})
       setPendingSubKey(null)
     }
@@ -135,27 +156,11 @@ export default function WebSocketTester({
     setParamValues((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleLogon = () => {
-    setLastError('')
-    try {
-      const payload = { channel: 'logon', event: 'sub' as const, data: { token } }
-      send(payload)
-      addMessage({ direction: 'out', kind: 'logon', payload })
-    } catch (error) {
-      setLastError((error as Error).message)
-    }
-  }
-
   const handleSubscribe = () => {
     setLastError('')
 
     if (currentData.errors.length > 0) {
       setLastError(currentData.errors.join(', '))
-      return
-    }
-
-    if (channel.requiresAuth && !isAuthenticated) {
-      setLastError('Authenticate with logon before subscribing to private channels')
       return
     }
 
@@ -213,16 +218,6 @@ export default function WebSocketTester({
         </div>
       </div>
 
-      {channel.requiresAuth ? (
-        <AuthPanel
-          token={token}
-          onTokenChange={setToken}
-          onLogon={handleLogon}
-          isConnected={isConnected}
-          isAuthenticated={isAuthenticated}
-        />
-      ) : null}
-
       <ParameterForm params={channel.params} values={paramValues} onChange={handleParamChange} />
 
       {lastError ? <div className={styles.error}>{lastError}</div> : null}
@@ -230,4 +225,26 @@ export default function WebSocketTester({
       <MessageLog messages={messages} onClear={clearMessages} />
     </div>
   )
+}
+
+export default function WebSocketTester(props: WebSocketTesterProps) {
+  if (!canUseInteractiveWebSocket(props.channel)) {
+    return (
+      <div className={styles.privateGuard} role="note">
+        <span className={styles.privateGuardMark} aria-hidden="true">◆</span>
+        <div>
+          <p className={styles.privateGuardEyebrow}>Private channel</p>
+          <h3>{props.channel.path}</h3>
+          <p>{props.channel.description}</p>
+          <p>
+            Private WebSocket authentication uses an HMAC-signed <code>logon</code> message. To keep
+            your API secret out of the browser, authentication and subscription controls are disabled here.
+          </p>
+          <Link to="/guides/api-key-authentication">Open the HMAC signing guide →</Link>
+        </div>
+      </div>
+    )
+  }
+
+  return <InteractiveWebSocketTester {...props} />
 }

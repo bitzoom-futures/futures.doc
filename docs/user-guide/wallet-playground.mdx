@@ -1,0 +1,17 @@
+---
+sidebar_position: 4
+sidebar_label: Wallet Playground
+---
+
+import BrowserOnly from '@docusaurus/BrowserOnly'
+
+# Wallet Playground
+
+Interactive tool for creating and testing TRON wallets on the **Nile testnet**. You can create or import a wallet, receive test TRX and USDT from the host faucet wallet, check balances, and view transaction history.
+
+<BrowserOnly>
+  {() => {
+    const { WalletPlayground } = require('@site/src/components/WalletPlayground')
+    return <WalletPlayground />
+  }}
+</BrowserOnly>

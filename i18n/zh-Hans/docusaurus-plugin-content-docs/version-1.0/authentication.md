@@ -66,4 +66,4 @@ curl -X GET "http://119.8.50.236:8088/api/v1/balance"   -H "Authorization: Beare
 
 - [快速开始](./getting-started.md)
 - [下第一笔订单](./guides/place-order.md)
-- [API 参考](/docs/category/bitzoom-api)
+- [API 参考](/1.0/category/bitzoom-api)

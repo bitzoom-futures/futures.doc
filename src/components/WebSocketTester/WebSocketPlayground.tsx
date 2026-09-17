@@ -17,7 +17,7 @@ export default function WebSocketPlayground({
 }: WebSocketPlaygroundProps) {
   const { siteConfig } = useDocusaurusContext()
   const generatedServerUrl =
-    (siteConfig.customFields && (siteConfig.customFields as Record<string, unknown>).gatewayServerUrl) || ''
+    (siteConfig.customFields && (siteConfig.customFields as Record<string, unknown>).hmacApiUrl) || ''
   const resolvedDefaultServerUrl =
     defaultServerUrl || (typeof generatedServerUrl === 'string' ? generatedServerUrl : undefined)
   const safeInitial = channels.some((channel) => channel.id === initialChannelId)

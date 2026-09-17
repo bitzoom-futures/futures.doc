@@ -5,7 +5,7 @@ description: "/api/v1/ticker/bookticker"
 sidebar_label: "/api/v1/ticker/bookticker"
 hide_title: true
 hide_table_of_contents: true
-api: eJyFVNtu2zAM/RWDz258yaWpgWHobsUGDBvQDHsI+sDYTKLGljSJzhYY/veBduKlS9c9WRbBw0OeIzZgLDlkZfTHAjKI0Kpon0Ss8h25aGXMrj9CCBYdVsTkPGTLBgryuVNWUiEDf6hWpswgBCW/P2pyBwhBY0WQwX0XhRB8vqUKIWuAD1Yinp3SG2jbhxAceWu0Jy/xNI7lkxvNpFmOaG2p8o5r9OilanOGR7+wsiV10A5zUtLObDZPUpzMr+a4pqtJEk+ucJrSFcZUTHBGSTzNIQRyzri3piDI0jg+/n8m73EjHIV3nefkPWTsagqhqPuZQXaTpuPxdRqPZ/Pp5Pp6Fkt+gYyQ6bosQ9gaz5ABk2elNwHpvcBtzc9FN4C4DcE6EYFV33if3LTnVRpYG1ehACnNswmEp/kpzbQhB+2TLpp/hYemLgQ4MX0m8Iftc7jDaIbgypiSUEtwkOJS8KEFs3qknKGVq6emuu+h13UZDDbtM3EjJoQNMv3EAzz8nfmSjyvirRF3bIg7W/P2Pxme3P5k+9qVkMGW2WZRlCQ3o/loGo/S8Sybx/M5iI895bVTfLgXc/aiviF05OS06k4fTnJ++r6Av8nfEQcL8rwwO9LB2pkq+Fe9jnVPr0KNG4rEaCyJr2tPThWvknQ8mZ6eXidPz2WYv2B3U1V6bToHPmHz1RnRJ7j9+jF4Z/K6Is2B0nlZF4F1ao9MAeoisPWqVPKaWLG8Q/hiSUsWhCDT69GSUTyKxRnWeK6w8/ZxSbykwBNKg5eYfnFkS1Sd1zplmqOeS0CrpHLSMTrCnGE+nAy/hKZZoadvrmxbue53V7filMdVSQVkayw9XdAYltPZ+nuW2o4O51twj2XdLRZxyx6dkiqQLR/kFRIW4pRlc8y6zXOyfJZ1sQcFZTD13fsFtO1vAmn0UQ==
+api: eJyFVF1v2zAM/CsGn93GSdNkMTAM+8YGDBvQDHsI+kDLjKPVljSJThcY/u8D5cRL1257siSapyPvxA6sI4+srflQQg4TdHqyn05Yqzvyk8Lau2EJKTj02BCTD5BvOigpKK+dpEIO4dAUts4hBS3bHy35A6RgsCHI4SZGIYWgdtQg5B3wwUkksNemgr6/TcFTcNYEChKfZZl8lDVMhmWJztVaRa6T70Fu7c7w6Cc2rqYI7VGRlnIW21VWznF1Md8u6WK+mhcXxfVMXSzK4npFy2yRzQhSIO+tf21LgnyWZcf9JwoBK+EovFulKATI2beUQtkOPYN8NZtdXS1n2dXi2fV8uVxkkl8iI+SmresUdjYw5MAUWJsqIbMXuJ29X8cGZH0KzosIrIfCh+SuP7+lg631DQqQNryYQ3rqnzZMFXnoH1TR/S08FvVIgBPTJwK/2T6FO7ZmDBbW1oRGgqMUjwUfS7DFd1IMvRw9NNXNAL1t62S06ZCJlZgQKmS6xwPc/pn5Lx83xDsr7qiIo61595+MQH5/sn3ra8hhx+xCPpmIrNNLr/fk7/FS2QbEyIFU6zUfbsSdg6qvCD15WRVx9e6k58dva/iT/XviZE2B1/aOTLL1tkkYfUWcCBOtKE+OlSd/JRLrGYg3aLCi+AsL4os2kNfl8+nsan59epRRuIHkqIyAx35rs7XRmw9ofvFWlEtefvmQvLGqbchwoo2q2zJxXu+RKUFTJq4taq0EVrO8UPjsyEgWpCB9HdCml9llJp5xNnCD0fXH8fEvbR5QGl3G9JMnrkYdXRg1645KbwCdlpunkdER5gzz9vQUNtB1BQb66uu+l+NhqsXhpwMWNZWQb7EO9IjGOLbOBuOT1O7ocD4f91i3ceSIjfbotdwC+eZW3idhKRbadMesl0qR47OsRxNSUEa7v3+7hr7/Ba4pBKI=
 sidebar_class_name: "get api-method"
 info_path: bitzoom/open-api
 custom_edit_url: null
@@ -18,6 +18,7 @@ import StatusCodes from "@theme/StatusCodes";
 import OperationTabs from "@theme/OperationTabs";
 import TabItem from "@theme/TabItem";
 import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
 
 <Heading
   as={"h1"}
@@ -42,27 +43,24 @@ import Heading from "@theme/Heading";
   id={"request"}
   as={"h2"}
   className={"openapi-tabs__heading"}
-  children={"Request"}
 >
+  <Translate id="theme.openapi.request.title">Request</Translate>
 </Heading>
 
 <ParamsDetails
-  parameters={[{"description":"symbol:","in":"query","name":"Symbol","schema":{"type":"string"}}]}
+  {...require("./api-v-1-ticker-bookticker.ParamsDetails.json")}
 >
   
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
-  body={undefined}
+  {...require("./api-v-1-ticker-bookticker.RequestSchema.json")}
 >
   
 </RequestSchema>
 
 <StatusCodes
-  id={undefined}
-  label={undefined}
-  responses={{"200":{"content":{"application/json":{"schema":{"example":{"traceid":"66812a48-8afe-4104-a52e-a0ed4a6e105c","errorCode":200,"errorMessage":"","success":true,"duration":9223372036854776000,"data":null,"host":"testing env","showType":0},"properties":{"data":{},"duration":{"format":"int64","type":"integer"},"errorCode":{"type":"integer"},"errorMessage":{"type":"string"},"host":{"type":"string"},"showType":{"type":"integer"},"success":{"type":"boolean"},"traceid":{"type":"string"}},"type":"object"}}},"description":"Successful operation"}}}
+  {...require("./api-v-1-ticker-bookticker.StatusCodes.json")}
 >
   
 </StatusCodes>

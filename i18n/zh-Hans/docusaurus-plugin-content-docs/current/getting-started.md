@@ -70,7 +70,7 @@ JWT 获取方式请参考 [鉴权](./authentication.md)。
 - [WebSocket 实时流](./websocket.md) - 获取实时市场数据
 - [下第一笔订单](./guides/place-order.md) - 交易教程
 - [仓位管理](./guides/positions.md) - 管理仓位风险
-- [API 参考](/docs/category/bitzoom-api) - 浏览全部可用接口
+- [API 参考](/category/bitzoom-api) - 浏览全部可用接口
 - [错误码](./errors.md) - 完整错误码说明
 - [常见问题](./faq.md) - 高频问题解答
 
