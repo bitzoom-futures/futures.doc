@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"properties":{"api_key_ip_whitelist":{"type":"string"},"api_permissions":{"type":"string"},"label":{"type":"string"}},"type":"object"}}},"description":"api_permissions:</br>api_key_ip_whitelist:</br>label:","required":true}}

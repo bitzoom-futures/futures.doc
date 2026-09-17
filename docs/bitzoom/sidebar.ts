@@ -4,7 +4,7 @@ const sidebar: SidebarsConfig = {
   apisidebar: [
     {
       type: "doc",
-      id: "bitzoom/bitzoom-hmac-api",
+      id: "bitzoom/open-api",
     },
     {
       type: "category",
@@ -34,9 +34,39 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "bitzoom/api-v-1-apikey",
+          label: "/api/v1/apikey",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "bitzoom/api-v-1-apikey-list",
+          label: "/api/v1/apikey/list",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "bitzoom/api-v-1-apikey-revoke",
+          label: "/api/v1/apikey/revoke",
+          className: "api-method delete",
+        },
+        {
+          type: "doc",
+          id: "bitzoom/api-v-1-apikey-status",
+          label: "/api/v1/apikey/status",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
           id: "bitzoom/api-v-1-balance",
           label: "/api/v1/balance",
           className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "bitzoom/api-v-1-bindreferralcode",
+          label: "/api/v1/bindreferralcode",
+          className: "api-method post",
         },
         {
           type: "doc",
@@ -136,6 +166,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "bitzoom/api-v-1-language",
+          label: "/api/v1/language",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
           id: "bitzoom/api-v-1-leverage",
           label: "/api/v1/leverage",
           className: "api-method get",
@@ -190,9 +226,27 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "bitzoom/api-v-1-positiontype",
+          label: "/api/v1/positiontype",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
           id: "bitzoom/api-v-1-premiumindex",
           label: "/api/v1/premiumindex",
           className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "bitzoom/api-v-1-resetmarket",
+          label: "/api/v1/resetmarket",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "bitzoom/api-v-1-resetuser",
+          label: "/api/v1/resetuser",
+          className: "api-method post",
         },
         {
           type: "doc",
@@ -244,9 +298,9 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "bitzoom/api-v-1-userinfohook",
-          label: "/api/v1/userinfohook",
-          className: "api-method post",
+          id: "bitzoom/api-v-1-version",
+          label: "/api/v1/version",
+          className: "api-method get",
         },
         {
           type: "doc",
@@ -286,6 +340,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "bitzoom/api-v-1-wallet-transfer",
+          label: "/api/v1/wallet/transfer",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
           id: "bitzoom/api-v-1-wallet-withdraw",
           label: "/api/v1/wallet/withdraw",
           className: "api-method post",
@@ -294,6 +354,24 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "bitzoom/api-v-1-wallet-withdrawrecord",
           label: "/api/v1/wallet/withdrawrecord",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "bitzoom/health",
+          label: "/health",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "bitzoom/readiness",
+          label: "/readiness",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "bitzoom/stream-status",
+          label: "/stream/status",
           className: "api-method get",
         },
       ],

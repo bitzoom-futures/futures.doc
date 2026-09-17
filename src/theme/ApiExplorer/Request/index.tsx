@@ -8,7 +8,6 @@
 // @ts-nocheck
 import React, { useState } from "react";
 
-import Link from "@docusaurus/Link";
 import { useDoc } from "@docusaurus/plugin-content-docs/client";
 import { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
@@ -35,10 +34,8 @@ import * as sdk from "postman-collection";
 import { FormProvider, useForm } from "react-hook-form";
 
 import makeRequest, { RequestError, RequestErrorType } from "./makeRequest";
-import { isHmacOperation } from "./isHmacOperation";
 
 function Request({ item }: { item: ApiItem }) {
-  const requiresHmac = isHmacOperation(item);
   const postman = new sdk.Request(item.postman);
   const metadata = useDoc();
   const { proxy: frontMatterProxy, hide_send_button: hideSendButton } =
@@ -203,8 +200,8 @@ function Request({ item }: { item: ApiItem }) {
   const showServerOptions = serverOptions.length > 0;
   const showAcceptOptions = acceptOptions.length > 1;
   const showRequestBody = contentType !== undefined;
-  const showRequestButton = (item.servers || proxy) && !hideSendButton && !requiresHmac;
-  const showAuth = authSelected !== undefined && !requiresHmac;
+  const showRequestButton = (item.servers || proxy) && !hideSendButton;
+  const showAuth = authSelected !== undefined;
   const showParams = allParams.length > 0;
   const requestBodyRequired = item.requestBody?.required;
 
@@ -214,8 +211,7 @@ function Request({ item }: { item: ApiItem }) {
     !showParams &&
     !showRequestBody &&
     !showServerOptions &&
-    !showRequestButton &&
-    !requiresHmac
+    !showRequestButton
   ) {
     return null;
   }
@@ -275,16 +271,6 @@ function Request({ item }: { item: ApiItem }) {
           )}
         </div>
         <div className="openapi-explorer__details-outer-container">
-          {requiresHmac && (
-            <div className="bitzoom-hmac-guard" role="note">
-              <strong>Signed request required</strong>
-              <p>
-                Private requests are disabled in the browser because your API secret must never be
-                entered into a documentation page. Build and sign this request in your own client.
-              </p>
-              <Link to="/guides/api-key-authentication">Open the HMAC signing guide →</Link>
-            </div>
-          )}
           {showServerOptions && item.method !== "event" && (
             <details
               open={expandServer}

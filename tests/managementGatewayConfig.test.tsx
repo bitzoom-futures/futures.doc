@@ -77,7 +77,7 @@ describe('management gateway configuration', () => {
         typeof entry === 'function'
       )
       .map((factory) => factory())
-      .find((entry) => entry.name === 'management-gateway-dev-proxy') as
+      .find((entry) => entry.name === 'dev-server-proxy') as
         | {
             configureWebpack: () => {
               devServer: {
@@ -111,6 +111,45 @@ describe('management gateway configuration', () => {
     expect(headers).toEqual(new Set(['authorization']))
   })
 
+  it('routes API Explorer requests through a development proxy to the API server', async () => {
+    vi.stubEnv('NODE_ENV', 'development')
+    vi.stubEnv('BITZOOM_API_URL', 'https://api.example/')
+    vi.resetModules()
+
+    const { default: createConfig } = await import('../docusaurus.config')
+    const config = await createConfig()
+    const plugin = (config.plugins || [])
+      .filter((entry): entry is (...args: unknown[]) => Record<string, unknown> =>
+        typeof entry === 'function'
+      )
+      .map((factory) => factory())
+      .find((entry) => entry.name === 'dev-server-proxy') as
+        | {
+            configureWebpack: () => {
+              devServer: {
+                proxy: Array<{
+                  context: string[]
+                  target: string
+                  pathRewrite: (path: string) => string
+                }>
+              }
+            }
+          }
+        | undefined
+
+    expect((config.themeConfig as { api: { proxy?: string } }).api.proxy).toBe('/__api')
+    expect(plugin).toBeDefined()
+    if (!plugin) return
+
+    const proxy = plugin
+      .configureWebpack()
+      .devServer.proxy.find((entry) => entry.context.includes('/__api'))
+    expect(proxy?.target).toBe('https://api.example')
+    expect(proxy?.pathRewrite('/__api/https://api.example/api/v1/balance?asset=USDT')).toBe(
+      '/api/v1/balance?asset=USDT'
+    )
+  })
+
   it('does not expose the local proxy route in production', async () => {
     vi.stubEnv('NODE_ENV', 'production')
     vi.stubEnv('BITZOOM_MANAGEMENT_GATEWAY_URL', 'https://management.example')
@@ -125,6 +164,7 @@ describe('management gateway configuration', () => {
       .map((factory) => factory().name)
 
     expect(config.customFields?.managementGatewayUrl).toBe('https://management.example')
-    expect(pluginNames).not.toContain('management-gateway-dev-proxy')
+    expect(pluginNames).not.toContain('dev-server-proxy')
+    expect((config.themeConfig as { api: { proxy?: string } }).api.proxy).toBeUndefined()
   })
 })

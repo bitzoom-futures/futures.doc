@@ -6,23 +6,18 @@ function readSpec(path: string) {
 }
 
 describe('generated OpenAPI artifacts', () => {
-  it('keeps public current operations unsigned and makes private operations HMAC-only', () => {
+  it('keeps public operations open and authenticates private operations with Bearer tokens', () => {
     const spec = readSpec('examples/bitzoom.gateway.json')
     const publicOperation = spec.paths['/api/gateway/ping'].get
     const privateOperation = spec.paths['/api/v1/balance'].get
 
-    expect(spec.servers).toEqual([{ url: 'https://api1.riverwa.com' }])
+    expect(spec.servers).toEqual([{ url: 'https://test1.riverwa.com' }])
+    expect(spec.components.securitySchemes).toHaveProperty('Bearer')
+    expect(spec.components.securitySchemes).not.toHaveProperty('HmacApiKey')
     expect(publicOperation.security).toBeUndefined()
-    expect(publicOperation['x-bitzoom-hmac']).toBeUndefined()
-    expect(privateOperation.security).toEqual([{ HmacApiKey: [] }])
-    expect(privateOperation['x-bitzoom-hmac']).toBe(true)
-    expect(privateOperation.parameters).toEqual(
-      expect.arrayContaining([
-        expect.objectContaining({ in: 'header', name: 'X-BZ-TIMESTAMP' }),
-        expect.objectContaining({ in: 'header', name: 'X-BZ-NONCE' }),
-        expect.objectContaining({ in: 'header', name: 'X-BZ-SIGNATURE' }),
-      ])
-    )
+    expect(privateOperation.security).toEqual([{ Bearer: [] }])
+    expect(privateOperation['x-bitzoom-hmac']).toBeUndefined()
+    expect(privateOperation.servers).toBeUndefined()
   })
 
   it('pins version 1.0 to its original Bearer contract', () => {

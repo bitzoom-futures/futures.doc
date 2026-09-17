@@ -46,8 +46,10 @@ defaults to `https://test1.riverwa.com`. Override the upstream when needed:
 BITZOOM_MANAGEMENT_GATEWAY_URL=https://management.example.com yarn start
 ```
 
-The development proxy applies only to management requests; HMAC API requests continue
-to use `BITZOOM_HMAC_API_URL` directly.
+API Explorer requests ("Send API Request") use the local `/__api` route in development,
+which forwards to `BITZOOM_API_URL` (default `https://test1.riverwa.com`) to avoid CORS.
+The deployed docs are served from the same origin as the API, so production requests go
+to `https://test1.riverwa.com` directly with a Bearer token.
 
 Run a specific locale in development:
 

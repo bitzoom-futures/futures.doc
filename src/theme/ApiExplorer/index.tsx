@@ -10,7 +10,6 @@ import React from "react";
 import { useDoc } from "@docusaurus/plugin-content-docs/client";
 import CodeSnippets from "@theme/ApiExplorer/CodeSnippets";
 import Request from "@theme/ApiExplorer/Request";
-import { isHmacOperation } from "@theme/ApiExplorer/Request/isHmacOperation";
 import Response from "@theme/ApiExplorer/Response";
 import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
 import type { ApiItem } from "docusaurus-plugin-openapi-docs/src/types";
@@ -38,7 +37,7 @@ function ApiExplorer({
     <>
       <SecuritySchemes infoPath={infoPath} />
       <Request item={item} />
-      {!isHmacOperation(item) && <Response item={item} />}
+      <Response item={item} />
       {item.method !== "event" && (
         <CodeSnippets
           postman={postman}

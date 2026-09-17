@@ -40,10 +40,14 @@ const hmacApiUrl = (process.env.BITZOOM_HMAC_API_URL || 'https://api1.riverwa.co
   /\/+$/,
   ''
 )
+// REST API used by the API Explorer. Deployed docs share this origin, so requests are same-origin.
+const apiUrl = (process.env.BITZOOM_API_URL || 'https://test1.riverwa.com').replace(/\/+$/, '')
+// In development the explorer sends `${API_DEV_PROXY_PATH}/<absolute url>` to avoid CORS.
+const API_DEV_PROXY_PATH = '/__api'
 
-function managementGatewayDevProxyPlugin() {
+function devServerProxyPlugin() {
   return {
-    name: 'management-gateway-dev-proxy',
+    name: 'dev-server-proxy',
     configureWebpack() {
       return {
         devServer: {
@@ -55,6 +59,17 @@ function managementGatewayDevProxyPlugin() {
               secure: true,
               pathRewrite: (path: string) =>
                 path.replace(new RegExp(`^${MANAGEMENT_GATEWAY_DEV_PROXY_PATH}`), ''),
+              onProxyReq(proxyRequest: import('node:http').ClientRequest) {
+                proxyRequest.removeHeader('origin')
+              }
+            },
+            {
+              context: [API_DEV_PROXY_PATH],
+              target: apiUrl,
+              changeOrigin: true,
+              secure: true,
+              pathRewrite: (path: string) =>
+                path.replace(new RegExp(`^${API_DEV_PROXY_PATH}/https?://[^/]+`), ''),
               onProxyReq(proxyRequest: import('node:http').ClientRequest) {
                 proxyRequest.removeHeader('origin')
               }
@@ -128,7 +143,7 @@ const config: Config = {
 
   themeConfig: {
     api: {
-      // proxy: 'https://cors.pan.dev', // Site-wide proxy (can be overridden per-spec in plugin config)
+      proxy: process.env.NODE_ENV === 'development' ? API_DEV_PROXY_PATH : undefined,
       authPersistence: 'localStorage',
       requestTimeout: 60000 // 60 seconds
     },
@@ -348,7 +363,7 @@ const config: Config = {
 
   plugins: [
     'docusaurus-plugin-image-zoom',
-    ...(process.env.NODE_ENV === 'development' ? [managementGatewayDevProxyPlugin] : []),
+    ...(process.env.NODE_ENV === 'development' ? [devServerProxyPlugin] : []),
     function polyfillPlugin() {
       return {
         name: 'node-polyfill-plugin',

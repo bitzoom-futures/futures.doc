@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 
-const GATEWAY_URL = 'http://119.8.50.236/api/openapi'
+const GATEWAY_URL = 'https://test1.riverwa.com/api/openapi'
 const TARGET_SPEC = path.join(process.cwd(), 'examples', 'bitzoom.json')
 
 async function main() {

@@ -14,8 +14,8 @@ yarn serve              # Serve production build
 ### API Doc Pipeline
 
 ```bash
-node scripts/fetch-gateway-spec.cjs   # Fetch OpenAPI spec from gateway → examples/bitzoom.json
-node scripts/build-gateway-spec.cjs   # Filter to "gateway" tag, replace URLs → examples/bitzoom.gateway.json
+node scripts/fetch-gateway-spec.cjs   # Fetch OpenAPI spec from https://test1.riverwa.com/api/openapi → examples/bitzoom.json
+node scripts/build-gateway-spec.cjs   # Filter to "gateway" tag, set server URL → examples/bitzoom.gateway.json
 yarn gen-docs                          # Generate API docs from spec → docs/bitzoom/
 ```
 
@@ -40,7 +40,8 @@ i18n/                    # Translations (zh-Hans)
 
 ## Conventions
 
-- **URLs**: Internal IPs (e.g. `http://119.8.50.236:*`) are replaced with `https://test.riverwa.com` by build-gateway-spec.cjs. Never commit internal IPs to generated docs.
+- **URLs**: The API server is `https://test1.riverwa.com` (`BITZOOM_API_URL`); build-gateway-spec.cjs sets it and replaces any internal IPs (e.g. `http://119.8.50.236:*`). Never commit internal IPs to generated docs.
+- **Auth**: API Explorer requests use Bearer tokens. In `yarn start`, requests go through the `/__api` dev proxy to avoid CORS.
 - **CSS overrides**: OpenAPI theme styles require high specificity. Use `[class]` doubling (e.g. `.openapi-explorer__details-summary[class]`) to override plugin styles.
 - **API docs**: Files in `docs/bitzoom/` are auto-generated. Edit the spec or build scripts instead.
 - **Primary color**: `#7948ff` (purple)

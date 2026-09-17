@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"properties":{"inviteCode":{"type":"string"},"referralCode":{"type":"string"},"signature":{"type":"string"},"timestamp":{"format":"int64","type":"integer"}},"type":"object"}}},"description":"timestamp:</br>signature:</br>referralCode:</br>inviteCode:","required":true}}
